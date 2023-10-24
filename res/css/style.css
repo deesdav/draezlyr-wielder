@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: default;
+    font-family: 'VT323', monospace;
+    transition: 0.5s all;
+}
+
+body,
+html {
+    height: 100vh;
+}
+
+body {
+    background-image: url(../img/heavenBackground.gif);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#lobby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    top: 170px;
+}
+
+#headline {
+    font-size: 100px;
+    text-shadow: 1px 2px 5px violet;
+}
+
+#play,
+#settings,
+#story {
+    font-size: 60px;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s ease;
+}
+
+#play:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: black;
+}
+
+#settings:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: black;
+}
+
+#story:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: black;
+}
+
+#storyinfo {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: xx-large;
+    padding: 1em;
+    height: 100vh;
+}
+
+#storyinfo p {
+    width: 1000px;
+}
+
+#storyinfo #nextBtn {
+    width: 200px;
+    color: white;
+    background-color: black;
+    padding: 1em;
+
+    border: 3px solid white;
+    cursor: pointer;
+    font-size: xx-large;
+    transition: 0.3s ease;
+}
+
+#storyinfo #sendInputBtn {
+    width: 200px;
+    color: white;
+    background-color: black;
+    padding: 1em;
+
+    border: 3px solid white;
+    cursor: pointer;
+    font-size: xx-large;
+    transition: 0.3s ease;
+}
+
+#storyinfo #nextBtn:hover {
+    border-radius: 20px;
+}
+
+#storyinfo #sendInputBtn:hover {
+    border-radius: 20px;
+}
+
+#storyPartInput {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    transform: scale(3);
+    display: none;
+    position: absolute;
+}
+
+#yourName {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: x-large;
+}
+
+#realtimepresented {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: xx-large;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+}
+
+#planets {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+    position: relative;
+    top: 0;
+}
+#nameOfPlanet{
+    color: white;
+    text-align: center;
+}
+#marvelPlanet {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0;
+}
+
+#marvelPlanet:hover {
+    animation: example 1s alternate infinite;
+}
+
+@keyframes example {
+    from {
+        box-shadow: 0 0 25px brown inset;
+    }
+
+    ;
+
+    to {
+        box-shadow: 0 0 25px red inset;
+    }
+
+    ;
+}
