@@ -7,6 +7,7 @@
     user-select: default;
     font-family: 'VT323', monospace;
     transition: 0.5s all;
+    overflow: hidden;
 }
 
 body,
@@ -31,6 +32,7 @@ body {
     margin: auto;
     position: relative;
     top: 170px;
+   
 }
 
 #headline {
@@ -39,7 +41,7 @@ body {
 }
 
 #play,
-#settings,
+#customization,
 #story {
     font-size: 60px;
     padding: 20px;
@@ -48,6 +50,7 @@ body {
     cursor: pointer;
     background-color: transparent;
     transition: 0.5s ease;
+    text-transform: uppercase;
 }
 
 #play:hover {
@@ -56,7 +59,7 @@ body {
     background-color: black;
 }
 
-#settings:hover {
+#customization:hover {
     text-decoration: underline;
     color: white;
     background-color: black;
@@ -148,27 +151,33 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    gap: 300px;
+    gap: 70px;
     position: relative;
     top: 0;
+    transform: scale(1.9);
+    padding: 0;
+    
 }
 #nameOfPlanet{
     color: white;
     text-align: center;
+    text-shadow: 1px 1px 0px red;
 }
+
 #marvelPlanet {
     width: 200px;
     height: 200px;
     cursor: pointer;
     border-radius: 50%;
     padding: 0;
+    
 }
 
 #marvelPlanet:hover {
-    animation: example 1s alternate infinite;
+    animation: boxPlanet 1s alternate infinite;
 }
 
-@keyframes example {
+@keyframes boxPlanet {
     from {
         box-shadow: 0 0 25px brown inset;
     }
