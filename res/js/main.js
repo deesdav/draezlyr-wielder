@@ -51,7 +51,7 @@ play.onclick = () => {
     audioButtonClickMulti.src = "./res/audio/loadingtheme.mp3";
     audioButtonClickMulti.play();
     audioButtonClick.play();
-    document.body.style.backgroundImage = "url(./res/img/multiverse.gif)";
+    document.body.style.backgroundImage = "url(./res/img/multiverse.png)";
     play.style.display = "none";
     story.style.display = "none";
     customization.style.display = "none";
