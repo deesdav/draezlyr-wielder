@@ -1,4 +1,4 @@
-# [Play]()
+# [Play](https://deesdav.github.io/draezlyr-wielder/)
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 <b>english +</b><br>
