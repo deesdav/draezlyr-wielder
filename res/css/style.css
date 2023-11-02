@@ -16,11 +16,12 @@ html {
 }
 
 body {
-    background-image: url(../img/heavenBackground.png);
+    background-image: url(../img/lobbyBackground.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-color: black;
 }
 
 #lobby {
@@ -32,12 +33,12 @@ body {
     margin: auto;
     position: relative;
     top: 170px;
-   
+
 }
 
 #headline {
     font-size: 100px;
-    text-shadow: 1px 2px 5px violet;
+    text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.631);
 }
 
 #play,
@@ -97,6 +98,7 @@ body {
     cursor: pointer;
     font-size: xx-large;
     transition: 0.3s ease;
+    box-shadow: 0 0 25px white;
 }
 
 #storyinfo #sendInputBtn {
@@ -109,6 +111,7 @@ body {
     cursor: pointer;
     font-size: xx-large;
     transition: 0.3s ease;
+    box-shadow: 0 0 25px white;
 }
 
 #storyinfo #nextBtn:hover {
@@ -139,11 +142,11 @@ body {
 
 #realtimepresented {
     position: absolute;
-    top: 0;
-    left: 5px;
+    top: 15px;
+    left: 15px;
     font-size: xx-large;
     display: block;
-    color: black;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
 
@@ -156,9 +159,10 @@ body {
     top: 0;
     transform: scale(1.9);
     padding: 0;
-    
+
 }
-#nameOfPlanet{
+
+#nameOfPlanet {
     color: white;
     text-align: center;
     text-shadow: 1px 1px 0px red;
@@ -170,7 +174,7 @@ body {
     cursor: pointer;
     border-radius: 50%;
     padding: 0;
-    
+
 }
 
 #marvelPlanet:hover {
@@ -189,4 +193,41 @@ body {
     }
 
     ;
+}
+
+
+
+#levelsText {
+    text-align: center;
+    font-size: 75px;
+    color: white;
+    display: none;
+    padding: 1em;
+}
+
+#levelBtn {
+    border: 3px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: transparent;
+}
+
+#levelBtn:hover {
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+}
+
+#levelsBox {
+    position: relative;
+    top: 100px;
 }

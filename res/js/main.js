@@ -14,7 +14,10 @@ const sendInputBtn = document.getElementById("sendInputBtn");
 const realtimepresented = document.getElementById("realtimepresented");
 const planets = document.getElementById("planets");
 const marvelPlanet = document.getElementById("marvelPlanet");
+const nameOfPlanet = document.getElementById("nameOfPlanet");
 const headline = document.getElementById("headline");
+const levelsText = document.getElementById("levelsText");
+const levelBtn = document.getElementById("levelBtn");
 
 const realtime = new Date();
 const hours = realtime.getHours();
@@ -31,10 +34,18 @@ if (hours >= 0 && hours < 12) {
 headline.onmouseover = () => {
     audioLobbyBackground.src = "./res/audio/lobbymusic.mp3";
     audioLobbyBackground.play();
+    document.body.style.backgroundImage = "none";
+    document.body.style.color = "red";
+    headline.style.transform = "scale(1.9)";
+    headline.style.paddingTop = "50px";
 }
 headline.onmouseout = () => {
     audioLobbyBackground.pause();
     audioLobbyBackground.currentTime = 0;
+    document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
+    document.body.style.color = "black";
+    headline.style.transform = "none";
+    headline.style.paddingTop = "0px";
 }
 
 story.onclick = () => {
@@ -52,17 +63,18 @@ play.onclick = () => {
     audioButtonClickMulti.play();
     audioButtonClick.play();
     document.body.style.backgroundImage = "url(./res/img/multiverse.png)";
+    document.body.style.cursor = "progress";
     play.style.display = "none";
     story.style.display = "none";
     customization.style.display = "none";
     lobby.style.display = "none";
     sendInputBtn.style.display = "none";
     realtimepresented.style.display = "none";
-    
+
     planets.style.top = "250px";
     const playInterval = setTimeout(() => {
-        document.body.style.backgroundImage = "url(./res/img/galaxy.gif)";
         planets.style.display = "none";
+        document.body.style.cursor = "default";
         audioButtonClickMulti.pause();
         audioButtonClickMulti.currentTime = 0;
         storyinfo.style.display = "flex";
@@ -70,7 +82,7 @@ play.onclick = () => {
     if (storyinfo.style.display == "flex") {
         clearTimeout(playInterval)
     }
-   
+
 }
 nextBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -111,17 +123,68 @@ sendInputBtn.onclick = () => {
     storyPartInput.style.display = "none";
     sendInputBtn.style.display = "none";
     planets.style.display = "flex";
+    document.body.style.backgroundImage = "none";
+
 }
 
 
-window.addEventListener("keyup", (e) => {
+document.addEventListener("keyup", (e) => {
     console.log(e);
     switch (e.key) {
         case ("Escape"):
             window.location.reload();
+            /**audioButtonClick.style.display = "none";
+            audioButtonClick.pause();
+            audioButtonClick.currentTime = 0;
+            audioButtonClickMulti.style.display = "none";
+            audioButtonClickMulti.pause();
+            audioButtonClickMulti.currentTime = 0;
+            audioLobbyBackground.style.display = "none";
+            audioLobbyBackground.pause();
+            audioLobbyBackground.currentTime = 0;
+            lobby.style.display = "flex";
+            play.style.display = "block";
+            story.style.display = "block";
+            customization.style.display = "block";
+            storyinfo.style.display = "none";
+            nextBtn.style.display = "none";
+            storyPart.style.display = "none";
+            storyPartInput.style.display = "none";
+            yourName.style.display = "none";
+            sendInputBtn.style.display = "none";
+            realtimepresented.style.display = "block";
+            planets.style.display = "none";
+            marvelPlanet.style.display = "none";
+            headline.style.display = "block";
+            leveltText.style.display = "none";
+            document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
+            document.body.style.cursor = "default"; */
             break;
         default:
             console.log("you type something wrong");
             break;
     }
 });
+
+marvelPlanet.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "block";
+    levelBtn.style.display = "block";
+    marvelPlanet.style.display = "none";
+    nameOfPlanet.style.display = "none";
+    document.body.style.backgroundColor = "red";
+}
+
+levelBtn.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+}
+levelBtn.onmousedown = () => {
+    levelBtn.style.backgroundColor = "white";
+    levelBtn.style.color = "red";
+}
+levelBtn.onmouseup = () => {
+    levelBtn.style.backgroundColor = "transparent";
+    levelBtn.style.color = "black";
+}
