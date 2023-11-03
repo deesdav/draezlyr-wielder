@@ -18,6 +18,7 @@ const nameOfPlanet = document.getElementById("nameOfPlanet");
 const headline = document.getElementById("headline");
 const levelsText = document.getElementById("levelsText");
 const levelBtn = document.getElementById("levelBtn");
+const storyrecap = document.getElementById("storyrecap");
 
 const realtime = new Date();
 const hours = realtime.getHours();
@@ -51,6 +52,16 @@ headline.onmouseout = () => {
 story.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
+    storyrecap.style.display = "block";
+    lobby.style.display = "none";
+    
+}
+storyrecap.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    storyrecap.style.display = "none";
+    lobby.style.display = "flex";
+    
 }
 customization.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
