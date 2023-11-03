@@ -4,7 +4,7 @@ const audioLobbyBackground = document.getElementById("audioLobbyBackground");
 const lobby = document.getElementById("lobby");
 const play = document.getElementById("play");
 const story = document.getElementById("story");
-const customization = document.getElementById("customization");
+const author = document.getElementById("author");
 const storyinfo = document.getElementById("storyinfo");
 const nextBtn = document.getElementById("nextBtn");
 const storyPart = document.getElementById("storyPart");
@@ -63,7 +63,7 @@ storyrecap.onclick = () => {
     lobby.style.display = "flex";
     
 }
-customization.onclick = () => {
+author.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
 }
@@ -77,7 +77,7 @@ play.onclick = () => {
     document.body.style.cursor = "progress";
     play.style.display = "none";
     story.style.display = "none";
-    customization.style.display = "none";
+    author.style.display = "none";
     lobby.style.display = "none";
     sendInputBtn.style.display = "none";
     realtimepresented.style.display = "none";
@@ -156,7 +156,7 @@ document.addEventListener("keyup", (e) => {
             lobby.style.display = "flex";
             play.style.display = "block";
             story.style.display = "block";
-            customization.style.display = "block";
+            author.style.display = "block";
             storyinfo.style.display = "none";
             nextBtn.style.display = "none";
             storyPart.style.display = "none";

@@ -42,7 +42,7 @@ body {
 }
 
 #play,
-#customization,
+#author,
 #story {
     font-size: 60px;
     padding: 20px;
@@ -53,6 +53,10 @@ body {
     transition: 0.5s ease;
     text-transform: uppercase;
 }
+#author a{
+    text-decoration: none;
+    color: black;
+}
 
 #play:hover {
     text-decoration: underline;
@@ -60,10 +64,14 @@ body {
     background-color: black;
 }
 
-#customization:hover {
+#author:hover {
     text-decoration: underline;
     color: white;
     background-color: black;
+}
+#author a:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 #story:hover {
