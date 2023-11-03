@@ -1,7 +1,6 @@
 # [Play](https://deesdav.github.io/draezlyr-wielder/) 
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
-Last Update:
-<p>title and logo</p>
+
 <b>english +</b><br>
 <b>lobby +</b><br>
 <b>level system -<b><br>
