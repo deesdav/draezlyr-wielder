@@ -15,7 +15,7 @@
         <h1 id="headline">DRAEZLYR WIELDER</h1>
         <button id="play">PLAY</button>
         <button id="story">STORY RECAP</button>
-        <button id="author"><a  href="https://github.com/deesdav"> AUTHOR</a></button>
+        <button id="author"><a href="https://github.com/deesdav"> AUTHOR</a></button>
     </div>
 
     <div id="storyrecap">
@@ -44,10 +44,38 @@
     </div>
     <div id="levelsBox">
         <h2 id="levelsText">Levels: 1-20</h2>
-        <button id="levelBtn">1</button>
+        <div id="gridOfLevels">
+            <button title="SPIDER MAN" id="levelONE">1</button>
+            <button id="levelTWO">2</button>
+            <button id="levelTHREE">3</button>
+            <button id="levelFOUR">4</button>
+            <button id="levelFIVE">5</button>
+            <button id="levelSIX">6</button>
+            <button id="levelSEVEN">7</button>
+            <button id="levelEIGHT">8</button>
+            <button id="levelNINE">9</button>
+            <button id="levelTEN">10</button>
+            <button id="levelELEVEN">11</button>
+            <button id="levelTWELVE">12</button>
+            <button id="levelTHIRTEEN">13</button>
+            <button id="levelFOURTEEN">14</button>
+            <button id="levelFIFTEEN">15</button>
+            <button id="levelSIXTEEN">16</button>
+            <button id="levelSEVENTEEN">17</button>
+            <button id="levelEIGHTTEEN">18</button>
+            <button id="levelNINETEEN">19</button>
+            <button id="levelTWENTY">20</button>
+        </div>
+        
     </div>
 
-    <div id="mainGameBox"></div>
+    <div id="game">
+        <div id="yourHpText">your HP: <span id="yourHp">0</span></div>
+        <div id="enemyHpText">enemy HP: <span id="enemyHp">0</span></div>
+        <img src="./res/img/hero.idle.png" alt="" id="hero">
+        <img src="./res/img/enemy.spiderman.png" alt="" id="enemy">
+    </div>
+    <div id="gameResult"></div>
     <audio id="audioButtonClick" src=""></audio>
     <audio id="audioButtonClickMulti" src=""></audio>
     <audio id="audioLobbyBackground" src=""></audio>

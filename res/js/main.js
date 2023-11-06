@@ -16,9 +16,39 @@ const planets = document.getElementById("planets");
 const marvelPlanet = document.getElementById("marvelPlanet");
 const nameOfPlanet = document.getElementById("nameOfPlanet");
 const headline = document.getElementById("headline");
+
+
 const levelsText = document.getElementById("levelsText");
-const levelBtn = document.getElementById("levelBtn");
+const gridOfLevels = document.getElementById("gridOfLevels");
+const levelONE = document.getElementById("levelONE");
+const levelTWO = document.getElementById("levelTWO");
+const levelTHREE = document.getElementById("levelTHREE");
+const levelFOUR = document.getElementById("levelFOUR");
+const levelFIVE = document.getElementById("levelFIVE");
+const levelSIX = document.getElementById("levelSIX");
+const levelSEVEN = document.getElementById("levelSEVEN");
+const levelEIGHT = document.getElementById("levelEIGHT");
+const levelNINE = document.getElementById("levelNINE");
+const levelTEN = document.getElementById("levelTEN");
+const levelELEVEN = document.getElementById("levelELEVEN");
+const levelTWELVE = document.getElementById("levelTWELVE");
+const levelTHIRTEEN = document.getElementById("levelTHIRTEEN");
+const levelFOURTEEN = document.getElementById("levelFOURTEEN");
+const levelFIFTEEN = document.getElementById("levlevelFIFTEENelONE");
+const levelSIXTEEN = document.getElementById("levelSIXTEEN");
+const levelSEVENTEEN = document.getElementById("levelSEVENTEEN");
+const levelEIGHTTEEN = document.getElementById("levelEIGHTTEEN");
+const levelNINETEEN = document.getElementById("levelNINETEEN");
+const levelTWENTY = document.getElementById("levelTWENTY");
+
+
 const storyrecap = document.getElementById("storyrecap");
+const game = document.getElementById("game");
+const hero = document.getElementById("hero");
+const enemy = document.getElementById("enemy");
+const yourHp = document.getElementById("yourHp");
+const enemyHp = document.getElementById("enemyHp");
+const gameResult = document.getElementById("gameResult");
 
 const realtime = new Date();
 const hours = realtime.getHours();
@@ -48,20 +78,21 @@ headline.onmouseout = () => {
     headline.style.transform = "none";
     headline.style.paddingTop = "0px";
 }
+// lobby buttons
 
 story.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     storyrecap.style.display = "block";
     lobby.style.display = "none";
-    
+
 }
 storyrecap.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     storyrecap.style.display = "none";
     lobby.style.display = "flex";
-    
+
 }
 author.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -95,6 +126,9 @@ play.onclick = () => {
     }
 
 }
+
+// brief info and entering your name or not
+
 nextBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -138,38 +172,16 @@ sendInputBtn.onclick = () => {
 
 }
 
+// fast refresh page function and secret
 
 document.addEventListener("keyup", (e) => {
     console.log(e);
     switch (e.key) {
         case ("Escape"):
             window.location.reload();
-            /**audioButtonClick.style.display = "none";
-            audioButtonClick.pause();
-            audioButtonClick.currentTime = 0;
-            audioButtonClickMulti.style.display = "none";
-            audioButtonClickMulti.pause();
-            audioButtonClickMulti.currentTime = 0;
-            audioLobbyBackground.style.display = "none";
-            audioLobbyBackground.pause();
-            audioLobbyBackground.currentTime = 0;
-            lobby.style.display = "flex";
-            play.style.display = "block";
-            story.style.display = "block";
-            author.style.display = "block";
-            storyinfo.style.display = "none";
-            nextBtn.style.display = "none";
-            storyPart.style.display = "none";
-            storyPartInput.style.display = "none";
-            yourName.style.display = "none";
-            sendInputBtn.style.display = "none";
-            realtimepresented.style.display = "block";
-            planets.style.display = "none";
-            marvelPlanet.style.display = "none";
-            headline.style.display = "block";
-            leveltText.style.display = "none";
-            document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
-            document.body.style.cursor = "default"; */
+            break;
+        case ("7", "7", "7", "8"):
+            hero.src = "./res/img/secret.hero.idle.png";
             break;
         default:
             console.log("you type something wrong");
@@ -181,21 +193,96 @@ marvelPlanet.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
-    levelBtn.style.display = "block";
+    gridOfLevels.style.display = "grid";
+    levelONE.style.display = "block";
     marvelPlanet.style.display = "none";
     nameOfPlanet.style.display = "none";
     document.body.style.backgroundColor = "red";
+    storyPartInput.style.display = "none";
 }
 
-levelBtn.onclick = () => {
+// level and fight system
+let levelOneCompleted = false;
+
+levelONE.onclick = () => {
+    if (levelOneCompleted) {
+        console.log("Level is completed");
+    }
+
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    levelONE.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML--;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.innerHTML = `You lost`;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.innerHTML = `You won`;
+        }
+
+    }, 1000);
+
+    //disabled level one because is completed
+    levelOneCompleted = true;
+    levelONE.disabled = true;
+}
+
+
+let yourHpValue = 20;
+let enemyHpValue = 20;
+
+yourHp.innerHTML = yourHpValue;
+enemyHp.innerHTML = enemyHpValue;
+
+enemy.onmousedown = () => {
+    hero.style.left = "35%";
+    hero.src = "./res/img/hero.attack.png";
+    enemy.style.transform = "rotate(5deg)";
+    enemyHp.innerHTML--;
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
 }
-levelBtn.onmousedown = () => {
-    levelBtn.style.backgroundColor = "white";
-    levelBtn.style.color = "red";
+enemy.onmouseup = () => {
+    hero.style.left = "20%";
+    hero.src = "./res/img/hero.idle.png";
+    enemy.style.transform = "none";
 }
-levelBtn.onmouseup = () => {
-    levelBtn.style.backgroundColor = "transparent";
-    levelBtn.style.color = "black";
+
+
+levelONE.onmousedown = () => {
+    levelONE.style.backgroundColor = "white";
+    levelONE.style.color = "red";
+}
+levelONE.onmouseup = () => {
+    levelONE.style.backgroundColor = "transparent";
+    levelONE.style.color = "black";
+}
+
+gameResult.onclick = () => {
+    console.log("funguje");
+    document.body.style.backgroundColor = "red";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "block";
+    levelONE.style.display = "block";
+    gridOfLevels.style.display = "grid";
+    levelTWO.style.display = "block";
+    game.style.display = "none";
+    gameResult.style.display = "none";
 }
