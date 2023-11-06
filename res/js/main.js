@@ -286,3 +286,7 @@ gameResult.onclick = () => {
     game.style.display = "none";
     gameResult.style.display = "none";
 }
+levelTWO.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+}
