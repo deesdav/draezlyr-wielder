@@ -11,7 +11,7 @@
 <li>sounds of win and lose</li>
 <li>back button</li>
 <li>hulk image</li>
-<li>secret functionality</li>
+<li>functionality of easter egg</li>
 <li>XP</li>
 </ul>     
 
