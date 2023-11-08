@@ -10,6 +10,7 @@
 <ul>
 <li>sounds of win and lose</li>
 <li>back button</li>
+<li>loader</li>
 <li>hulk image</li>
 <li>functionality of easter egg</li>
 <li>XP</li>
