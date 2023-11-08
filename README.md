@@ -1,15 +1,18 @@
-# [Play](https://deesdav.github.io/draezlyr-wielder/) 
+# [Play](https://deesdav.github.io/draezlyr-wielder/)
+
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
-about last update:
-    - level 1, 2, 3 - functionality
-    added:
-        - sounds of win and lose
-        - back button 
-        - hulk image
-        - secret functionality
-        - XP
-
+<h2>about last update: </h2>
+<ul>
+<li>- level 1, 2, 3 - functionality</li>
+</ul>  
+<h2>added:</h2>
+<ul>
+<li>- sounds of win and lose</li>
+<li>- back button</li>
+<li>- hulk image</li>
+<li>- secret functionality</li>
+<li>- XP</li>
+</ul>     
 
 <img style="height: 200px; width: 200px;" src="./res/img/hero.idle.png"><img style="height: 200px; width: 200px;" src="./res/img/hero.attack.png">
-
