@@ -36,6 +36,30 @@ body {
 
 }
 
+#loader {
+    border: 13px solid #ffffff;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    border-radius: 50%;
+    border-top: 13px solid blueviolet;
+    width: 100px;
+    height: 100px;
+    display: none;
+    margin: 0 auto;
+    position: relative;
+    top: 43%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #headline {
     font-size: 100px;
     text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.631);
@@ -150,6 +174,15 @@ body {
     font-size: x-large;
 }
 
+#yourXPText {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: x-large;
+}
+
 #realtimepresented {
     position: absolute;
     top: 15px;
@@ -208,6 +241,14 @@ body {
 
 
 #levelsText {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    display: none;
+    padding-bottom: 15px;
+}
+
+#levelInfo {
     text-align: center;
     font-size: 50px;
     color: white;
@@ -291,7 +332,6 @@ body {
 }
 
 #game {
-    background-image: url(../img/spidermanBG.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: white;
@@ -305,19 +345,33 @@ body {
 
 }
 
-#hero {
+#heroIdle {
+    display: block;
     height: min-content;
     width: min-content;
     position: relative;
-    top: 70%;
+    top: 72%;
     left: 20%;
+    transition: 0.5s ease;
+    animation: heroMoving 1s infinite alternate linear;
+}
+
+#heroAttack {
+    display: none;
+    height: min-content;
+    width: min-content;
+    position: relative;
+    top: 72%;
+    left: 35%;
+    transition: 0.5s ease;
+    animation: heroMoving 1s infinite alternate linear;
 }
 
 #enemy {
     height: 120px;
     width: 120px;
     position: relative;
-    top: 70%;
+    top: 75%;
     left: 40%;
     cursor: crosshair;
     animation: enemyMoving 1s infinite;
@@ -326,7 +380,6 @@ body {
 
 #yourHpText {
     position: absolute;
- 
     top: 0;
     left: 0;
     background-color: #333;
@@ -369,4 +422,37 @@ body {
     }
 
     ;
+}
+
+@keyframes heroMoving {
+
+    from {
+        top: 73%;
+    }
+
+    ;
+
+    to {
+        top: 72%;
+    }
+
+    ;
+}
+
+#backBtn {
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 1em;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: x-large;
+    height: min-content;
+    width: min-content;
+    display: none;
 }

@@ -1,7 +1,12 @@
+//------------------------------------ audios
 const audioButtonClick = document.getElementById("audioButtonClick");
 const audioButtonClickMulti = document.getElementById("audioButtonClickMulti");
 const audioLobbyBackground = document.getElementById("audioLobbyBackground");
+const audioYouWin = document.getElementById("audioYouWin");
+const audioYouLost = document.getElementById("audioYouLost");
+
 const lobby = document.getElementById("lobby");
+const loader = document.getElementById("loader");
 const play = document.getElementById("play");
 const story = document.getElementById("story");
 const author = document.getElementById("author");
@@ -10,12 +15,14 @@ const nextBtn = document.getElementById("nextBtn");
 const storyPart = document.getElementById("storyPart");
 const storyPartInput = document.getElementById("storyPartInput");
 const yourName = document.getElementById("yourName");
+const yourXPText = document.getElementById("yourXPText");
 const sendInputBtn = document.getElementById("sendInputBtn");
 const realtimepresented = document.getElementById("realtimepresented");
 const planets = document.getElementById("planets");
 const marvelPlanet = document.getElementById("marvelPlanet");
 const nameOfPlanet = document.getElementById("nameOfPlanet");
 const headline = document.getElementById("headline");
+const backBtn = document.getElementById("backBtn");
 
 
 const levelsText = document.getElementById("levelsText");
@@ -44,11 +51,15 @@ const levelTWENTY = document.getElementById("levelTWENTY");
 
 const storyrecap = document.getElementById("storyrecap");
 const game = document.getElementById("game");
-const hero = document.getElementById("hero");
+const heroIdle = document.getElementById("heroIdle");
+const heroAttack = document.getElementById("heroAttack");
 const enemy = document.getElementById("enemy");
 const yourHp = document.getElementById("yourHp");
 const enemyHp = document.getElementById("enemyHp");
 const gameResult = document.getElementById("gameResult");
+const levelInfo = document.getElementById("levelInfo");
+const enemyName = document.getElementById("enemyName");
+const yourXP = document.getElementById("yourXP");
 
 const realtime = new Date();
 const hours = realtime.getHours();
@@ -78,7 +89,7 @@ headline.onmouseout = () => {
     headline.style.transform = "none";
     headline.style.paddingTop = "0px";
 }
-// lobby buttons
+//------------------------------------ lobby buttons
 
 story.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -105,11 +116,13 @@ play.onclick = () => {
     audioButtonClickMulti.play();
     audioButtonClick.play();
     document.body.style.backgroundImage = "url(./res/img/multiverse.png)";
-    document.body.style.cursor = "progress";
+    document.body.style.bakcgroundColor = "rgba(0, 0, 0, 0.727)";
+    document.body.style.cursor = "none";
     play.style.display = "none";
     story.style.display = "none";
     author.style.display = "none";
     lobby.style.display = "none";
+    loader.style.display = "block";
     sendInputBtn.style.display = "none";
     realtimepresented.style.display = "none";
 
@@ -117,7 +130,9 @@ play.onclick = () => {
     const playInterval = setTimeout(() => {
         planets.style.display = "none";
         document.body.style.cursor = "default";
+        loader.style.display = "none";
         audioButtonClickMulti.pause();
+        document.body.style.bakcgroundColor = "black";
         audioButtonClickMulti.currentTime = 0;
         storyinfo.style.display = "flex";
     }, 10000);
@@ -127,7 +142,7 @@ play.onclick = () => {
 
 }
 
-// brief info and entering your name or not
+//------------------------------------ brief info and entering your name or not
 
 nextBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -163,6 +178,7 @@ sendInputBtn.onclick = () => {
         yourName.innerHTML = `Your name: ${nameValue}`;
     }
     yourName.style.display = "block";
+    yourXPText.style.display = "block";
     storyinfo.style.display = "none";
     storyPart.style.display = "none";
     storyPartInput.style.display = "none";
@@ -172,7 +188,7 @@ sendInputBtn.onclick = () => {
 
 }
 
-// fast refresh page function and secret
+//------------------------------------ fast refresh page function and secret
 
 document.addEventListener("keyup", (e) => {
     console.log(e);
@@ -181,34 +197,79 @@ document.addEventListener("keyup", (e) => {
             window.location.reload();
             break;
         case ("7", "7", "7", "8"):
-            hero.src = "./res/img/secret.hero.idle.png";
+            heroIdle.src = "./res/img/secret.hero.idle.png";
+            heroAttack.src = "./res/img/secret.hero.attack.png";
             break;
         default:
             console.log("you type something wrong");
             break;
     }
 });
-
+//------------------------------------ planets
 marvelPlanet.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
+    levelInfo.style.display = "block";
     gridOfLevels.style.display = "grid";
     levelONE.style.display = "block";
     marvelPlanet.style.display = "none";
     nameOfPlanet.style.display = "none";
     document.body.style.backgroundColor = "red";
     storyPartInput.style.display = "none";
+    backBtn.style.display = "block";
+    backBtn.enable = true;
 }
 
-// level and fight system
-let levelOneCompleted = false;
+//------------------------------------ back button to portals
+backBtn.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    levelInfo.style.display = "none";
+    gridOfLevels.style.display = "none";
+    levelONE.style.display = "none";
+    marvelPlanet.style.display = "block";
+    nameOfPlanet.style.display = "block";
+    document.body.style.backgroundColor = "black";
+    backBtn.style.display = "none";
+
+}
+
+//------------------------------------ level and fighting system
+let levelONECompleted = false;
+let levelTWOCompleted = false;
+let levelTHREECompleted = false;
+let yourHpValue = 20;
+let enemyHpValue = 20;
+
+yourHp.innerHTML = yourHpValue;
+enemyHp.innerHTML = enemyHpValue;
+
+
+//------------------------------------ level 1
+levelONE.onmouseover = () => {
+    enemyName.innerHTML = "Spider-man";
+}
+levelONE.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelONE.onmousedown = () => {
+    levelONE.style.backgroundColor = "white";
+    levelONE.style.color = "red";
+}
+levelONE.onmouseup = () => {
+    levelONE.style.backgroundColor = "transparent";
+    levelONE.style.color = "black";
+}
 
 levelONE.onclick = () => {
-    if (levelOneCompleted) {
+    if (levelONECompleted) {
         console.log("Level is completed");
     }
-
+    game.style.backgroundImage = "url(./res/img/spidermanBG.png)";
+    enemy.src = "./res/img/enemy.spiderman.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -226,6 +287,13 @@ levelONE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelONECompleted = false;
+            levelONE.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = enemyHpValue;
+
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
@@ -234,59 +302,196 @@ levelONE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelONECompleted = true;
+            levelONE.disabled = true;
+            yourXP.innerHTML = 2;
         }
 
     }, 1000);
 
-    //disabled level one because is completed
-    levelOneCompleted = true;
-    levelONE.disabled = true;
 }
 
-
-let yourHpValue = 20;
-let enemyHpValue = 20;
-
-yourHp.innerHTML = yourHpValue;
-enemyHp.innerHTML = enemyHpValue;
+//------------------------------------ enemy system
 
 enemy.onmousedown = () => {
-    hero.style.left = "35%";
-    hero.src = "./res/img/hero.attack.png";
+    heroAttack.style.left = "35%";
+    heroAttack.style.display = "block";
+    heroIdle.style.display = "none";
     enemy.style.transform = "rotate(5deg)";
     enemyHp.innerHTML--;
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
+
 }
 enemy.onmouseup = () => {
-    hero.style.left = "20%";
-    hero.src = "./res/img/hero.idle.png";
+    heroAttack.style.display = "none";
+    heroIdle.style.display = "block";
+    heroIdle.style.left = "20%";
     enemy.style.transform = "none";
 }
 
+//------------------------------------ level 2
+levelTWO.onmouseover = () => {
+    enemyName.innerHTML = "Hulk";
+}
+levelTWO.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelTWO.onmousedown = () => {
+    levelTWO.style.backgroundColor = "white";
+    levelTWO.style.color = "red";
+}
+levelTWO.onmouseup = () => {
+    levelTWO.style.backgroundColor = "transparent";
+    levelTWO.style.color = "black";
+}
 
-levelONE.onmousedown = () => {
-    levelONE.style.backgroundColor = "white";
-    levelONE.style.color = "red";
+levelTWO.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url()";
+    enemy.src = "./res/img/enemy.hulk.png";
+    enemyHp.innerHTML = 25;
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    levelONE.style.display = "none";
+    levelTWO.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 2;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelTWOCompleted = false;
+            levelTWO.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 25;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelTWOCompleted = true;
+            levelTWO.disabled = true;
+            yourXP.innerHTML = 4;
+        }
+
+    }, 1000);
+
 }
-levelONE.onmouseup = () => {
-    levelONE.style.backgroundColor = "transparent";
-    levelONE.style.color = "black";
+
+//------------------------------------ level 3
+levelTHREE.onmouseover = () => {
+    enemyName.innerHTML = "Iron man";
 }
+levelTHREE.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelTHREE.onmousedown = () => {
+    levelTHREE.style.backgroundColor = "white";
+    levelTHREE.style.color = "red";
+}
+levelTHREE.onmouseup = () => {
+    levelTHREE.style.backgroundColor = "transparent";
+    levelTHREE.style.color = "black";
+}
+
+levelTHREE.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "none";
+    enemy.src = "";
+    enemyHp.innerHTML = 30;
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    levelONE.style.display = "none";
+    levelTWO.style.display = "none";
+    levelTHREE.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 3;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelTHREECompleted = false;
+            levelTHREE.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 30;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelTHREECompleted = true;
+            levelTHREE.disabled = true;
+            yourXP.innerHTML = 6;
+        }
+
+    }, 1000);
+
+}
+
+//------------------------------------ level 4 ...
+
+
+
 
 gameResult.onclick = () => {
+
     console.log("funguje");
     document.body.style.backgroundColor = "red";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
+    levelInfo.style.display = "block";
     levelONE.style.display = "block";
     gridOfLevels.style.display = "grid";
-    levelTWO.style.display = "block";
+    if (levelONECompleted) {
+        levelTWO.style.display = "block";
+    }
+    if (levelTWOCompleted) {
+        levelTHREE.style.display = "block";
+    }
     game.style.display = "none";
     gameResult.style.display = "none";
+    backBtn.style.display = "block";
 }
-levelTWO.onclick = () => {
-    audioButtonClick.src = "./res/audio/buttonsound.mp3";
-    audioButtonClick.play();
-}
+

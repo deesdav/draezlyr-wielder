@@ -17,7 +17,7 @@
         <button id="story">STORY RECAP</button>
         <button id="author"><a href="https://github.com/deesdav"> AUTHOR</a></button>
     </div>
-
+    <div id="loader"></div>
     <div id="storyrecap">
         <h3>Recapitulation of the story</h3>
         <p>You were a knight named John Guiscard Coral Ironside
@@ -37,17 +37,20 @@
         <button id="sendInputBtn">send</button>
     </div>
     <div id="yourName"></div>
+    <div id="yourXPText">your XP: <span id="yourXP">0</span></div>
     <div id="planets">
         <div><img src="./res/img/marvelRedPlanet.png" alt="" id="marvelPlanet">
             <div id="nameOfPlanet">Multiverse Planet</div>
         </div>
     </div>
+
     <div id="levelsBox">
         <h2 id="levelsText">Levels: 1-20</h2>
+        <div id="levelInfo">enemy: <span id="enemyName"></span></div>
         <div id="gridOfLevels">
             <button title="SPIDER MAN" id="levelONE">1</button>
-            <button id="levelTWO">2</button>
-            <button id="levelTHREE">3</button>
+            <button title="HULK" id="levelTWO">2</button>
+            <button title="IRON MAN" id="levelTHREE">3</button>
             <button id="levelFOUR">4</button>
             <button id="levelFIVE">5</button>
             <button id="levelSIX">6</button>
@@ -66,17 +69,20 @@
             <button id="levelNINETEEN">19</button>
             <button id="levelTWENTY">20</button>
         </div>
-        
+        <button id="backBtn">back</button>
     </div>
 
     <div id="game">
         <div id="yourHpText">your HP: <span id="yourHp">0</span></div>
         <div id="enemyHpText">enemy HP: <span id="enemyHp">0</span></div>
-        <img src="./res/img/hero.idle.png" alt="" id="hero">
-        <img src="./res/img/enemy.spiderman.png" alt="" id="enemy">
+        <img src="./res/img/hero.idle.png" alt="" id="heroIdle">
+        <img src="./res/img/hero.attack.png" alt="" id="heroAttack">
+        <img src="" alt="" id="enemy">
     </div>
     <div id="gameResult"></div>
     <audio id="audioButtonClick" src=""></audio>
+    <audio id="audioYouWin" src=""></audio>
+    <audio id="audioYouLost" src=""></audio>
     <audio id="audioButtonClickMulti" src=""></audio>
     <audio id="audioLobbyBackground" src=""></audio>
     <script src="./res/js/main.js"></script>
