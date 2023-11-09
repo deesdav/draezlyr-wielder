@@ -334,14 +334,17 @@ body {
 #game {
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: cover;
+    box-shadow: 0 0 900px rgb(0, 0, 0) inset;
+    background-size: 100%;
     background-color: white;
     position: relative;
-    top: 120px;
+    border-radius: 10px;
+    top: 40px;
+    text-transform: uppercase;
     display: none;
     margin: 0 auto;
-    width: 800px;
-    height: 500px;
+    width: 999px;
+    height: 666px;
     border: 0.3em solid #333;
 
 }
@@ -353,6 +356,7 @@ body {
     position: relative;
     top: 72%;
     left: 20%;
+    transform: scale(1.5);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
 }
@@ -364,6 +368,7 @@ body {
     position: relative;
     top: 72%;
     left: 35%;
+    transform: scale(1.5);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
 }
@@ -373,6 +378,7 @@ body {
     width: 120px;
     position: relative;
     top: 75%;
+    transform: scale(1.5);
     left: 40%;
     cursor: crosshair;
     animation: enemyMoving 1s infinite;
@@ -384,8 +390,10 @@ body {
     top: 0;
     left: 0;
     background-color: #333;
-    color: aquamarine;
+    color: rgb(255, 255, 255);
     padding: 1em;
+    box-shadow: 2px 0 25px rgb(0, 255, 0);
+    text-shadow: 0 0 0px rgb(0, 255, 0);
 }
 
 #enemyHpText {
@@ -393,9 +401,10 @@ body {
     top: 0;
     right: 0;
     background-color: #333;
-    color: red;
+    color: rgb(255, 255, 255);
     padding: 1em;
-
+    box-shadow: 2px 0 25px rgb(255, 0, 0);
+    text-shadow: 0 0 0px rgb(255, 0, 0);
 }
 
 #gameResult {

@@ -240,11 +240,10 @@ backBtn.onclick = () => {
 let levelONECompleted = false;
 let levelTWOCompleted = false;
 let levelTHREECompleted = false;
-let yourHpValue = 20;
-let enemyHpValue = 20;
+let levelFOURCompleted = false;
 
-yourHp.innerHTML = yourHpValue;
-enemyHp.innerHTML = enemyHpValue;
+yourHp.style.color = "rgb(0, 255, 0)";
+enemyHp.style.color = "rgb(255, 0, 0)";
 
 
 //------------------------------------ level 1
@@ -274,9 +273,10 @@ levelONE.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
-    levelONE.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
+    yourHp.innerHTML = 20;
+    enemyHp.innerHTML = 20;
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML--;
 
@@ -286,13 +286,14 @@ levelONE.onclick = () => {
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelONECompleted = false;
             levelONE.disabled = false;
-            yourHp.innerHTML = yourHpValue;
-            enemyHp.innerHTML = enemyHpValue;
+            yourHp.innerHTML = 20;
+            enemyHp.innerHTML = 20;
 
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
@@ -301,35 +302,19 @@ levelONE.onclick = () => {
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelONECompleted = true;
             levelONE.disabled = true;
             yourXP.innerHTML = 2;
+            yourHp.innerHTML = 20;
+
         }
 
     }, 1000);
 
-}
-
-//------------------------------------ enemy system
-
-enemy.onmousedown = () => {
-    heroAttack.style.left = "35%";
-    heroAttack.style.display = "block";
-    heroIdle.style.display = "none";
-    enemy.style.transform = "rotate(5deg)";
-    enemyHp.innerHTML--;
-    audioButtonClick.src = "./res/audio/buttonsound.mp3";
-    audioButtonClick.play();
-
-}
-enemy.onmouseup = () => {
-    heroAttack.style.display = "none";
-    heroIdle.style.display = "block";
-    heroIdle.style.left = "20%";
-    enemy.style.transform = "none";
 }
 
 //------------------------------------ level 2
@@ -354,17 +339,16 @@ levelTWO.onclick = () => {
     }
     game.style.backgroundImage = "url(./res/img/hulkBG.png)";
     enemy.src = "./res/img/enemy.hulk.png";
-    enemyHp.innerHTML = 25;
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
-    levelONE.style.display = "none";
-    levelTWO.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
+    yourHp.innerHTML = 20;
+    enemyHp.innerHTML = 25;
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 2;
 
@@ -374,12 +358,13 @@ levelTWO.onclick = () => {
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTWOCompleted = false;
             levelTWO.disabled = false;
-            yourHp.innerHTML = yourHpValue;
+            yourHp.innerHTML = 20;
             enemyHp.innerHTML = 25;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
@@ -388,12 +373,15 @@ levelTWO.onclick = () => {
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTWOCompleted = true;
             levelTWO.disabled = true;
             yourXP.innerHTML = 4;
+            yourHp.innerHTML = 20;
+            enemyHp.innerHTML = 25;
         }
 
     }, 1000);
@@ -429,11 +417,10 @@ levelTHREE.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
-    levelONE.style.display = "none";
-    levelTWO.style.display = "none";
-    levelTHREE.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
+    yourHp.innerHTML = 20;
+    enemyHp.innerHTML = 30;
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 3;
 
@@ -443,12 +430,13 @@ levelTHREE.onclick = () => {
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTHREECompleted = false;
             levelTHREE.disabled = false;
-            yourHp.innerHTML = yourHpValue;
+            yourHp.innerHTML = 20;
             enemyHp.innerHTML = 30;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
@@ -457,23 +445,97 @@ levelTHREE.onclick = () => {
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTHREECompleted = true;
             levelTHREE.disabled = true;
             yourXP.innerHTML = 6;
+            yourHp.innerHTML = 20;
+            enemyHp.innerHTML = 30;
         }
 
     }, 1000);
 
 }
 
-//------------------------------------ level 4 ...
+//------------------------------------ level 4
+levelFOUR.onmouseover = () => {
+    enemyName.innerHTML = "Thor";
+}
+levelFOUR.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelFOUR.onmousedown = () => {
+    levelFOUR.style.backgroundColor = "white";
+    levelFOUR.style.color = "red";
+}
+levelFOUR.onmouseup = () => {
+    levelFOUR.style.backgroundColor = "transparent";
+    levelFOUR.style.color = "black";
+}
+
+levelFOUR.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/.png)";
+    enemy.src = "";
+    enemyHp.innerHTML = 30;
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerHTML = 20;
+    enemyHp.innerHTML = 35;
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 3;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelFOURCompleted = false;
+            levelFOUR.disabled = false;
+            yourHp.innerHTML = 20;
+            enemyHp.innerHTML = 30;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelFOURCompleted = true;
+            levelFOUR.disabled = true;
+            yourXP.innerHTML = 8;
+            yourHp.innerHTML = 20;
+            enemyHp.innerHTML = 30;
+        }
+
+    }, 1000);
+
+}
+
+//------------------------------------ level 5 ...
 
 
-
-
+//------------------------------------ game result
 gameResult.onclick = () => {
 
     console.log("funguje");
@@ -490,8 +552,31 @@ gameResult.onclick = () => {
     if (levelTWOCompleted) {
         levelTHREE.style.display = "block";
     }
+    if (levelTHREECompleted) {
+        levelFOUR.style.display = "block";
+    }
+    if (levelFOURCompleted) {
+        levelFIVE.style.display = "block";
+    }
     game.style.display = "none";
     gameResult.style.display = "none";
     backBtn.style.display = "block";
 }
 
+//------------------------------------ enemy system
+enemy.onmousedown = () => {
+    heroAttack.style.left = "35%";
+    heroAttack.style.display = "block";
+    heroIdle.style.display = "none";
+    enemy.style.transform = "rotate(5deg) scale(1.5)";
+    enemyHp.innerHTML--;
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+
+}
+enemy.onmouseup = () => {
+    heroAttack.style.display = "none";
+    heroIdle.style.display = "block";
+    heroIdle.style.left = "20%";
+    enemy.style.transform = "rotate(0deg) scale(1.5)";
+}
