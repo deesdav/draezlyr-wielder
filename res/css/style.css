@@ -333,6 +333,7 @@ body {
 
 #game {
     background-repeat: no-repeat;
+    background-position: bottom;
     background-size: cover;
     background-color: white;
     position: relative;

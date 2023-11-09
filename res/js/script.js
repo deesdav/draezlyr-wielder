@@ -352,7 +352,7 @@ levelTWO.onclick = () => {
     if (levelONECompleted || levelTWOCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url()";
+    game.style.backgroundImage = "url(./res/img/hulkBG.png)";
     enemy.src = "./res/img/enemy.hulk.png";
     enemyHp.innerHTML = 25;
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -420,7 +420,7 @@ levelTHREE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "none";
+    game.style.backgroundImage = "url(./res/img/ironmanBG.png)";
     enemy.src = "";
     enemyHp.innerHTML = 30;
     enemy.style.animation = "enemyMoving 1s infinite";
