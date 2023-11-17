@@ -29,6 +29,11 @@ body {
         zoom: 110%;
     }
 }
+@media screen and (min-width: 2300px) {
+    body {
+        zoom: 115%;
+    }
+}
 
 #lobby {
     display: flex;
@@ -182,11 +187,12 @@ body {
 
 #yourXPText {
     display: none;
-    color: white;
+    color: rgb(255, 255, 255);
     position: absolute;
     top: 15px;
     right: 15px;
     font-size: x-large;
+    z-index: 999;
 }
 
 #realtimepresented {
@@ -492,6 +498,7 @@ body {
 }
 
 #shop {
+    z-index: 1;
     display: none;
     justify-content: center;
     align-items: center;
@@ -582,7 +589,7 @@ body {
 }
 
 #redColor {
-    background-color: rgba(255, 0, 0, 0.87);
+    background-color: rgba(255, 0, 0, 0.875);
 }
 
 #greenColor {

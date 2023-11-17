@@ -146,7 +146,7 @@ play.onclick = () => {
         document.body.style.bakcgroundColor = "black";
         audioButtonClickMulti.currentTime = 0;
         storyinfo.style.display = "flex";
-    }, 10000);
+    }, 7000);
     if (storyinfo.style.display == "flex") {
         clearTimeout(playInterval)
     }
@@ -206,6 +206,10 @@ document.addEventListener("keyup", (e) => {
     switch (e.key) {
         case ("Escape"):
             window.location.reload();
+            break;
+        case ("7", "7", "7", "8"):
+            heroIdle.src = "./res/img/secret.hero.idle.png";
+            heroAttack.src = "./res/img/secret.hero.attack.png";
             break;
         default:
             console.log("you type something wrong");
@@ -1258,6 +1262,9 @@ let levelEIGHTCompleted = false;
 let levelNINECompleted = false;
 let levelTENCompleted = false;
 
+yourXP.style.color = "gold";
+yourXP.style.textShadow = "1px 1px 2px black";
+yourXP.style.fontWeight = "bold";
 yourHp.style.color = "rgb(0, 255, 0)";
 enemyHp.style.color = "rgb(255, 0, 0)";
 
@@ -1498,8 +1505,8 @@ levelFOUR.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/thorBG.png)";
+    enemy.src = "./res/img/enemy.thor.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -1570,8 +1577,8 @@ levelFIVE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/blackwidowBG.png)";
+    enemy.src = "./res/img/enemy.blackwidow.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -2029,7 +2036,7 @@ enemy.onmousedown = () => {
     heroIdle.style.display = "none";
     enemy.style.transform = "rotate(5deg) scale(1.5)";
     enemyHp.innerHTML -= yourDamage;
-    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
     audioButtonClick.play();
 
 }
