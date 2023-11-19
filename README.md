@@ -3,7 +3,7 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - over 2200 rows of js
+ - over 2400 rows of js
  - fixed damge intervals
  - level 11, 12, 13 functionability
 
