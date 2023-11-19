@@ -34,6 +34,8 @@ const yellowColor = document.getElementById("yellowColor");
 const costOfColors = document.getElementById("costOfColors");
 const costOfUps = document.getElementById("costOfUps");
 const backBtnShop = document.getElementById("backBtnShop");
+const overview = document.getElementById("overview");
+const overviewSrc = document.getElementById("overviewSrc");
 
 
 const levelsText = document.getElementById("levelsText");
@@ -266,6 +268,8 @@ let yourXPValue = 0;
 let yourXPIncrease = 2;
 
 shopBtn.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
     shopBtn.style.display = "none";
     shop.style.display = "flex";
     backBtnShop.style.display = "block";
@@ -1316,34 +1320,52 @@ yellowColor.onclick = () => {
 //------------------------------------ cost of colors mouse over
 redColor.onmouseover = () => {
     costOfColors.innerHTML = 5;
+    overviewSrc.src = "./res/img/red.hero.idle.png";
+    overview.style.display = "block";
 }
 greenColor.onmouseover = () => {
     costOfColors.innerHTML = 7;
+    overviewSrc.src = "./res/img/green.hero.idle.png";
+    overview.style.display = "block";
 }
 blueColor.onmouseover = () => {
     costOfColors.innerHTML = 10;
+    overviewSrc.src = "./res/img/blue.hero.idle.png";
+    overview.style.display = "block";
 }
 yellowColor.onmouseover = () => {
     costOfColors.innerHTML = 12;
+    overviewSrc.src = "./res/img/yellow.hero.idle.png";
+    overview.style.display = "block";
 }
 //------------------------------------ cost of colors mouse out 
 redColor.onmouseout = () => {
     costOfColors.innerHTML = 0;
+    overviewSrc.src = "./res/img/hero.idle.png";
+    overview.style.display = "none";
 }
 greenColor.onmouseout = () => {
     costOfColors.innerHTML = 0;
+    overviewSrc.src = "./res/img/hero.idle.png";
+    overview.style.display = "none";
 }
 blueColor.onmouseout = () => {
     costOfColors.innerHTML = 0;
+    overviewSrc.src = "./res/img/hero.idle.png";
+    overview.style.display = "none";
 }
 yellowColor.onmouseout = () => {
     costOfColors.innerHTML = 0;
+    overviewSrc.src = "./res/img/hero.idle.png";
+    overview.style.display = "none";
 }
 upgradeDamage.onmouseout = () => {
     costOfColors.innerHTML = 0;
+    overview.style.display = "none";
 }
 upgradeHealth.onmouseout = () => {
     costOfColors.innerHTML = 0;
+    overview.style.display = "none";
 }
 //------------------------------------ cost of upgrades mouse over
 upgradeDamage.onmouseover = () => {

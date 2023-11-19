@@ -621,3 +621,17 @@ body {
     width: min-content;
     display: none;
 }
+#overview{
+    display: none;
+    margin: 0 auto;
+    color: white;
+    padding: 1em;
+    position: absolute;
+    right: 235px;
+}
+#overview img{
+    height: 250px;
+    width: 250px;
+    position: relative;
+    bottom: 50px;
+}
