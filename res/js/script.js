@@ -211,6 +211,10 @@ document.addEventListener("keyup", (e) => {
             heroIdle.src = "./res/img/secret.hero.idle.png";
             heroAttack.src = "./res/img/secret.hero.attack.png";
             break;
+        case ("o", "g"):
+            heroIdle.src = "./res/img/hero.idle.png";
+            heroAttack.src = "./res/img/hero.attack.png";
+            break;
         default:
             console.log("you type something wrong");
             break;
@@ -331,6 +335,10 @@ redColor.onclick = () => {
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     }
@@ -358,6 +366,10 @@ redColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
@@ -375,6 +387,10 @@ redColor.onclick = () => {
                 case ("g", "r", "e", "e", "n"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -398,6 +414,10 @@ redColor.onclick = () => {
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
@@ -415,6 +435,10 @@ redColor.onclick = () => {
                 case ("b", "l", "u", "e"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -438,6 +462,10 @@ redColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
@@ -460,6 +488,10 @@ redColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
@@ -477,6 +509,10 @@ redColor.onclick = () => {
                 case ("y", "e", "l", "l", "o", "w"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -546,6 +582,10 @@ greenColor.onclick = () => {
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     }
@@ -573,6 +613,10 @@ greenColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
@@ -590,6 +634,10 @@ greenColor.onclick = () => {
                 case ("g", "r", "e", "e", "n"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -613,6 +661,10 @@ greenColor.onclick = () => {
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
 
             }
         });
@@ -632,6 +684,10 @@ greenColor.onclick = () => {
                 case ("b", "l", "u", "e"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
 
             }
@@ -657,6 +713,10 @@ greenColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
@@ -680,6 +740,10 @@ greenColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
@@ -700,7 +764,12 @@ greenColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
+
         });
     }
     /*
@@ -768,6 +837,10 @@ blueColor.onclick = () => {
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     }
@@ -795,6 +868,10 @@ blueColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
@@ -813,6 +890,10 @@ blueColor.onclick = () => {
                 case ("b", "l", "u", "e"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
 
             }
@@ -837,6 +918,10 @@ blueColor.onclick = () => {
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
@@ -856,7 +941,10 @@ blueColor.onclick = () => {
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
@@ -878,6 +966,10 @@ blueColor.onclick = () => {
                 case ("y", "e", "l", "l", "o", "w"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -902,6 +994,10 @@ blueColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
@@ -919,6 +1015,10 @@ blueColor.onclick = () => {
                 case ("y", "e", "l", "l", "o", "w"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -988,6 +1088,10 @@ yellowColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     }
@@ -1015,6 +1119,10 @@ yellowColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
@@ -1033,6 +1141,10 @@ yellowColor.onclick = () => {
                 case ("y", "e", "l", "l", "o", "w"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -1056,6 +1168,10 @@ yellowColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
@@ -1075,6 +1191,10 @@ yellowColor.onclick = () => {
                 case ("y", "e", "l", "l", "o", "w"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -1099,6 +1219,10 @@ yellowColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
@@ -1122,6 +1246,10 @@ yellowColor.onclick = () => {
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
+                    break;
             }
         });
     } else if (redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
@@ -1140,6 +1268,10 @@ yellowColor.onclick = () => {
                 case ("y", "e", "l", "l", "o", "w"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    break;
+                case ("o", "g"):
+                    heroIdle.src = "./res/img/hero.idle.png";
+                    heroAttack.src = "./res/img/hero.attack.png";
                     break;
             }
         });
@@ -1261,6 +1393,9 @@ let levelSEVENCompleted = false;
 let levelEIGHTCompleted = false;
 let levelNINECompleted = false;
 let levelTENCompleted = false;
+let levelELEVENCompleted = false;
+let levelTWELVECompleted = false;
+let levelTHIRTEENCompleted = false;
 
 yourXP.style.color = "gold";
 yourXP.style.textShadow = "1px 1px 2px black";
@@ -1696,7 +1831,7 @@ levelSIX.onclick = () => {
             enemyHp.innerHTML = 45;
         }
 
-    }, 1000);
+    }, 1050);
 
 }
 //------------------------------------ level 7
@@ -1767,7 +1902,7 @@ levelSEVEN.onclick = () => {
             enemyHp.innerHTML = 50;
         }
 
-    }, 1000);
+    }, 1070);
 
 }
 //------------------------------------ level 8
@@ -1838,7 +1973,7 @@ levelEIGHT.onclick = () => {
             enemyHp.innerHTML = 55;
         }
 
-    }, 1500);
+    }, 1100);
 
 }
 //------------------------------------ level 9
@@ -1909,7 +2044,7 @@ levelNINE.onclick = () => {
             enemyHp.innerHTML = 60;
         }
 
-    }, 2000);
+    }, 1700);
 
 }
 //------------------------------------ level 10
@@ -1980,10 +2115,227 @@ levelTEN.onclick = () => {
             enemyHp.innerHTML = 65;
         }
 
-    }, 2500);
+    }, 2000);
 
 }
-//------------------------------------ game result
+
+//------------------------------------ level 11
+levelELEVEN.onmouseover = () => {
+    enemyName.innerHTML = "Black Panther";
+}
+levelELEVEN.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelELEVEN.onmousedown = () => {
+    levelELEVEN.style.backgroundColor = "white";
+    levelELEVEN.style.color = "red";
+}
+levelELEVEN.onmouseup = () => {
+    levelELEVEN.style.backgroundColor = "transparent";
+    levelELEVEN.style.color = "black";
+}
+
+levelELEVEN.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/blackpantherBG.png)";
+    enemy.src = "./res/img/enemy.blackpanther.png";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerHTML = yourHpValue;
+    enemyHp.innerHTML = 70;
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 11;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelELEVENCompleted = false;
+            levelELEVEN.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 70;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelELEVENCompleted = true;
+            levelELEVEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerHTML = yourXPValue;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 70;
+        }
+
+    }, 2050);
+
+}
+
+//------------------------------------ level 12
+levelTWELVE.onmouseover = () => {
+    enemyName.innerHTML = "Ghost rider";
+}
+levelTWELVE.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelTWELVE.onmousedown = () => {
+    levelTWELVE.style.backgroundColor = "white";
+    levelTWELVE.style.color = "red";
+}
+levelTWELVE.onmouseup = () => {
+    levelTWELVE.style.backgroundColor = "transparent";
+    levelTWELVE.style.color = "black";
+}
+
+levelTWELVE.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/ghostriderBG.png)";
+    enemy.src = "./res/img/enemy.ghostrider.png";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerHTML = yourHpValue;
+    enemyHp.innerHTML = 75;
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 12;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelTWELVECompleted = false;
+            levelTWELVE.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 75;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelTWELVECompleted = true;
+            levelTWELVE.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerHTML = yourXPValue;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 75;
+        }
+
+    }, 2100);
+
+}
+
+//------------------------------------ level 13
+levelTHIRTEEN.onmouseover = () => {
+    enemyName.innerHTML = "Magneto";
+}
+levelTHIRTEEN.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelTHIRTEEN.onmousedown = () => {
+    levelTHIRTEEN.style.backgroundColor = "white";
+    levelTHIRTEEN.style.color = "red";
+}
+levelTHIRTEEN.onmouseup = () => {
+    levelTHIRTEEN.style.backgroundColor = "transparent";
+    levelTHIRTEEN.style.color = "black";
+}
+
+levelTHIRTEEN.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/magnetoBG.png)";
+    enemy.src = "./res/img/enemy.magneto.png";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerHTML = yourHpValue;
+    enemyHp.innerHTML = 80;
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 13;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerHTML = `You lost`;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelTHIRTEENCompleted = false;
+            levelTHIRTEEN.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 80;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+            enemyHp.innerHTML = 0;
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerHTML = `You won`;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelTHIRTEENCompleted = true;
+            levelTHIRTEEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerHTML = yourXPValue;
+            yourHp.innerHTML = yourHpValue;
+            enemyHp.innerHTML = 80;
+        }
+
+    }, 2150);
+
+}
+
+//------------------------------------ game result system
 gameResult.onclick = () => {
 
     console.log("funguje");
@@ -2023,6 +2375,15 @@ gameResult.onclick = () => {
     }
     if (levelTENCompleted) {
         levelELEVEN.style.display = "block";
+    }
+    if (levelELEVENCompleted) {
+        levelTWELVE.style.display = "block";
+    }
+    if (levelTWELVECompleted) {
+        levelTHIRTEEN.style.display = "block";
+    }
+    if (levelTHIRTEENCompleted) {
+        levelFOURTEEN.style.display = "block";
     }
     game.style.display = "none";
     gameResult.style.display = "none";
