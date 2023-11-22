@@ -477,6 +477,7 @@ body {
     height: min-content;
     width: min-content;
     display: none;
+    z-index: 999;
 }
 
 #shopBtn {
@@ -503,7 +504,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 101vh;
+    height: 100%;
     position: relative;
     bottom: 220px;
     color: white;
@@ -614,12 +615,13 @@ body {
     border: 3px solid white;
     border-radius: 1em;
     background-color: transparent;
-    color: rgb(255, 255, 255);
+    color: gold;
     display: block;
     font-size: x-large;
     height: min-content;
     width: min-content;
     display: none;
+    z-index: 999;
 }
 #overview{
     display: none;

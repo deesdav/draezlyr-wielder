@@ -273,6 +273,7 @@ shopBtn.onclick = () => {
     shopBtn.style.display = "none";
     shop.style.display = "flex";
     backBtnShop.style.display = "block";
+    backBtnShop.style.zIndex = "999";
 }
 shopBtn.onmouseover = () => {
     shopBtn.style.backgroundColor = "white";
@@ -284,11 +285,11 @@ shopBtn.onmouseout = () => {
 }
 //------------------------------------ merchant upgrades 
 upgradeDamage.onclick = () => {
-    if (yourXP.innerHTML >= 6) {
+    if (yourXP.innerHTML >= 4) {
         upgradeDamage.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        yourXPValue -= 6;
+        yourXPValue -= 4;
         yourXP.innerHTML = yourXPValue;
         yourDamage++;
     } else {
@@ -1369,7 +1370,7 @@ upgradeHealth.onmouseout = () => {
 }
 //------------------------------------ cost of upgrades mouse over
 upgradeDamage.onmouseover = () => {
-    costOfUps.innerHTML = 6;
+    costOfUps.innerHTML = 4;
 }
 upgradeHealth.onmouseover = () => {
     costOfUps.innerHTML = 2;
@@ -1425,6 +1426,23 @@ yourXP.style.fontWeight = "bold";
 yourHp.style.color = "rgb(0, 255, 0)";
 enemyHp.style.color = "rgb(255, 0, 0)";
 
+  //------------------------------------ enemy system
+  enemy.onmousedown = () => {
+    heroAttack.style.left = "35%";
+    heroAttack.style.display = "block";
+    heroIdle.style.display = "none";
+    enemy.style.transform = "rotate(5deg) scale(1.5)";
+    enemyHp.innerHTML -= yourDamage;
+    audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+    audioButtonClick.play();
+
+}
+enemy.onmouseup = () => {
+    heroAttack.style.display = "none";
+    heroIdle.style.display = "block";
+    heroIdle.style.left = "20%";
+    enemy.style.transform = "rotate(0deg) scale(1.5)";
+}
 
 //------------------------------------ level 1
 levelONE.onmouseover = () => {
@@ -1443,6 +1461,7 @@ levelONE.onmouseup = () => {
 }
 
 levelONE.onclick = () => {
+  
     if (levelONECompleted) {
         console.log("Level is completed");
     }
@@ -1451,18 +1470,22 @@ levelONE.onclick = () => {
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 20;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML--;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1473,12 +1496,11 @@ levelONE.onclick = () => {
             levelONECompleted = false;
             levelONE.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 20;
-
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1491,7 +1513,8 @@ levelONE.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
-
+            backBtn.style.zIndex = "999";
+            enemyHp.innerHTML = 20;
         }
 
     }, 1000);
@@ -1530,12 +1553,15 @@ levelTWO.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 25;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 2;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1546,11 +1572,12 @@ levelTWO.onclick = () => {
             levelTWOCompleted = false;
             levelTWO.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 25;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1563,8 +1590,10 @@ levelTWO.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 25;
         }
+
 
     }, 1000);
 
@@ -1602,12 +1631,15 @@ levelTHREE.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 30;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 3;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1618,11 +1650,12 @@ levelTHREE.onclick = () => {
             levelTHREECompleted = false;
             levelTHREE.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 30;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1635,8 +1668,10 @@ levelTHREE.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 30;
         }
+
 
     }, 1000);
 
@@ -1674,12 +1709,15 @@ levelFOUR.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 35;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 4;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1690,11 +1728,12 @@ levelFOUR.onclick = () => {
             levelFOURCompleted = false;
             levelFOUR.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 35;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1707,8 +1746,10 @@ levelFOUR.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 35;
         }
+
 
     }, 1000);
 
@@ -1746,12 +1787,15 @@ levelFIVE.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 40;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 5;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1762,11 +1806,12 @@ levelFIVE.onclick = () => {
             levelFIVECompleted = false;
             levelFIVE.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 40;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1779,6 +1824,7 @@ levelFIVE.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 40;
         }
 
@@ -1817,12 +1863,15 @@ levelSIX.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 45;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 6;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1833,11 +1882,12 @@ levelSIX.onclick = () => {
             levelSIXCompleted = false;
             levelSIX.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 45;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1850,10 +1900,11 @@ levelSIX.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 45;
         }
 
-    }, 1050);
+    }, 1000);
 
 }
 //------------------------------------ level 7
@@ -1888,12 +1939,15 @@ levelSEVEN.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 50;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 7;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1904,11 +1958,12 @@ levelSEVEN.onclick = () => {
             levelSEVENCompleted = false;
             levelSEVEN.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 50;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1921,10 +1976,11 @@ levelSEVEN.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 50;
         }
 
-    }, 1070);
+    }, 1000);
 
 }
 //------------------------------------ level 8
@@ -1959,12 +2015,15 @@ levelEIGHT.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 55;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 8;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1975,11 +2034,12 @@ levelEIGHT.onclick = () => {
             levelEIGHTCompleted = false;
             levelEIGHT.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 55;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1992,10 +2052,11 @@ levelEIGHT.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 55;
         }
 
-    }, 1100);
+    }, 1000);
 
 }
 //------------------------------------ level 9
@@ -2030,12 +2091,15 @@ levelNINE.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 60;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 9;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2046,11 +2110,12 @@ levelNINE.onclick = () => {
             levelNINECompleted = false;
             levelNINE.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 60;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2063,10 +2128,11 @@ levelNINE.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 60;
         }
 
-    }, 1700);
+    }, 1000);
 
 }
 //------------------------------------ level 10
@@ -2101,12 +2167,15 @@ levelTEN.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 65;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 10;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2117,11 +2186,12 @@ levelTEN.onclick = () => {
             levelTENCompleted = false;
             levelTEN.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 65;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2134,10 +2204,11 @@ levelTEN.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 65;
         }
 
-    }, 2000);
+    }, 1000);
 
 }
 
@@ -2173,12 +2244,14 @@ levelELEVEN.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 70;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 11;
 
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2189,11 +2262,12 @@ levelELEVEN.onclick = () => {
             levelELEVENCompleted = false;
             levelELEVEN.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 70;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2206,10 +2280,11 @@ levelELEVEN.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 70;
         }
 
-    }, 2050);
+    }, 1500);
 
 }
 
@@ -2245,12 +2320,14 @@ levelTWELVE.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 75;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 12;
 
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2261,11 +2338,12 @@ levelTWELVE.onclick = () => {
             levelTWELVECompleted = false;
             levelTWELVE.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 75;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2278,10 +2356,11 @@ levelTWELVE.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 75;
         }
 
-    }, 2100);
+    }, 1500);
 
 }
 
@@ -2317,12 +2396,14 @@ levelTHIRTEEN.onclick = () => {
     gridOfLevels.style.display = "none";
     yourHp.innerHTML = yourHpValue;
     enemyHp.innerHTML = 80;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerHTML -= 13;
 
         if (yourHp.innerHTML <= 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2333,11 +2414,12 @@ levelTHIRTEEN.onclick = () => {
             levelTHIRTEENCompleted = false;
             levelTHIRTEEN.disabled = false;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 80;
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
-            enemyHp.innerHTML = 0;
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -2350,10 +2432,11 @@ levelTHIRTEEN.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerHTML = yourXPValue;
             yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
             enemyHp.innerHTML = 80;
         }
 
-    }, 2150);
+    }, 1500);
 
 }
 
@@ -2410,22 +2493,4 @@ gameResult.onclick = () => {
     game.style.display = "none";
     gameResult.style.display = "none";
     backBtn.style.display = "block";
-}
-
-//------------------------------------ enemy system
-enemy.onmousedown = () => {
-    heroAttack.style.left = "35%";
-    heroAttack.style.display = "block";
-    heroIdle.style.display = "none";
-    enemy.style.transform = "rotate(5deg) scale(1.5)";
-    enemyHp.innerHTML -= yourDamage;
-    audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
-    audioButtonClick.play();
-
-}
-enemy.onmouseup = () => {
-    heroAttack.style.display = "none";
-    heroIdle.style.display = "block";
-    heroIdle.style.left = "20%";
-    enemy.style.transform = "rotate(0deg) scale(1.5)";
 }
