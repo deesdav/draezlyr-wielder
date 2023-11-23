@@ -29,6 +29,7 @@ body {
         zoom: 110%;
     }
 }
+
 @media screen and (min-width: 2300px) {
     body {
         zoom: 115%;
@@ -189,8 +190,28 @@ body {
     display: none;
     color: rgb(255, 255, 255);
     position: absolute;
+    top: 75px;
+    right: 25px;
+    font-size: x-large;
+    z-index: 999;
+}
+
+#yourHPText {
+    display: none;
+    color: rgb(255, 255, 255);
+    position: absolute;
     top: 15px;
     right: 15px;
+    font-size: x-large;
+    z-index: 999;
+}
+
+#yourDamageText {
+    display: none;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 45px;
+    right: 25px;
     font-size: x-large;
     z-index: 999;
 }
@@ -273,7 +294,7 @@ body {
     margin: 0 auto;
     grid-template-columns: auto auto auto auto auto;
     gap: 10px;
-    height: 530px;
+    height: auto;
     width: 650px;
 }
 
@@ -291,12 +312,7 @@ body {
 #levelTWELVE,
 #levelTHIRTEEN,
 #levelFOURTEEN,
-#levelFIFTEEN,
-#levelSIXTEEN,
-#levelSEVENTEEN,
-#levelEIGHTTEEN,
-#levelNINETEEN,
-#levelTWENTY {
+#levelFIFTEEN {
     border: 3px solid white;
     border-radius: 10px;
     text-align: center;
@@ -623,7 +639,8 @@ body {
     display: none;
     z-index: 999;
 }
-#overview{
+
+#overview {
     display: none;
     margin: 0 auto;
     color: white;
@@ -631,7 +648,8 @@ body {
     position: absolute;
     right: 235px;
 }
-#overview img{
+
+#overview img {
     height: 250px;
     width: 250px;
     position: relative;

@@ -16,6 +16,8 @@ const storyPart = document.getElementById("storyPart");
 const storyPartInput = document.getElementById("storyPartInput");
 const yourName = document.getElementById("yourName");
 const yourXPText = document.getElementById("yourXPText");
+const yourHPText = document.getElementById("yourHPText");
+const yourDamageText = document.getElementById("yourDamageText");
 const sendInputBtn = document.getElementById("sendInputBtn");
 const realtimepresented = document.getElementById("realtimepresented");
 const planets = document.getElementById("planets");
@@ -27,6 +29,8 @@ const shopBtn = document.getElementById("shopBtn");
 const shop = document.getElementById("shop");
 const upgradeDamage = document.getElementById("upgradeDamage");
 const upgradeHealth = document.getElementById("upgradeHealth");
+const DamageInfo = document.getElementById("DamageInfo");
+const HealthInfo = document.getElementById("HealthInfo");
 const redColor = document.getElementById("redColor");
 const greenColor = document.getElementById("greenColor");
 const blueColor = document.getElementById("blueColor");
@@ -55,11 +59,6 @@ const levelTWELVE = document.getElementById("levelTWELVE");
 const levelTHIRTEEN = document.getElementById("levelTHIRTEEN");
 const levelFOURTEEN = document.getElementById("levelFOURTEEN");
 const levelFIFTEEN = document.getElementById("levlevelFIFTEENelONE");
-const levelSIXTEEN = document.getElementById("levelSIXTEEN");
-const levelSEVENTEEN = document.getElementById("levelSEVENTEEN");
-const levelEIGHTTEEN = document.getElementById("levelEIGHTTEEN");
-const levelNINETEEN = document.getElementById("levelNINETEEN");
-const levelTWENTY = document.getElementById("levelTWENTY");
 
 
 const storyrecap = document.getElementById("storyrecap");
@@ -77,6 +76,21 @@ const yourXP = document.getElementById("yourXP");
 const realtime = new Date();
 const hours = realtime.getHours();
 console.log(hours);
+
+const responsivityForPhones = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if (responsivityForPhones == true) {
+    document.body.style.zoom = "60%";
+    document.body.style.position = "relative";
+    document.body.style.top = "20%";
+    game.style.transform = "scale(0.9)";
+    game.style.top = "75px";
+    game.style.width = "auto";
+    game.style.height = "90%";
+    game.style.backgroundSize = "cover";
+    document.addEventListener('touchstart', function (t) {
+        t.preventDefault();
+    });
+}
 
 if (hours >= 0 && hours < 12) {
     realtimepresented.innerHTML = `Good morning`;
@@ -192,6 +206,8 @@ sendInputBtn.onclick = () => {
     }
     yourName.style.display = "block";
     yourXPText.style.display = "block";
+    yourHPText.style.display = "block";
+    yourDamageText.style.display = "block";
     storyinfo.style.display = "none";
     storyPart.style.display = "none";
     storyPartInput.style.display = "none";
@@ -284,6 +300,13 @@ shopBtn.onmouseout = () => {
     shopBtn.style.color = "white";
 }
 //------------------------------------ merchant upgrades 
+DamageInfo.style.color = "orange";
+DamageInfo.style.textShadow = "1px 1px 2px black";
+DamageInfo.style.fontWeight = "bold";
+HealthInfo.style.color = "rgb(0,255,0)";
+HealthInfo.style.textShadow = "1px 1px 2px black";
+HealthInfo.style.fontWeight = "bold";
+
 upgradeDamage.onclick = () => {
     if (yourXP.innerHTML >= 4) {
         upgradeDamage.disable = false;
@@ -292,6 +315,7 @@ upgradeDamage.onclick = () => {
         yourXPValue -= 4;
         yourXP.innerHTML = yourXPValue;
         yourDamage++;
+        DamageInfo.innerHTML = yourDamage;
     } else {
         upgradeDamage.disable = true;
     }
@@ -304,8 +328,9 @@ upgradeHealth.onclick = () => {
         yourXPValue -= 2;
         yourXP.innerHTML = yourXPValue;
         yourHpValue += 5;
+        HealthInfo.innerHTML = yourHpValue;
     } else {
-        upgradeDamage.disable = true;
+        upgradeHealth.disable = true;
     }
 }
 //------------------------------------ customization upgrades
@@ -1426,8 +1451,8 @@ yourXP.style.fontWeight = "bold";
 yourHp.style.color = "rgb(0, 255, 0)";
 enemyHp.style.color = "rgb(255, 0, 0)";
 
-  //------------------------------------ enemy system
-  enemy.onmousedown = () => {
+//------------------------------------ enemy system
+enemy.onmousedown = () => {
     heroAttack.style.left = "35%";
     heroAttack.style.display = "block";
     heroIdle.style.display = "none";
@@ -1461,7 +1486,7 @@ levelONE.onmouseup = () => {
 }
 
 levelONE.onclick = () => {
-  
+
     if (levelONECompleted) {
         console.log("Level is completed");
     }

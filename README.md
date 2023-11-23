@@ -3,9 +3,10 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - over 2400 rows of js
- - reduced damage price
- - fixed back buttons 
- - fixed images backgrounds
+ - 2500 rows of js
+ - added information about damage and health
+ - reduced from 20 levels to 15
+ - back buttons fix
+ - mobile functionability
 
 <img style="height: 200px; width: 200px;" src="./res/img/hero.idle.png"><img style="height: 200px; width: 200px;" src="./res/img/hero.attack.png">
