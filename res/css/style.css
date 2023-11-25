@@ -655,3 +655,25 @@ body {
     position: relative;
     bottom: 50px;
 }
+
+#winAndLoss {
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 156px;
+}
+
+#winsCounter {
+    color: rgb(0, 255, 0);
+    text-shadow: 0 0 2px black;
+    font-weight: bold;
+}
+
+#lossesCounter {
+    color: red;
+    text-shadow:  0 0 2px black;
+    font-weight: bold;
+}

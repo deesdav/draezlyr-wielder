@@ -40,6 +40,9 @@ const costOfUps = document.getElementById("costOfUps");
 const backBtnShop = document.getElementById("backBtnShop");
 const overview = document.getElementById("overview");
 const overviewSrc = document.getElementById("overviewSrc");
+const winAndLoss = document.getElementById("winAndLoss");
+const winsCounter = document.getElementById("winsCounter");
+const lossesCounter = document.getElementById("lossesCounter");
 
 
 const levelsText = document.getElementById("levelsText");
@@ -99,6 +102,7 @@ if (hours >= 0 && hours < 12) {
 } else {
     realtimepresented.innerHTML = `Good evening`;
 }
+
 
 headline.onmouseover = () => {
     audioLobbyBackground.src = "./res/audio/lobbymusic.mp3";
@@ -214,6 +218,7 @@ sendInputBtn.onclick = () => {
     sendInputBtn.style.display = "none";
     planets.style.display = "flex";
     shopBtn.style.display = "block";
+    winAndLoss.style.display = "block";
     document.body.style.backgroundImage = "none";
 
 }
@@ -1460,6 +1465,12 @@ enemy.onmousedown = () => {
     enemyHp.innerHTML -= yourDamage;
     audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
     audioButtonClick.play();
+    if (enemyHp.innerHTML == 0 || enemyHp.innerHTML <= 0) {
+        audioButtonClick.pause();
+        audioButtonClick.currentTime = 0;
+        enemyHp.innerHTML = 0;
+        yourHp.innerHTML = yourHpValue;
+    }
 
 }
 enemy.onmouseup = () => {
@@ -1467,6 +1478,12 @@ enemy.onmouseup = () => {
     heroIdle.style.display = "block";
     heroIdle.style.left = "20%";
     enemy.style.transform = "rotate(0deg) scale(1.5)";
+    if (enemyHp.innerHTML == 0 || enemyHp.innerHTML <= 0) {
+        audioButtonClick.pause();
+        audioButtonClick.currentTime = 0;
+        enemyHp.innerHTML = 0;
+        yourHp.innerHTML = yourHpValue;
+    }
 }
 
 //------------------------------------ level 1
@@ -1516,6 +1533,7 @@ levelONE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelONECompleted = false;
@@ -1526,11 +1544,13 @@ levelONE.onclick = () => {
         }
         if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
             clearInterval(enemyDamage);
+
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelONECompleted = true;
@@ -1592,6 +1612,7 @@ levelTWO.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTWOCompleted = false;
@@ -1608,6 +1629,7 @@ levelTWO.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTWOCompleted = true;
@@ -1670,6 +1692,7 @@ levelTHREE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTHREECompleted = false;
@@ -1686,6 +1709,7 @@ levelTHREE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTHREECompleted = true;
@@ -1748,6 +1772,7 @@ levelFOUR.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelFOURCompleted = false;
@@ -1764,6 +1789,7 @@ levelFOUR.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelFOURCompleted = true;
@@ -1826,6 +1852,7 @@ levelFIVE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelFIVECompleted = false;
@@ -1842,6 +1869,7 @@ levelFIVE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelFIVECompleted = true;
@@ -1902,6 +1930,7 @@ levelSIX.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelSIXCompleted = false;
@@ -1918,6 +1947,7 @@ levelSIX.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelSIXCompleted = true;
@@ -1978,6 +2008,7 @@ levelSEVEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelSEVENCompleted = false;
@@ -1994,6 +2025,7 @@ levelSEVEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelSEVENCompleted = true;
@@ -2054,6 +2086,7 @@ levelEIGHT.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelEIGHTCompleted = false;
@@ -2070,6 +2103,7 @@ levelEIGHT.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelEIGHTCompleted = true;
@@ -2130,6 +2164,7 @@ levelNINE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelNINECompleted = false;
@@ -2146,6 +2181,7 @@ levelNINE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelNINECompleted = true;
@@ -2206,6 +2242,7 @@ levelTEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTENCompleted = false;
@@ -2222,6 +2259,7 @@ levelTEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTENCompleted = true;
@@ -2282,6 +2320,7 @@ levelELEVEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelELEVENCompleted = false;
@@ -2298,6 +2337,7 @@ levelELEVEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelELEVENCompleted = true;
@@ -2358,6 +2398,7 @@ levelTWELVE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTWELVECompleted = false;
@@ -2374,6 +2415,7 @@ levelTWELVE.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTWELVECompleted = true;
@@ -2434,6 +2476,7 @@ levelTHIRTEEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
             gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
             levelTHIRTEENCompleted = false;
@@ -2450,6 +2493,7 @@ levelTHIRTEEN.onclick = () => {
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
             gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
             levelTHIRTEENCompleted = true;
