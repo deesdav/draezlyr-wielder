@@ -1904,8 +1904,8 @@ levelSIX.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/captainamericaBG.png)";
+    enemy.src = "./res/img/enemy.captainamerica.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -2433,7 +2433,7 @@ levelTWELVE.onclick = () => {
 
 //------------------------------------ level 13
 levelTHIRTEEN.onmouseover = () => {
-    enemyName.innerHTML = "Magneto";
+    enemyName.innerHTML = "Loki";
 }
 levelTHIRTEEN.onmouseout = () => {
     enemyName.innerHTML = " ";
@@ -2451,8 +2451,8 @@ levelTHIRTEEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/magnetoBG.png)";
-    enemy.src = "./res/img/enemy.magneto.png";
+    game.style.backgroundImage = "url(./res/img/lokiBG.png)";
+    enemy.src = "./res/img/enemy.loki.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";

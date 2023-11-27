@@ -6,5 +6,7 @@ about last update and what is added:
  - over 2500 rows of js
  - added win and loss counter
  - fixed damaging
+ - captain america, BG img
+ - fixing images 
 
 <img style="height: 200px; width: 200px;" src="./res/img/hero.idle.png"><img style="height: 200px; width: 200px;" src="./res/img/hero.attack.png">
