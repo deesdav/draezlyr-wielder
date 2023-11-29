@@ -40,19 +40,25 @@
     <div id="yourXPText">XP: <span id="yourXP">0</span></div>
     <div id="yourDamageText">DAMAGE: <span id="DamageInfo">1</span></div>
     <div id="yourHPText">HEALTH: <span id="HealthInfo">20</span></div>
-    
+
     <div id="planets">
+        <div><img src="./res/img/" alt="" id="dcPlanet">
+            <div id="nameOfPlanetDC"> </div>
+        </div>
         <div><img src="./res/img/marvelRedPlanet.png" alt="" id="marvelPlanet">
-            <div id="nameOfPlanet">Multiverse Planet</div>
+            <div id="nameOfPlanet">Marvel Planet</div>
+        </div>
+        <div><img src="./res/img/deesdavPlanet.png" alt="" id="deesdavPlanet">
+            <div id="nameOfPlanetDeesdav">Deesdav Planet into the dimension</div>
         </div>
     </div>
-<div id="winAndLoss">
-            <div id="yourWins">Ws: <span id="winsCounter">0</span></div>
-            <div id="yourLosses">Ls: <span id="lossesCounter">0</span></div>
-        </div>
+    <div id="winAndLoss">
+        <div id="yourWins">Ws: <span id="winsCounter">0</span></div>
+        <div id="yourLosses">Ls: <span id="lossesCounter">0</span></div>
+    </div>
     <div id="levelsBox">
         <h2 id="levelsText">Levels: 1-15</h2>
-        
+
         <div id="levelInfo">Enemy: <span id="enemyName"></span></div>
         <div id="gridOfLevels">
             <button title="SPIDER MAN" id="levelONE">1</button>
@@ -107,6 +113,10 @@
 
     </div>
     <button id="backBtnShop">back</button>
+    <div id="countDownText"><span id="countDown">60</span>s</div>
+    <div id="deesdavDimension">
+        <div id="dot">0</div>
+    </div>
     <audio id="audioButtonClick" src=""></audio>
     <audio id="audioYouWin" src=""></audio>
     <audio id="audioYouLost" src=""></audio>

@@ -43,6 +43,7 @@ const overviewSrc = document.getElementById("overviewSrc");
 const winAndLoss = document.getElementById("winAndLoss");
 const winsCounter = document.getElementById("winsCounter");
 const lossesCounter = document.getElementById("lossesCounter");
+const levelsBox = document.getElementById("levelsBox");
 
 
 const levelsText = document.getElementById("levelsText");
@@ -61,7 +62,7 @@ const levelELEVEN = document.getElementById("levelELEVEN");
 const levelTWELVE = document.getElementById("levelTWELVE");
 const levelTHIRTEEN = document.getElementById("levelTHIRTEEN");
 const levelFOURTEEN = document.getElementById("levelFOURTEEN");
-const levelFIFTEEN = document.getElementById("levlevelFIFTEENelONE");
+const levelFIFTEEN = document.getElementById("levelFIFTEEN");
 
 
 const storyrecap = document.getElementById("storyrecap");
@@ -75,6 +76,14 @@ const gameResult = document.getElementById("gameResult");
 const levelInfo = document.getElementById("levelInfo");
 const enemyName = document.getElementById("enemyName");
 const yourXP = document.getElementById("yourXP");
+
+const deesdavPlanet = document.getElementById("deesdavPlanet");
+const nameOfPlanetDeesdav = document.getElementById("nameOfPlanetDeesdav");
+const dot = document.getElementById("dot");
+const deesdavDimension = document.getElementById("deesdavDimension");
+const countDownText = document.getElementById("countDownText");
+const countDown = document.getElementById("countDown");
+
 
 const realtime = new Date();
 const hours = realtime.getHours();
@@ -243,7 +252,7 @@ document.addEventListener("keyup", (e) => {
             break;
     }
 });
-//------------------------------------ planets
+//------------------------------------ marvel planet
 marvelPlanet.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -253,12 +262,16 @@ marvelPlanet.onclick = () => {
     levelONE.style.display = "block";
     marvelPlanet.style.display = "none";
     nameOfPlanet.style.display = "none";
+    deesdavPlanet.style.display = "none";
+    nameOfPlanetDeesdav.style.display = "none";
     document.body.style.backgroundColor = "red";
     storyPartInput.style.display = "none";
     backBtn.style.display = "block";
     backBtn.enable = true;
     shopBtn.style.display = "none";
 }
+
+
 
 //------------------------------------ back button to portals
 backBtn.onclick = () => {
@@ -273,6 +286,11 @@ backBtn.onclick = () => {
     document.body.style.backgroundColor = "black";
     backBtn.style.display = "none";
     shopBtn.style.display = "block";
+    if (levelFIFTEENCompleted) {
+        shopBtn.style.display = "none";
+        deesdavPlanet.style.display = "block";
+        nameOfPlanetDeesdav.style.display = "block";
+    }
 }
 backBtn.onmouseover = () => {
     backBtn.style.backgroundColor = "white";
@@ -287,6 +305,7 @@ let yourDamage = 1;
 let yourHpValue = 20;
 let yourXPValue = 0;
 let yourXPIncrease = 2;
+let dotXP = 5;
 
 shopBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1449,6 +1468,8 @@ let levelTENCompleted = false;
 let levelELEVENCompleted = false;
 let levelTWELVECompleted = false;
 let levelTHIRTEENCompleted = false;
+let levelFOURTEENCompleted = false;
+let levelFIFTEENCompleted = false;
 
 yourXP.style.color = "gold";
 yourXP.style.textShadow = "1px 1px 2px black";
@@ -1964,7 +1985,7 @@ levelSIX.onclick = () => {
 }
 //------------------------------------ level 7
 levelSEVEN.onmouseover = () => {
-    enemyName.innerHTML = "Moon Knight";
+    enemyName.innerHTML = "Doctor Strange";
 }
 levelSEVEN.onmouseout = () => {
     enemyName.innerHTML = " ";
@@ -1982,8 +2003,8 @@ levelSEVEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/doctorstrangeBG.png)";
+    enemy.src = "./res/img/enemy.doctorstrange.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -2060,8 +2081,8 @@ levelEIGHT.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/venomBG.png)";
+    enemy.src = "./res/img/enemy.venom.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -2138,8 +2159,8 @@ levelNINE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/wolverineBG.png)";
+    enemy.src = "./res/img/enemy.wolverine.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -2216,8 +2237,8 @@ levelTEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/.png)";
-    enemy.src = "";
+    game.style.backgroundImage = "url(./res/img/deadpoolBG.png)";
+    enemy.src = "./res/img/enemy.deadpool.png";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -2509,6 +2530,163 @@ levelTHIRTEEN.onclick = () => {
 
 }
 
+//------------------------------------ level 14
+levelFOURTEEN.onmouseover = () => {
+    enemyName.innerHTML = "Captain Marvel";
+}
+levelFOURTEEN.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelFOURTEEN.onmousedown = () => {
+    levelFOURTEEN.style.backgroundColor = "white";
+    levelFOURTEEN.style.color = "red";
+}
+levelFOURTEEN.onmouseup = () => {
+    levelFOURTEEN.style.backgroundColor = "transparent";
+    levelFOURTEEN.style.color = "black";
+}
+
+levelFOURTEEN.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/captainmarvelBG.png)";
+    enemy.src = "./res/img/enemy.captainmarvel.png";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerHTML = yourHpValue;
+    enemyHp.innerHTML = 85;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 14;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelFOURTEENCompleted = false;
+            levelFOURTEEN.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerHTML = 85;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelFOURTEENCompleted = true;
+            levelFOURTEEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerHTML = yourXPValue;
+            yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerHTML = 85;
+        }
+
+    }, 1500);
+
+}
+
+//------------------------------------ level 15
+levelFIFTEEN.onmouseover = () => {
+    enemyName.innerHTML = "Thanos";
+}
+levelFIFTEEN.onmouseout = () => {
+    enemyName.innerHTML = " ";
+}
+levelFIFTEEN.onmousedown = () => {
+    levelFIFTEEN.style.backgroundColor = "white";
+    levelFIFTEEN.style.color = "red";
+}
+levelFIFTEEN.onmouseup = () => {
+    levelFIFTEEN.style.backgroundColor = "transparent";
+    levelFIFTEEN.style.color = "black";
+}
+
+levelFIFTEEN.onclick = () => {
+    if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted || levelFIFTEENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/thanosBG.png)";
+    enemy.src = "./res/img/enemy.thanos.png";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerHTML = yourHpValue;
+    enemyHp.innerHTML = 85;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerHTML -= 15;
+
+        if (yourHp.innerHTML <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerHTML = `You lost`;
+            lossesCounter.innerHTML++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            levelFIFTEENCompleted = false;
+            levelFIFTEEN.disabled = false;
+            yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerHTML = 90;
+        }
+        if (enemyHp.innerHTML <= 0 && yourHp.innerHTML > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerHTML = `You won`;
+            winsCounter.innerHTML++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            levelFIFTEENCompleted = true;
+            levelFIFTEEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerHTML = yourXPValue;
+            yourHp.innerHTML = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerHTML = 90;
+        }
+
+    }, 1500);
+
+}
+
+
 //------------------------------------ game result system
 gameResult.onclick = () => {
 
@@ -2558,6 +2736,89 @@ gameResult.onclick = () => {
     }
     if (levelTHIRTEENCompleted) {
         levelFOURTEEN.style.display = "block";
+    }
+    if (levelFOURTEENCompleted) {
+        levelFIFTEEN.style.display = "block";
+    }
+    if (levelFIFTEENCompleted) {
+        //------------------------------------ deesdav planet into the dimension
+        deesdavDimension.onmouseover = () => {
+            audioLobbyBackground.src = "./res/audio/deesdav.mp3";
+            audioLobbyBackground.play();
+        }
+
+        deesdavDimension.onmouseout = () => {
+            audioLobbyBackground.src = "";
+            audioLobbyBackground.pause();
+            audioLobbyBackground.currentTime = 0;
+        }
+
+        deesdavPlanet.onclick = () => {
+            audioButtonClick.src = "./res/audio/buttonsound.mp3";
+            audioButtonClick.play();
+            marvelPlanet.style.display = "none";
+            nameOfPlanet.style.display = "none";
+            nameOfPlanetDeesdav.style.display = "none";
+            document.body.style.backgroundColor = "black";
+            storyPartInput.style.display = "none";
+            deesdavPlanet.style.display = "none";
+            deesdavDimension.style.display = "block";
+            backBtn.style.display = "none";
+            countDownText.style.display = "block";
+            backBtn.enable = true;
+            shopBtn.style.display = "none";
+            winAndLoss.style.display = "none";
+
+            const timerDimension = setInterval(() => {
+                countDown.innerHTML--;
+                if (countDown.innerHTML == 0) {
+                    clearInterval(timerDimension);
+                    countDown.innerHTML = 60;
+                    deesdavDimension.style.display = "none";
+                    countDownText.style.display = "none";
+                    marvelPlanet.style.display = "block";
+                    nameOfPlanet.style.display = "block";
+                    deesdavPlanet.style.display = "block";
+                    nameOfPlanetDeesdav.style.display = "block";
+                    document.body.style.backgroundColor = "black";
+                    backBtn.style.display = "none";
+                    dot.innerHTML = 0;
+                }
+            }, 1000);
+
+
+        }
+        setInterval(() => {
+            const randomPositionX = Math.floor(Math.random() * 600);
+            const randomPositionY = Math.floor(Math.random() * 600);
+            dot.style.top = randomPositionY + "px";
+            dot.style.left = randomPositionX + "px";
+
+            //console.log(randomPositionX);
+            //console.log(randomPositionY);
+        }, 666);
+
+
+
+        dot.onclick = () => {
+            audioButtonClick.src = "./res/audio/buttonsound.mp3";
+            audioButtonClick.play();
+            dot.innerHTML++;
+            yourXPValue += dotXP;
+            yourXP.innerHTML = yourXPValue;
+        }
+        dot.onmouseover = () => {
+            dot.style.backgroundColor = "white";
+            dot.style.color = "black";
+            audioLobbyBackground.src = "./res/audio/deesdav.mp3";
+            audioLobbyBackground.play();
+        }
+        dot.onmouseout = () => {
+            dot.style.backgroundColor = "black";
+            dot.style.color = "white";
+            audioLobbyBackground.src = "";
+            audioLobbyBackground.pause();
+        }
     }
     game.style.display = "none";
     gameResult.style.display = "none";

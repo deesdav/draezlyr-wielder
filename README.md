@@ -3,10 +3,9 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - over 2500 rows of js
- - added win and loss counter
- - fixed damaging
- - captain america, BG img
- - fixing images 
+ - over 2800 rows of js
+ - funkční level 14 a 15
+ - pridany images
+ - deesdav dimension is added
 
 <img style="height: 200px; width: 200px;" src="./res/img/hero.idle.png"><img style="height: 200px; width: 200px;" src="./res/img/hero.attack.png">
