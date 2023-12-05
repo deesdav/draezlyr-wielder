@@ -42,13 +42,13 @@
     <div id="yourHPText">HEALTH: <span id="HealthInfo">20</span></div>
 
     <div id="planets">
-        <div><img src="./res/img/" alt="" id="dcPlanet">
-            <div id="nameOfPlanetDC"> </div>
+        <div><img src="./res/img/dcBluePlanet.png" alt="photo" id="dcPlanet">
+            <div id="nameOfPlanetDC">Dc planet</div>
         </div>
-        <div><img src="./res/img/marvelRedPlanet.png" alt="" id="marvelPlanet">
+        <div><img src="./res/img/marvelRedPlanet.png" alt="photo" id="marvelPlanet">
             <div id="nameOfPlanet">Marvel Planet</div>
         </div>
-        <div><img src="./res/img/deesdavPlanet.png" alt="" id="deesdavPlanet">
+        <div><img src="./res/img/deesdavPlanet.png" alt="photo" id="deesdavPlanet">
             <div id="nameOfPlanetDeesdav">Deesdav Planet into the dimension</div>
         </div>
     </div>
@@ -61,9 +61,9 @@
 
         <div id="levelInfo">Enemy: <span id="enemyName"></span></div>
         <div id="gridOfLevels">
-            <button title="SPIDER MAN" id="levelONE">1</button>
-            <button title="HULK" id="levelTWO">2</button>
-            <button title="IRON MAN" id="levelTHREE">3</button>
+            <button id="levelONE">1</button>
+            <button id="levelTWO">2</button>
+            <button id="levelTHREE">3</button>
             <button id="levelFOUR">4</button>
             <button id="levelFIVE">5</button>
             <button id="levelSIX">6</button>
@@ -77,22 +77,47 @@
             <button id="levelFOURTEEN">14</button>
             <button id="levelFIFTEEN">15</button>
         </div>
-
+        <div id="gridOfLevelsDC">
+            <button id="dcLevelONE">1</button>
+            <button id="dcLevelTWO">2</button>
+            <button id="dcLevelTHREE">3</button>
+            <button id="dcLevelFOUR">4</button>
+            <button id="dcLevelFIVE">5</button>
+            <button id="dcLevelSIX">6</button>
+            <button id="dcLevelSEVEN">7</button>
+            <button id="dcLevelEIGHT">8</button>
+            <button id="dcLevelNINE">9</button>
+            <button id="dcLevelTEN">10</button>
+            <button id="dcLevelELEVEN">11</button>
+            <button id="dcLevelTWELVE">12</button>
+            <button id="dcLevelTHIRTEEN">13</button>
+            <button id="dcLevelFOURTEEN">14</button>
+            <button id="dcLevelFIFTEEN">15</button>
+        </div>
     </div>
     <button id="backBtn">back</button>
     <div id="game">
         <div id="yourHpText">your HP: <span id="yourHp">0</span></div>
         <div id="enemyHpText">enemy HP: <span id="enemyHp">0</span></div>
-        <img src="./res/img/hero.idle.png" alt="" id="heroIdle">
-        <img src="./res/img/hero.attack.png" alt="" id="heroAttack">
-        <img src="" alt="" id="enemy">
+        <img src="./res/img/hero.idle.png" alt="photo" id="heroIdle">
+        <img src="./res/img/hero.attack.png" alt="photo" id="heroAttack">
+        <img src="" alt="photo" id="enemy">
     </div>
     <div id="gameResult"></div>
 
     <button id="shopBtn">shop</button>
-
+    <button id="infoBtn">info</button>
+    <div id="infoBox">
+        <h2>Info</h2>
+        <div>1. so if you complete marvel planet, Deesdav planet appear. </div>
+        <div>2. in deesdav planet you need to get 120 or more xp to get dc planet, when you got 120 xp, 100 xp will be taken from you, due to harder difficulty </div>
+        <div>3. colors of player you can change by typing on keyboard current color, so if your hero is yellow and you
+            want a red color just type red, for the color change you need to have that colors bought </div>
+        <div>4. default color is black and white so type: og</div>
+        <div>5. secret color <span title="7">?</span> <span title="7">?</span> <span title="7">?</span> <span
+                title="8">?</span></div>
+    </div>
     <div id="shop">
-
         <div id="merchant">
             <h2>MERCHANT OFFER TO YOU</h2>
             <button id="upgradeDamage">damage + 1</button>
@@ -108,7 +133,7 @@
             <button id="blueColor">blue color</button>
             <button id="yellowColor">yellow color</button>
             <div>cost <span id="costOfColors">0</span> xp</div>
-            <div id="overview"><img id="overviewSrc" src="" alt="" srcset=""></div>
+            <div id="overview"><img id="overviewSrc" src="" alt="photo" srcset=""></div>
         </div>
 
     </div>
@@ -123,6 +148,8 @@
     <audio id="audioButtonClickMulti" src=""></audio>
     <audio id="audioLobbyBackground" src=""></audio>
     <script src="./res/js/script.js"></script>
+    <script src="./res/js/marvel-levels.js"></script>
+    <script src="./res/js/dc-levels.js"></script>
 </body>
 
 </html>

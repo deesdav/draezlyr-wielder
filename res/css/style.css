@@ -233,6 +233,7 @@ body {
     gap: 70px;
     position: relative;
     top: 0;
+    margin-right: auto;
     transform: scale(1.9);
     padding: 0;
 
@@ -247,6 +248,13 @@ body {
     color: white;
     text-align: center;
     text-shadow: 1px 1px 0px rgb(255, 255, 255);
+    display: none;
+}
+
+#nameOfPlanetDC {
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 0px blue;
     display: none;
 }
 
@@ -274,6 +282,19 @@ body {
 
 #deesdavPlanet:hover {
     animation: boxPlanet2 1s alternate infinite;
+}
+
+#dcPlanet {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0;
+    display: none;
+}
+
+#dcPlanet:hover {
+    animation: boxPlanet3 1s alternate infinite;
 }
 
 @keyframes boxPlanet {
@@ -304,7 +325,19 @@ body {
     ;
 }
 
+@keyframes boxPlanet3 {
+    from {
+        box-shadow: 0 0 25px skyblue inset;
+    }
 
+    ;
+
+    to {
+        box-shadow: 0 0 25px blue inset;
+    }
+
+    ;
+}
 
 #levelsText {
     text-align: center;
@@ -361,6 +394,49 @@ body {
 }
 
 #gridOfLevels button:hover {
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+}
+
+#gridOfLevelsDC {
+    display: none;
+    margin: 0 auto;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 10px;
+    height: auto;
+    width: 650px;
+}
+
+#dcLevelONE,
+#dcLevelTWO,
+#dcLevelTHREE,
+#dcLevelFOUR,
+#dcLevelFIVE,
+#dcLevelSIX,
+#dcLevelSEVEN,
+#dcLevelEIGHT,
+#dcLevelNINE,
+#dcLevelTEN,
+#dcLevelELEVEN,
+#dcLevelTWELVE,
+#dcLevelTHIRTEEN,
+#dcLevelFOURTEEN,
+#dcLevelFIFTEEN {
+    border: 3px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    padding: 1em;
+    background-color: transparent;
+}
+
+#gridOfLevelsDC button:hover {
     color: rgb(0, 0, 0);
     border: 3px solid rgb(0, 0, 0);
 }
@@ -529,6 +605,48 @@ body {
     z-index: 999;
 }
 
+#infoBtn {
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 1em;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: x-large;
+    height: min-content;
+    width: min-content;
+    display: none;
+}
+
+#infoBox {
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    padding-top: 200px;
+    font-size: xx-large;
+    display: block;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.931);
+    width: fit-content;
+    height: 100%;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: none;
+}
+
+#infoBox div {
+    list-style-type: decimal;
+    color: white;
+    font-size: xx-large;
+    padding-left: 7px;
+}
+
 #shopBtn {
     text-transform: uppercase;
     cursor: pointer;
@@ -664,7 +782,7 @@ body {
     border: 3px solid white;
     border-radius: 1em;
     background-color: transparent;
-    color: gold;
+    color: white;
     display: block;
     font-size: x-large;
     height: min-content;
