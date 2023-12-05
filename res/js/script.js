@@ -386,7 +386,10 @@ backBtn.onclick = () => {
     }
 
     if (countDown.innerText == 60 && yourXP.innerText >= 120) {
+        yourXPValue -= 100;
+        yourXP.innerText = yourXPValue;
         shopBtn.style.display = "block";
+        infoBtn.style.display = "block";
         deesdavDimension.style.display = "none";
         deesdavPlanet.style.display = "none";
         nameOfPlanetDeesdav.style.display = "none";
@@ -1742,6 +1745,7 @@ gameResult.onclick = () => {
             countDownText.style.display = "block";
             backBtn.enable = true;
             shopBtn.style.display = "none";
+            infoBtn.style.display = "none";
             winAndLoss.style.display = "none";
 
             const timerDimension = setInterval(() => {
@@ -1760,7 +1764,10 @@ gameResult.onclick = () => {
                     dot.innerText = 0;
                 }
                 if (countDown.innerText == 60 && yourXP.innerText >= 120) {
+                    yourXPValue -= 100;
+                    yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
+                    infoBtn.style.display = "block";
                     deesdavDimension.style.display = "none";
                     deesdavPlanet.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "none";
