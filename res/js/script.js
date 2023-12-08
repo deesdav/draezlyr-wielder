@@ -106,10 +106,43 @@ const countDownText = document.getElementById("countDownText");
 const countDown = document.getElementById("countDown");
 
 
+//------------------------------------ img dragging
+const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, heroIdle, heroAttack];
+
+for (let i = 0; i < elements.length; i++) {
+    elements[i].ondragstart = function () {
+        return false;
+    };
+}
+
+//------------------------------------ btns onmouseover and onmouseout
+const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn];
+
+for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
+    btnsOnMouseOverAndOut[i].onmouseover = () => {
+        btnsOnMouseOverAndOut[i].style.backgroundColor = "white";
+        btnsOnMouseOverAndOut[i].style.color = "black";
+        btnsOnMouseOverAndOut[i].style.boxShadow = "0 0 100px white";
+    }
+}
+
+for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
+    btnsOnMouseOverAndOut[i].onmouseout = () => {
+        btnsOnMouseOverAndOut[i].style.backgroundColor = "transparent";
+        btnsOnMouseOverAndOut[i].style.color = "white";
+        btnsOnMouseOverAndOut[i].style.boxShadow = "0 0 0px white";
+    }
+
+}
+
+
+//------------------------------------ date
 const realtime = new Date();
 const hours = realtime.getHours();
 console.log(hours);
 
+
+//------------------------------------ respon
 const responsivityForPhones = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (responsivityForPhones == true) {
     document.body.style.zoom = "60%";
@@ -120,6 +153,8 @@ if (responsivityForPhones == true) {
     game.style.width = "auto";
     game.style.height = "90%";
     game.style.backgroundSize = "cover";
+    headline.style.textAlign = "center";
+    storyPartInput.style.marginRight = "50px";
     document.addEventListener('touchstart', function (t) {
         t.preventDefault();
     });
@@ -134,16 +169,6 @@ if (hours >= 0 && hours < 12) {
 }
 
 //------------------------------------ info button
-infoBtn.onmouseover = () => {
-    infoBtn.style.backgroundColor = "white";
-    infoBtn.style.color = "black";
-    infoBtn.style.boxShadow = "0 0 100px white";
-}
-infoBtn.onmouseout = () => {
-    infoBtn.style.backgroundColor = "transparent";
-    infoBtn.style.color = "white";
-    infoBtn.style.boxShadow = "0 0 0px white";
-}
 infoBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -399,16 +424,6 @@ backBtn.onclick = () => {
     }
 
 }
-backBtn.onmouseover = () => {
-    backBtn.style.backgroundColor = "white";
-    backBtn.style.color = "black";
-    backBtn.style.boxShadow = "0 0 100px white";
-}
-backBtn.onmouseout = () => {
-    backBtn.style.backgroundColor = "transparent";
-    backBtn.style.color = "white";
-    backBtn.style.boxShadow = "0 0 0px white";
-}
 //------------------------------------ shop button, shop system, upgrades 
 let yourDamage = 1;
 let yourHpValue = 20;
@@ -423,16 +438,6 @@ shopBtn.onclick = () => {
     shop.style.display = "flex";
     backBtnShop.style.display = "block";
     backBtnShop.style.zIndex = "999";
-}
-shopBtn.onmouseover = () => {
-    shopBtn.style.backgroundColor = "white";
-    shopBtn.style.color = "black";
-    shopBtn.style.boxShadow = "0 0 100px white";
-}
-shopBtn.onmouseout = () => {
-    shopBtn.style.backgroundColor = "transparent";
-    shopBtn.style.color = "white";
-    shopBtn.style.boxShadow = "0 0 0px white";
 }
 //------------------------------------ merchant upgrades 
 DamageInfo.style.color = "orange";
@@ -1560,16 +1565,7 @@ backBtnShop.onclick = () => {
     shop.style.display = "none";
     infoBtn.style.display = "block";
 }
-backBtnShop.onmouseover = () => {
-    backBtnShop.style.backgroundColor = "white";
-    backBtnShop.style.color = "black";
-    backBtnShop.style.boxShadow = "0 0 100px white";
-}
-backBtnShop.onmouseout = () => {
-    backBtnShop.style.backgroundColor = "transparent";
-    backBtnShop.style.color = "white";
-    backBtnShop.style.boxShadow = "0 0 0px white";
-}
+
 //------------------------------------ level and fighting system
 let levelONECompleted = false;
 let levelTWOCompleted = false;
@@ -1610,13 +1606,11 @@ yourHp.style.color = "rgb(0, 255, 0)";
 enemyHp.style.color = "rgb(255, 0, 0)";
 
 //------------------------------------ enemy system
-enemy.onmouseover = () => {
-    document.body.style.boxShadow = "0 0 77px red inset";
-}
 enemy.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
 }
 enemy.onmousedown = () => {
+    document.body.style.boxShadow = "0 0 77px red inset";
     heroAttack.style.left = "35%";
     heroAttack.style.display = "block";
     heroIdle.style.display = "none";
@@ -1633,6 +1627,7 @@ enemy.onmousedown = () => {
 
 }
 enemy.onmouseup = () => {
+    document.body.style.boxShadow = "0 0 0px red inset";
     heroAttack.style.display = "none";
     heroIdle.style.display = "block";
     heroIdle.style.left = "20%";

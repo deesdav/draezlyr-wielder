@@ -24,7 +24,7 @@ body {
     background-color: black;
 }
 
-@media screen and (min-width: 1600px) {
+/*@media screen and (min-width: 1600px) {
     body {
         zoom: 110%;
     }
@@ -34,7 +34,7 @@ body {
     body {
         zoom: 115%;
     }
-}
+}*/
 
 #lobby {
     display: flex;
@@ -92,7 +92,7 @@ body {
 
 #author a {
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 #play:hover {
@@ -394,8 +394,9 @@ body {
 }
 
 #gridOfLevels button:hover {
-    color: rgb(0, 0, 0);
-    border: 3px solid rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.555);
+    border: 3px solid rgb(255, 255, 255);
 }
 
 #gridOfLevelsDC {
@@ -437,8 +438,9 @@ body {
 }
 
 #gridOfLevelsDC button:hover {
-    color: rgb(0, 0, 0);
-    border: 3px solid rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.555);
+    border: 3px solid rgb(255, 255, 255);
 }
 
 #levelsBox {
@@ -471,7 +473,6 @@ body {
 #game {
     background-repeat: no-repeat;
     background-position: bottom;
-    box-shadow: 0 0 900px rgb(0, 0, 0) inset;
     background-size: 100%;
     background-color: white;
     position: relative;
@@ -528,9 +529,10 @@ body {
     left: 0;
     background-color: #333;
     color: rgb(255, 255, 255);
-    padding: 1em;
+    padding: 15px;
     box-shadow: 2px 0 25px rgb(0, 255, 0);
     text-shadow: 0 0 0px rgb(0, 255, 0);
+    border-radius: 0 0 1em 0;
 }
 
 #enemyHpText {
@@ -539,9 +541,10 @@ body {
     right: 0;
     background-color: #333;
     color: rgb(255, 255, 255);
-    padding: 1em;
+    padding: 15px;
     box-shadow: 2px 0 25px rgb(255, 0, 0);
     text-shadow: 0 0 0px rgb(255, 0, 0);
+    border-radius: 0 0 0 1em;
 }
 
 #gameResult {

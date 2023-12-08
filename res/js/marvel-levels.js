@@ -1,21 +1,31 @@
+//------------------------------------ marvelLevels onmousedown and onmouseup
+const marvelLevels = [levelONE, levelTWO, levelTHREE, levelFOUR, levelFIVE, levelSIX, levelSEVEN, levelEIGHT,
+    levelNINE, levelTEN, levelELEVEN, levelTWELVE, levelTHIRTEEN, levelFOURTEEN, levelFIFTEEN];
+
+for (let i = 0; i < marvelLevels.length; i++) {
+    marvelLevels[i].onmousedown = () => {
+        marvelLevels[i].style.backgroundColor = "white";
+        marvelLevels[i].style.color = "black";
+    }
+}
+for (let i = 0; i < marvelLevels.length; i++) {
+    marvelLevels[i].onmouseup = () => {
+        marvelLevels[i].style.backgroundColor = "transparent";
+        marvelLevels[i].style.border = "3px solid black";
+        marvelLevels[i].style.color = "black";
+        marvelLevels[i].style.textDecoration = "underline";
+    }
+
+}
 //------------------------------------ marvel level 1
 levelONE.onmouseover = () => {
-    enemyName.innerText = "Spider-man";
+    enemyName.innerText = "Spider man";
 }
 levelONE.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelONE.onmousedown = () => {
-    levelONE.style.backgroundColor = "white";
-    levelONE.style.color = "red";
-}
-levelONE.onmouseup = () => {
-    levelONE.style.backgroundColor = "transparent";
-    levelONE.style.color = "black";
-}
-
 levelONE.onclick = () => {
-
+    game.style.boxShadow = "0 0 500px red inset";
     if (levelONECompleted) {
         console.log("Level is completed");
     }
@@ -85,16 +95,8 @@ levelTWO.onmouseover = () => {
 levelTWO.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelTWO.onmousedown = () => {
-    levelTWO.style.backgroundColor = "white";
-    levelTWO.style.color = "red";
-}
-levelTWO.onmouseup = () => {
-    levelTWO.style.backgroundColor = "transparent";
-    levelTWO.style.color = "black";
-}
-
 levelTWO.onclick = () => {
+    game.style.boxShadow = "0 0 500px green inset";
     if (levelONECompleted || levelTWOCompleted) {
         console.log("Level is completed");
     }
@@ -165,16 +167,8 @@ levelTHREE.onmouseover = () => {
 levelTHREE.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelTHREE.onmousedown = () => {
-    levelTHREE.style.backgroundColor = "white";
-    levelTHREE.style.color = "red";
-}
-levelTHREE.onmouseup = () => {
-    levelTHREE.style.backgroundColor = "transparent";
-    levelTHREE.style.color = "black";
-}
-
 levelTHREE.onclick = () => {
+    game.style.boxShadow = "0 0 500px gold inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted) {
         console.log("Level is completed");
     }
@@ -245,16 +239,8 @@ levelFOUR.onmouseover = () => {
 levelFOUR.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelFOUR.onmousedown = () => {
-    levelFOUR.style.backgroundColor = "white";
-    levelFOUR.style.color = "red";
-}
-levelFOUR.onmouseup = () => {
-    levelFOUR.style.backgroundColor = "transparent";
-    levelFOUR.style.color = "black";
-}
-
 levelFOUR.onclick = () => {
+    game.style.boxShadow = "0 0 500px lightblue inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted) {
         console.log("Level is completed");
     }
@@ -325,16 +311,8 @@ levelFIVE.onmouseover = () => {
 levelFIVE.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelFIVE.onmousedown = () => {
-    levelFIVE.style.backgroundColor = "white";
-    levelFIVE.style.color = "red";
-}
-levelFIVE.onmouseup = () => {
-    levelFIVE.style.backgroundColor = "transparent";
-    levelFIVE.style.color = "black";
-}
-
 levelFIVE.onclick = () => {
+    game.style.boxShadow = "0 0 500px grey inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted) {
         console.log("Level is completed");
     }
@@ -403,16 +381,8 @@ levelSIX.onmouseover = () => {
 levelSIX.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelSIX.onmousedown = () => {
-    levelSIX.style.backgroundColor = "white";
-    levelSIX.style.color = "red";
-}
-levelSIX.onmouseup = () => {
-    levelSIX.style.backgroundColor = "transparent";
-    levelSIX.style.color = "black";
-}
-
 levelSIX.onclick = () => {
+    game.style.boxShadow = "0 0 500px skyblue inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted) {
         console.log("Level is completed");
     }
@@ -481,16 +451,8 @@ levelSEVEN.onmouseover = () => {
 levelSEVEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelSEVEN.onmousedown = () => {
-    levelSEVEN.style.backgroundColor = "white";
-    levelSEVEN.style.color = "red";
-}
-levelSEVEN.onmouseup = () => {
-    levelSEVEN.style.backgroundColor = "transparent";
-    levelSEVEN.style.color = "black";
-}
-
 levelSEVEN.onclick = () => {
+    game.style.boxShadow = "0 0 500px orange inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted) {
         console.log("Level is completed");
     }
@@ -559,16 +521,8 @@ levelEIGHT.onmouseover = () => {
 levelEIGHT.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelEIGHT.onmousedown = () => {
-    levelEIGHT.style.backgroundColor = "white";
-    levelEIGHT.style.color = "red";
-}
-levelEIGHT.onmouseup = () => {
-    levelEIGHT.style.backgroundColor = "transparent";
-    levelEIGHT.style.color = "black";
-}
-
 levelEIGHT.onclick = () => {
+    game.style.boxShadow = "0 0 500px black inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted) {
         console.log("Level is completed");
     }
@@ -637,16 +591,8 @@ levelNINE.onmouseover = () => {
 levelNINE.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelNINE.onmousedown = () => {
-    levelNINE.style.backgroundColor = "white";
-    levelNINE.style.color = "red";
-}
-levelNINE.onmouseup = () => {
-    levelNINE.style.backgroundColor = "transparent";
-    levelNINE.style.color = "black";
-}
-
 levelNINE.onclick = () => {
+    game.style.boxShadow = "0 0 500px yellow inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted) {
         console.log("Level is completed");
     }
@@ -715,16 +661,8 @@ levelTEN.onmouseover = () => {
 levelTEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelTEN.onmousedown = () => {
-    levelTEN.style.backgroundColor = "white";
-    levelTEN.style.color = "red";
-}
-levelTEN.onmouseup = () => {
-    levelTEN.style.backgroundColor = "transparent";
-    levelTEN.style.color = "black";
-}
-
 levelTEN.onclick = () => {
+    game.style.boxShadow = "0 0 500px darkred inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted) {
         console.log("Level is completed");
     }
@@ -794,16 +732,8 @@ levelELEVEN.onmouseover = () => {
 levelELEVEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelELEVEN.onmousedown = () => {
-    levelELEVEN.style.backgroundColor = "white";
-    levelELEVEN.style.color = "red";
-}
-levelELEVEN.onmouseup = () => {
-    levelELEVEN.style.backgroundColor = "transparent";
-    levelELEVEN.style.color = "black";
-}
-
 levelELEVEN.onclick = () => {
+    game.style.boxShadow = "0 0 500px purple inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted) {
         console.log("Level is completed");
     }
@@ -861,7 +791,7 @@ levelELEVEN.onclick = () => {
             enemyHp.innerText = 70;
         }
 
-    }, 1500);
+    }, 1000);
 
 }
 
@@ -872,16 +802,8 @@ levelTWELVE.onmouseover = () => {
 levelTWELVE.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelTWELVE.onmousedown = () => {
-    levelTWELVE.style.backgroundColor = "white";
-    levelTWELVE.style.color = "red";
-}
-levelTWELVE.onmouseup = () => {
-    levelTWELVE.style.backgroundColor = "transparent";
-    levelTWELVE.style.color = "black";
-}
-
 levelTWELVE.onclick = () => {
+    game.style.boxShadow = "0 0 500px rgb(255,102,50) inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted) {
         console.log("Level is completed");
     }
@@ -939,7 +861,7 @@ levelTWELVE.onclick = () => {
             enemyHp.innerText = 75;
         }
 
-    }, 1500);
+    }, 1000);
 
 }
 
@@ -947,19 +869,11 @@ levelTWELVE.onclick = () => {
 levelTHIRTEEN.onmouseover = () => {
     enemyName.innerText = "Loki";
 }
-levelTHIRTEEN.onmouseout = () => { 
+levelTHIRTEEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelTHIRTEEN.onmousedown = () => {
-    levelTHIRTEEN.style.backgroundColor = "white";
-    levelTHIRTEEN.style.color = "red";
-}
-levelTHIRTEEN.onmouseup = () => {
-    levelTHIRTEEN.style.backgroundColor = "transparent";
-    levelTHIRTEEN.style.color = "black";
-}
-
 levelTHIRTEEN.onclick = () => {
+    game.style.boxShadow = "0 0 500px rgb(0,255,100) inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1017,10 +931,9 @@ levelTHIRTEEN.onclick = () => {
             enemyHp.innerText = 80;
         }
 
-    }, 1500);
+    }, 1000);
 
 }
-
 //------------------------------------ marvel level 14
 levelFOURTEEN.onmouseover = () => {
     enemyName.innerText = "Captain Marvel";
@@ -1028,16 +941,9 @@ levelFOURTEEN.onmouseover = () => {
 levelFOURTEEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelFOURTEEN.onmousedown = () => {
-    levelFOURTEEN.style.backgroundColor = "white";
-    levelFOURTEEN.style.color = "red";
-}
-levelFOURTEEN.onmouseup = () => {
-    levelFOURTEEN.style.backgroundColor = "transparent";
-    levelFOURTEEN.style.color = "black";
-}
 
 levelFOURTEEN.onclick = () => {
+    game.style.boxShadow = "0 0 500px rgb(200,20,50) inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1095,10 +1001,9 @@ levelFOURTEEN.onclick = () => {
             enemyHp.innerText = 85;
         }
 
-    }, 1500);
+    }, 1000);
 
 }
-
 //------------------------------------ marvel level 15
 levelFIFTEEN.onmouseover = () => {
     enemyName.innerText = "Thanos";
@@ -1106,16 +1011,9 @@ levelFIFTEEN.onmouseover = () => {
 levelFIFTEEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
-levelFIFTEEN.onmousedown = () => {
-    levelFIFTEEN.style.backgroundColor = "white";
-    levelFIFTEEN.style.color = "red";
-}
-levelFIFTEEN.onmouseup = () => {
-    levelFIFTEEN.style.backgroundColor = "transparent";
-    levelFIFTEEN.style.color = "black";
-}
 
 levelFIFTEEN.onclick = () => {
+    game.style.boxShadow = "0 0 500px blueviolet inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted || levelFIFTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1173,6 +1071,6 @@ levelFIFTEEN.onclick = () => {
             enemyHp.innerText = 90;
         }
 
-    }, 1500);
+    }, 1000);
 
 }

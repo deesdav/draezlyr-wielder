@@ -1,3 +1,23 @@
+//------------------------------------ dcLevels onmousedown and onmouseup
+const dcLevels = [dcLevelONE, dcLevelTWO, dcLevelTHREE, dcLevelFOUR, dcLevelFIVE, dcLevelSIX, dcLevelSEVEN, dcLevelEIGHT,
+    dcLevelNINE, dcLevelTEN, dcLevelELEVEN, dcLevelTWELVE, dcLevelTHIRTEEN, dcLevelFOURTEEN, dcLevelFIFTEEN];
+
+for (let i = 0; i < dcLevels.length; i++) {
+    dcLevels[i].onmousedown = () => {
+        dcLevels[i].style.backgroundColor = "white";
+        dcLevels[i].style.color = "black";
+    }
+}
+
+for (let i = 0; i < dcLevels.length; i++) {
+    dcLevels[i].onmouseup = () => {
+        dcLevels[i].style.backgroundColor = "transparent";
+        dcLevels[i].style.border = "3px solid black";
+        dcLevels[i].style.color = "black";
+        dcLevels[i].style.textDecoration = "underline";
+    }
+
+}
 //------------------------------------ dc level 1
 dcLevelONE.onmouseover = () => {
     enemyName.innerText = "Batman";
@@ -5,17 +25,8 @@ dcLevelONE.onmouseover = () => {
 dcLevelONE.onmouseout = () => {
     enemyName.innerText = " ";
 }
-dcLevelONE.onmousedown = () => {
-    dcLevelONE.style.backgroundColor = "white";
-    dcLevelONE.style.color = "red";
-}
-dcLevelONE.onmouseup = () => {
-    dcLevelONE.style.backgroundColor = "transparent";
-    dcLevelONE.style.color = "black";
-}
-
 dcLevelONE.onclick = () => {
-
+    game.style.boxShadow = "0 0 500px rgb(0,0,100) inset";
     if (dcLevelONECompleted) {
         console.log("Level is completed");
     }

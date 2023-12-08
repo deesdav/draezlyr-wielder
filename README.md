@@ -7,5 +7,11 @@ about last update and what is added:
  - odděleni scriptů
  - stylizace s box shadows
  - info button přidaný
+ - img dragging disabled
+ - cutted audios
+ - fixing images
+ - snížené intervaly 
+ - pole a cykly zjednoduseni kodu
+ - new add images 
 
 
