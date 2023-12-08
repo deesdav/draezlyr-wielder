@@ -607,6 +607,24 @@ body {
     display: none;
     z-index: 999;
 }
+#backBtnDC {
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 1em;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: x-large;
+    height: min-content;
+    width: min-content;
+    display: none;
+    z-index: 999;
+}
 
 #infoBtn {
     text-transform: uppercase;

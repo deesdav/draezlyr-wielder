@@ -44,6 +44,7 @@ dcLevelONE.onclick = () => {
     yourHp.innerText = yourHpValue;
     enemyHp.innerText = 95;
     backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
     backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerText -= 16;
@@ -63,7 +64,8 @@ dcLevelONE.onclick = () => {
             dcLevelONECompleted = false;
             dcLevelONE.disabled = false;
             yourHp.innerText = yourHpValue;
-            backBtn.style.zIndex = "999";
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
             enemyHp.innerText = 90;
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
@@ -82,7 +84,8 @@ dcLevelONE.onclick = () => {
             yourXPValue += yourXPIncrease;
             yourXP.innerText = yourXPValue;
             yourHp.innerText = yourHpValue;
-            backBtn.style.zIndex = "999";
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
             enemyHp.innerText = 90;
         }
 

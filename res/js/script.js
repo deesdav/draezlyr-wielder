@@ -68,6 +68,7 @@ const levelTHIRTEEN = document.getElementById("levelTHIRTEEN");
 const levelFOURTEEN = document.getElementById("levelFOURTEEN");
 const levelFIFTEEN = document.getElementById("levelFIFTEEN");
 
+const backBtnDC = document.getElementById("backBtnDC");
 const gridOfLevelsDC = document.getElementById("gridOfLevelsDC");
 const dcLevelONE = document.getElementById("dcLevelONE");
 const dcLevelTWO = document.getElementById("dcLevelTWO");
@@ -338,6 +339,7 @@ marvelPlanet.onclick = () => {
     levelsText.style.display = "block";
     levelInfo.style.display = "block";
     gridOfLevels.style.display = "grid";
+    gridOfLevelsDC.style.display = "none";
     levelONE.style.display = "block";
     marvelPlanet.style.display = "none";
     nameOfPlanet.style.display = "none";
@@ -379,8 +381,8 @@ dcPlanet.onclick = () => {
     nameOfPlanetDeesdav.style.display = "none";
     document.body.style.backgroundColor = "blue";
     storyPartInput.style.display = "none";
-    backBtn.style.display = "block";
-    backBtn.enable = true;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "block";
     shopBtn.style.display = "none";
     winAndLoss.style.display = "block";
     infoBtn.style.display = "none";
@@ -389,7 +391,7 @@ dcPlanet.onclick = () => {
 
 
 
-//------------------------------------ back button to portals
+//------------------------------------ back button to planets
 backBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -402,6 +404,7 @@ backBtn.onclick = () => {
     nameOfPlanet.style.display = "block";
     document.body.style.backgroundColor = "black";
     backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
     shopBtn.style.display = "block";
     infoBtn.style.display = "block";
     if (levelFIFTEENCompleted) {
@@ -409,10 +412,27 @@ backBtn.onclick = () => {
         deesdavPlanet.style.display = "block";
         nameOfPlanetDeesdav.style.display = "block";
     }
+}
 
-    if (countDown.innerText == 60 && yourXP.innerText >= 120) {
-        yourXPValue -= 100;
-        yourXP.innerText = yourXPValue;
+backBtnDC.onclick = () => {
+    marvelPlanet.disable = true;
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    levelInfo.style.display = "none";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    levelONE.style.display = "none";
+    marvelPlanet.style.display = "block";
+    nameOfPlanet.style.display = "block";
+    document.body.style.backgroundColor = "black";
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    shopBtn.style.display = "block";
+    infoBtn.style.display = "block";
+    deesdavDimensionCompleted = true;
+
+    if (deesdavDimensionCompleted) {
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
         deesdavDimension.style.display = "none";
@@ -421,8 +441,10 @@ backBtn.onclick = () => {
         dcPlanet.style.display = "block";
         nameOfPlanetDC.style.display = "block";
         dcPlanetClick = true;
+        backBtn.style.display = "none";
+        marvelPlanet.style.display = "none";
+        nameOfPlanet.style.display = "none";
     }
-
 }
 //------------------------------------ shop button, shop system, upgrades 
 let yourDamage = 1;
@@ -1564,6 +1586,10 @@ backBtnShop.onclick = () => {
     shopBtn.style.display = "block";
     shop.style.display = "none";
     infoBtn.style.display = "block";
+    if (deesdavDimensionCompleted) {
+        marvelPlanet.style.display = "none";
+        nameOfPlanet.style.display = "none";
+    }
 }
 
 //------------------------------------ level and fighting system
@@ -1598,6 +1624,8 @@ let dcLevelTWELVECompleted = false;
 let dcLevelTHIRTEENCompleted = false;
 let dcLevelFOURTEENCompleted = false;
 let dcLevelFIFTEENCompleted = false;
+
+let deesdavDimensionCompleted = false;
 
 yourXP.style.color = "gold";
 yourXP.style.textShadow = "1px 1px 2px black";
@@ -1663,6 +1691,9 @@ gameResult.onclick = () => {
         document.body.style.backgroundColor = "red";
         levelONE.style.display = "block";
         gridOfLevels.style.display = "grid";
+        gridOfLevelsDC.style.display = "none";
+        backBtn.style.display = "block";
+        backBtnDC.style.display = "none";
     }
 
     if (levelONECompleted) {
@@ -1758,7 +1789,17 @@ gameResult.onclick = () => {
                     backBtn.style.display = "none";
                     dot.innerText = 0;
                 }
-                if (countDown.innerText == 60 && yourXP.innerText >= 120) {
+
+                if (countDown.innerText == 60 && yourXP.innerText >= 120 && deesdavDimensionCompleted == false) {
+                    deesdavDimensionCompleted = true;
+                    if (deesdavDimensionCompleted == true) {
+                        console.log("deesdav dimension completed");
+                    }
+                } else {
+                    deesdavDimensionCompleted = false;
+                }
+
+                if (deesdavDimensionCompleted) {
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
@@ -1769,8 +1810,11 @@ gameResult.onclick = () => {
                     dcPlanet.style.display = "block";
                     nameOfPlanetDC.style.display = "block";
                     dcPlanetClick = true;
+                    backBtn.style.display = "none";
+                    marvelPlanet.style.display = "none";
+                    nameOfPlanet.style.display = "none";
+                    planets.style.gap = "0px";
                 }
-
             }, 1000);
 
 
@@ -1809,7 +1853,10 @@ gameResult.onclick = () => {
     if (dcPlanetClick) {
         document.body.style.backgroundColor = "blue";
         dcLevelONE.style.display = "block";
+        gridOfLevels.style.display = "none";
         gridOfLevelsDC.style.display = "grid";
+        backBtn.style.display = "none";
+        backBtnDC.style.display = "block";
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
@@ -1820,8 +1867,7 @@ gameResult.onclick = () => {
     audioButtonClick.play();
     levelsText.style.display = "block";
     levelInfo.style.display = "block";
-
     game.style.display = "none";
     gameResult.style.display = "none";
-    backBtn.style.display = "block";
+
 }
