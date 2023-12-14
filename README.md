@@ -12,6 +12,6 @@ about last update and what is added:
  - fixing images
  - snížené intervaly 
  - pole a cykly zjednoduseni kodu
- - new add images 
+ - new add images*
 
 

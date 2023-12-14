@@ -1815,8 +1815,7 @@ gameResult.onclick = () => {
                     nameOfPlanet.style.display = "none";
                     planets.style.gap = "0px";
                 }
-            }, 1000);
-
+            }, 1000);            
 
         }
         setInterval(() => {

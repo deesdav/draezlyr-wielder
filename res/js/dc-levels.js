@@ -26,7 +26,7 @@ dcLevelONE.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelONE.onclick = () => {
-    game.style.boxShadow = "0 0 500px rgb(0,0,100) inset";
+    game.style.boxShadow = "0 0 120px rgb(0,0,100) inset";
     if (dcLevelONECompleted) {
         console.log("Level is completed");
     }
