@@ -117,7 +117,7 @@ for (let i = 0; i < elements.length; i++) {
 }
 
 //------------------------------------ btns onmouseover and onmouseout
-const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn];
+const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC];
 
 for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
     btnsOnMouseOverAndOut[i].onmouseover = () => {
@@ -135,6 +135,24 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
     }
 
 }
+
+//------------------------------------ dynamic title
+const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
+    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn];
+const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND"];
+const dynamicTitleDefault = "DRAEZLYR WIELDER";
+
+for (let i = 0; i < dynamicTitleElements.length; i++) {
+    dynamicTitleElements[i].addEventListener('mouseover', () => {
+        document.title = dynamicValues[i];
+    });
+
+    dynamicTitleElements[i].addEventListener('mouseout', () => {
+        document.title = dynamicTitleDefault;
+    });
+}
+
 
 
 //------------------------------------ date
@@ -452,6 +470,9 @@ let yourHpValue = 20;
 let yourXPValue = 0;
 let yourXPIncrease = 2;
 let dotXP = 5;
+let upgradeDamageValue = 4;
+let upgradeHealthValue = 2;
+
 
 shopBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -470,11 +491,11 @@ HealthInfo.style.textShadow = "1px 1px 2px black";
 HealthInfo.style.fontWeight = "bold";
 
 upgradeDamage.onclick = () => {
-    if (yourXP.innerText >= 4) {
+    if (yourXP.innerText >= upgradeDamageValue) {
         upgradeDamage.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        yourXPValue -= 4;
+        yourXPValue -= upgradeDamageValue;
         yourXP.innerText = yourXPValue;
         yourDamage++;
         DamageInfo.innerText = yourDamage;
@@ -483,11 +504,11 @@ upgradeDamage.onclick = () => {
     }
 }
 upgradeHealth.onclick = () => {
-    if (yourXP.innerText >= 2) {
+    if (yourXP.innerText >= upgradeHealthValue) {
         upgradeDamage.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        yourXPValue -= 2;
+        yourXPValue -= upgradeHealthValue;
         yourXP.innerText = yourXPValue;
         yourHpValue += 5;
         HealthInfo.innerText = yourHpValue;
@@ -500,15 +521,16 @@ let redColorOwned = false;
 let greenColorOwned = false;
 let blueColorOwned = false;
 let yellowColorOwned = false;
+let redColorValue = 5;
 redColor.onclick = () => {
-    if (yourXP.innerText >= 5) {
+    if (yourXP.innerText >= redColorValue) {
         redColor.style.display = "none";
         redColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         heroIdle.src = "./res/img/red.hero.idle.png";
         heroAttack.src = "./res/img/red.hero.attack.png";
-        yourXPValue -= 5;
+        yourXPValue -= redColorValue;
         yourXP.innerText = yourXPValue;
         redColorOwned = true;
     } else {
@@ -746,16 +768,16 @@ redColor.onclick = () => {
         });
         */
 }
-
+let greenColorValue = 7;
 greenColor.onclick = () => {
-    if (yourXP.innerText >= 7) {
+    if (yourXP.innerText >= greenColorValue) {
         greenColor.style.display = "none";
         greenColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         heroIdle.src = "./res/img/green.hero.idle.png";
         heroAttack.src = "./res/img/green.hero.attack.png";
-        yourXPValue -= 7;
+        yourXPValue -= greenColorValue;
         yourXP.innerText = yourXPValue;
         greenColorOwned = true;
     } else {
@@ -1001,16 +1023,16 @@ greenColor.onclick = () => {
         });
         */
 }
-
+let blueColorValue = 10;
 blueColor.onclick = () => {
-    if (yourXP.innerText >= 10) {
+    if (yourXP.innerText >= blueColorValue) {
         blueColor.style.display = "none";
         blueColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         heroIdle.src = "./res/img/blue.hero.idle.png";
         heroAttack.src = "./res/img/blue.hero.attack.png";
-        yourXPValue -= 10;
+        yourXPValue -= blueColorValue;
         yourXP.innerText = yourXPValue;
         blueColor = true;
     } else {
@@ -1252,16 +1274,16 @@ blueColor.onclick = () => {
         });
         */
 }
-
+let yellowColorValue = 12;
 yellowColor.onclick = () => {
-    if (yourXP.innerText >= 12) {
+    if (yourXP.innerText >= yellowColorValue) {
         yellowColor.style.display = "none";
         yellowColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         heroIdle.src = "./res/img/yellow.hero.idle.png";
         heroAttack.src = "./res/img/yellow.hero.attack.png";
-        yourXPValue -= 12;
+        yourXPValue -= yellowColorValue;
         yourXP.innerText = yourXPValue;
         yellowColorOwned = true;
     } else {
@@ -1507,22 +1529,22 @@ yellowColor.onclick = () => {
 }
 //------------------------------------ cost of colors mouse over
 redColor.onmouseover = () => {
-    costOfColors.innerText = 5;
+    costOfColors.innerText = redColorValue;
     overviewSrc.src = "./res/img/red.hero.idle.png";
     overview.style.display = "block";
 }
 greenColor.onmouseover = () => {
-    costOfColors.innerText = 7;
+    costOfColors.innerText = greenColorValue;
     overviewSrc.src = "./res/img/green.hero.idle.png";
     overview.style.display = "block";
 }
 blueColor.onmouseover = () => {
-    costOfColors.innerText = 10;
+    costOfColors.innerText = blueColorValue;
     overviewSrc.src = "./res/img/blue.hero.idle.png";
     overview.style.display = "block";
 }
 yellowColor.onmouseover = () => {
-    costOfColors.innerText = 12;
+    costOfColors.innerText = yellowColorValue;
     overviewSrc.src = "./res/img/yellow.hero.idle.png";
     overview.style.display = "block";
 }
@@ -1557,10 +1579,10 @@ upgradeHealth.onmouseout = () => {
 }
 //------------------------------------ cost of upgrades mouse over
 upgradeDamage.onmouseover = () => {
-    costOfUps.innerText = 4;
+    costOfUps.innerText = upgradeDamageValue;
 }
 upgradeHealth.onmouseover = () => {
-    costOfUps.innerText = 2;
+    costOfUps.innerText = upgradeHealthValue;
 }
 //------------------------------------ cost of upgrades mouse out
 upgradeDamage.onmouseout = () => {
@@ -1739,17 +1761,18 @@ gameResult.onclick = () => {
         levelFIFTEEN.style.display = "block";
     }
     if (levelFIFTEENCompleted) {
+        upgradeDamageValue = (upgradeDamageValue + 5);
+        upgradeHealthValue = (upgradeHealthValue + 5);
+        redColorValue = (redColorValue + 5);
+        greenColorValue = (greenColorValue + 5);
+        blueColorValue = (blueColorValue + 5);
+        yellowColorValue = (yellowColorValue + 5);
+
         marvelPlanetClick = false;
         //------------------------------------ deesdav planet into the dimension
         deesdavDimension.onmouseover = () => {
             audioLobbyBackground.src = "./res/audio/deesdav.mp3";
             audioLobbyBackground.play();
-        }
-
-        deesdavDimension.onmouseout = () => {
-            audioLobbyBackground.src = "";
-            audioLobbyBackground.pause();
-            audioLobbyBackground.currentTime = 0;
         }
         deesdavPlanet.onmouseover = () => {
             document.body.style.boxShadow = "0 0 999px white inset";
@@ -1788,6 +1811,9 @@ gameResult.onclick = () => {
                     document.body.style.backgroundColor = "black";
                     backBtn.style.display = "none";
                     dot.innerText = 0;
+                    audioLobbyBackground.src = "";
+                    audioLobbyBackground.pause();
+                    audioLobbyBackground.currentTime = 0;
                 }
 
                 if (countDown.innerText == 60 && yourXP.innerText >= 120 && deesdavDimensionCompleted == false) {
@@ -1815,7 +1841,7 @@ gameResult.onclick = () => {
                     nameOfPlanet.style.display = "none";
                     planets.style.gap = "0px";
                 }
-            }, 1000);            
+            }, 1000);
 
         }
         setInterval(() => {
@@ -1841,12 +1867,14 @@ gameResult.onclick = () => {
             dot.style.color = "black";
             audioLobbyBackground.src = "./res/audio/deesdav.mp3";
             audioLobbyBackground.play();
+            document.body.style.boxShadow = "0 0 77px white inset";
         }
         dot.onmouseout = () => {
             dot.style.backgroundColor = "black";
             dot.style.color = "white";
             audioLobbyBackground.src = "";
             audioLobbyBackground.pause();
+            document.body.style.boxShadow = "0 0 0px white inset";
         }
     }
     if (dcPlanetClick) {
@@ -1859,6 +1887,9 @@ gameResult.onclick = () => {
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
+    }
+    if (dcLevelTWOCompleted) {
+        dcLevelTHREE.style.display = "block";
     }
 
     console.log("funguje");

@@ -17,6 +17,8 @@ for (let i = 0; i < marvelLevels.length; i++) {
     }
 
 }
+
+
 //------------------------------------ marvel level 1
 levelONE.onmouseover = () => {
     enemyName.innerText = "Spider man";
@@ -753,7 +755,8 @@ levelELEVEN.onclick = () => {
     backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerText -= 11;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -823,7 +826,8 @@ levelTWELVE.onclick = () => {
     backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerText -= 12;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -893,7 +897,8 @@ levelTHIRTEEN.onclick = () => {
     backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerText -= 13;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -963,7 +968,8 @@ levelFOURTEEN.onclick = () => {
     backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerText -= 14;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -1028,12 +1034,13 @@ levelFIFTEEN.onclick = () => {
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
-    enemyHp.innerText = 85;
+    enemyHp.innerText = 90;
     backBtn.style.display = "none";
     backBtnShop.style.zIndex = "0";
     const enemyDamage = setInterval(() => {
         yourHp.innerText -= 15;
-
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 

@@ -3,15 +3,13 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - dc planet a funkcni prvni level
+ - dc planet a funkcni dva levely
  - odděleni scriptů
- - stylizace s box shadows
- - info button přidaný
  - img dragging disabled
- - cutted audios
  - fixing images
- - snížené intervaly 
  - pole a cykly zjednoduseni kodu
  - new add images*
+ - dynamic title
+ - increased shop values when you complete level 15 in marvel planet
 
 
