@@ -1768,6 +1768,8 @@ gameResult.onclick = () => {
         blueColorValue = (blueColorValue + 5);
         yellowColorValue = (yellowColorValue + 5);
 
+        yourXPIncrease = (yourXPIncrease + 2);
+
         marvelPlanetClick = false;
         //------------------------------------ deesdav planet into the dimension
         deesdavDimension.onmouseover = () => {
@@ -1890,6 +1892,9 @@ gameResult.onclick = () => {
     }
     if (dcLevelTWOCompleted) {
         dcLevelTHREE.style.display = "block";
+    }
+    if (dcLevelTHREECompleted) {
+        dcLevelFOUR.style.display = "block";
     }
 
     console.log("funguje");
