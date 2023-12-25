@@ -1761,15 +1761,7 @@ gameResult.onclick = () => {
         levelFIFTEEN.style.display = "block";
     }
     if (levelFIFTEENCompleted) {
-        upgradeDamageValue = (upgradeDamageValue + 5);
-        upgradeHealthValue = (upgradeHealthValue + 5);
-        redColorValue = (redColorValue + 5);
-        greenColorValue = (greenColorValue + 5);
-        blueColorValue = (blueColorValue + 5);
-        yellowColorValue = (yellowColorValue + 5);
-
-        yourXPIncrease = (yourXPIncrease + 2);
-
+        console.log("level 15 hotov");
         marvelPlanetClick = false;
         //------------------------------------ deesdav planet into the dimension
         deesdavDimension.onmouseover = () => {
@@ -1841,7 +1833,14 @@ gameResult.onclick = () => {
                     backBtn.style.display = "none";
                     marvelPlanet.style.display = "none";
                     nameOfPlanet.style.display = "none";
-                    planets.style.gap = "0px";
+                    planets.style.gap = "0px"; 
+                    upgradeDamageValue = 9;
+                    upgradeHealthValue = 7;
+                    redColorValue = 10;
+                    greenColorValue = 12;
+                    blueColorValue = 15;
+                    yellowColorValue = 17;
+                    yourXPIncrease = 4;
                 }
             }, 1000);
 
