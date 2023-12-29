@@ -1898,6 +1898,40 @@ gameResult.onclick = () => {
     if (dcLevelFOURCompleted) {
         dcLevelFIVE.style.display = "block";
     }
+    if (dcLevelFIVECompleted) {
+        dcLevelSIX.style.display = "block";
+    }
+    if (dcLevelSIXCompleted) {
+        dcLevelSEVEN.style.display = "block";
+    }
+    if (dcLevelSEVENCompleted) {
+        dcLevelEIGHT.style.display = "block";
+    }
+    if (dcLevelEIGHTCompleted) {
+        dcLevelNINE.style.display = "block";
+    }
+    if (dcLevelNINECompleted) {
+        dcLevelTEN.style.display = "block";
+    }
+    if (dcLevelTENCompleted) {
+        dcLevelELEVEN.style.display = "block";
+    }
+    if (dcLevelELEVENCompleted) {
+        dcLevelTWELVE.style.display = "block";
+    }
+    if (dcLevelTWELVECompleted) {
+        dcLevelTHIRTEEN.style.display = "block";
+    }
+    if (dcLevelTHIRTEENCompleted) {
+        dcLevelFOURTEEN.style.display = "block";
+    }
+    if (levelFOURTEENCompleted) {
+        dcLevelFIFTEEN.style.display = "block";
+    }
+    if (dcLevelFIFTEENCompleted) {
+        dcLevelFIFTEEN.style.display = "block";
+        // tady toho bude ještě hodně !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    }
 
     console.log("funguje");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
