@@ -3,6 +3,6 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - dc levels 3
+ - all dc levels are here but without images
 
 

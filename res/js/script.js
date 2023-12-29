@@ -1895,6 +1895,9 @@ gameResult.onclick = () => {
     if (dcLevelTHREECompleted) {
         dcLevelFOUR.style.display = "block";
     }
+    if (dcLevelFOURCompleted) {
+        dcLevelFIVE.style.display = "block";
+    }
 
     console.log("funguje");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";

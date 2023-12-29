@@ -244,4 +244,879 @@ dcLevelTHREE.onclick = () => {
 
 }
 //------------------------------------ dc level 4
-// coming soon
+dcLevelFOUR.onmouseover = () => {
+    enemyName.innerText = "Joker";
+}
+dcLevelFOUR.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelFOUR.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/batmanBG.png)";
+    enemy.src = "./res/img/enemy.joker.png";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 110;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 19;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelFOURCompleted = false;
+            dcLevelFOUR.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 110;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelFOURCompleted = true;
+            dcLevelFOUR.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 110;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 5
+dcLevelFIVE.onmouseover = () => {
+    enemyName.innerText = "Superman";
+}
+dcLevelFIVE.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelFIVE.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/supermanBG.png)";
+    enemy.src = "./res/img/enemy.superman.png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 115;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 20;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelFIVECompleted = false;
+            dcLevelFIVE.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 115;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelFIVECompleted = true;
+            dcLevelFIVE.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 115;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 6
+dcLevelSIX.onmouseover = () => {
+    enemyName.innerText = "Aquaman";
+}
+dcLevelSIX.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelSIX.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 110;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 21;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelSIXCompleted = false;
+            dcLevelSIX.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 120;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelSIXCompleted = true;
+            dcLevelSIX.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 120;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 7
+dcLevelSEVEN.onmouseover = () => {
+    enemyName.innerText = "Deathstroke";
+}
+dcLevelSEVEN.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelSEVEN.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 125;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 22;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelSEVENCompleted = false;
+            dcLevelSEVEN.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 125;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelSEVENCompleted = true;
+            dcLevelSEVEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 125;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 8
+dcLevelEIGHT.onmouseover = () => {
+    enemyName.innerText = "Cyborg";
+}
+dcLevelEIGHT.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelEIGHT.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 130;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 23;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelEIGHTCompleted = false;
+            dcLevelEIGHT.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 130;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelEIGHTCompleted = true;
+            dcLevelEIGHT.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 130;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 9
+dcLevelNINE.onmouseover = () => {
+    enemyName.innerText = "Green Lantern";
+}
+dcLevelNINE.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelNINE.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 135;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 24;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelNINECompleted = false;
+            dcLevelNINE.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 135;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelNINECompleted = true;
+            dcLevelNINE.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 135;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 10
+dcLevelTEN.onmouseover = () => {
+    enemyName.innerText = "Green Arrow";
+}
+dcLevelTEN.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelTEN.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 140;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 25;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelTENCompleted = false;
+            dcLevelTEN.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 140;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelTENCompleted = true;
+            dcLevelTEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 140;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 11
+dcLevelELEVEN.onmouseover = () => {
+    enemyName.innerText = "Nightwing";
+}
+dcLevelELEVEN.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelELEVEN.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 145;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 26;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelELEVENCompleted = false;
+            dcLevelELEVEN.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 145;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelELEVENCompleted = true;
+            dcLevelELEVEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 145;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 12
+dcLevelTWELVE.onmouseover = () => {
+    enemyName.innerText = "Shazam";
+}
+dcLevelTWELVE.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelTWELVE.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 150;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 27;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelTWELVECompleted = false;
+            dcLevelTWELVE.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 150;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelTWELVECompleted = true;
+            dcLevelTWELVE.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 150;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 13
+dcLevelTHIRTEEN.onmouseover = () => {
+    enemyName.innerText = "Black Adam";
+}
+dcLevelTHIRTEEN.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelTHIRTEEN.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 155;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 28;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelTHIRTEENCompleted = false;
+            dcLevelTHIRTEEN.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 155;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelTHIRTEENCompleted = true;
+            dcLevelTHIRTEEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 155;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 14
+dcLevelFOURTEEN.onmouseover = () => {
+    enemyName.innerText = "Doktor Manhattan";
+}
+dcLevelFOURTEEN.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelFOURTEEN.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 160;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 29;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelFOURTEENCompleted = false;
+            dcLevelFOURTEEN.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 160;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelFOURTEENCompleted = true;
+            dcLevelFOURTEEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 160;
+        }
+
+    }, 1000);
+
+}
+//------------------------------------ dc level 15
+dcLevelFIFTEEN.onmouseover = () => {
+    enemyName.innerText = "Dakrseid";
+}
+dcLevelFIFTEEN.onmouseout = () => {
+    enemyName.innerText = " ";
+}
+dcLevelFIFTEEN.onclick = () => {
+    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted || dcLevelFIFTEENCompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/BG.png)";
+    enemy.src = "./res/img/enemy..png";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    gridOfLevelsDC.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 110;
+    backBtn.style.display = "none";
+    backBtnDC.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 30;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            gameResult.innerText = `You lost`;
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            dcLevelFIFTEENCompleted = false;
+            dcLevelFIFTEEN.disabled = false;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 165;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            gameResult.innerText = `You won`;
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            dcLevelFIFTEENCompleted = true;
+            dcLevelFIFTEEN.disabled = true;
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtnDC.style.zIndex = "999";
+            backBtn.style.zIndex = "0";
+            enemyHp.innerText = 165;
+        }
+
+    }, 1000);
+
+}
