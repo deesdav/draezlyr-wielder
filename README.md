@@ -3,6 +3,6 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - all dc levels are here but without images
+ - all dc levels are completed but functionality of ending in 15 level is not available
 
 
