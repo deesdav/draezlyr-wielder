@@ -27,6 +27,14 @@ dcLevelONE.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelONE.onclick = () => {
+    enemyHpTextValue.innerText = `BATMAN´S HP:`;
+    const nameValue = storyPartInput.value;
+    const defaultName = "Draezlyr Wielder";
+    if (nameValue == "") {
+        yourHpTextValue.innerText = `${defaultName}´S HP:`;
+    } else {
+        yourHpTextValue.innerText = `${nameValue}´S HP:`;
+    }
     game.style.boxShadow = "0 0 120px rgb(0,0,100) inset";
     if (dcLevelONECompleted) {
         console.log("Level is completed");
@@ -58,7 +66,13 @@ dcLevelONE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -76,7 +90,13 @@ dcLevelONE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -102,6 +122,7 @@ dcLevelTWO.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelTWO.onclick = () => {
+    enemyHpTextValue.innerText = `FLASH´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted) {
         console.log("Level is completed");
@@ -133,7 +154,13 @@ dcLevelTWO.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -151,7 +178,13 @@ dcLevelTWO.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -177,6 +210,7 @@ dcLevelTHREE.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelTHREE.onclick = () => {
+    enemyHpTextValue.innerText = `WONDER WOMAN´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(255,20,100) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted) {
         console.log("Level is completed");
@@ -208,7 +242,13 @@ dcLevelTHREE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -226,7 +266,13 @@ dcLevelTHREE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -251,6 +297,7 @@ dcLevelFOUR.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelFOUR.onclick = () => {
+    enemyHpTextValue.innerText = `JOKER´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(255,255,100) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted) {
         console.log("Level is completed");
@@ -282,7 +329,13 @@ dcLevelFOUR.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -300,7 +353,13 @@ dcLevelFOUR.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -325,12 +384,14 @@ dcLevelFIVE.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelFIVE.onclick = () => {
+    enemyHpTextValue.innerText = `SUPERMAN´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/supermanBG.png)";
     enemy.src = "./res/img/enemy.superman.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -355,7 +416,13 @@ dcLevelFIVE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -373,7 +440,13 @@ dcLevelFIVE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -398,12 +471,14 @@ dcLevelSIX.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelSIX.onclick = () => {
+    enemyHpTextValue.innerText = `AQUAMAN´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/aquamanBG.png)";
     enemy.src = "./res/img/enemy.aquaman.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -428,7 +503,13 @@ dcLevelSIX.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -446,7 +527,13 @@ dcLevelSIX.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -471,12 +558,14 @@ dcLevelSEVEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelSEVEN.onclick = () => {
+    enemyHpTextValue.innerText = `CATWOMAN´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(250,20,60) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/batmanBG.png)";
     enemy.src = "./res/img/enemy.catwoman.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -501,7 +590,13 @@ dcLevelSEVEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -519,7 +614,13 @@ dcLevelSEVEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -544,12 +645,14 @@ dcLevelEIGHT.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelEIGHT.onclick = () => {
+    enemyHpTextValue.innerText = `CYBORG´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(50,45,180) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/cyborgBG.png)";
     enemy.src = "./res/img/enemy.cyborg.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -574,7 +677,13 @@ dcLevelEIGHT.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -592,7 +701,13 @@ dcLevelEIGHT.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -617,12 +732,14 @@ dcLevelNINE.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelNINE.onclick = () => {
+    enemyHpTextValue.innerText = `GREEN LANTERN´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(55,255,51) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/greenlanternBG.png)";
     enemy.src = "./res/img/enemy.greenlantern.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -647,7 +764,13 @@ dcLevelNINE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -665,7 +788,13 @@ dcLevelNINE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -690,12 +819,14 @@ dcLevelTEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelTEN.onclick = () => {
+    enemyHpTextValue.innerText = `GREEN ARROW´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(0,200,0) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/greenarrowBG.png)";
     enemy.src = "./res/img/enemy.greenarrow.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -720,7 +851,13 @@ dcLevelTEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -738,7 +875,13 @@ dcLevelTEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -763,12 +906,14 @@ dcLevelELEVEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelELEVEN.onclick = () => {
+    enemyHpTextValue.innerText = `NIGHTWING´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(0,100,250) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/batmanBG.png)";
     enemy.src = "./res/img/enemy.nightwing.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -793,7 +938,13 @@ dcLevelELEVEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -811,7 +962,13 @@ dcLevelELEVEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -836,12 +993,14 @@ dcLevelTWELVE.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelTWELVE.onclick = () => {
+    enemyHpTextValue.innerText = `SHAZAM´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(255,200,0) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/shazamBG.png)";
     enemy.src = "./res/img/enemy.shazam.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -866,7 +1025,13 @@ dcLevelTWELVE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -884,7 +1049,13 @@ dcLevelTWELVE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -909,12 +1080,14 @@ dcLevelTHIRTEEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelTHIRTEEN.onclick = () => {
+    enemyHpTextValue.innerText = `BLACK ADAM´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(220,205,0) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/blackadamBG.png)";
     enemy.src = "./res/img/enemy.blackadam.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -939,7 +1112,13 @@ dcLevelTHIRTEEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -957,7 +1136,13 @@ dcLevelTHIRTEEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -976,18 +1161,20 @@ dcLevelTHIRTEEN.onclick = () => {
 }
 //------------------------------------ dc level 14
 dcLevelFOURTEEN.onmouseover = () => {
-    enemyName.innerText = "Doktor Manhattan";
+    enemyName.innerText = "Doctor Manhattan";
 }
 dcLevelFOURTEEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelFOURTEEN.onclick = () => {
+    enemyHpTextValue.innerText = `DOCTOR MANHATTAN´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(0,255,255) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/doctormanhattanBG.png)";
     enemy.src = "./res/img/enemy.doctormanhattan.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -1012,7 +1199,13 @@ dcLevelFOURTEEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -1030,7 +1223,13 @@ dcLevelFOURTEEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();
@@ -1049,18 +1248,20 @@ dcLevelFOURTEEN.onclick = () => {
 }
 //------------------------------------ dc level 15
 dcLevelFIFTEEN.onmouseover = () => {
-    enemyName.innerText = "Dakrseid";
+    enemyName.innerText = "Darkseid";
 }
 dcLevelFIFTEEN.onmouseout = () => {
     enemyName.innerText = " ";
 }
 dcLevelFIFTEEN.onclick = () => {
+    enemyHpTextValue.innerText = `DARKSEID´S HP:`;
     game.style.boxShadow = "0 0 120px rgb(220,50,70) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted || dcLevelFIFTEENCompleted) {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/darkseidBG.png)";
     enemy.src = "./res/img/enemy.darkseid.png";
+    levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -1085,7 +1286,13 @@ dcLevelFIFTEEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            gameResult.innerText = `You lost`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
             lossesCounter.innerText++;
             audioYouLost.src = "./res/audio/youLost.mp3";
             audioYouLost.play();
@@ -1103,7 +1310,13 @@ dcLevelFIFTEEN.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            gameResult.innerText = `You won`;
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";
             audioYouWin.play();

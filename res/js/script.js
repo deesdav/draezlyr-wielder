@@ -17,6 +17,10 @@ const storyPartInput = document.getElementById("storyPartInput");
 const yourName = document.getElementById("yourName");
 const yourXPText = document.getElementById("yourXPText");
 const yourHPText = document.getElementById("yourHPText");
+const yourHpTextPromName = document.getElementById("yourHpTextPromName");
+const yourHpTextValue = document.getElementById("yourHpTextValue");
+const enemyHpTextPromName = document.getElementById("enemyHpTextPromName");
+const enemyHpTextValue = document.getElementById("enemyHpTextValue");
 const yourDamageText = document.getElementById("yourDamageText");
 const sendInputBtn = document.getElementById("sendInputBtn");
 const realtimepresented = document.getElementById("realtimepresented");
@@ -105,6 +109,7 @@ const dot = document.getElementById("dot");
 const deesdavDimension = document.getElementById("deesdavDimension");
 const countDownText = document.getElementById("countDownText");
 const countDown = document.getElementById("countDown");
+
 
 
 //------------------------------------ img dragging
@@ -269,7 +274,8 @@ play.onclick = () => {
 }
 
 //------------------------------------ brief info and entering your name or not
-
+const nameValue = storyPartInput.value;
+const defaultName = "Draezlyr Wielder";
 nextBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -328,6 +334,7 @@ document.addEventListener("keyup", (e) => {
         case ("7", "7", "7", "8"):
             heroIdle.src = "./res/img/secret.hero.idle.png";
             heroAttack.src = "./res/img/secret.hero.attack.png";
+            yourHp.innerText += 1;
             break;
         case ("o", "g"):
             heroIdle.src = "./res/img/hero.idle.png";
@@ -350,6 +357,7 @@ marvelPlanet.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
 }
 marvelPlanet.onclick = () => {
+    yourName.style.display = "none";
     marvelPlanetClick = true;
     console.log("MARVEL PLANET");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -382,6 +390,7 @@ dcPlanet.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px blue inset";
 }
 dcPlanet.onclick = () => {
+    yourName.style.display = "none";
     dcPlanetClick = true;
     console.log("DC PLANET");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -411,6 +420,7 @@ dcPlanet.onclick = () => {
 
 //------------------------------------ back button to planets
 backBtn.onclick = () => {
+    yourName.style.display = "block";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
@@ -433,6 +443,7 @@ backBtn.onclick = () => {
 }
 
 backBtnDC.onclick = () => {
+    yourName.style.display = "block";
     marvelPlanet.disable = true;
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -1833,7 +1844,7 @@ gameResult.onclick = () => {
                     backBtn.style.display = "none";
                     marvelPlanet.style.display = "none";
                     nameOfPlanet.style.display = "none";
-                    planets.style.gap = "0px"; 
+                    planets.style.gap = "0px";
                     upgradeDamageValue = 9;
                     upgradeHealthValue = 7;
                     redColorValue = 10;
@@ -1928,10 +1939,10 @@ gameResult.onclick = () => {
     if (levelFOURTEENCompleted) {
         dcLevelFIFTEEN.style.display = "block";
     }
-    if (dcLevelFIFTEENCompleted) {
-        dcLevelFIFTEEN.style.display = "block";
+  //  if (dcLevelFIFTEENCompleted) {
+        dcLevelFIFTEEN.style.display = "none";
         // tady toho bude ještě hodně !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    }
+   // }
 
     console.log("funguje");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";

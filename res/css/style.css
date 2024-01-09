@@ -179,6 +179,7 @@ body {
 
 #yourName {
     display: none;
+    text-transform: uppercase;
     color: white;
     position: absolute;
     top: 15px;
@@ -244,6 +245,7 @@ body {
     text-align: center;
     text-shadow: 1px 1px 0px red;
 }
+
 #nameOfPlanetDeesdav {
     color: white;
     text-align: center;
@@ -481,7 +483,7 @@ body {
     text-transform: uppercase;
     display: none;
     margin: 0 auto;
-    width: 999px;
+    width: 1111px;
     height: 666px;
     border: 0.3em solid #333;
 
@@ -522,8 +524,11 @@ body {
     animation: enemyMoving 1s infinite;
 
 }
+#enemyName{
+    text-transform: uppercase;
+}
 
-#yourHpText {
+#yourHpTextPromName{
     position: absolute;
     top: 0;
     left: 0;
@@ -533,9 +538,11 @@ body {
     box-shadow: 2px 0 25px rgb(0, 255, 0);
     text-shadow: 0 0 0px rgb(0, 255, 0);
     border-radius: 0 0 1em 0;
+    text-transform: uppercase;
 }
 
-#enemyHpText {
+
+#enemyHpTextPromName {
     position: absolute;
     top: 0;
     right: 0;
@@ -545,6 +552,7 @@ body {
     box-shadow: 2px 0 25px rgb(255, 0, 0);
     text-shadow: 0 0 0px rgb(255, 0, 0);
     border-radius: 0 0 0 1em;
+    text-transform: uppercase;
 }
 
 #gameResult {
@@ -607,6 +615,7 @@ body {
     display: none;
     z-index: 999;
 }
+
 #backBtnDC {
     text-transform: uppercase;
     cursor: pointer;
@@ -846,7 +855,7 @@ body {
 
 #lossesCounter {
     color: red;
-    text-shadow:  0 0 2px black;
+    text-shadow: 0 0 2px black;
     font-weight: bold;
 }
 
@@ -865,12 +874,17 @@ body {
 }
 
 @keyframes boxShadow {
-    from{
+    from {
         box-shadow: 0 0 50px white;
-    };
-    to{
+    }
+
+    ;
+
+    to {
         box-shadow: 0 0 10px white;
-    };
+    }
+
+    ;
 }
 
 #dot {

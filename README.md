@@ -3,6 +3,7 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - all dc levels are completed but functionality of ending in 15 level is not available
+ - main function in hero and enemy names
+ - dc level 15 is not available
 
 
