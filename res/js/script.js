@@ -110,6 +110,128 @@ const deesdavDimension = document.getElementById("deesdavDimension");
 const countDownText = document.getElementById("countDownText");
 const countDown = document.getElementById("countDown");
 
+const multiverse = document.getElementById("multiverse");
+
+//------------------------------------ multiverse
+const randomNumberFunciton = (max, min) => {
+    const rdNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    return rdNum;
+}
+
+const multiverseChangingBGColor = () => {
+    const red = randomNumberFunciton(0, 255);
+    const green = randomNumberFunciton(0, 255);
+    const blue = randomNumberFunciton(0, 255);
+    const animationPulse = randomNumberFunciton(25, 65);
+
+    multiverse.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    multiverse.style.boxShadow = `0 0 ${animationPulse}px rgb(${red}, ${green}, ${blue})`;
+
+}
+
+
+multiverse.onmouseover = () => {
+    const multi = setInterval(() => {
+        multiverseChangingBGColor();
+    }, 400);
+    multiverse.onmouseout = () => {
+        clearInterval(multi)
+    }
+
+}
+/**
+multiverse.onclick = () => {
+    yourName.style.display = "none";
+    shopBtn.style.display = "none";
+    infoBtn.style.display = "none";
+    planets.style.display = "none";
+
+    enemyHpTextValue.innerText = `ENEMY´S HP:`;
+    const nameValue = storyPartInput.value;
+    const defaultName = "Draezlyr Wielder";
+    if (nameValue == "") {
+        yourHpTextValue.innerText = `${defaultName}´S HP:`;
+    } else {
+        yourHpTextValue.innerText = `${nameValue}´S HP:`;
+    }
+    game.style.boxShadow = "0 0 120px red inset";
+    game.style.backgroundImage = "url(./res/img/spidermanBG.png)";
+    enemy.src = "./res/img/enemy.spiderman.png";
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "black";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerText = yourHpValue;
+    enemyHp.innerText = 20;
+    backBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText--;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            yourHp.innerText = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerText = 20;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerText = 20;
+        }
+
+    }, 1000);
+
+    gameResult.onclick = () => {
+        audioButtonClick.src = "./res/audio/buttonsound.mp3";
+        audioButtonClick.play();
+        yourName.style.display = "block";
+        shopBtn.style.display = "block";
+        infoBtn.style.display = "block";
+        planets.style.display = "flex";
+        gameResult.style.display = "none";
+    }
+}
+*/
+
 
 
 //------------------------------------ img dragging
@@ -143,9 +265,9 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 
 //------------------------------------ dynamic title
 const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
-    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn];
+    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
-    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND"];
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -369,6 +491,7 @@ marvelPlanet.onclick = () => {
     levelONE.style.display = "block";
     marvelPlanet.style.display = "none";
     nameOfPlanet.style.display = "none";
+    multiverse.style.display = "none";
     dcPlanet.style.display = "none";
     nameOfPlanetDC.style.display = "none";
     deesdavPlanet.style.display = "none";
@@ -473,6 +596,11 @@ backBtnDC.onclick = () => {
         backBtn.style.display = "none";
         marvelPlanet.style.display = "none";
         nameOfPlanet.style.display = "none";
+    }
+    if (dcLevelFIFTEENCompleted) {
+        dcPlanet.style.display = "none";
+        nameOfPlanetDC.style.display = "none";
+        multiverse.style.display = "block";
     }
 }
 //------------------------------------ shop button, shop system, upgrades 
@@ -1701,24 +1829,6 @@ enemy.onmouseup = () => {
     }
 }
 
-
-//------------------------------------ game result system
-/*if (gameResult.innerText == "You lost") {
-    gameResult.onmouseover = () => {
-        document.body.style.boxShadow = "0 0 999px red inset";
-    }
-    gameResult.onmouseout = () => {
-        document.body.style.boxShadow = "0 0 0px red inset";
-    }
-} 
-if (gameResult.innerText == "You won") {
-    gameResult.onmouseover = () => {
-        document.body.style.boxShadow = "0 0 999px rgb(0, 255, 0) inset";
-    }
-    gameResult.onmouseout = () => {
-        document.body.style.boxShadow = "0 0 0px rgb(0, 255, 0) inset";
-    }
-}*/
 gameResult.onclick = () => {
     if (marvelPlanetClick) {
         document.body.style.backgroundColor = "red";
@@ -1936,13 +2046,12 @@ gameResult.onclick = () => {
     if (dcLevelTHIRTEENCompleted) {
         dcLevelFOURTEEN.style.display = "block";
     }
-    if (levelFOURTEENCompleted) {
+    if (dcLevelFOURTEENCompleted) {
         dcLevelFIFTEEN.style.display = "block";
     }
-  //  if (dcLevelFIFTEENCompleted) {
-        dcLevelFIFTEEN.style.display = "none";
-        // tady toho bude ještě hodně !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-   // }
+    if (dcLevelFIFTEENCompleted) {
+        multiverse.style.display = "block";
+    }
 
     console.log("funguje");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";

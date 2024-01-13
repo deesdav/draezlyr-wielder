@@ -439,6 +439,21 @@ body {
     background-color: transparent;
 }
 
+#dcLevelFIFTEEN {
+    border: 3px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    padding: 1em;
+    background-color: transparent;
+}
+
 #gridOfLevelsDC button:hover {
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.555);
@@ -524,11 +539,12 @@ body {
     animation: enemyMoving 1s infinite;
 
 }
-#enemyName{
+
+#enemyName {
     text-transform: uppercase;
 }
 
-#yourHpTextPromName{
+#yourHpTextPromName {
     position: absolute;
     top: 0;
     left: 0;
@@ -911,4 +927,18 @@ body {
     color: white;
     font-size: xx-large;
     padding: 0;
+}
+
+#multiverse {
+    display: none;
+    border: 3px solid white;
+    border-radius: 50%;
+    height: 115px;
+    width: 115px;
+    cursor: pointer;
+    font-size: medium;
+}
+
+#multiverse:hover {
+    transform: scale(1.2);
 }

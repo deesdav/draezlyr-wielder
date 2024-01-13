@@ -3,7 +3,7 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - main function in hero and enemy names
- - dc level 15 is not available
+ - dc level 15 available
+ - multiverse play is not available
 
 

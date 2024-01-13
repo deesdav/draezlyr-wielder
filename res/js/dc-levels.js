@@ -215,7 +215,7 @@ dcLevelTHREE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/wonderwomanBG.png)";
+    game.style.backgroundImage = "url(./res/img/batmanBG.png)";
     enemy.src = "./res/img/enemy.wonderwoman.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
