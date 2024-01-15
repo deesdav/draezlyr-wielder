@@ -8,7 +8,6 @@ for (let i = 0; i < dcLevels.length; i++) {
         dcLevels[i].style.color = "black";
     }
 }
-
 for (let i = 0; i < dcLevels.length; i++) {
     dcLevels[i].onmouseup = () => {
         dcLevels[i].style.backgroundColor = "transparent";
@@ -35,7 +34,7 @@ dcLevelONE.onclick = () => {
     } else {
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
-    game.style.boxShadow = "0 0 120px rgb(0,0,100) inset";
+    game.style.boxShadow = "0 0 70px rgb(0,0,100) inset";
     if (dcLevelONECompleted) {
         console.log("Level is completed");
     }
@@ -123,7 +122,7 @@ dcLevelTWO.onmouseout = () => {
 }
 dcLevelTWO.onclick = () => {
     enemyHpTextValue.innerText = `FLASH´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,200,50) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted) {
         console.log("Level is completed");
     }
@@ -211,7 +210,7 @@ dcLevelTHREE.onmouseout = () => {
 }
 dcLevelTHREE.onclick = () => {
     enemyHpTextValue.innerText = `WONDER WOMAN´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,20,100) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,20,100) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted) {
         console.log("Level is completed");
     }
@@ -298,7 +297,7 @@ dcLevelFOUR.onmouseout = () => {
 }
 dcLevelFOUR.onclick = () => {
     enemyHpTextValue.innerText = `JOKER´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,255,100) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,255,100) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted) {
         console.log("Level is completed");
     }
@@ -385,7 +384,7 @@ dcLevelFIVE.onmouseout = () => {
 }
 dcLevelFIVE.onclick = () => {
     enemyHpTextValue.innerText = `SUPERMAN´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,200,50) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted) {
         console.log("Level is completed");
     }
@@ -472,7 +471,7 @@ dcLevelSIX.onmouseout = () => {
 }
 dcLevelSIX.onclick = () => {
     enemyHpTextValue.innerText = `AQUAMAN´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,200,50) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,200,50) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted) {
         console.log("Level is completed");
     }
@@ -559,7 +558,7 @@ dcLevelSEVEN.onmouseout = () => {
 }
 dcLevelSEVEN.onclick = () => {
     enemyHpTextValue.innerText = `CATWOMAN´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(250,20,60) inset";
+    game.style.boxShadow = "0 0 70px rgb(250,20,60) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted) {
         console.log("Level is completed");
     }
@@ -646,7 +645,7 @@ dcLevelEIGHT.onmouseout = () => {
 }
 dcLevelEIGHT.onclick = () => {
     enemyHpTextValue.innerText = `CYBORG´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(50,45,180) inset";
+    game.style.boxShadow = "0 0 70px rgb(50,45,180) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted) {
         console.log("Level is completed");
     }
@@ -733,7 +732,7 @@ dcLevelNINE.onmouseout = () => {
 }
 dcLevelNINE.onclick = () => {
     enemyHpTextValue.innerText = `GREEN LANTERN´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(55,255,51) inset";
+    game.style.boxShadow = "0 0 70px rgb(55,255,51) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted) {
         console.log("Level is completed");
     }
@@ -820,7 +819,7 @@ dcLevelTEN.onmouseout = () => {
 }
 dcLevelTEN.onclick = () => {
     enemyHpTextValue.innerText = `GREEN ARROW´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(0,200,0) inset";
+    game.style.boxShadow = "0 0 70px rgb(0,200,0) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted) {
         console.log("Level is completed");
     }
@@ -907,7 +906,7 @@ dcLevelELEVEN.onmouseout = () => {
 }
 dcLevelELEVEN.onclick = () => {
     enemyHpTextValue.innerText = `NIGHTWING´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(0,100,250) inset";
+    game.style.boxShadow = "0 0 70px rgb(0,100,250) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted) {
         console.log("Level is completed");
     }
@@ -994,7 +993,7 @@ dcLevelTWELVE.onmouseout = () => {
 }
 dcLevelTWELVE.onclick = () => {
     enemyHpTextValue.innerText = `SHAZAM´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,200,0) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,200,0) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted) {
         console.log("Level is completed");
     }
@@ -1081,7 +1080,7 @@ dcLevelTHIRTEEN.onmouseout = () => {
 }
 dcLevelTHIRTEEN.onclick = () => {
     enemyHpTextValue.innerText = `BLACK ADAM´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(220,205,0) inset";
+    game.style.boxShadow = "0 0 70px rgb(220,205,0) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1168,7 +1167,7 @@ dcLevelFOURTEEN.onmouseout = () => {
 }
 dcLevelFOURTEEN.onclick = () => {
     enemyHpTextValue.innerText = `DOCTOR MANHATTAN´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(0,255,255) inset";
+    game.style.boxShadow = "0 0 70px rgb(0,255,255) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1255,7 +1254,7 @@ dcLevelFIFTEEN.onmouseout = () => {
 }
 dcLevelFIFTEEN.onclick = () => {
     enemyHpTextValue.innerText = `DARKSEID´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(220,50,70) inset";
+    game.style.boxShadow = "0 0 70px rgb(220,50,70) inset";
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted || dcLevelFIFTEENCompleted) {
         console.log("Level is completed");
     }

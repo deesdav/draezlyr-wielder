@@ -35,7 +35,7 @@ levelONE.onclick = () => {
     } else {
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
-    game.style.boxShadow = "0 0 120px red inset";
+    game.style.boxShadow = "0 0 70px red inset";
     if (levelONECompleted) {
         console.log("Level is completed");
     }
@@ -119,7 +119,7 @@ levelTWO.onmouseout = () => {
 }
 levelTWO.onclick = () => {
     enemyHpTextValue.innerText = `HULK´S HP:`;
-    game.style.boxShadow = "0 0 120px green inset";
+    game.style.boxShadow = "0 0 70px green inset";
     if (levelONECompleted || levelTWOCompleted) {
         console.log("Level is completed");
     }
@@ -204,7 +204,7 @@ levelTHREE.onmouseout = () => {
 }
 levelTHREE.onclick = () => {
     enemyHpTextValue.innerText = `IRON MAN´S HP:`;
-    game.style.boxShadow = "0 0 120px gold inset";
+    game.style.boxShadow = "0 0 70px gold inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted) {
         console.log("Level is completed");
     }
@@ -289,7 +289,7 @@ levelFOUR.onmouseout = () => {
 }
 levelFOUR.onclick = () => {
     enemyHpTextValue.innerText = `THOR´S HP:`;
-    game.style.boxShadow = "0 0 120px lightblue inset";
+    game.style.boxShadow = "0 0 70px lightblue inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted) {
         console.log("Level is completed");
     }
@@ -374,7 +374,7 @@ levelFIVE.onmouseout = () => {
 }
 levelFIVE.onclick = () => {
     enemyHpTextValue.innerText = `BLACK WIDOW´S HP:`;
-    game.style.boxShadow = "0 0 120px grey inset";
+    game.style.boxShadow = "0 0 70px grey inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted) {
         console.log("Level is completed");
     }
@@ -455,7 +455,7 @@ levelSIX.onmouseout = () => {
 }
 levelSIX.onclick = () => {
     enemyHpTextValue.innerText = `CAPTAIN AMERICA´S HP:`;
-    game.style.boxShadow = "0 0 120px skyblue inset";
+    game.style.boxShadow = "0 0 70px skyblue inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted) {
         console.log("Level is completed");
     }
@@ -538,7 +538,7 @@ levelSEVEN.onmouseout = () => {
 }
 levelSEVEN.onclick = () => {
     enemyHpTextValue.innerText = `DOCTOR STRANGE´S HP:`;
-    game.style.boxShadow = "0 0 120px orange inset";
+    game.style.boxShadow = "0 0 70px orange inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted) {
         console.log("Level is completed");
     }
@@ -621,7 +621,7 @@ levelEIGHT.onmouseout = () => {
 }
 levelEIGHT.onclick = () => {
     enemyHpTextValue.innerText = `VENOM´S HP:`;
-    game.style.boxShadow = "0 0 120px black inset";
+    game.style.boxShadow = "0 0 70px black inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted) {
         console.log("Level is completed");
     }
@@ -704,7 +704,7 @@ levelNINE.onmouseout = () => {
 }
 levelNINE.onclick = () => {
     enemyHpTextValue.innerText = `WOLVERINE´S HP:`;
-    game.style.boxShadow = "0 0 120px yellow inset";
+    game.style.boxShadow = "0 0 70px yellow inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted) {
         console.log("Level is completed");
     }
@@ -787,7 +787,7 @@ levelTEN.onmouseout = () => {
 }
 levelTEN.onclick = () => {
     enemyHpTextValue.innerText = `DEADPOOL´S HP:`;
-    game.style.boxShadow = "0 0 120px darkred inset";
+    game.style.boxShadow = "0 0 70px darkred inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted) {
         console.log("Level is completed");
     }
@@ -871,7 +871,7 @@ levelELEVEN.onmouseout = () => {
 }
 levelELEVEN.onclick = () => {
     enemyHpTextValue.innerText = `BLACK PANTHER´S HP:`;
-    game.style.boxShadow = "0 0 120px purple inset";
+    game.style.boxShadow = "0 0 70px purple inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted) {
         console.log("Level is completed");
     }
@@ -955,7 +955,7 @@ levelTWELVE.onmouseout = () => {
 }
 levelTWELVE.onclick = () => {
     enemyHpTextValue.innerText = `GHOST RIDER´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(255,102,50) inset";
+    game.style.boxShadow = "0 0 70px rgb(255,102,50) inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted) {
         console.log("Level is completed");
     }
@@ -1039,7 +1039,7 @@ levelTHIRTEEN.onmouseout = () => {
 }
 levelTHIRTEEN.onclick = () => {
     enemyHpTextValue.innerText = `LOKI´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(0,255,100) inset";
+    game.style.boxShadow = "0 0 70px rgb(0,255,100) inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1123,7 +1123,7 @@ levelFOURTEEN.onmouseout = () => {
 
 levelFOURTEEN.onclick = () => {
     enemyHpTextValue.innerText = `CAPTAIN MARVEL´S HP:`;
-    game.style.boxShadow = "0 0 120px rgb(200,20,50) inset";
+    game.style.boxShadow = "0 0 70px rgb(200,20,50) inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted) {
         console.log("Level is completed");
     }
@@ -1207,7 +1207,7 @@ levelFIFTEEN.onmouseout = () => {
 
 levelFIFTEEN.onclick = () => {
     enemyHpTextValue.innerText = `THANOS´S HP:`;
-    game.style.boxShadow = "0 0 120px blueviolet inset";
+    game.style.boxShadow = "0 0 70px blueviolet inset";
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted || levelFIFTEENCompleted) {
         console.log("Level is completed");
     }

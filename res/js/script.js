@@ -8,6 +8,7 @@ const audioYouLost = document.getElementById("audioYouLost");
 const lobby = document.getElementById("lobby");
 const loader = document.getElementById("loader");
 const play = document.getElementById("play");
+const skipIntroBtn = document.getElementById("skipIntroBtn");
 const story = document.getElementById("story");
 const author = document.getElementById("author");
 const storyinfo = document.getElementById("storyinfo");
@@ -129,24 +130,901 @@ const multiverseChangingBGColor = () => {
 
 }
 
+let multiverseAppeared = false;
+let roundValueCounter = 1;
 
 multiverse.onmouseover = () => {
+    multiverse.innerHTML = `ROUND ${roundValueCounter}`;
     const multi = setInterval(() => {
         multiverseChangingBGColor();
     }, 400);
     multiverse.onmouseout = () => {
+        multiverse.innerText = "MULTIVERSE";
+        roundValueCounter.style.display = "none";
         clearInterval(multi)
     }
 
 }
-/**
+
 multiverse.onclick = () => {
+    const randomEnemy = Math.floor(Math.random() * 14);
+    roundValueCounter++;
+    //------------------------------------ enemy groot
+    if (randomEnemy == 0) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 170;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText--;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 170;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 170;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 1) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 175;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 2;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 175;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 175;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 2) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 180;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 3;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 180;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 180;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 3) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 185;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 4;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 185;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 185;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 4) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 190;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 5;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 190;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 190;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 5) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 195;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 6;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 195;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 195;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 6) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 200;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 7;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 200;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 200;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 7) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 205;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 8;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 205;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 205;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 8) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 210;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 9;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 210;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 210;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 9) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 215;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 10;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 215;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 215;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 10) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 220;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 11;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 220;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 220;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 11) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 225;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 12;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 225;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 225;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 12) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 230;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 13;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 230;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 230;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 13) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 235;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 14;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 235;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 235;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy groot
+    if (randomEnemy == 14) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/BG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = 240;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 15;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 240;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = 240;
+            }
+
+        }, 1000);
+    }
+
     yourName.style.display = "none";
     shopBtn.style.display = "none";
     infoBtn.style.display = "none";
     planets.style.display = "none";
 
-    enemyHpTextValue.innerText = `ENEMY´S HP:`;
     const nameValue = storyPartInput.value;
     const defaultName = "Draezlyr Wielder";
     if (nameValue == "") {
@@ -154,9 +1032,6 @@ multiverse.onclick = () => {
     } else {
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
-    game.style.boxShadow = "0 0 120px red inset";
-    game.style.backgroundImage = "url(./res/img/spidermanBG.png)";
-    enemy.src = "./res/img/enemy.spiderman.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -166,59 +1041,9 @@ multiverse.onclick = () => {
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
-    enemyHp.innerText = 20;
+
     backBtn.style.display = "none";
     backBtnShop.style.zIndex = "0";
-    const enemyDamage = setInterval(() => {
-        yourHp.innerText--;
-        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
-        audioButtonClick.play();
-        if (yourHp.innerText <= 0) {
-            clearInterval(enemyDamage);
-
-            enemy.style.animation = "none";
-            game.style.display = "none";
-            gameResult.style.display = "block";
-            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-            const nameValue = storyPartInput.value;
-            const defaultName = "Draezlyr Wielder";
-            if (nameValue == "") {
-                gameResult.innerText = `${defaultName} lost`;
-            } else {
-                gameResult.innerText = `${nameValue} lost`;
-            }
-            lossesCounter.innerText++;
-            audioYouLost.src = "./res/audio/youLost.mp3";
-            audioYouLost.play();
-            yourHp.innerText = yourHpValue;
-            backBtn.style.zIndex = "999";
-            enemyHp.innerText = 20;
-        }
-        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
-            clearInterval(enemyDamage);
-
-            enemy.style.animation = "none";
-            game.style.display = "none";
-            gameResult.style.display = "block";
-            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-            const nameValue = storyPartInput.value;
-            const defaultName = "Draezlyr Wielder";
-            if (nameValue == "") {
-                gameResult.innerText = `${defaultName} won`;
-            } else {
-                gameResult.innerText = `${nameValue} won`;
-            }
-            winsCounter.innerText++;
-            audioYouWin.src = "./res/audio/youWin.mp3";
-            audioYouWin.play();
-            yourXPValue += yourXPIncrease;
-            yourXP.innerText = yourXPValue;
-            yourHp.innerText = yourHpValue;
-            backBtn.style.zIndex = "999";
-            enemyHp.innerText = 20;
-        }
-
-    }, 1000);
 
     gameResult.onclick = () => {
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -230,9 +1055,6 @@ multiverse.onclick = () => {
         gameResult.style.display = "none";
     }
 }
-*/
-
-
 
 //------------------------------------ img dragging
 const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, heroIdle, heroAttack];
@@ -363,7 +1185,10 @@ author.onclick = () => {
     audioButtonClick.play();
 }
 
-play.onclick = () => {
+let playClickTime = 7000;
+let nextBtnClickTime = 5000;
+
+function playGame() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClickMulti.src = "./res/audio/loadingtheme.mp3";
     audioButtonClickMulti.play();
@@ -388,11 +1213,22 @@ play.onclick = () => {
         document.body.style.bakcgroundColor = "black";
         audioButtonClickMulti.currentTime = 0;
         storyinfo.style.display = "flex";
-    }, 7000);
+    }, playClickTime);
     if (storyinfo.style.display == "flex") {
         clearTimeout(playInterval)
     }
 
+}
+
+skipIntroBtn.onclick = () => {
+    playClickTime = 7;
+    nextBtnClickTime = 5;
+    playGame();
+    skipIntroBtn.style.display = "none";
+}
+play.onclick = () => {
+    playGame();
+    skipIntroBtn.style.display = "none";
 }
 
 //------------------------------------ brief info and entering your name or not
@@ -415,13 +1251,13 @@ nextBtn.onclick = () => {
             storyPart.innerText = "";
             storyPartInput.style.display = "block";
             sendInputBtn.style.display = "block";
-        }, 5000);
+        }, nextBtnClickTime);
     }
     if (storyPartInput.style.display == "block") {
         clearTimeout(nextBtnInterval)
     }
 }
-sendInputBtn.onclick = () => {
+function sendEnter() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     const nameValue = storyPartInput.value;
@@ -445,22 +1281,30 @@ sendInputBtn.onclick = () => {
     document.body.style.backgroundImage = "none";
     infoBtn.style.display = "block";
 }
+sendInputBtn.onclick = () => {
+    sendEnter();
+}
 
 //------------------------------------ fast refresh page function and secret
 document.addEventListener("keyup", (e) => {
     console.log(e);
     switch (e.key) {
-        case ("Escape"):
+        /*case ("Escape"):
             window.location.reload();
-            break;
-        case ("7", "7", "7", "8"):
+            break;*/
+        case ("7"): //god mode
             heroIdle.src = "./res/img/secret.hero.idle.png";
             heroAttack.src = "./res/img/secret.hero.attack.png";
             yourHp.innerText += 1;
             break;
-        case ("o", "g"):
+        case ("d" || "D"): //black and white default hero color
             heroIdle.src = "./res/img/hero.idle.png";
             heroAttack.src = "./res/img/hero.attack.png";
+            break;
+        case ("Enter"):
+            if (storyPartInput.style.display == "block") {
+                sendEnter();
+            }
             break;
         default:
             console.log("you type something wrong");
@@ -512,34 +1356,34 @@ dcPlanet.onmouseover = () => {
 dcPlanet.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px blue inset";
 }
-dcPlanet.onclick = () => {
-    yourName.style.display = "none";
-    dcPlanetClick = true;
-    console.log("DC PLANET");
-    audioButtonClick.src = "./res/audio/buttonsound.mp3";
-    audioButtonClick.play();
-    levelsText.style.display = "block";
-    levelInfo.style.display = "block";
-    gridOfLevels.style.display = "none";
-    gridOfLevelsDC.style.display = "grid";
-    dcLevelONE.style.display = "block";
-    marvelPlanet.style.display = "none";
-    nameOfPlanet.style.display = "none";
-    dcPlanet.style.display = "none";
-    nameOfPlanetDC.style.display = "none";
-    deesdavPlanet.style.display = "none";
-    nameOfPlanetDeesdav.style.display = "none";
-    document.body.style.backgroundColor = "blue";
-    storyPartInput.style.display = "none";
-    backBtn.style.display = "none";
-    backBtnDC.style.display = "block";
-    shopBtn.style.display = "none";
-    winAndLoss.style.display = "block";
-    infoBtn.style.display = "none";
-
+if (multiverseAppeared == false) {
+    dcPlanet.onclick = () => {
+        yourName.style.display = "none";
+        dcPlanetClick = true;
+        console.log("DC PLANET");
+        audioButtonClick.src = "./res/audio/buttonsound.mp3";
+        audioButtonClick.play();
+        levelsText.style.display = "block";
+        levelInfo.style.display = "block";
+        gridOfLevels.style.display = "none";
+        gridOfLevelsDC.style.display = "grid";
+        dcLevelONE.style.display = "block";
+        marvelPlanet.style.display = "none";
+        nameOfPlanet.style.display = "none";
+        dcPlanet.style.display = "none";
+        nameOfPlanetDC.style.display = "none";
+        deesdavPlanet.style.display = "none";
+        nameOfPlanetDeesdav.style.display = "none";
+        document.body.style.backgroundColor = "blue";
+        storyPartInput.style.display = "none";
+        backBtn.style.display = "none";
+        backBtnDC.style.display = "block";
+        shopBtn.style.display = "none";
+        winAndLoss.style.display = "block";
+        infoBtn.style.display = "none";
+        multiverse.style.display = "none";
+    }
 }
-
-
 
 //------------------------------------ back button to planets
 backBtn.onclick = () => {
@@ -598,9 +1442,10 @@ backBtnDC.onclick = () => {
         nameOfPlanet.style.display = "none";
     }
     if (dcLevelFIFTEENCompleted) {
-        dcPlanet.style.display = "none";
-        nameOfPlanetDC.style.display = "none";
+        multiverseAppeared = true;
         multiverse.style.display = "block";
+        planets.style.gap = "70px";
+        dcPlanet.disable = true;
     }
 }
 //------------------------------------ shop button, shop system, upgrades 
@@ -680,15 +1525,15 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode 
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -699,27 +1544,27 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -729,19 +1574,19 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -751,23 +1596,23 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -777,19 +1622,19 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -799,23 +1644,23 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -825,23 +1670,23 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -851,19 +1696,19 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -883,23 +1728,23 @@ redColor.onclick = () => {
             document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
@@ -927,15 +1772,15 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -946,27 +1791,27 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -976,19 +1821,19 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -998,23 +1843,23 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1025,20 +1870,20 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1049,24 +1894,24 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1076,24 +1921,24 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
 
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1103,21 +1948,21 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
 
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1138,23 +1983,23 @@ greenColor.onclick = () => {
             document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
@@ -1182,15 +2027,15 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1201,27 +2046,27 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1231,20 +2076,20 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1255,23 +2100,23 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1281,20 +2126,20 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1304,23 +2149,23 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1330,24 +2175,24 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1357,19 +2202,19 @@ blueColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1389,23 +2234,23 @@ blueColor.onclick = () => {
             document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
@@ -1433,15 +2278,15 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1452,27 +2297,27 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1482,20 +2327,20 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1505,23 +2350,23 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1531,21 +2376,21 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
 
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1555,24 +2400,24 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1582,24 +2427,24 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1609,20 +2454,20 @@ yellowColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
 
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("o", "g"):
+                case ("d" || "D"): //black and white default hero color
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1642,23 +2487,23 @@ yellowColor.onclick = () => {
             document.addEventListener("keyup", (e) => {
             console.log(e);
             switch (e.key) {
-                case ("7", "7", "7", "8"):
+                case ("7"): //god mode
                     heroIdle.src = "./res/img/secret.hero.idle.png";
                     heroAttack.src = "./res/img/secret.hero.attack.png";
                     break;
-                case ("r", "e", "d"):
+                case ("r" || "R"): //red hero color
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g", "r", "e", "e", "n"):
+                case ("g" || "G"): //green hero color
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b", "l", "u", "e"):
+                case ("b" || "B"): //blue hero color
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y", "e", "l", "l", "o", "w"):
+                case ("y" || "Y"): //yellow hero color
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
@@ -2050,7 +2895,11 @@ gameResult.onclick = () => {
         dcLevelFIFTEEN.style.display = "block";
     }
     if (dcLevelFIFTEENCompleted) {
-        multiverse.style.display = "block";
+        multiverseAppeared = true;
+        multiverse.style.display = "none";
+        lossesCounter.innerText = 0;
+        winsCounter.innerText = 0;
+
     }
 
     console.log("funguje");
