@@ -1087,9 +1087,9 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 
 //------------------------------------ dynamic title
 const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
-    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse];
+    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
-    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY"];
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY","SKIP INTRO"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
