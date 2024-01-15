@@ -1724,33 +1724,6 @@ redColor.onclick = () => {
         redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true y
         redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true y
      */
-    /*
-            document.addEventListener("keyup", (e) => {
-            console.log(e);
-            switch (e.key) {
-                case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
-                    break;
-                case ("r" || "R"): //red hero color
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
-                    break;
-                case ("g" || "G"): //green hero color
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
-                    break;
-                case ("b" || "B"): //blue hero color
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
-                    break;
-                case ("y" || "Y"): //yellow hero color
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
-                    break;
-            }
-        });
-        */
 }
 let greenColorValue = 7;
 greenColor.onclick = () => {
@@ -1970,42 +1943,6 @@ greenColor.onclick = () => {
 
         });
     }
-    /*
-    redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true y
-    redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false y 
-    redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false y
-    redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false y
-    redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true y
-    redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true y
-    redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true y
- */
-    /*
-            document.addEventListener("keyup", (e) => {
-            console.log(e);
-            switch (e.key) {
-                case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
-                    break;
-                case ("r" || "R"): //red hero color
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
-                    break;
-                case ("g" || "G"): //green hero color
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
-                    break;
-                case ("b" || "B"): //blue hero color
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
-                    break;
-                case ("y" || "Y"): //yellow hero color
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
-                    break;
-            }
-        });
-        */
 }
 let blueColorValue = 10;
 blueColor.onclick = () => {
@@ -2221,42 +2158,7 @@ blueColor.onclick = () => {
             }
         });
     }
-    /*
-       redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true y
-       redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false y
-       redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false y
-       redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false y
-       redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true y
-       redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true y
-       redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true y
-    */
-    /*
-            document.addEventListener("keyup", (e) => {
-            console.log(e);
-            switch (e.key) {
-                case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
-                    break;
-                case ("r" || "R"): //red hero color
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
-                    break;
-                case ("g" || "G"): //green hero color
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
-                    break;
-                case ("b" || "B"): //blue hero color
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
-                    break;
-                case ("y" || "Y"): //yellow hero color
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
-                    break;
-            }
-        });
-        */
+
 }
 let yellowColorValue = 12;
 yellowColor.onclick = () => {
@@ -2474,42 +2376,6 @@ yellowColor.onclick = () => {
             }
         });
     }
-    /*
-        redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true y
-        redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true y
-        redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true y
-        redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true y
-        redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true y
-        redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true y
-        redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true 
-     */
-    /*
-            document.addEventListener("keyup", (e) => {
-            console.log(e);
-            switch (e.key) {
-                case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
-                    break;
-                case ("r" || "R"): //red hero color
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
-                    break;
-                case ("g" || "G"): //green hero color
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
-                    break;
-                case ("b" || "B"): //blue hero color
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
-                    break;
-                case ("y" || "Y"): //yellow hero color
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
-                    break;
-            }
-        });
-        */
 }
 //------------------------------------ cost of colors mouse over
 redColor.onmouseover = () => {
@@ -2817,8 +2683,6 @@ gameResult.onclick = () => {
             dot.style.top = randomPositionY + "px";
             dot.style.left = randomPositionX + "px";
 
-            //console.log(randomPositionX);
-            //console.log(randomPositionY);
         }, 666);
 
 
@@ -2902,7 +2766,6 @@ gameResult.onclick = () => {
 
     }
 
-    console.log("funguje");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
