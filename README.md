@@ -6,5 +6,6 @@ about last update and what is added:
  - multiverse play is available
  - skip intro is here
  - typing color fixed
+ - scaled dot
 
 
