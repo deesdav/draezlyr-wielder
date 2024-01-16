@@ -1089,7 +1089,7 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
     backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
-    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY","SKIP INTRO"];
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -1155,6 +1155,8 @@ headline.onmouseover = () => {
     document.body.style.color = "red";
     headline.style.transform = "scale(1.9)";
     headline.style.paddingTop = "50px";
+    realtimepresented.style.display = "none";
+    skipIntroBtn.style.display = "none";
 }
 headline.onmouseout = () => {
     audioLobbyBackground.pause();
@@ -1163,6 +1165,8 @@ headline.onmouseout = () => {
     document.body.style.color = "black";
     headline.style.transform = "none";
     headline.style.paddingTop = "0px";
+    realtimepresented.style.display = "block";
+    skipIntroBtn.style.display = "block";
 }
 //------------------------------------ lobby buttons
 
@@ -1285,7 +1289,7 @@ sendInputBtn.onclick = () => {
     sendEnter();
 }
 
-//------------------------------------ fast refresh page function and secret
+//------------------------------------ fast refresh page function, secret color, Enter function and F11 function
 document.addEventListener("keyup", (e) => {
     console.log(e);
     switch (e.key) {
@@ -1295,13 +1299,23 @@ document.addEventListener("keyup", (e) => {
         case ("7"): //god mode
             heroIdle.src = "./res/img/secret.hero.idle.png";
             heroAttack.src = "./res/img/secret.hero.attack.png";
-            yourHp.innerText += 1;
+            yourHp.innerText += 0;
+            const hpNums = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+            for (let i = 0; i < hpNums.length; i++) {
+                if (yourHp.innerText == `${hpNums[i]}00` || yourHp.innerText == `${hpNums[i]}000` || yourHp.innerText == `${hpNums[i]}0000` || yourHp.innerText == `${hpNums[i]}00000` || yourHp.innerText == `${hpNums[i]}000000` || yourHp.innerText == `${hpNums[i]}0000000`) {
+                    yourHp.innerText = yourHpValue;
+                }
+            }
+
+            if (yourHp.innerText == `${yourHpValue}00` || yourHp.innerText == `${yourHpValue}000` || yourHp.innerText == `${yourHpValue}0000` || yourHp.innerText == `${yourHpValue}00000` || yourHp.innerText == `${yourHpValue}000000` || yourHp.innerText == `${yourHpValue}0000000`) {
+                yourHp.innerText = yourHpValue;
+            }
             break;
         case ("d" || "D"): //black and white default hero color
             heroIdle.src = "./res/img/hero.idle.png";
             heroAttack.src = "./res/img/hero.attack.png";
             break;
-        case ("Enter"):
+        case ("Enter"): //Enter function
             if (storyPartInput.style.display == "block") {
                 sendEnter();
             }
@@ -1311,6 +1325,23 @@ document.addEventListener("keyup", (e) => {
             break;
     }
 });
+
+document.addEventListener('keyup', function (e) {
+    if (e.key === 'F11') {
+        // Handle f key press
+        checkFullscreen();
+    }
+});
+
+function checkFullscreen() {
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+        // Document is in fullscreen mode
+        console.log('Fullscreen activated');
+    } else {
+        // Document is not in fullscreen mode
+        console.log('Not in fullscreen mode');
+    }
+}
 
 let marvelPlanetClick = false;
 let dcPlanetClick = false;

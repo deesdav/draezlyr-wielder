@@ -7,5 +7,7 @@ about last update and what is added:
  - skip intro is here
  - typing color fixed
  - scaled dot
+ - fixing bugs
+ - nerf of god mode
 
 

@@ -30,7 +30,7 @@ body {
     align-items: center;
     height: auto;
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     top: 170px;
 
@@ -905,10 +905,7 @@ body {
     cursor: pointer;
     color: white;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
+    font-size: 45px;
     font-weight: bold;
     display: block;
 }
