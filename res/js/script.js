@@ -2723,6 +2723,13 @@ gameResult.onclick = () => {
             dot.innerText++;
             yourXPValue += dotXP;
             yourXP.innerText = yourXPValue;
+            if (yourXP.innerText >= 150) {
+                deesdavDimension.style.backgroundImage = "none";
+                deesdavDimension.style.color = "white";
+                deesdavDimension.style.backgroundColor = "black";
+                dot.style.display = "none";
+                deesdavDimension.innerText += `NOW YOU WAIT`;
+            }
         }
         dot.onmouseover = () => {
             dot.style.backgroundColor = "white";
@@ -2736,6 +2743,7 @@ gameResult.onclick = () => {
             dot.style.color = "white";
             audioLobbyBackground.src = "";
             audioLobbyBackground.pause();
+            audioLobbyBackground.currentTime = 0;
             document.body.style.boxShadow = "0 0 0px white inset";
         }
     }

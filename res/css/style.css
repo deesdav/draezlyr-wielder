@@ -868,6 +868,9 @@ body {
 }
 
 #deesdavDimension {
+    font-size: 135px;
+    padding: 1em;
+    text-align: center;
     display: none;
     margin: 0 auto;
     height: 666px;

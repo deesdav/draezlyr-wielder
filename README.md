@@ -9,5 +9,6 @@ about last update and what is added:
  - scaled dot
  - fixing bugs
  - nerf of god mode
+ - deesdav dimension updated
 
 
