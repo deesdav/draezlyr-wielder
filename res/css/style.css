@@ -877,7 +877,7 @@ body {
     width: 666px;
     background-image: url(../img/deesdav.dimension.png);
     animation: boxShadow 1s alternate linear infinite;
-    border-radius: 1em;
+    border-radius: 15px;
     position: relative;
     top: 20px;
     padding: 1em;

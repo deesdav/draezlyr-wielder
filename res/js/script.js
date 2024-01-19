@@ -2709,8 +2709,8 @@ gameResult.onclick = () => {
 
         }
         setInterval(() => {
-            const randomPositionX = Math.floor(Math.random() * 600);
-            const randomPositionY = Math.floor(Math.random() * 600);
+            const randomPositionX = Math.floor(Math.random() * 450);
+            const randomPositionY = Math.floor(Math.random() * 450);
             dot.style.top = randomPositionY + "px";
             dot.style.left = randomPositionX + "px";
 
