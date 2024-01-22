@@ -3,12 +3,6 @@
 ## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
 about last update and what is added:
- - multiverse play is available
- - skip intro is here
- - typing color fixed
- - scaled dot
- - fixing bugs
- - nerf of god mode
- - deesdav dimension updated
+ - image updates in multiverse and dc planet
 
 
