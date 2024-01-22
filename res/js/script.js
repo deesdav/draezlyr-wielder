@@ -1,10 +1,3 @@
-//------------------------------------ audios
-const audioButtonClick = document.getElementById("audioButtonClick");
-const audioButtonClickMulti = document.getElementById("audioButtonClickMulti");
-const audioLobbyBackground = document.getElementById("audioLobbyBackground");
-const audioYouWin = document.getElementById("audioYouWin");
-const audioYouLost = document.getElementById("audioYouLost");
-
 const lobby = document.getElementById("lobby");
 const loader = document.getElementById("loader");
 const play = document.getElementById("play");
@@ -110,6 +103,55 @@ const dot = document.getElementById("dot");
 const deesdavDimension = document.getElementById("deesdavDimension");
 const countDownText = document.getElementById("countDownText");
 const countDown = document.getElementById("countDown");
+
+const dcID = document.getElementById("dc-id");
+const marvelID = document.getElementById("marvel-id");
+const deesdavID = document.getElementById("deesdav-id");
+
+//------------------------------------ audios
+const audioButtonClick = document.getElementById("audioButtonClick");
+const audioButtonClickMulti = document.getElementById("audioButtonClickMulti");
+const audioLobbyBackground = document.getElementById("audioLobbyBackground");
+const audioYouWin = document.getElementById("audioYouWin");
+const audioYouLost = document.getElementById("audioYouLost");
+
+const muteAudio = document.getElementById("muteAudio");
+
+muteAudio.onclick = () => {
+    if (muteAudio.innerText == "MUTE AUDIO") {
+        toggleMute();
+        muteAudio.innerText = "UNMUTE AUDIO";
+    } else if (muteAudio.innerText == "UNMUTE AUDIO") {
+        toggleUnMute();
+        muteAudio.innerText = "MUTE AUDIO";
+    }
+}
+
+//------------------------------------ mute audio
+function toggleMute() {
+    if (audioButtonClick.muted || audioButtonClickMulti.muted || audioLobbyBackground.muted || audioYouWin.muted || audioYouLost.muted) {
+        audioButtonClick.muted = false;
+        audioButtonClickMulti.muted = false;
+        audioLobbyBackground.muted = false;
+        audioYouWin.muted = false;
+        audioYouLost.muted = false;
+    } else {
+        audioButtonClick.muted = true;
+        audioButtonClickMulti.muted = true;
+        audioLobbyBackground.muted = true;
+        audioYouWin.muted = true;
+        audioYouLost.muted = true;
+    }
+}
+
+function toggleUnMute() {
+    audioButtonClick.muted = !audioButtonClick.muted;
+    audioButtonClickMulti.muted = !audioButtonClickMulti.muted;
+    audioLobbyBackground.muted = !audioLobbyBackground.muted;
+    audioYouWin.muted = !audioYouWin.muted;
+    audioYouLost.muted = !audioYouLost.muted;
+}
+
 
 const multiverse = document.getElementById("multiverse");
 
@@ -1067,7 +1109,7 @@ for (let i = 0; i < elements.length; i++) {
 }
 
 //------------------------------------ btns onmouseover and onmouseout
-const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC];
+const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio];
 
 for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
     btnsOnMouseOverAndOut[i].onmouseover = () => {
@@ -1088,9 +1130,9 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 
 //------------------------------------ dynamic title
 const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
-    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn];
+    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
-    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO"];
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -1158,6 +1200,7 @@ headline.onmouseover = () => {
     headline.style.paddingTop = "50px";
     realtimepresented.style.display = "none";
     skipIntroBtn.style.display = "none";
+    muteAudio.style.display = "none";
 }
 headline.onmouseout = () => {
     audioLobbyBackground.pause();
@@ -1168,6 +1211,7 @@ headline.onmouseout = () => {
     headline.style.paddingTop = "0px";
     realtimepresented.style.display = "block";
     skipIntroBtn.style.display = "block";
+    muteAudio.style.display = "block";
 }
 //------------------------------------ lobby buttons
 
@@ -1208,6 +1252,7 @@ function playGame() {
     loader.style.display = "block";
     sendInputBtn.style.display = "none";
     realtimepresented.style.display = "none";
+    muteAudio.style.display = "none";
 
     planets.style.top = "250px";
     const playInterval = setTimeout(() => {
@@ -1285,6 +1330,7 @@ function sendEnter() {
     winAndLoss.style.display = "block";
     document.body.style.backgroundImage = "none";
     infoBtn.style.display = "block";
+    muteAudio.style.display = "block";
 }
 sendInputBtn.onclick = () => {
     sendEnter();
@@ -1327,22 +1373,6 @@ document.addEventListener("keyup", (e) => {
     }
 });
 
-document.addEventListener('keyup', function (e) {
-    if (e.key === 'F11') {
-        // Handle f key press
-        checkFullscreen();
-    }
-});
-
-function checkFullscreen() {
-    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-        // Document is in fullscreen mode
-        console.log('Fullscreen activated');
-    } else {
-        // Document is not in fullscreen mode
-        console.log('Not in fullscreen mode');
-    }
-}
 
 let marvelPlanetClick = false;
 let dcPlanetClick = false;

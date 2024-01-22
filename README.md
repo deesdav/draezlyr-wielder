@@ -4,5 +4,6 @@
 
 about last update and what is added:
  - image updates in multiverse and dc planet
+ - mute audio is here
 
 

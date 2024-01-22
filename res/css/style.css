@@ -33,6 +33,7 @@ body {
     margin: 0 auto;
     position: relative;
     top: 170px;
+    
 
 }
 
@@ -485,16 +486,17 @@ body {
     background-position: bottom;
     background-size: 100%;
     background-color: white;
-    position: relative;
+    position: absolute;
     border-radius: 10px;
-    top: 40px;
     text-transform: uppercase;
     display: none;
-    margin: 0 auto;
+    margin: auto;
     width: 1111px;
     height: 666px;
     border: 0.3em solid #333;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #heroIdle {
@@ -568,13 +570,15 @@ body {
     color: white;
     font-size: xxx-large;
     display: none;
-    position: relative;
-    top: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin: 0 auto;
     text-transform: uppercase;
     cursor: pointer;
 }
+
 
 @keyframes enemyMoving {
 
@@ -992,4 +996,23 @@ tr:nth-child(6) td:nth-child(2) {
 tr:nth-child(7) td:nth-child(2) {
     background-color: rgb(255, 0, 255);
     color: black;
+}
+
+#muteAudio {
+    text-transform: uppercase;
+    cursor: pointer;
+    position: fixed;
+    top: 12%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 1em;
+    background-color: transparent;
+    color: white;
+    display: block;
+    font-size: large;
+    height: min-content;
+    width: fit-content;
+    display: block;
 }
