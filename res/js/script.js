@@ -2623,7 +2623,7 @@ enemy.onmousedown = () => {
     }
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
-        enemy.style.animation = "enemyMoving 2s infinite";
+        enemy.style.animation = "enemyMoving 1.2s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
     }
@@ -2648,7 +2648,7 @@ enemy.onmouseup = () => {
     }
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
-        enemy.style.animation = "enemyMoving 2s infinite";
+        enemy.style.animation = "enemyMoving 1.2s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
     }
