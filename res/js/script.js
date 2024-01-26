@@ -2603,6 +2603,12 @@ yourName.onmouseout = () => {
 //------------------------------------ enemy system
 enemy.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
+    if (gameResult.style.display == "block") {
+        enemyHp.style.color = "red";
+        enemy.style.animation = "enemyMoving 1s infinite";
+        enemy.style.borderBottom = "none";
+        enemy.style.borderRadius = "none";
+    }
 }
 enemy.onmousedown = () => {
     document.body.style.boxShadow = "0 0 77px red inset";
@@ -2625,16 +2631,15 @@ enemy.onmousedown = () => {
         enemy.style.animation = "enemyMoving 0.5s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
-    } else {
-        enemyHp.style.color = "red";
-        enemy.style.animation = "enemyMoving 1s infinite";
-        enemy.style.borderBottom = "none";
-        enemy.style.borderRadius = "none";
     }
 }
 
 
 enemy.onmouseup = () => {
+    enemyHp.style.color = "red";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    enemy.style.borderBottom = "none";
+    enemy.style.borderRadius = "none";
     document.body.style.boxShadow = "0 0 0px red inset";
     heroAttack.style.display = "none";
     heroIdle.style.display = "block";
@@ -2651,11 +2656,6 @@ enemy.onmouseup = () => {
         enemy.style.animation = "enemyMoving 0.5s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
-    } else {
-        enemyHp.style.color = "red";
-        enemy.style.animation = "enemyMoving 1s infinite";
-        enemy.style.borderBottom = "none";
-        enemy.style.borderRadius = "none";
     }
 }
 
