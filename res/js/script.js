@@ -1191,7 +1191,9 @@ infoBox.onclick = () => {
     infoBox.style.display = "none";
 }
 
+
 headline.onmouseover = () => {
+    canvas.style.display = "block";
     audioLobbyBackground.src = "./res/audio/lobbymusic.mp3";
     audioLobbyBackground.play();
     document.body.style.backgroundImage = "none";
@@ -1203,6 +1205,7 @@ headline.onmouseover = () => {
     muteAudio.style.display = "none";
 }
 headline.onmouseout = () => {
+    canvas.style.display = "none";
     audioLobbyBackground.pause();
     audioLobbyBackground.currentTime = 0;
     document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
@@ -1213,6 +1216,7 @@ headline.onmouseout = () => {
     skipIntroBtn.style.display = "block";
     muteAudio.style.display = "block";
 }
+
 //------------------------------------ lobby buttons
 
 story.onclick = () => {
@@ -1385,7 +1389,7 @@ marvelPlanet.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
 }
 marvelPlanet.onclick = () => {
-    yourName.style.display = "none";
+    yourName.style.display = "block";
     marvelPlanetClick = true;
     console.log("MARVEL PLANET");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1420,7 +1424,7 @@ dcPlanet.onmouseout = () => {
 }
 if (multiverseAppeared == false) {
     dcPlanet.onclick = () => {
-        yourName.style.display = "none";
+        yourName.style.display = "block";
         dcPlanetClick = true;
         console.log("DC PLANET");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -2567,6 +2571,35 @@ yourXP.style.fontWeight = "bold";
 yourHp.style.color = "rgb(0, 255, 0)";
 enemyHp.style.color = "rgb(255, 0, 0)";
 
+
+//------------------------------------ hero audio
+heroAttack.onmouseover = () => {
+    audioLobbyBackground.src = "./res/audio/bomb.mp3";
+    audioLobbyBackground.play();
+}
+heroIdle.onmouseover = () => {
+    audioLobbyBackground.src = "./res/audio/bomb.mp3";
+    audioLobbyBackground.play();
+}
+heroAttack.onmouseout = () => {
+    audioLobbyBackground.pause();
+    audioLobbyBackground.currentTime = 0;
+}
+heroIdle.onmouseout = () => {
+    audioLobbyBackground.pause();
+    audioLobbyBackground.currentTime = 0;
+}
+yourName.onmouseover = () => {
+    yourName.style.left = "35%";
+    audioLobbyBackground.src = "./res/audio/bomb.mp3";
+    audioLobbyBackground.play();
+}
+yourName.onmouseout = () => {
+    yourName.style.left = "15px";
+    audioLobbyBackground.pause();
+    audioLobbyBackground.currentTime = 0;
+}
+
 //------------------------------------ enemy system
 enemy.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
@@ -2585,9 +2618,22 @@ enemy.onmousedown = () => {
         audioButtonClick.currentTime = 0;
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
-    }
 
+    }
+    if (enemyHp.innerText <= 15) {
+        enemyHp.style.color = "pink";
+        enemy.style.animation = "enemyMoving 0.5s infinite";
+        enemy.style.borderBottom = "5px solid red";
+        enemy.style.borderRadius = "1em";
+    } else {
+        enemyHp.style.color = "red";
+        enemy.style.animation = "enemyMoving 1s infinite";
+        enemy.style.borderBottom = "none";
+        enemy.style.borderRadius = "none";
+    }
 }
+
+
 enemy.onmouseup = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
     heroAttack.style.display = "none";
@@ -2599,6 +2645,17 @@ enemy.onmouseup = () => {
         audioButtonClick.currentTime = 0;
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
+    }
+    if (enemyHp.innerText <= 15) {
+        enemyHp.style.color = "pink";
+        enemy.style.animation = "enemyMoving 0.5s infinite";
+        enemy.style.borderBottom = "5px solid red";
+        enemy.style.borderRadius = "1em";
+    } else {
+        enemyHp.style.color = "red";
+        enemy.style.animation = "enemyMoving 1s infinite";
+        enemy.style.borderBottom = "none";
+        enemy.style.borderRadius = "none";
     }
 }
 
@@ -2844,3 +2901,63 @@ gameResult.onclick = () => {
     gameResult.style.display = "none";
 
 }
+
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+
+class Square {
+    constructor(x, y, sideLength, dx, dy) {
+        this.x = x;
+        this.y = y;
+        this.sideLength = sideLength;
+        this.dx = dx;
+        this.dy = dy;
+
+        this.draw = function () {
+            ctx.beginPath();
+            ctx.rect(this.x - this.sideLength / 2, this.y - this.sideLength / 2, this.sideLength, this.sideLength);
+            ctx.fillStyle = 'black';
+            ctx.fill();
+            ctx.closePath();
+        };
+
+        this.update = function () {
+            if (this.x + this.sideLength / 2 > canvas.width || this.x - this.sideLength / 2 < 0) {
+                this.dx = -this.dx;
+            }
+
+            if (this.y + this.sideLength / 2 > canvas.height || this.y - this.sideLength / 2 < 0) {
+                this.dy = -this.dy;
+            }
+
+            this.x += this.dx;
+            this.y += this.dy;
+        };
+    }
+}
+
+const squares = [];
+
+for (let i = 0; i < 77; i++) {
+    const sideLength = 40;
+    const x = Math.random() * (canvas.width - sideLength) + sideLength / 2;
+    const y = Math.random() * (canvas.height - sideLength) + sideLength / 2;
+    const dx = (Math.random() - 0.5) * 2;
+    const dy = (Math.random() - 0.5) * 2;
+
+    squares[i] = new Square(x, y, sideLength, dx, dy);
+}
+
+
+function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].draw();
+        squares[i].update();
+    }
+}
+
+animate();
