@@ -388,7 +388,7 @@ dcLevelFIVE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/supermanBG.png)";
+    game.style.backgroundImage = "url(./res/img/batmanBG.png)";
     enemy.src = "./res/img/enemy.superman.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";

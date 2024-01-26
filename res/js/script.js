@@ -1347,21 +1347,16 @@ document.addEventListener("keyup", (e) => {
         /*case ("Escape"):
             window.location.reload();
             break;*/
-        case ("7"): //god mode
+        case "7": //god mode
             heroIdle.src = "./res/img/secret.hero.idle.png";
             heroAttack.src = "./res/img/secret.hero.attack.png";
             yourHp.innerText += 0;
-            const hpNums = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-            for (let i = 0; i < hpNums.length; i++) {
-                if (yourHp.innerText == `${hpNums[i]}00` || yourHp.innerText == `${hpNums[i]}000` || yourHp.innerText == `${hpNums[i]}0000` || yourHp.innerText == `${hpNums[i]}00000` || yourHp.innerText == `${hpNums[i]}000000` || yourHp.innerText == `${hpNums[i]}0000000`) {
-                    yourHp.innerText = yourHpValue;
-                }
-            }
-
-            if (yourHp.innerText == `${yourHpValue}00` || yourHp.innerText == `${yourHpValue}000` || yourHp.innerText == `${yourHpValue}0000` || yourHp.innerText == `${yourHpValue}00000` || yourHp.innerText == `${yourHpValue}000000` || yourHp.innerText == `${yourHpValue}0000000`) {
+            // Revert to normal state
+            setTimeout(() => {
                 yourHp.innerText = yourHpValue;
-            }
+            }, 5000);
             break;
+
         case ("d" || "D"): //black and white default hero color
             heroIdle.src = "./res/img/hero.idle.png";
             heroAttack.src = "./res/img/hero.attack.png";
@@ -2628,7 +2623,7 @@ enemy.onmousedown = () => {
     }
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
-        enemy.style.animation = "enemyMoving 0.5s infinite";
+        enemy.style.animation = "enemyMoving 2s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
     }
@@ -2653,7 +2648,7 @@ enemy.onmouseup = () => {
     }
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
-        enemy.style.animation = "enemyMoving 0.5s infinite";
+        enemy.style.animation = "enemyMoving 2s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
     }
