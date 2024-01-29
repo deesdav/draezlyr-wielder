@@ -5,6 +5,6 @@
 about last update and what is added:
  - new effects
  - functional nerf of god mode
- 
+ - first 4 marvel levels are updated 
 
 

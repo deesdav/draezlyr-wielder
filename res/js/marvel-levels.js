@@ -39,8 +39,8 @@ levelONE.onclick = () => {
     if (levelONECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/spidermanBG.png)";
-    enemy.src = "./res/img/enemy.spiderman.png";
+    game.style.backgroundImage = "url(./res/img/spidermanBG.gif)";
+    enemy.src = "./res/img/enemy.spiderman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -123,8 +123,8 @@ levelTWO.onclick = () => {
     if (levelONECompleted || levelTWOCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/hulkBG.png)";
-    enemy.src = "./res/img/enemy.hulk.png";
+    game.style.backgroundImage = "url(./res/img/hulkBG.gif)";
+    enemy.src = "./res/img/enemy.hulk.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -208,8 +208,8 @@ levelTHREE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/ironmanBG.png)";
-    enemy.src = "./res/img/enemy.ironman.png";
+    game.style.backgroundImage = "url(./res/img/ironmanBG.gif)";
+    enemy.src = "./res/img/enemy.ironman.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -293,8 +293,8 @@ levelFOUR.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/thorBG.png)";
-    enemy.src = "./res/img/enemy.thor.png";
+    game.style.backgroundImage = "url(./res/img/thorBG.gif)";
+    enemy.src = "./res/img/enemy.thor.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";

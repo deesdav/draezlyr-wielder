@@ -2627,6 +2627,16 @@ enemy.onmousedown = () => {
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
     }
+    //------------------------------------ gif enemy effects
+    const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR"]
+    const damagedEffectEnemies = ["spiderman", "hulk", "ironman", "thor"]
+    for (let i = 0; i < enemyTextValue.length; i++) {
+        for (let j = 0; j < damagedEffectEnemies.length; j++) {
+            if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText == `${enemyTextValue[i]}´S HP:`) {
+                enemy.src = `./res/img/damaged.${damagedEffectEnemies[i]}.gif`;
+            }
+        }
+    }
 }
 
 
@@ -2651,6 +2661,16 @@ enemy.onmouseup = () => {
         enemy.style.animation = "enemyMoving 1.2s infinite";
         enemy.style.borderBottom = "5px solid red";
         enemy.style.borderRadius = "1em";
+    }
+    //------------------------------------ gif enemy effects
+    const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR"]
+    const damagedEffectEnemies = ["spiderman", "hulk", "ironman", "thor"]
+    for (let i = 0; i < enemyTextValue.length; i++) {
+        for (let j = 0; j < damagedEffectEnemies.length; j++) {
+            if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText == `${enemyTextValue[i]}´S HP:`) {
+                enemy.src = `./res/img/damaged.${damagedEffectEnemies[i]}.gif`;
+            }
+        }
     }
 }
 
