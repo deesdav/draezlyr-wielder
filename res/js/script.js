@@ -3246,7 +3246,6 @@ for (let i = 0; i < killedEnemies.length; i++) {
         infoOfKilledEnemyLocation.innerText = `${locations[i]}`;
         viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.gif`;
         viewPhoto.style.display = "block";
-
     }
     killedEnemiesId.onmouseout = () => {
         infoOfKilledEnemyName.innerText = 0;
