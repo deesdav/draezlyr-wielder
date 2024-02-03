@@ -1,4 +1,4 @@
-# Draezlyr Wielder Game
+# Draezlyr Wielder
 
 ## [Play Draezlyr Wielder](https://deesdav.github.io/draezlyr-wielder/)
 
