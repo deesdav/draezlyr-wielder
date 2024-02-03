@@ -487,7 +487,7 @@ dcLevelSIX.onclick = () => {
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
     yourHp.innerText = yourHpValue;
-    enemyHp.innerText = 110;
+    enemyHp.innerText = 120;
     backBtn.style.display = "none";
     backBtnDC.style.display = "none";
     backBtnShop.style.zIndex = "0";
@@ -1270,7 +1270,7 @@ dcLevelFIFTEEN.onclick = () => {
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
     yourHp.innerText = yourHpValue;
-    enemyHp.innerText = 110;
+    enemyHp.innerText = 165;
     backBtn.style.display = "none";
     backBtnDC.style.display = "none";
     backBtnShop.style.zIndex = "0";

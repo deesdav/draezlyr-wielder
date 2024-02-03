@@ -378,8 +378,8 @@ levelFIVE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/blackwidowBG.png)";
-    enemy.src = "./res/img/enemy.blackwidow.png";
+    game.style.backgroundImage = "url(./res/img/blackwidowBG.gif)";
+    enemy.src = "./res/img/enemy.blackwidow.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -459,8 +459,8 @@ levelSIX.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/captainamericaBG.png)";
-    enemy.src = "./res/img/enemy.captainamerica.png";
+    game.style.backgroundImage = "url(./res/img/captainamericaBG.gif)";
+    enemy.src = "./res/img/enemy.captainamerica.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -542,8 +542,8 @@ levelSEVEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/doctorstrangeBG.png)";
-    enemy.src = "./res/img/enemy.doctorstrange.png";
+    game.style.backgroundImage = "url(./res/img/doctorstrangeBG.gif)";
+    enemy.src = "./res/img/enemy.doctorstrange.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -625,8 +625,8 @@ levelEIGHT.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/venomBG.png)";
-    enemy.src = "./res/img/enemy.venom.png";
+    game.style.backgroundImage = "url(./res/img/venomBG.gif)";
+    enemy.src = "./res/img/enemy.venom.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -708,8 +708,8 @@ levelNINE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/wolverineBG.png)";
-    enemy.src = "./res/img/enemy.wolverine.png";
+    game.style.backgroundImage = "url(./res/img/wolverineBG.gif)";
+    enemy.src = "./res/img/enemy.wolverine.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -791,8 +791,8 @@ levelTEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/deadpoolBG.png)";
-    enemy.src = "./res/img/enemy.deadpool.png";
+    game.style.backgroundImage = "url(./res/img/deadpoolBG.gif)";
+    enemy.src = "./res/img/enemy.deadpool.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -875,8 +875,8 @@ levelELEVEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/blackpantherBG.png)";
-    enemy.src = "./res/img/enemy.blackpanther.png";
+    game.style.backgroundImage = "url(./res/img/blackpantherBG.gif)";
+    enemy.src = "./res/img/enemy.blackpanther.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -959,8 +959,8 @@ levelTWELVE.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/ghostriderBG.png)";
-    enemy.src = "./res/img/enemy.ghostrider.png";
+    game.style.backgroundImage = "url(./res/img/ghostriderBG.gif)";
+    enemy.src = "./res/img/enemy.ghostrider.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -1043,8 +1043,8 @@ levelTHIRTEEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/lokiBG.png)";
-    enemy.src = "./res/img/enemy.loki.png";
+    game.style.backgroundImage = "url(./res/img/lokiBG.gif)";
+    enemy.src = "./res/img/enemy.loki.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -1127,8 +1127,8 @@ levelFOURTEEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/captainmarvelBG.png)";
-    enemy.src = "./res/img/enemy.captainmarvel.png";
+    game.style.backgroundImage = "url(./res/img/captainmarvelBG.gif)";
+    enemy.src = "./res/img/enemy.captainmarvel.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
@@ -1211,8 +1211,8 @@ levelFIFTEEN.onclick = () => {
     if (levelONECompleted || levelTWOCompleted || levelTHREECompleted || levelFOURCompleted || levelFIVECompleted || levelSIXCompleted || levelSEVENCompleted || levelEIGHTCompleted || levelNINECompleted || levelTENCompleted || levelELEVENCompleted || levelTWELVECompleted || levelTHIRTEENCompleted || levelFOURTEENCompleted || levelFIFTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/thanosBG.png)";
-    enemy.src = "./res/img/enemy.thanos.png";
+    game.style.backgroundImage = "url(./res/img/thanosBG.gif)";
+    enemy.src = "./res/img/enemy.thanos.gif";
     enemy.style.animation = "enemyMoving 1s infinite";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";

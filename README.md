@@ -1,10 +1,15 @@
-# [Play](https://deesdav.github.io/draezlyr-wielder/)
+# Draezlyr Wielder Game
 
-## [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
+## [Play Draezlyr Wielder](https://deesdav.github.io/draezlyr-wielder/)
 
-about last update and what is added:
- - new effects
- - functional nerf of god mode
- - first 4 marvel levels are updated 
+### Draezlyr Sword Massacre Edition
 
+#### [Play Draezlyr Sword Massacre](https://deesdav.github.io/draezlyr/)
 
+**Latest Update Highlights:**
+
+- New Effects
+- God Mode Functional Nerf
+- Marvel Level Edits
+- New Collection
+- New Choose Sound

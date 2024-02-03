@@ -60,7 +60,11 @@ body {
 
 #headline {
     font-size: 100px;
-    text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.631);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    color: black;
+    text-shadow: 3px 3px 3px rgb(255, 255, 255);
     z-index: 999;
 }
 
@@ -665,27 +669,101 @@ body {
 }
 
 #infoBox {
-    padding: 10px;
-    position: absolute;
+    position: fixed;
     top: 0;
-    padding-top: 200px;
-    font-size: xx-large;
-    display: block;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.931);
-    width: fit-content;
+    left: 0;
+    width: 100%;
     height: 100%;
+    padding: 20px;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0, 0.931);
     color: white;
     cursor: pointer;
     text-transform: uppercase;
     display: none;
+    overflow: auto;
 }
 
-#infoBox div {
+#infoBox #leftBox h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#infoBox #rightBox h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#infoBox #leftBox:hover h2 {
+    text-decoration-color: blue;
+}
+
+#infoBox #rightBox:hover h2 {
+    text-decoration-color: blue;
+}
+
+#infoBox #leftBox {
+    padding-top: 50px;
+    padding-left: 20px;
+    width: 50%;
     color: white;
     font-size: xx-large;
-    padding-left: 7px;
+    margin-top: 10px;
 }
+
+#infoBox #leftBox div::first-letter {
+    color: blue;
+    text-shadow: 0 1px 2px white;
+}
+
+#infoBox #rightBox {
+    border-left: 3px solid white;
+    padding-top: 80px;
+}
+
+table {
+    text-transform: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+    transform: scale(0.8);
+}
+
+tr th,
+tr td {
+    border: 2px solid white;
+    padding: 10px;
+}
+
+tr th {
+    background-color: white;
+    color: black;
+}
+
+tr:nth-child(2) td:nth-child(2) {
+    background-color: red;
+}
+
+tr:nth-child(3) td:nth-child(2) {
+    background-color: rgb(0, 255, 0);
+}
+
+tr:nth-child(4) td:nth-child(2) {
+    background-color: rgb(0, 0, 255);
+}
+
+tr:nth-child(5) td:nth-child(2) {
+    background-color: rgb(255, 255, 0);
+}
+
+tr:nth-child(6) td:nth-child(2) {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+tr:nth-child(7) td:nth-child(2) {
+    background-color: rgb(255, 0, 255);
+}
+
 
 #shopBtn {
     text-transform: uppercase;
@@ -938,64 +1016,6 @@ body {
     transform: scale(1.2);
 }
 
-table {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    text-transform: none;
-    border: 2px solid rgb(255, 255, 255);
-    border-collapse: collapse;
-    transform: scale(0.7);
-}
-
-table:hover {
-    transform: scale(0.8);
-    right: 0px;
-    bottom: 0px;
-}
-
-tr th {
-    border: 2px solid white;
-    padding: 10px;
-    background-color: white;
-    color: black;
-}
-
-tr td {
-    border: 2px solid white;
-    padding: 10px;
-}
-
-tr:nth-child(2) td:nth-child(2) {
-    background-color: red;
-    color: black;
-}
-
-tr:nth-child(3) td:nth-child(2) {
-    background-color: rgb(0, 255, 0);
-    color: black;
-}
-
-tr:nth-child(4) td:nth-child(2) {
-    background-color: rgb(0, 0, 255);
-    color: black;
-}
-
-tr:nth-child(5) td:nth-child(2) {
-    background-color: rgb(255, 255, 0);
-    color: black;
-}
-
-tr:nth-child(6) td:nth-child(2) {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-
-tr:nth-child(7) td:nth-child(2) {
-    background-color: rgb(255, 0, 255);
-    color: black;
-}
-
 #muteAudio {
     text-transform: uppercase;
     cursor: pointer;
@@ -1015,12 +1035,89 @@ tr:nth-child(7) td:nth-child(2) {
     display: block;
 }
 
-canvas {
+#collectionBtn {
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    border: 3px solid white;
+    border-radius: 1em;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
     display: none;
-    border: 3px solid black;
-    width: 100%;
-    height: 100%;
-    background-color: white;
+    font-size: x-large;
+    height: min-content;
+    width: min-content;
+}
+
+
+#collectionsBox {
     position: absolute;
     top: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+#collectionsBoxHealine {
+    font-size: xxx-large;
+    color: white;
+    text-align: center;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50px;
+}
+
+#gridOfKilledEnemies {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+
+#gridOfKilledEnemies img {
+    height: 100px;
+    width: 100px;
+    padding: 1em;
+    background-color: rgb(0, 0, 0);
+}
+
+#gridOfKilledEnemies img[alt="marvel"] {
+    border: 3px solid red;
+}
+
+#gridOfKilledEnemies img[alt="dc"] {
+    border: 3px solid blue;
+}
+
+
+#gridOfKilledEnemies img:hover {
+    border: 3px solid #f39c12;
+    box-shadow: 0 0 100px rgba(49, 49, 49, 0.89) inset;
+}
+
+#infoOfKilledEnemiesBox {
+    text-transform: uppercase;
+    width: 50%;
+    color: white;
+    font-size: xx-large;
+}
+
+#viewPhoto {
+    width: min-content;
+    height: min-content;
+    position: absolute;
+    right: 20px;
+    bottom: 120px;
+    border: 4mm ridge rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
 }

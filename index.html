@@ -114,44 +114,54 @@
     <button id="shopBtn">shop</button>
     <button id="infoBtn">info</button>
     <div id="infoBox">
-        <h2>Info</h2>
-        <div>1. so if you complete marvel planet, Deesdav planet appear. </div>
-        <div>2. in deesdav planet you need to get 120 or more xp to get dc planet, when you got 120 xp, 100 xp will be
-            taken from you, due to harder difficulty, when you get 150 xp you will have to wait until countdown end</div>
-        <div>3. colors of player you can change by typing on keyboard current color, so if your hero is yellow and you
-            want a red color just type r, for the color change you need to have that colors bought </div>
-        <div>4. default color is black and white so type: d</div>
-        <table>
-            <tr>
-                <th>shortcuts to type</th>
-                <th>hero colors</th>
-            </tr>
-            <tr>
-                <td>r (or R)</td>
-                <td>red hero color</td>
-            </tr>
-            <tr>
-                <td>g (or G)</td>
-                <td>green hero color</td>
-            </tr>
-            <tr>
-                <td>b (or B)</td>
-                <td>blue hero color</td>
-            </tr>
-            <tr>
-                <td>y (or Y)</td>
-                <td>yellow hero color</td>
-            </tr>
-            <tr>
-                <td>d (or D)</td>
-                <td>default black and white hero color</td>
-            </tr>
-            <tr>
-                <td>? - just find out</td>
-                <td>secret color</td>
-            </tr>
-        </table>
-        <div>5. secret color <span title="7">?</span></div>
+        <div id="leftBox">
+            <h2>Info</h2>
+            <div>1. so if you complete marvel planet, Deesdav planet appear. </div>
+            <div>2. in deesdav planet you need to get 120 or more xp to get dc planet, when you got 120 xp, 100 xp will
+                be
+                taken from you, due to harder difficulty, when you get 150 xp you will have to wait until countdown end
+            </div>
+            <div>3. The colors of player you can change by typing on keyboard current color, so if your hero is yellow
+                and
+                you
+                want a red color just type r, for the color change you need to have that colors bought </div>
+            <div>4. default color is black and white so type: d</div>
+            <div>5. secret color <span title="7">?</span></div>
+        </div>
+        <div id="rightBox">
+            <h2>Table</h2>
+            <table>
+                <tr>
+                    <th>shortcuts to type</th>
+                    <th>hero colors</th>
+                </tr>
+                <tr>
+                    <td>r (or R)</td>
+                    <td>red hero color</td>
+                </tr>
+                <tr>
+                    <td>g (or G)</td>
+                    <td>green hero color</td>
+                </tr>
+                <tr>
+                    <td>b (or B)</td>
+                    <td>blue hero color</td>
+                </tr>
+                <tr>
+                    <td>y (or Y)</td>
+                    <td>yellow hero color</td>
+                </tr>
+                <tr>
+                    <td>d (or D)</td>
+                    <td>default black and white hero color</td>
+                </tr>
+                <tr>
+                    <td>? - just find out</td>
+                    <td>secret color</td>
+                </tr>
+            </table>
+
+        </div>
     </div>
     <div id="shop">
         <div id="merchant">
@@ -178,8 +188,50 @@
     <div id="deesdavDimension">
         <div id="dot">0</div>
     </div>
+    <button id="collectionBtn">COLLECTION</button>
+    <div id="collectionsBox">
+        <div id="collectionsBoxHealine">List of enemies</div>
+        <div id="gridOfKilledEnemies">
+            <img src="./res/img/enemy.spiderman.png" id="spidermanKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.hulk.png" id="hulkKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.ironman.png" id="ironmanKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.thor.png" id="thorKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.blackwidow.png" id="blackwidowKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.captainamerica.png" id="captainamericaKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.doctorstrange.png" id="doctorstrangeKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.venom.png" id="venomKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.wolverine.png" id="wolverineKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.deadpool.png" id="deadpoolKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.blackpanther.png" id="blackpantherKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.ghostrider.png" id="ghostriderKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.loki.png" id="lokiKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.captainamerica.png" id="captainmarvelKilledEnemy" alt="marvel"" srcset="">
+            <img src=" ./res/img/enemy.thanos.png" id="thanosKilledEnemy" alt="marvel" srcset="">
+            <img src="./res/img/enemy.batman.png" id="batmanKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.flash.png" id="flashKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.wonderwoman.png" id="wonderwomanKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.joker.png" id="jokerKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.superman.png" id="supermanKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.aquaman.png" id="aquamanKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.catwoman.png" id="catwomanKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.cyborg.png" id="cyborgKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.greenlantern.png" id="greenlanternKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.greenarrow.png" id="greenarrowKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.nightwing.png" id="nightwingKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.shazam.png" id="shazamKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.blackadam.png" id="blackadamKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.doctormanhattan.png" id="doctormanhattanKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.darkseid.png" id="darkseidKilledEnemy" alt="dc" srcset="">
+        </div>
+        <div id="infoOfKilledEnemiesBox">
+            <p>Name: <span id="infoOfKilledEnemyName"></span></p>
+            <p>Damage per sec: <span id="infoOfKilledEnemyDamagePerSec"></span></p>
+            <p>HP: <span id="infoOfKilledEnemyHP"></span></p>
+            <p>LOCATION: <span id="infoOfKilledEnemyLocation"></span></p>
 
-    <canvas id="canvas"></canvas>
+            <img src="" id="viewPhoto" alt="photo" srcset="">
+        </div>
+    </div>
     <audio id="audioButtonClick" src=""></audio>
     <audio id="audioYouWin" src=""></audio>
     <audio id="audioYouLost" src=""></audio>
