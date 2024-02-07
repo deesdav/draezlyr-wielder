@@ -720,6 +720,10 @@ body {
     color: white;
     font-size: xx-large;
     margin-top: 10px;
+    filter: blur(5px);
+}
+#infoBox #leftBox:hover {
+    filter: blur(0px);
 }
 
 #infoBox #leftBox div::first-letter {
@@ -730,6 +734,10 @@ body {
 #infoBox #rightBox {
     border-left: 3px solid white;
     padding-top: 80px;
+    filter: blur(5px);
+}
+#infoBox #rightBox:hover {
+    filter: blur(0px);
 }
 
 table {
@@ -1133,4 +1141,5 @@ tr:nth-child(7) td:nth-child(2) {
     border: 4mm ridge rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     filter: saturate(150%);
+    
 }

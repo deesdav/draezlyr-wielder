@@ -3378,11 +3378,9 @@ infoOfKilledEnemyLocation.innerHTML = 0;
 viewPhoto.src = "";
 viewPhoto.style.display = "none";
 
-
-
 for (let i = 0; i < killedEnemies.length; i++) {
-
     const killedEnemiesId = document.getElementById(`${killedEnemies[i]}KilledEnemy`);
+    killedEnemiesId.style.filter = "blur(5px)";
     killedEnemiesId.onmouseover = () => {
         audioButtonClick.src = "./res/audio/choose.mp3";
         audioButtonClick.play();
@@ -3392,6 +3390,7 @@ for (let i = 0; i < killedEnemies.length; i++) {
         infoOfKilledEnemyLocation.innerText = `${locations[i]}`;
         viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.gif`;
         viewPhoto.style.display = "block";
+        killedEnemiesId.style.filter = "blur(0px)";
     }
     killedEnemiesId.onmouseout = () => {
         infoOfKilledEnemyName.innerHTML = null;
@@ -3400,5 +3399,6 @@ for (let i = 0; i < killedEnemies.length; i++) {
         infoOfKilledEnemyLocation.innerHTML = null;
         viewPhoto.src = "";
         viewPhoto.style.display = "none";
+        killedEnemiesId.style.filter = "blur(5px)";
     }
 }
