@@ -520,7 +520,7 @@ body {
     transform: scale(1.5);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
-    /* filter: drop-shadow(3px 3px #333)drop-shadow(-3px -3px goldenrod);*/
+    filter: drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod);
 }
 
 #heroAttack {
@@ -533,7 +533,7 @@ body {
     transform: scale(1.5);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
-    /* filter: drop-shadow(3px 3px #333) drop-shadow(-3px -3px silver);*/
+    filter: drop-shadow(3px 3px 5px #333) drop-shadow(-3px -3px 5px silver);
 }
 
 #enemy {
