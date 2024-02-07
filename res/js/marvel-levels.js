@@ -2,31 +2,22 @@
 const marvelLevels = [levelONE, levelTWO, levelTHREE, levelFOUR, levelFIVE, levelSIX, levelSEVEN, levelEIGHT,
     levelNINE, levelTEN, levelELEVEN, levelTWELVE, levelTHIRTEEN, levelFOURTEEN, levelFIFTEEN];
 
-for (let i = 0; i < marvelLevels.length; i++) {
-    marvelLevels[i].onmousedown = () => {
-        marvelLevels[i].style.backgroundColor = "white";
-        marvelLevels[i].style.color = "black";
-    }
-}
-for (let i = 0; i < marvelLevels.length; i++) {
-    marvelLevels[i].onmouseup = () => {
-        marvelLevels[i].style.backgroundColor = "transparent";
-        marvelLevels[i].style.border = "3px solid black";
-        marvelLevels[i].style.color = "black";
-        marvelLevels[i].style.textDecoration = "underline";
-    }
+const enemiesNamesOver = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
+    "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS"]
 
+for (let i = 0; i < marvelLevels.length; i++) {
+    marvelLevels[i].onmouseover = () => {
+        enemyName.innerText = enemiesNamesOver[i];
+
+    }
+    marvelLevels[i].onmouseout = () => {
+        enemyName.innerText = " ";
+    }
 }
 
 //------------------------------------ marvel level 1
-levelONE.onmouseover = () => {
-    enemyName.innerText = "Spider man";
-}
-levelONE.onmouseout = () => {
-    enemyName.innerText = " ";
-
-}
 levelONE.onclick = () => {
+    game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 0, 0.41))";
     enemyHpTextValue.innerText = `SPIDER MAN´S HP:`;
     const nameValue = storyPartInput.value;
     const defaultName = "Draezlyr Wielder";
@@ -40,7 +31,7 @@ levelONE.onclick = () => {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/spidermanBG.gif)";
-    enemy.src = "./res/img/enemy.spiderman.gif";
+    enemy.src = "./res/img/enemy.spiderman.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -111,12 +102,6 @@ levelONE.onclick = () => {
 }
 
 //------------------------------------ marvel level 2
-levelTWO.onmouseover = () => {
-    enemyName.innerText = "Hulk";
-}
-levelTWO.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelTWO.onclick = () => {
     enemyHpTextValue.innerText = `HULK´S HP:`;
     game.style.boxShadow = "0 0 70px green inset";
@@ -196,12 +181,6 @@ levelTWO.onclick = () => {
 }
 
 //------------------------------------ marvel level 3
-levelTHREE.onmouseover = () => {
-    enemyName.innerText = "Iron man";
-}
-levelTHREE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelTHREE.onclick = () => {
     enemyHpTextValue.innerText = `IRON MAN´S HP:`;
     game.style.boxShadow = "0 0 70px gold inset";
@@ -281,12 +260,6 @@ levelTHREE.onclick = () => {
 }
 
 //------------------------------------ marvel level 4
-levelFOUR.onmouseover = () => {
-    enemyName.innerText = "Thor";
-}
-levelFOUR.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelFOUR.onclick = () => {
     enemyHpTextValue.innerText = `THOR´S HP:`;
     game.style.boxShadow = "0 0 70px lightblue inset";
@@ -366,12 +339,6 @@ levelFOUR.onclick = () => {
 }
 
 //------------------------------------ marvel level 5
-levelFIVE.onmouseover = () => {
-    enemyName.innerText = "Black Widow";
-}
-levelFIVE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelFIVE.onclick = () => {
     enemyHpTextValue.innerText = `BLACK WIDOW´S HP:`;
     game.style.boxShadow = "0 0 70px grey inset";
@@ -447,12 +414,6 @@ levelFIVE.onclick = () => {
 
 }
 //------------------------------------ marvel level 6
-levelSIX.onmouseover = () => {
-    enemyName.innerText = "Captain America";
-}
-levelSIX.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelSIX.onclick = () => {
     enemyHpTextValue.innerText = `CAPTAIN AMERICA´S HP:`;
     game.style.boxShadow = "0 0 70px skyblue inset";
@@ -530,12 +491,6 @@ levelSIX.onclick = () => {
 
 }
 //------------------------------------ marvel level 7
-levelSEVEN.onmouseover = () => {
-    enemyName.innerText = "Doctor Strange";
-}
-levelSEVEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelSEVEN.onclick = () => {
     enemyHpTextValue.innerText = `DOCTOR STRANGE´S HP:`;
     game.style.boxShadow = "0 0 70px orange inset";
@@ -613,12 +568,6 @@ levelSEVEN.onclick = () => {
 
 }
 //------------------------------------ marvel level 8
-levelEIGHT.onmouseover = () => {
-    enemyName.innerText = "Venom";
-}
-levelEIGHT.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelEIGHT.onclick = () => {
     enemyHpTextValue.innerText = `VENOM´S HP:`;
     game.style.boxShadow = "0 0 70px black inset";
@@ -696,12 +645,6 @@ levelEIGHT.onclick = () => {
 
 }
 //------------------------------------ marvel level 9
-levelNINE.onmouseover = () => {
-    enemyName.innerText = "Wolverine";
-}
-levelNINE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelNINE.onclick = () => {
     enemyHpTextValue.innerText = `WOLVERINE´S HP:`;
     game.style.boxShadow = "0 0 70px yellow inset";
@@ -779,12 +722,6 @@ levelNINE.onclick = () => {
 
 }
 //------------------------------------ marvel level 10
-levelTEN.onmouseover = () => {
-    enemyName.innerText = "Deadpool";
-}
-levelTEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelTEN.onclick = () => {
     enemyHpTextValue.innerText = `DEADPOOL´S HP:`;
     game.style.boxShadow = "0 0 70px darkred inset";
@@ -863,12 +800,6 @@ levelTEN.onclick = () => {
 }
 
 //------------------------------------ marvel level 11
-levelELEVEN.onmouseover = () => {
-    enemyName.innerText = "Black Panther";
-}
-levelELEVEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelELEVEN.onclick = () => {
     enemyHpTextValue.innerText = `BLACK PANTHER´S HP:`;
     game.style.boxShadow = "0 0 70px purple inset";
@@ -947,12 +878,6 @@ levelELEVEN.onclick = () => {
 }
 
 //------------------------------------ marvel level 12
-levelTWELVE.onmouseover = () => {
-    enemyName.innerText = "Ghost rider";
-}
-levelTWELVE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelTWELVE.onclick = () => {
     enemyHpTextValue.innerText = `GHOST RIDER´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,102,50) inset";
@@ -1031,12 +956,6 @@ levelTWELVE.onclick = () => {
 }
 
 //------------------------------------ marvel level 13
-levelTHIRTEEN.onmouseover = () => {
-    enemyName.innerText = "Loki";
-}
-levelTHIRTEEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 levelTHIRTEEN.onclick = () => {
     enemyHpTextValue.innerText = `LOKI´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(0,255,100) inset";
@@ -1114,13 +1033,6 @@ levelTHIRTEEN.onclick = () => {
 
 }
 //------------------------------------ marvel level 14
-levelFOURTEEN.onmouseover = () => {
-    enemyName.innerText = "Captain Marvel";
-}
-levelFOURTEEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
-
 levelFOURTEEN.onclick = () => {
     enemyHpTextValue.innerText = `CAPTAIN MARVEL´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(200,20,50) inset";
@@ -1198,13 +1110,6 @@ levelFOURTEEN.onclick = () => {
 
 }
 //------------------------------------ marvel level 15
-levelFIFTEEN.onmouseover = () => {
-    enemyName.innerText = "Thanos";
-}
-levelFIFTEEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
-
 levelFIFTEEN.onclick = () => {
     enemyHpTextValue.innerText = `THANOS´S HP:`;
     game.style.boxShadow = "0 0 70px blueviolet inset";

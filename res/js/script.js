@@ -132,6 +132,7 @@ muteAudio.onclick = () => {
     }
 }
 
+
 //------------------------------------ mute audio
 function toggleMute() {
     if (audioButtonClick.muted || audioButtonClickMulti.muted || audioLobbyBackground.muted || audioYouWin.muted || audioYouLost.muted) {
@@ -193,8 +194,34 @@ multiverse.onmouseover = () => {
 
 }
 
+let pikachuHP = 270;
+let supermarioHP = 275;
+let grootHP = 280;
+let robocopHP = 285;
+let predatorHP = 290;
+let terminatorHP = 300;
+let geraltHP = 305;
+let doomslayerHP = 310;
+let solidsnakeHP = 315;
+let mandalorianHP = 320;
+let darthvaderHP = 325;
+let narutoHP = 330;
+let gokuHP = 335;
+let johnwickHP = 340;
+let kratosHP = 345;
+
 multiverse.onclick = () => {
-    const randomEnemy = Math.floor(Math.random() * 14);
+    /* if (winsCounter.innerText >= 5) {
+         const multiverseEnemiesHP = [pikachuHP, supermarioHP, grootHP, robocopHP,
+             predatorHP, terminatorHP, geraltHP, doomslayerHP, solidsnakeHP, mandalorianHP,
+             darthvaderHP, narutoHP, gokuHP, johnwickHP, kratosHP]
+         for (let i = 0; i < multiverseEnemiesHP.length; i++) {
+             multiverseEnemiesHP[i] += 50;
+         }
+         console.log("Updated HP values:", multiverseEnemiesHP);
+ 
+     }*/
+    const randomEnemy = Math.floor(Math.random() * 15);
     roundValueCounter++;
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
@@ -202,123 +229,11 @@ multiverse.onclick = () => {
         game.style.backgroundImage = "url(./res/img/pikachuBG.png)";
         enemy.src = "./res/img/enemy.pikachu.png";
         enemyHpTextValue.innerText = `PIKACHU´S HP:`;
-        enemyHp.innerText = 270;
-        const enemyDamage = setInterval(() => {
-            yourHp.innerText--;
-            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
-            audioButtonClick.play();
-            if (yourHp.innerText <= 0) {
-                clearInterval(enemyDamage);
-
-                enemy.style.animation = "none";
-                game.style.display = "none";
-                gameResult.style.display = "block";
-                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-                const nameValue = storyPartInput.value;
-                const defaultName = "Draezlyr Wielder";
-                if (nameValue == "") {
-                    gameResult.innerText = `${defaultName} lost`;
-                } else {
-                    gameResult.innerText = `${nameValue} lost`;
-                }
-                lossesCounter.innerText++;
-                audioYouLost.src = "./res/audio/youLost.mp3";
-                audioYouLost.play();
-                yourHp.innerText = yourHpValue;
-                backBtn.style.zIndex = "999";
-                enemyHp.innerText = 270;
-            }
-            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
-                clearInterval(enemyDamage);
-
-                enemy.style.animation = "none";
-                game.style.display = "none";
-                gameResult.style.display = "block";
-                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-                const nameValue = storyPartInput.value;
-                const defaultName = "Draezlyr Wielder";
-                if (nameValue == "") {
-                    gameResult.innerText = `${defaultName} won`;
-                } else {
-                    gameResult.innerText = `${nameValue} won`;
-                }
-                winsCounter.innerText++;
-                audioYouWin.src = "./res/audio/youWin.mp3";
-                audioYouWin.play();
-                yourXPValue += yourXPIncrease;
-                yourXP.innerText = yourXPValue;
-                yourHp.innerText = yourHpValue;
-                backBtn.style.zIndex = "999";
-                enemyHp.innerText = 270;
-            }
-
-        }, 1000);
-    }
-    //------------------------------------ enemy super mario
-    if (randomEnemy == 1) {
-        game.style.boxShadow = "0 0 120px red inset";
-        game.style.backgroundImage = "url(./res/img/supermarioBG.png)";
-        enemy.src = "./res/img/enemy.supermario.png";
-        enemyHpTextValue.innerText = `SUPER MARIO´S HP:`;
-        enemyHp.innerText = 275;
-        const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 2;
-            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
-            audioButtonClick.play();
-            if (yourHp.innerText <= 0) {
-                clearInterval(enemyDamage);
-
-                enemy.style.animation = "none";
-                game.style.display = "none";
-                gameResult.style.display = "block";
-                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
-                const nameValue = storyPartInput.value;
-                const defaultName = "Draezlyr Wielder";
-                if (nameValue == "") {
-                    gameResult.innerText = `${defaultName} lost`;
-                } else {
-                    gameResult.innerText = `${nameValue} lost`;
-                }
-                lossesCounter.innerText++;
-                audioYouLost.src = "./res/audio/youLost.mp3";
-                audioYouLost.play();
-                yourHp.innerText = yourHpValue;
-                backBtn.style.zIndex = "999";
-                enemyHp.innerText = 275;
-            }
-            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
-                clearInterval(enemyDamage);
-
-                enemy.style.animation = "none";
-                game.style.display = "none";
-                gameResult.style.display = "block";
-                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
-                const nameValue = storyPartInput.value;
-                const defaultName = "Draezlyr Wielder";
-                if (nameValue == "") {
-                    gameResult.innerText = `${defaultName} won`;
-                } else {
-                    gameResult.innerText = `${nameValue} won`;
-                }
-                winsCounter.innerText++;
-                audioYouWin.src = "./res/audio/youWin.mp3";
-                audioYouWin.play();
-                yourXPValue += yourXPIncrease;
-                yourXP.innerText = yourXPValue;
-                yourHp.innerText = yourHpValue;
-                backBtn.style.zIndex = "999";
-                enemyHp.innerText = 275;
-            }
-
-        }, 1000);
-    }
-    //------------------------------------ enemy groot
-    if (randomEnemy == 2) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/grootBG.png)";
-        enemy.src = "./res/img/enemy.groot.png";
-        enemyHpTextValue.innerText = `GROOT´S HP:`;
-        enemyHp.innerText = 280;
+        if (winsCounter.innerText >= 5) {
+            enemyHp.innerText = (pikachuHP + 50);
+        } else {
+            enemyHp.innerText = pikachuHP;
+        }
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 3;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -342,7 +257,11 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 280;
+                if (winsCounter.innerText >= 5) {
+                    enemyHp.innerText = (pikachuHP + 50);
+                } else {
+                    enemyHp.innerText = pikachuHP;
+                }
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -365,18 +284,22 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 280;
+                if (winsCounter.innerText >= 5) {
+                    enemyHp.innerText = (pikachuHP + 50);
+                } else {
+                    enemyHp.innerText = pikachuHP;
+                }
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy robocop
-    if (randomEnemy == 3) {
-        game.style.boxShadow = "0 0 120px gray inset";
-        game.style.backgroundImage = "url(./res/img/robocopBG.png)";
-        enemy.src = "./res/img/enemy.robocop.png";
-        enemyHpTextValue.innerText = `ROBOCOP´S HP:`;
-        enemyHp.innerText = 285;
+    //------------------------------------ enemy super mario
+    if (randomEnemy == 1) {
+        game.style.boxShadow = "0 0 120px red inset";
+        game.style.backgroundImage = "url(./res/img/supermarioBG.png)";
+        enemy.src = "./res/img/enemy.supermario.png";
+        enemyHpTextValue.innerText = `SUPER MARIO´S HP:`;
+        enemyHp.innerText = supermarioHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 4;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -400,7 +323,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 285;
+                enemyHp.innerText = supermarioHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -423,18 +346,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 285;
+                enemyHp.innerText = supermarioHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy predator
-    if (randomEnemy == 4) {
-        game.style.boxShadow = "0 0 120px green inset";
-        game.style.backgroundImage = "url(./res/img/predatorBG.png)";
-        enemy.src = "./res/img/enemy.predator.png";
-        enemyHpTextValue.innerText = `PREDATOR´S HP:`;
-        enemyHp.innerText = 240;
+    //------------------------------------ enemy groot
+    if (randomEnemy == 2) {
+        game.style.boxShadow = "0 0 120px brown inset";
+        game.style.backgroundImage = "url(./res/img/grootBG.png)";
+        enemy.src = "./res/img/enemy.groot.png";
+        enemyHpTextValue.innerText = `GROOT´S HP:`;
+        enemyHp.innerText = grootHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 5;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -458,7 +381,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 240;
+                enemyHp.innerText = grootHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -481,18 +404,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 240;
+                enemyHp.innerText = grootHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy terminator
-    if (randomEnemy == 5) {
-        game.style.boxShadow = "0 0 120px black inset";
-        game.style.backgroundImage = "url(./res/img/terminatorBG.png)";
-        enemy.src = "./res/img/enemy.terminator.png";
-        enemyHpTextValue.innerText = `TERMINATOR´S HP:`;
-        enemyHp.innerText = 245;
+    //------------------------------------ enemy robocop
+    if (randomEnemy == 3) {
+        game.style.boxShadow = "0 0 120px gray inset";
+        game.style.backgroundImage = "url(./res/img/robocopBG.png)";
+        enemy.src = "./res/img/enemy.robocop.png";
+        enemyHpTextValue.innerText = `ROBOCOP´S HP:`;
+        enemyHp.innerText = robocopHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 6;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -516,7 +439,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 245;
+                enemyHp.innerText = robocopHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -539,18 +462,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 245;
+                enemyHp.innerText = robocopHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 6) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 250;
+    //------------------------------------ enemy predator
+    if (randomEnemy == 4) {
+        game.style.boxShadow = "0 0 120px green inset";
+        game.style.backgroundImage = "url(./res/img/predatorBG.png)";
+        enemy.src = "./res/img/enemy.predator.png";
+        enemyHpTextValue.innerText = `PREDATOR´S HP:`;
+        enemyHp.innerText = predatorHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 7;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -574,7 +497,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 250;
+                enemyHp.innerText = predatorHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -597,18 +520,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 250;
+                enemyHp.innerText = predatorHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 7) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 255;
+    //------------------------------------ enemy terminator
+    if (randomEnemy == 5) {
+        game.style.boxShadow = "0 0 120px black inset";
+        game.style.backgroundImage = "url(./res/img/terminatorBG.png)";
+        enemy.src = "./res/img/enemy.terminator.png";
+        enemyHpTextValue.innerText = `TERMINATOR´S HP:`;
+        enemyHp.innerText = terminatorHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 8;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -632,7 +555,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 255;
+                enemyHp.innerText = terminatorHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -655,18 +578,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 255;
+                enemyHp.innerText = terminatorHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 8) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 260;
+    //------------------------------------ enemy geralt
+    if (randomEnemy == 6) {
+        game.style.boxShadow = "0 0 120px rgb(100,50,10) inset";
+        game.style.backgroundImage = "url(./res/img/geraltBG.png)";
+        enemy.src = "./res/img/enemy.geralt.png";
+        enemyHpTextValue.innerText = `GERALT´S HP:`;
+        enemyHp.innerText = geraltHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 9;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -690,7 +613,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 260;
+                enemyHp.innerText = geraltHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -713,18 +636,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 260;
+                enemyHp.innerText = geraltHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 9) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 265;
+    //------------------------------------ enemy doom slayer
+    if (randomEnemy == 7) {
+        game.style.boxShadow = "0 0 120px rgb(10,150,10) inset";
+        game.style.backgroundImage = "url(./res/img/doomslayerBG.png)";
+        enemy.src = "./res/img/enemy.doomslayer.png";
+        enemyHpTextValue.innerText = `DOOM SLAYER´S HP:`;
+        enemyHp.innerText = doomslayerHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 10;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -748,7 +671,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 265;
+                enemyHp.innerText = doomslayerHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -771,18 +694,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 265;
+                enemyHp.innerText = doomslayerHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 10) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 270;
+    //------------------------------------ enemy solid snake
+    if (randomEnemy == 8) {
+        game.style.boxShadow = "0 0 120px rgb(20,20,120) inset";
+        game.style.backgroundImage = "url(./res/img/solidsnakeBG.png)";
+        enemy.src = "./res/img/enemy.solidsnake.png";
+        enemyHpTextValue.innerText = `SOLID SNAKE´S HP:`;
+        enemyHp.innerText = solidsnakeHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 11;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -806,7 +729,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 270;
+                enemyHp.innerText = solidsnakeHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -829,18 +752,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 270;
+                enemyHp.innerText = solidsnakeHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 11) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 275;
+    //------------------------------------ enemy mandalorian
+    if (randomEnemy == 9) {
+        game.style.boxShadow = "0 0 120px silver inset";
+        game.style.backgroundImage = "url(./res/img/mandalorianBG.png)";
+        enemy.src = "./res/img/enemy.mandalorian.png";
+        enemyHpTextValue.innerText = `MANDALORIAN´S HP:`;
+        enemyHp.innerText = mandalorianHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 12;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -864,7 +787,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 275;
+                enemyHp.innerText = mandalorianHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -887,18 +810,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 275;
+                enemyHp.innerText = mandalorianHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 12) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 280;
+    //------------------------------------ enemy darth vader
+    if (randomEnemy == 10) {
+        game.style.boxShadow = "0 0 120px rgb(100,0,0) inset";
+        game.style.backgroundImage = "url(./res/img/darthvaderBG.png)";
+        enemy.src = "./res/img/enemy.darthvader.png";
+        enemyHpTextValue.innerText = `DARTH VADER´S HP:`;
+        enemyHp.innerText = darthvaderHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 13;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -922,7 +845,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 280;
+                enemyHp.innerText = darthvaderHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -945,18 +868,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 280;
+                enemyHp.innerText = darthvaderHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 13) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 285;
+    //------------------------------------ enemy naruto
+    if (randomEnemy == 11) {
+        game.style.boxShadow = "0 0 120px rgb(255,205,0) inset";
+        game.style.backgroundImage = "url(./res/img/narutoBG.png)";
+        enemy.src = "./res/img/enemy.naruto.png";
+        enemyHpTextValue.innerText = `NARUTO´S HP:`;
+        enemyHp.innerText = narutoHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 14;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -980,7 +903,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 285;
+                enemyHp.innerText = narutoHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -1003,18 +926,18 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 285;
+                enemyHp.innerText = narutoHP;
             }
 
         }, 1000);
     }
-    //------------------------------------ enemy 
-    if (randomEnemy == 14) {
-        game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/BG.png)";
-        enemy.src = "./res/img/enemy..png";
-        enemyHpTextValue.innerText = `´S HP:`;
-        enemyHp.innerText = 290;
+    //------------------------------------ enemy goku
+    if (randomEnemy == 12) {
+        game.style.boxShadow = "0 0 120px lightblue inset";
+        game.style.backgroundImage = "url(./res/img/gokuBG.png)";
+        enemy.src = "./res/img/enemy.goku.png";
+        enemyHpTextValue.innerText = `GOKU´S HP:`;
+        enemyHp.innerText = gokuHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 15;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
@@ -1038,7 +961,7 @@ multiverse.onclick = () => {
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 290;
+                enemyHp.innerText = gokuHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -1061,7 +984,123 @@ multiverse.onclick = () => {
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                enemyHp.innerText = 290;
+                enemyHp.innerText = gokuHP;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy john wick
+    if (randomEnemy == 13) {
+        game.style.boxShadow = "0 0 120px goldenrod inset";
+        game.style.backgroundImage = "url(./res/img/johnwickBG.png)";
+        enemy.src = "./res/img/enemy.johnwick.png";
+        enemyHpTextValue.innerText = `JOHN WICK´S HP:`;
+        enemyHp.innerText = johnwickHP;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 16;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = johnwickHP;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = johnwickHP;
+            }
+
+        }, 1000);
+    }
+    //------------------------------------ enemy kratos
+    if (randomEnemy == 14 || randomEnemy == 15) {
+        game.style.boxShadow = "0 0 120px rgb(160,20,20) inset";
+        game.style.backgroundImage = "url(./res/img/kratosBG.png)";
+        enemy.src = "./res/img/enemy.kratos.png";
+        enemyHpTextValue.innerText = `KRATOS´S HP:`;
+        enemyHp.innerText = kratosHP;
+        const enemyDamage = setInterval(() => {
+            yourHp.innerText -= 17;
+            audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+            audioButtonClick.play();
+            if (yourHp.innerText <= 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} lost`;
+                } else {
+                    gameResult.innerText = `${nameValue} lost`;
+                }
+                lossesCounter.innerText++;
+                audioYouLost.src = "./res/audio/youLost.mp3";
+                audioYouLost.play();
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = kratosHP;
+            }
+            if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+                clearInterval(enemyDamage);
+
+                enemy.style.animation = "none";
+                game.style.display = "none";
+                gameResult.style.display = "block";
+                gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+                const nameValue = storyPartInput.value;
+                const defaultName = "Draezlyr Wielder";
+                if (nameValue == "") {
+                    gameResult.innerText = `${defaultName} won`;
+                } else {
+                    gameResult.innerText = `${nameValue} won`;
+                }
+                winsCounter.innerText++;
+                audioYouWin.src = "./res/audio/youWin.mp3";
+                audioYouWin.play();
+                yourXPValue += yourXPIncrease;
+                yourXP.innerText = yourXPValue;
+                yourHp.innerText = yourHpValue;
+                backBtn.style.zIndex = "999";
+                enemyHp.innerText = kratosHP;
             }
 
         }, 1000);
@@ -1090,6 +1129,7 @@ multiverse.onclick = () => {
     yourHp.innerText = yourHpValue;
 
     backBtn.style.display = "none";
+    collectionBtn.style.display = "none";
     backBtnShop.style.zIndex = "0";
 
     gameResult.onclick = () => {
@@ -1483,7 +1523,6 @@ if (multiverseAppeared == false) {
         multiverse.style.display = "none";
     }
 }
-
 //------------------------------------ back button to planets
 backBtn.onclick = () => {
     collectionBtn.style.display = "block";
@@ -2842,6 +2881,7 @@ yourName.onmouseout = () => {
 }
 
 //------------------------------------ enemy system
+
 enemy.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
     if (gameResult.style.display == "block") {
@@ -2870,8 +2910,6 @@ enemy.onmousedown = () => {
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
         enemy.style.animation = "enemyMoving 1.1s infinite";
-        enemy.style.borderBottom = "5px solid red";
-        enemy.style.borderRadius = "1em";
     }
     //------------------------------------ gif enemy effects
     let halfEnemyHp = (((enemyHp.innerText) / 2) + 7);
@@ -2886,20 +2924,27 @@ enemy.onmousedown = () => {
     for (let i = 0; i < enemyTextValue.length; i++) {
         for (let j = 0; j < damagedAndFinishedEffectEnemies.length; j++) {
             if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText == `${enemyTextValue[i]}´S HP:`) {
-                enemy.src = `./res/img/damaged.${damagedAndFinishedEffectEnemies[i]}.gif`;
                 game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+                enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
+                enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                document.body.onmousemove = () => {
+                    if (enemyHp.innerText <= 15) {
+                        enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                    } else {
+                        enemy.style.filter = "none";
+                    }
+                }
             }
         }
     }
 }
 
-
 enemy.onmouseup = () => {
+    document.body.style.boxShadow = "0 0 0px red inset";
     enemyHp.style.color = "red";
     enemy.style.animation = "enemyMoving 1s infinite";
     enemy.style.borderBottom = "none";
     enemy.style.borderRadius = "none";
-    document.body.style.boxShadow = "0 0 0px red inset";
     heroAttack.style.display = "none";
     heroIdle.style.display = "block";
     heroIdle.style.left = "20%";
@@ -2913,8 +2958,6 @@ enemy.onmouseup = () => {
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
         enemy.style.animation = "enemyMoving 1.1s infinite";
-        enemy.style.borderBottom = "5px solid red";
-        enemy.style.borderRadius = "1em";
     }
     //------------------------------------ gif enemy effects
     let halfEnemyHp = (((enemyHp.innerText) / 2) + 7);
@@ -2929,11 +2972,20 @@ enemy.onmouseup = () => {
     for (let i = 0; i < enemyTextValue.length; i++) {
         for (let j = 0; j < damagedAndFinishedEffectEnemies.length; j++) {
             if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText == `${enemyTextValue[i]}´S HP:`) {
-                enemy.src = `./res/img/damaged.${damagedAndFinishedEffectEnemies[i]}.gif`;
                 game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+                enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
+                enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                document.body.onmousemove = () => {
+                    if (enemyHp.innerText <= 15) {
+                        enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                    } else {
+                        enemy.style.filter = "none";
+                    }
+                }
             }
         }
     }
+
 }
 
 gameResult.onclick = () => {
@@ -2948,47 +3000,93 @@ gameResult.onclick = () => {
 
     if (levelONECompleted) {
         levelTWO.style.display = "block";
+        levelONE.style.backgroundColor = "transparent";
+        levelONE.style.filter = "invert(100%)";
+        levelONE.style.textDecoration = "underline";
     }
     if (levelTWOCompleted) {
         levelTHREE.style.display = "block";
+        levelTWO.style.backgroundColor = "transparent";
+        levelTWO.style.filter = "invert(100%)";
+        levelTWO.style.textDecoration = "underline";
     }
     if (levelTHREECompleted) {
         levelFOUR.style.display = "block";
+        levelTHREE.style.backgroundColor = "transparent";
+        levelTHREE.style.filter = "invert(100%)";
+        levelTHREE.style.textDecoration = "underline";
     }
     if (levelFOURCompleted) {
         levelFIVE.style.display = "block";
+        levelFOUR.style.backgroundColor = "transparent";
+        levelFOUR.style.filter = "invert(100%)";
+        levelFOUR.style.textDecoration = "underline";
     }
     if (levelFIVECompleted) {
         levelSIX.style.display = "block";
+        levelFIVE.style.backgroundColor = "transparent";
+        levelFIVE.style.filter = "invert(100%)";
+        levelFIVE.style.textDecoration = "underline";
     }
     if (levelSIXCompleted) {
         levelSEVEN.style.display = "block";
+        levelSIX.style.backgroundColor = "transparent";
+        levelSIX.style.filter = "invert(100%)";
+        levelSIX.style.textDecoration = "underline";
     }
     if (levelSEVENCompleted) {
         levelEIGHT.style.display = "block";
+        levelSEVEN.style.backgroundColor = "transparent";
+        levelSEVEN.style.filter = "invert(100%)";
+        levelSEVEN.style.textDecoration = "underline";
     }
     if (levelEIGHTCompleted) {
         levelNINE.style.display = "block";
+        levelEIGHT.style.backgroundColor = "transparent";
+        levelEIGHT.style.filter = "invert(100%)";
+        levelEIGHT.style.textDecoration = "underline";
     }
     if (levelNINECompleted) {
         levelTEN.style.display = "block";
+        levelNINE.style.backgroundColor = "transparent";
+        levelNINE.style.filter = "invert(100%)";
+        levelNINE.style.textDecoration = "underline";
     }
     if (levelTENCompleted) {
         levelELEVEN.style.display = "block";
+        levelTEN.style.backgroundColor = "transparent";
+        levelTEN.style.filter = "invert(100%)";
+        levelTEN.style.textDecoration = "underline";
     }
     if (levelELEVENCompleted) {
         levelTWELVE.style.display = "block";
+        levelELEVEN.style.backgroundColor = "transparent";
+        levelELEVEN.style.filter = "invert(100%)";
+        levelELEVEN.style.textDecoration = "underline";
     }
     if (levelTWELVECompleted) {
         levelTHIRTEEN.style.display = "block";
+        levelTWELVE.style.backgroundColor = "transparent";
+        levelTWELVE.style.filter = "invert(100%)";
+        levelTWELVE.style.textDecoration = "underline";
     }
     if (levelTHIRTEENCompleted) {
         levelFOURTEEN.style.display = "block";
+        levelTHIRTEEN.style.backgroundColor = "transparent";
+        levelTHIRTEEN.style.filter = "invert(100%)";
+        levelTHIRTEEN.style.textDecoration = "underline";
     }
     if (levelFOURTEENCompleted) {
         levelFIFTEEN.style.display = "block";
+        levelFOURTEEN.style.backgroundColor = "transparent";
+        levelFOURTEEN.style.filter = "invert(100%)";
+        levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
+        marvelPlanet.style.filter = "grayscale(100%)";
+        levelFIFTEEN.style.backgroundColor = "transparent";
+        levelFIFTEEN.style.filter = "invert(100%)";
+        levelFIFTEEN.style.textDecoration = "underline";
         console.log("level 15 hotov");
         marvelPlanetClick = false;
         //------------------------------------ deesdav planet into the dimension
@@ -3037,6 +3135,7 @@ gameResult.onclick = () => {
                     audioLobbyBackground.src = "";
                     audioLobbyBackground.pause();
                     audioLobbyBackground.currentTime = 0;
+                    document.body.style.boxShadow = "0 0 0px white inset";
                 }
 
                 if (countDown.innerText == 60 && yourXP.innerText >= 120 && deesdavDimensionCompleted == false) {
@@ -3123,52 +3222,97 @@ gameResult.onclick = () => {
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
+        dcLevelONE.style.backgroundColor = "transparent";
+        dcLevelONE.style.filter = "invert(100%)";
+        dcLevelONE.style.textDecoration = "underline";
     }
     if (dcLevelTWOCompleted) {
         dcLevelTHREE.style.display = "block";
+        dcLevelTWO.style.backgroundColor = "transparent";
+        dcLevelTWO.style.filter = "invert(100%)";
+        dcLevelTWO.style.textDecoration = "underline";
     }
     if (dcLevelTHREECompleted) {
         dcLevelFOUR.style.display = "block";
+        dcLevelTHREE.style.backgroundColor = "transparent";
+        dcLevelTHREE.style.filter = "invert(100%)";
+        dcLevelTHREE.style.textDecoration = "underline";
     }
     if (dcLevelFOURCompleted) {
         dcLevelFIVE.style.display = "block";
+        dcLevelFOUR.style.backgroundColor = "transparent";
+        dcLevelFOUR.style.filter = "invert(100%)";
+        dcLevelFOUR.style.textDecoration = "underline";
     }
     if (dcLevelFIVECompleted) {
         dcLevelSIX.style.display = "block";
+        dcLevelFIVE.style.backgroundColor = "transparent";
+        dcLevelFIVE.style.filter = "invert(100%)";
+        dcLevelFIVE.style.textDecoration = "underline";
     }
     if (dcLevelSIXCompleted) {
         dcLevelSEVEN.style.display = "block";
+        dcLevelSIX.style.backgroundColor = "transparent";
+        dcLevelSIX.style.filter = "invert(100%)";
+        dcLevelSIX.style.textDecoration = "underline";
     }
     if (dcLevelSEVENCompleted) {
         dcLevelEIGHT.style.display = "block";
+        dcLevelSEVEN.style.backgroundColor = "transparent";
+        dcLevelSEVEN.style.filter = "invert(100%)";
+        dcLevelSEVEN.style.textDecoration = "underline";
     }
     if (dcLevelEIGHTCompleted) {
         dcLevelNINE.style.display = "block";
+        dcLevelEIGHT.style.backgroundColor = "transparent";
+        dcLevelEIGHT.style.filter = "invert(100%)";
+        dcLevelEIGHT.style.textDecoration = "underline";
     }
     if (dcLevelNINECompleted) {
         dcLevelTEN.style.display = "block";
+        dcLevelNINE.style.backgroundColor = "transparent";
+        dcLevelNINE.style.filter = "invert(100%)";
+        dcLevelNINE.style.textDecoration = "underline";
     }
     if (dcLevelTENCompleted) {
         dcLevelELEVEN.style.display = "block";
+        dcLevelTEN.style.backgroundColor = "transparent";
+        dcLevelTEN.style.filter = "invert(100%)";
+        dcLevelTEN.style.textDecoration = "underline";
     }
     if (dcLevelELEVENCompleted) {
         dcLevelTWELVE.style.display = "block";
+        dcLevelELEVEN.style.backgroundColor = "transparent";
+        dcLevelELEVEN.style.filter = "invert(100%)";
+        dcLevelELEVEN.style.textDecoration = "underline";
     }
     if (dcLevelTWELVECompleted) {
         dcLevelTHIRTEEN.style.display = "block";
+        dcLevelTWELVE.style.backgroundColor = "transparent";
+        dcLevelTWELVE.style.filter = "invert(100%)";
+        dcLevelTWELVE.style.textDecoration = "underline";
     }
     if (dcLevelTHIRTEENCompleted) {
         dcLevelFOURTEEN.style.display = "block";
+        dcLevelTHIRTEEN.style.backgroundColor = "transparent";
+        dcLevelTHIRTEEN.style.filter = "invert(100%)";
+        dcLevelTHIRTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFOURTEENCompleted) {
         dcLevelFIFTEEN.style.display = "block";
+        dcLevelFOURTEEN.style.backgroundColor = "transparent";
+        dcLevelFOURTEEN.style.filter = "invert(100%)";
+        dcLevelFOURTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFIFTEENCompleted) {
+        dcPlanet.style.filter = "grayscale(100%)";
         multiverseAppeared = true;
         multiverse.style.display = "none";
         lossesCounter.innerText = 0;
         winsCounter.innerText = 0;
-
+        dcLevelFIFTEEN.style.backgroundColor = "transparent";
+        dcLevelFIFTEEN.style.filter = "invert(100%)";
+        dcLevelFIFTEEN.style.textDecoration = "underline";
     }
 
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -3227,12 +3371,14 @@ const locations = ["MARVEL LEVEL ONE", "MARVEL LEVEL TWO", "MARVEL LEVEL THREE",
     "DC LEVEL SIX", "DC LEVEL SEVEN", "DC LEVEL EIGHT", "DC LEVEL NINE", "DC LEVEL TEN",
     "DC LEVEL ELEVEN", "DC LEVEL TWELVE", "DC LEVEL THIRTEEN", "DC LEVEL FOURTEEN", "DC LEVEL FIFTEEN"];
 
-infoOfKilledEnemyName.innerText = 0;
-infoOfKilledEnemyDamagePerSec.innerText = 0;
-infoOfKilledEnemyHP.innerText = 0;
-infoOfKilledEnemyLocation.innerText = 0;
+infoOfKilledEnemyName.innerHTML = 0;
+infoOfKilledEnemyDamagePerSec.innerHTML = 0;
+infoOfKilledEnemyHP.innerHTML = 0;
+infoOfKilledEnemyLocation.innerHTML = 0;
 viewPhoto.src = "";
 viewPhoto.style.display = "none";
+
+
 
 for (let i = 0; i < killedEnemies.length; i++) {
 
@@ -3248,10 +3394,10 @@ for (let i = 0; i < killedEnemies.length; i++) {
         viewPhoto.style.display = "block";
     }
     killedEnemiesId.onmouseout = () => {
-        infoOfKilledEnemyName.innerText = 0;
-        infoOfKilledEnemyDamagePerSec.innerText = 0;
-        infoOfKilledEnemyHP.innerText = 0;
-        infoOfKilledEnemyLocation.innerText = 0;
+        infoOfKilledEnemyName.innerHTML = null;
+        infoOfKilledEnemyDamagePerSec.innerHTML = null;
+        infoOfKilledEnemyHP.innerHTML = null;
+        infoOfKilledEnemyLocation.innerHTML = null;
         viewPhoto.src = "";
         viewPhoto.style.display = "none";
     }

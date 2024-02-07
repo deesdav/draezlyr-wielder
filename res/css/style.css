@@ -8,6 +8,7 @@
     font-family: 'VT323', monospace;
     transition: 0.5s all;
     overflow: hidden;
+
 }
 
 body,
@@ -22,6 +23,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: black;
+
 }
 
 #lobby {
@@ -66,6 +68,7 @@ body {
     color: black;
     text-shadow: 3px 3px 3px rgb(255, 255, 255);
     z-index: 999;
+
 }
 
 #play,
@@ -255,6 +258,7 @@ body {
     color: white;
     text-align: center;
     text-shadow: 1px 1px 0px red;
+    text-transform: uppercase;
 }
 
 #nameOfPlanetDeesdav {
@@ -277,7 +281,6 @@ body {
     cursor: pointer;
     border-radius: 50%;
     padding: 0;
-
 }
 
 #marvelPlanet:hover {
@@ -357,7 +360,7 @@ body {
     font-size: 50px;
     color: white;
     display: none;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 #levelInfo {
@@ -365,7 +368,7 @@ body {
     font-size: 50px;
     color: white;
     display: none;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 #gridOfLevels {
@@ -375,6 +378,7 @@ body {
     gap: 10px;
     height: auto;
     width: 650px;
+    padding-bottom: 30px;
 }
 
 #levelONE,
@@ -457,8 +461,10 @@ body {
 }
 
 #levelsBox {
-    position: relative;
-    top: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #storyrecap {
@@ -499,7 +505,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 0, 0.518));
 }
+
+
 
 #heroIdle {
     display: block;
@@ -511,6 +520,7 @@ body {
     transform: scale(1.5);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
+    /* filter: drop-shadow(3px 3px #333)drop-shadow(-3px -3px goldenrod);*/
 }
 
 #heroAttack {
@@ -523,6 +533,7 @@ body {
     transform: scale(1.5);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
+    /* filter: drop-shadow(3px 3px #333) drop-shadow(-3px -3px silver);*/
 }
 
 #enemy {
@@ -534,7 +545,7 @@ body {
     left: 40%;
     cursor: crosshair;
     animation: enemyMoving 1s infinite;
-
+    filter: saturate(150%);
 }
 
 #enemyName {
@@ -1116,8 +1127,10 @@ tr:nth-child(7) td:nth-child(2) {
     width: min-content;
     height: min-content;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     right: 20px;
-    bottom: 120px;
     border: 4mm ridge rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+    filter: saturate(150%);
 }

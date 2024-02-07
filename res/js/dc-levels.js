@@ -2,30 +2,21 @@
 const dcLevels = [dcLevelONE, dcLevelTWO, dcLevelTHREE, dcLevelFOUR, dcLevelFIVE, dcLevelSIX, dcLevelSEVEN, dcLevelEIGHT,
     dcLevelNINE, dcLevelTEN, dcLevelELEVEN, dcLevelTWELVE, dcLevelTHIRTEEN, dcLevelFOURTEEN, dcLevelFIFTEEN];
 
-for (let i = 0; i < dcLevels.length; i++) {
-    dcLevels[i].onmousedown = () => {
-        dcLevels[i].style.backgroundColor = "white";
-        dcLevels[i].style.color = "black";
-    }
-}
-for (let i = 0; i < dcLevels.length; i++) {
-    dcLevels[i].onmouseup = () => {
-        dcLevels[i].style.backgroundColor = "transparent";
-        dcLevels[i].style.border = "3px solid black";
-        dcLevels[i].style.color = "black";
-        dcLevels[i].style.textDecoration = "underline";
-    }
+const enemiesDCNamesOver = ["BATMAN", "FLASH", "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG",
+    "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM", "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"]
 
+for (let i = 0; i < dcLevels.length; i++) {
+    dcLevels[i].onmouseover = () => {
+        enemyName.innerText = enemiesDCNamesOver[i];
+    }
+    dcLevels[i].onmouseout = () => {
+        enemyName.innerText = " ";
+    }
 }
 
 //------------------------------------ dc level 1
-dcLevelONE.onmouseover = () => {
-    enemyName.innerText = "Batman";
-}
-dcLevelONE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelONE.onclick = () => {
+    game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(0, 0, 255, 0.41))";
     enemyHpTextValue.innerText = `BATMAN´S HP:`;
     const nameValue = storyPartInput.value;
     const defaultName = "Draezlyr Wielder";
@@ -114,12 +105,6 @@ dcLevelONE.onclick = () => {
 }
 
 //------------------------------------ dc level 2
-dcLevelTWO.onmouseover = () => {
-    enemyName.innerText = "Flash";
-}
-dcLevelTWO.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelTWO.onclick = () => {
     enemyHpTextValue.innerText = `FLASH´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,200,50) inset";
@@ -202,12 +187,6 @@ dcLevelTWO.onclick = () => {
 }
 
 //------------------------------------ dc level 3
-dcLevelTHREE.onmouseover = () => {
-    enemyName.innerText = "Wonder woman";
-}
-dcLevelTHREE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelTHREE.onclick = () => {
     enemyHpTextValue.innerText = `WONDER WOMAN´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,20,100) inset";
@@ -289,12 +268,6 @@ dcLevelTHREE.onclick = () => {
 
 }
 //------------------------------------ dc level 4
-dcLevelFOUR.onmouseover = () => {
-    enemyName.innerText = "Joker";
-}
-dcLevelFOUR.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelFOUR.onclick = () => {
     enemyHpTextValue.innerText = `JOKER´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,255,100) inset";
@@ -376,12 +349,6 @@ dcLevelFOUR.onclick = () => {
 
 }
 //------------------------------------ dc level 5
-dcLevelFIVE.onmouseover = () => {
-    enemyName.innerText = "Superman";
-}
-dcLevelFIVE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelFIVE.onclick = () => {
     enemyHpTextValue.innerText = `SUPERMAN´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,200,50) inset";
@@ -463,12 +430,6 @@ dcLevelFIVE.onclick = () => {
 
 }
 //------------------------------------ dc level 6
-dcLevelSIX.onmouseover = () => {
-    enemyName.innerText = "Aquaman";
-}
-dcLevelSIX.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelSIX.onclick = () => {
     enemyHpTextValue.innerText = `AQUAMAN´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,200,50) inset";
@@ -550,12 +511,6 @@ dcLevelSIX.onclick = () => {
 
 }
 //------------------------------------ dc level 7
-dcLevelSEVEN.onmouseover = () => {
-    enemyName.innerText = "Catwoman";
-}
-dcLevelSEVEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelSEVEN.onclick = () => {
     enemyHpTextValue.innerText = `CATWOMAN´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(250,20,60) inset";
@@ -637,12 +592,6 @@ dcLevelSEVEN.onclick = () => {
 
 }
 //------------------------------------ dc level 8
-dcLevelEIGHT.onmouseover = () => {
-    enemyName.innerText = "Cyborg";
-}
-dcLevelEIGHT.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelEIGHT.onclick = () => {
     enemyHpTextValue.innerText = `CYBORG´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(50,45,180) inset";
@@ -724,12 +673,6 @@ dcLevelEIGHT.onclick = () => {
 
 }
 //------------------------------------ dc level 9
-dcLevelNINE.onmouseover = () => {
-    enemyName.innerText = "Green Lantern";
-}
-dcLevelNINE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelNINE.onclick = () => {
     enemyHpTextValue.innerText = `GREEN LANTERN´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(55,255,51) inset";
@@ -811,12 +754,6 @@ dcLevelNINE.onclick = () => {
 
 }
 //------------------------------------ dc level 10
-dcLevelTEN.onmouseover = () => {
-    enemyName.innerText = "Green Arrow";
-}
-dcLevelTEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelTEN.onclick = () => {
     enemyHpTextValue.innerText = `GREEN ARROW´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(0,200,0) inset";
@@ -898,12 +835,6 @@ dcLevelTEN.onclick = () => {
 
 }
 //------------------------------------ dc level 11
-dcLevelELEVEN.onmouseover = () => {
-    enemyName.innerText = "Nightwing";
-}
-dcLevelELEVEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelELEVEN.onclick = () => {
     enemyHpTextValue.innerText = `NIGHTWING´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(0,100,250) inset";
@@ -985,12 +916,6 @@ dcLevelELEVEN.onclick = () => {
 
 }
 //------------------------------------ dc level 12
-dcLevelTWELVE.onmouseover = () => {
-    enemyName.innerText = "Shazam";
-}
-dcLevelTWELVE.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelTWELVE.onclick = () => {
     enemyHpTextValue.innerText = `SHAZAM´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(255,200,0) inset";
@@ -1072,12 +997,6 @@ dcLevelTWELVE.onclick = () => {
 
 }
 //------------------------------------ dc level 13
-dcLevelTHIRTEEN.onmouseover = () => {
-    enemyName.innerText = "Black Adam";
-}
-dcLevelTHIRTEEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelTHIRTEEN.onclick = () => {
     enemyHpTextValue.innerText = `BLACK ADAM´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(220,205,0) inset";
@@ -1159,12 +1078,6 @@ dcLevelTHIRTEEN.onclick = () => {
 
 }
 //------------------------------------ dc level 14
-dcLevelFOURTEEN.onmouseover = () => {
-    enemyName.innerText = "Doctor Manhattan";
-}
-dcLevelFOURTEEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelFOURTEEN.onclick = () => {
     enemyHpTextValue.innerText = `DOCTOR MANHATTAN´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(0,255,255) inset";
@@ -1246,12 +1159,6 @@ dcLevelFOURTEEN.onclick = () => {
 
 }
 //------------------------------------ dc level 15
-dcLevelFIFTEEN.onmouseover = () => {
-    enemyName.innerText = "Darkseid";
-}
-dcLevelFIFTEEN.onmouseout = () => {
-    enemyName.innerText = " ";
-}
 dcLevelFIFTEEN.onclick = () => {
     enemyHpTextValue.innerText = `DARKSEID´S HP:`;
     game.style.boxShadow = "0 0 70px rgb(220,50,70) inset";

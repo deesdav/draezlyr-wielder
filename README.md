@@ -13,3 +13,4 @@
 - Marvel Level Edits
 - New Collection
 - New Choose Sound
+- Filtered Images
