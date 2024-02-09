@@ -41,8 +41,8 @@
     </div>
     <div id="yourName"></div>
     <div id="yourXPText">XP: <span id="yourXP">0</span></div>
-    <div id="yourDamageText">DAMAGE: <span id="DamageInfo">1</span></div>
-    <div id="yourHPText">HEALTH: <span id="HealthInfo">20</span></div>
+    <div id="yourDamageText">DAMAGE: <span id="damageInfo">1</span></div>
+    <div id="yourHPText">HEALTH: <span id="healthInfo">20</span></div>
 
     <div id="planets">
         <div id="dc-id"><img src="./res/img/dcBluePlanet.png" alt="photo" id="dcPlanet">
@@ -102,13 +102,13 @@
     </div>
     <button id="backBtn">back</button>
     <button id="backBtnDC">back</button>
-    <div id="game">
+    <div id="game" loading="lazy">
         <div id="yourHpTextPromName"><span id="yourHpTextValue">your HP:</span> <span id="yourHp">0</span></div>
         <div id="enemyHpTextPromName"><span id="enemyHpTextValue">enemy HP:</span> <span id="enemyHp">0</span></div>
-        <img src="./res/img/hero.idle.png" alt="photo" id="heroIdle">
-        <img src="./res/img/hero.attack.png" alt="photo" id="heroAttack">
-        <img src="" alt="photo" id="enemy">
-    </div>
+        <img src="./res/img/hero.idle.png" alt="photo" id="heroIdle" loading="lazy">
+        <img src="./res/img/hero.attack.png" alt="photo" id="heroAttack" loading="lazy">
+        <img src="" alt="photo" id="enemy" loading="lazy">
+    </div>    
     <div id="gameResult"></div>
 
     <button id="shopBtn">shop</button>

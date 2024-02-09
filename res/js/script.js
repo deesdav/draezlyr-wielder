@@ -31,8 +31,8 @@ const infoBox = document.getElementById("infoBox");
 const shop = document.getElementById("shop");
 const upgradeDamage = document.getElementById("upgradeDamage");
 const upgradeHealth = document.getElementById("upgradeHealth");
-const DamageInfo = document.getElementById("DamageInfo");
-const HealthInfo = document.getElementById("HealthInfo");
+const damageInfo = document.getElementById("damageInfo");
+const healthInfo = document.getElementById("healthInfo");
 const redColor = document.getElementById("redColor");
 const greenColor = document.getElementById("greenColor");
 const blueColor = document.getElementById("blueColor");
@@ -1608,12 +1608,12 @@ shopBtn.onclick = () => {
     backBtnShop.style.zIndex = "999";
 }
 //------------------------------------ merchant upgrades 
-DamageInfo.style.color = "orange";
-DamageInfo.style.textShadow = "1px 1px 2px black";
-DamageInfo.style.fontWeight = "bold";
-HealthInfo.style.color = "rgb(0,255,0)";
-HealthInfo.style.textShadow = "1px 1px 2px black";
-HealthInfo.style.fontWeight = "bold";
+damageInfo.style.color = "orange";
+damageInfo.style.textShadow = "1px 1px 2px black";
+damageInfo.style.fontWeight = "bold";
+healthInfo.style.color = "rgb(0,255,0)";
+healthInfo.style.textShadow = "1px 1px 2px black";
+healthInfo.style.fontWeight = "bold";
 
 upgradeDamage.onclick = () => {
     if (yourXP.innerText >= upgradeDamageValue) {
@@ -1623,7 +1623,7 @@ upgradeDamage.onclick = () => {
         yourXPValue -= upgradeDamageValue;
         yourXP.innerText = yourXPValue;
         yourDamage++;
-        DamageInfo.innerText = yourDamage;
+        damageInfo.innerText = yourDamage;
     } else {
         upgradeDamage.disable = true;
     }
@@ -1636,7 +1636,7 @@ upgradeHealth.onclick = () => {
         yourXPValue -= upgradeHealthValue;
         yourXP.innerText = yourXPValue;
         yourHpValue += 5;
-        HealthInfo.innerText = yourHpValue;
+        healthInfo.innerText = yourHpValue;
     } else {
         upgradeHealth.disable = true;
     }
