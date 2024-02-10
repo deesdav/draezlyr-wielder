@@ -43,6 +43,8 @@
     <div id="yourXPText">XP: <span id="yourXP">0</span></div>
     <div id="yourDamageText">DAMAGE: <span id="damageInfo">1</span></div>
     <div id="yourHPText">HEALTH: <span id="healthInfo">20</span></div>
+    <div id="yourShieldText">SHIELD: <span id="shieldInfo">OFF</span></div>
+    <div id="yourCriticalText">CRITICAL: <span id="criticalInfo">OFF</span></div>
 
     <div id="planets">
         <div id="dc-id"><img src="./res/img/dcBluePlanet.png" alt="photo" id="dcPlanet">
@@ -105,10 +107,12 @@
     <div id="game" loading="eager">
         <div id="yourHpTextPromName"><span id="yourHpTextValue">your HP:</span> <span id="yourHp">0</span></div>
         <div id="enemyHpTextPromName"><span id="enemyHpTextValue">enemy HP:</span> <span id="enemyHp">0</span></div>
+        <div id="shield">SHIELD</div>
+        <div id="critical">CRITICAL</div>
         <img src="./res/img/hero.idle.png" alt="photo" id="heroIdle" loading="eager">
         <img src="./res/img/hero.attack.png" alt="photo" id="heroAttack" loading="eager">
         <img src="" alt="photo" id="enemy" loading="eager">
-    </div>    
+    </div>
     <div id="gameResult"></div>
 
     <button id="shopBtn">shop</button>
@@ -166,9 +170,11 @@
     <div id="shop">
         <div id="merchant">
             <h2>MERCHANT OFFER TO YOU</h2>
-            <button id="upgradeDamage">damage + 1</button>
-            <button id="upgradeHealth">health + 5</button>
-            <div>cost <span id="costOfUps">0</span> xp</div>
+            <button id="upgradeDamage" alt="damage">damage + 1</button>
+            <button id="upgradeHealth" alt="health">health + 5</button>
+            <button id="upgradeShield" alt="shield">shield = MAX HP + 10</button>
+            <button id="upgradeCritical" alt="critical">critical = enemy - 10</button>
+            <div id="costingMerchant">cost <span id="costOfUps">0</span> xp</div>
         </div>
 
 
@@ -178,7 +184,7 @@
             <button id="greenColor">green color</button>
             <button id="blueColor">blue color</button>
             <button id="yellowColor">yellow color</button>
-            <div>cost <span id="costOfColors">0</span> xp</div>
+            <div id="costingCustomization">cost <span id="costOfColors">0</span> xp</div>
             <div id="overview"><img id="overviewSrc" src="" alt="photo" srcset=""></div>
         </div>
 
@@ -222,6 +228,22 @@
             <img src="./res/img/enemy.blackadam.png" id="blackadamKilledEnemy" alt="dc" srcset="">
             <img src="./res/img/enemy.doctormanhattan.png" id="doctormanhattanKilledEnemy" alt="dc" srcset="">
             <img src="./res/img/enemy.darkseid.png" id="darkseidKilledEnemy" alt="dc" srcset="">
+            <img src="./res/img/enemy.pikachu.png" id="pikachuKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.supermario.png" id="supermarioKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.groot.png" id="grootKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.robocop.png" id="robocopKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.predator.png" id="predatorKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.terminator.png" id="terminatorKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.geralt.png" id="geraltKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.doomslayer.png" id="doomslayerKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.solidsnake.png" id="solidsnakeKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.mandalorian.png" id="mandalorianKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.darthvader.png" id="darthvaderKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.naruto.png" id="narutoKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.goku.png" id="gokuKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.johnwick.png" id="johnwickKilledEnemy" alt="multiverse" srcset="">
+            <img src="./res/img/enemy.kratos.png" id="kratosKilledEnemy" alt="multiverse" srcset="">
+
         </div>
         <div id="infoOfKilledEnemiesBox">
             <p>Name: <span id="infoOfKilledEnemyName"></span></p>
@@ -232,11 +254,11 @@
             <img src="" id="viewPhoto" alt="photo" srcset="">
         </div>
     </div>
-    <audio id="audioButtonClick" src=""></audio>
-    <audio id="audioYouWin" src=""></audio>
-    <audio id="audioYouLost" src=""></audio>
-    <audio id="audioButtonClickMulti" src=""></audio>
-    <audio id="audioLobbyBackground" src=""></audio>
+    <audio id="audioButtonClick" src="" preload="auto"></audio>
+    <audio id="audioYouWin" src="" preload="auto"></audio>
+    <audio id="audioYouLost" src="" preload="auto"></audio>
+    <audio id="audioButtonClickMulti" src="" preload="auto"></audio>
+    <audio id="audioLobbyBackground" src="" preload="auto"></audio>
     <script src="./res/js/script.js"></script>
     <script src="./res/js/marvel-levels.js"></script>
     <script src="./res/js/dc-levels.js"></script>

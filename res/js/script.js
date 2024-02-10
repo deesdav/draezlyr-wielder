@@ -11,6 +11,8 @@ const storyPartInput = document.getElementById("storyPartInput");
 const yourName = document.getElementById("yourName");
 const yourXPText = document.getElementById("yourXPText");
 const yourHPText = document.getElementById("yourHPText");
+const yourShieldText = document.getElementById("yourShieldText");
+const yourCriticalText = document.getElementById("yourCriticalText");
 const yourHpTextPromName = document.getElementById("yourHpTextPromName");
 const yourHpTextValue = document.getElementById("yourHpTextValue");
 const enemyHpTextPromName = document.getElementById("enemyHpTextPromName");
@@ -29,10 +31,18 @@ const shopBtn = document.getElementById("shopBtn");
 const infoBtn = document.getElementById("infoBtn");
 const infoBox = document.getElementById("infoBox");
 const shop = document.getElementById("shop");
+const shield = document.getElementById("shield");
+const critical = document.getElementById("critical");
 const upgradeDamage = document.getElementById("upgradeDamage");
 const upgradeHealth = document.getElementById("upgradeHealth");
+const upgradeShield = document.getElementById("upgradeShield");
+const upgradeCritical = document.getElementById("upgradeCritical");
+const costingMerchant = document.getElementById("costingMerchant");
+const costingCustomization = document.getElementById("costingCustomization");
 const damageInfo = document.getElementById("damageInfo");
 const healthInfo = document.getElementById("healthInfo");
+const shieldInfo = document.getElementById("shieldInfo");
+const criticalInfo = document.getElementById("criticalInfo");
 const redColor = document.getElementById("redColor");
 const greenColor = document.getElementById("greenColor");
 const blueColor = document.getElementById("blueColor");
@@ -220,7 +230,16 @@ multiverse.onclick = () => {
          }
          console.log("Updated HP values:", multiverseEnemiesHP);
  
-     }*/
+     }*/ /* if (winsCounter.innerText >= 5) {
+const multiverseEnemiesHP = [pikachu, supermario, groot, robocop,
+predator, terminator, geralt, doomslayer, solidsnake, mandalorian,
+darthvader, naruto, goku, johnwick, kratos]
+for (let i = 0; i < multiverseEnemiesHP.length; i++) {
+multiverseEnemiesHP[i] += 50;
+}
+console.log("Updated HP values:", multiverseEnemiesHP);
+ 
+}*/
     const randomEnemy = Math.floor(Math.random() * 15);
     roundValueCounter++;
     //------------------------------------ enemy pikachu
@@ -1394,6 +1413,8 @@ function sendEnter() {
     yourName.style.display = "block";
     yourXPText.style.display = "block";
     yourHPText.style.display = "block";
+    yourShieldText.style.display = "block";
+    yourCriticalText.style.display = "block";
     yourDamageText.style.display = "block";
     storyinfo.style.display = "none";
     storyPart.style.display = "none";
@@ -1591,12 +1612,17 @@ backBtnDC.onclick = () => {
 //------------------------------------ shop button, shop system, upgrades 
 let yourDamage = 1;
 let yourHpValue = 20;
+let shieldHpValue = 10;
+let criticalHitValue = 10;
+let shieldActivate = "OFF";
+let criticalActivate = "OFF";
 let yourXPValue = 0;
 let yourXPIncrease = 2;
 let dotXP = 5;
 let upgradeDamageValue = 4;
 let upgradeHealthValue = 2;
-
+let upgradeShieldValue = 7;//7
+let upgradeCriticalValue = 6;//6
 
 shopBtn.onclick = () => {
     collectionBtn.style.display = "block";
@@ -1614,9 +1640,19 @@ damageInfo.style.fontWeight = "bold";
 healthInfo.style.color = "rgb(0,255,0)";
 healthInfo.style.textShadow = "1px 1px 2px black";
 healthInfo.style.fontWeight = "bold";
+shieldInfo.style.color = "cyan";
+shieldInfo.style.textShadow = "1px 1px 2px black";
+shieldInfo.style.fontWeight = "bold";
+criticalInfo.style.color = "rgb(128,9,9)";
+criticalInfo.style.textShadow = "1px 1px 2px black";
+criticalInfo.style.fontWeight = "bold";
 
 upgradeDamage.onclick = () => {
+    upgradeDamage.style.borderColor = "red";
+    upgradeDamage.style.color = "red";
     if (yourXP.innerText >= upgradeDamageValue) {
+        upgradeDamage.style.borderColor = "rgb(255, 165, 0, 0.684)";
+        upgradeDamage.style.color = "rgb(255, 165, 0, 0.684)";
         upgradeDamage.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
@@ -1629,7 +1665,11 @@ upgradeDamage.onclick = () => {
     }
 }
 upgradeHealth.onclick = () => {
+    upgradeHealth.style.borderColor = "red";
+    upgradeHealth.style.color = "red";
     if (yourXP.innerText >= upgradeHealthValue) {
+        upgradeHealth.style.borderColor = "rgb(0, 255, 0, 0.684)";
+        upgradeHealth.style.color = "rgb(0, 255, 0, 0.684)";
         upgradeDamage.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
@@ -1641,6 +1681,90 @@ upgradeHealth.onclick = () => {
         upgradeHealth.disable = true;
     }
 }
+
+upgradeShield.onclick = () => {
+    upgradeShield.style.borderColor = "red";
+    upgradeShield.style.color = "red";
+    if (yourXP.innerText >= upgradeShieldValue) {
+        upgradeShield.style.borderColor = "rgb(0, 255, 255, 0.684)";
+        upgradeShield.style.color = "rgb(0, 255, 255, 0.684)";
+        upgradeShield.disable = false;
+        audioButtonClick.src = "./res/audio/buttonsound.mp3";
+        audioButtonClick.play();
+        yourXPValue -= upgradeShieldValue;
+        yourXP.innerText = yourXPValue;
+        shieldActivate = "ON";
+        shieldInfo.innerText = shieldActivate;
+        upgradeShield.style.display = "none";
+        shield.style.display = "block";
+    } else {
+        upgradeShield.disable = true;
+    }
+}
+shield.onclick = () => {
+    audioButtonClick.src = "./res/audio/shield.mp3";
+    audioButtonClick.play();
+    shield.style.display = "none";
+    yourHp.innerText = yourHpValue + shieldHpValue;
+    shieldActivate = "ON";
+    shieldInfo.innerText = shieldActivate;
+    heroIdle.style.filter = "drop-shadow(3px 3px 5px cyan)drop-shadow(-3px -3px 5px cyan)";
+    heroAttack.style.filter = "drop-shadow(3px 3px 5px cyan)drop-shadow(-3px -3px 5px cyan)";
+    if (critical.style.display === "none" && shield.style.display === "none") {
+        heroIdle.style.filter = "drop-shadow(3px 3px 5px rgb(0, 255, 255))drop-shadow(-3px -3px 5px rgb(128, 9, 9))";
+        heroAttack.style.filter = "drop-shadow(3px 3px 5px rgb(128, 9, 9))drop-shadow(-3px -3px 5px rgb(0, 255, 255))";
+    }
+}
+
+upgradeCritical.onclick = () => {
+    upgradeCritical.style.borderColor = "red";
+    upgradeCritical.style.color = "red";
+    if (yourXP.innerText >= upgradeCriticalValue) {
+        upgradeCritical.style.borderColor = "rgb(128, 9, 9, 0.684)";
+        upgradeCritical.style.color = "rgb(128, 9, 9, 0.684)";
+        upgradeCritical.disable = false;
+        audioButtonClick.src = "./res/audio/buttonsound.mp3";
+        audioButtonClick.play();
+        yourXPValue -= upgradeCriticalValue;
+        yourXP.innerText = yourXPValue;
+        criticalActivate = "ON";
+        criticalInfo.innerText = criticalActivate;
+        upgradeCritical.style.display = "none";
+        critical.style.display = "block";
+    } else {
+        upgradeCritical.disable = true;
+    }
+}
+critical.onclick = () => {
+    audioButtonClick.src = "./res/audio/critical.mp3";
+    audioButtonClick.play();
+    critical.style.display = "none";
+    enemyHp.innerText -= criticalHitValue;
+    criticalActivate = "ON";
+    criticalInfo.innerText = criticalActivate;
+    heroIdle.style.filter = "drop-shadow(3px 3px 5px rgb(128, 9, 9))drop-shadow(-3px -3px 5px rgb(128, 9, 9))";
+    heroAttack.style.filter = "drop-shadow(3px 3px 5px rgb(128, 9, 9))drop-shadow(-3px -3px 5px rgb(128, 9, 9))";
+    if (critical.style.display === "none" && shield.style.display === "none") {
+        heroIdle.style.filter = "drop-shadow(3px 3px 5px rgb(0, 255, 255))drop-shadow(-3px -3px 5px rgb(128, 9, 9))";
+        heroAttack.style.filter = "drop-shadow(3px 3px 5px rgb(128, 9, 9))drop-shadow(-3px -3px 5px rgb(0, 255, 255))";
+    }
+    if (enemyHp.innerText == 0 || enemyHp.innerText <= 0) {
+        enemyHp.innerText = 0;
+        yourHp.innerText = yourHpValue;
+    }
+}
+critical.onmousedown = () => {
+    heroAttack.style.left = "35%";
+    heroAttack.style.display = "block";
+    heroIdle.style.display = "none";
+}
+critical.onmouseup = () => {
+    heroAttack.style.display = "none";
+    heroIdle.style.display = "block";
+    heroIdle.style.left = "20%";
+}
+
+
 //------------------------------------ customization upgrades
 let redColorOwned = false;
 let greenColorOwned = false;
@@ -2717,6 +2841,7 @@ redColor.onmouseover = () => {
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
+    costingCustomization.style.color = "red";
 }
 greenColor.onmouseover = () => {
     costOfColors.innerText = greenColorValue;
@@ -2724,6 +2849,7 @@ greenColor.onmouseover = () => {
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
+    costingCustomization.style.color = "rgb(0,255,0)";
 }
 blueColor.onmouseover = () => {
     costOfColors.innerText = blueColorValue;
@@ -2731,6 +2857,7 @@ blueColor.onmouseover = () => {
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
+    costingCustomization.style.color = "blue";
 }
 yellowColor.onmouseover = () => {
     costOfColors.innerText = yellowColorValue;
@@ -2738,53 +2865,110 @@ yellowColor.onmouseover = () => {
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
+    costingCustomization.style.color = "yellow";
 }
 //------------------------------------ cost of colors mouse out 
 redColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
+    costingCustomization.style.color = "white";
 }
 greenColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
+    costingCustomization.style.color = "white";
 }
 blueColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
+    costingCustomization.style.color = "white";
 }
 yellowColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
+    costingCustomization.style.color = "white";
 }
 upgradeDamage.onmouseout = () => {
     costOfColors.innerText = 0;
     overview.style.display = "none";
+    costingMerchant.style.color = "white";
+    upgradeDamage.style.borderColor = "rgb(255, 165, 0, 0.684)";
+    upgradeDamage.style.color = "rgb(255, 165, 0, 0.684)";
 }
 upgradeHealth.onmouseout = () => {
     costOfColors.innerText = 0;
     overview.style.display = "none";
+    costingMerchant.style.color = "white";
+    upgradeHealth.style.borderColor = "rgb(0, 255, 0, 0.684)";
+    upgradeHealth.style.color = "rgb(0, 255, 0, 0.684)";
+}
+upgradeShield.onmouseout = () => {
+    costOfColors.innerText = 0;
+    overview.style.display = "none";
+    costingMerchant.style.color = "white";
+    upgradeShield.style.borderColor = "rgb(0, 255, 255, 0.684)";
+    upgradeShield.style.color = "rgb(0, 255, 255, 0.684)";
+}
+upgradeCritical.onmouseout = () => {
+    costOfColors.innerText = 0;
+    overview.style.display = "none";
+    costingMerchant.style.color = "white";
+    upgradeCritical.style.borderColor = "rgb(128, 9, 9, 0.684)";
+    upgradeCritical.style.color = "rgb(128, 9, 9, 0.684)";
 }
 //------------------------------------ cost of upgrades mouse over
 upgradeDamage.onmouseover = () => {
     costOfUps.innerText = upgradeDamageValue;
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
+    costingMerchant.style.color = "orange";
 }
 upgradeHealth.onmouseover = () => {
     costOfUps.innerText = upgradeHealthValue;
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
+    costingMerchant.style.color = "rgb(0,255,0)";
+}
+upgradeShield.onmouseover = () => {
+    costOfUps.innerText = upgradeShieldValue;
+    audioButtonClick.src = "./res/audio/choose.mp3";
+    audioButtonClick.play();
+    costingMerchant.style.color = "cyan";
+}
+upgradeCritical.onmouseover = () => {
+    costOfUps.innerText = upgradeCriticalValue;
+    audioButtonClick.src = "./res/audio/choose.mp3";
+    audioButtonClick.play();
+    costingMerchant.style.color = "rgb(128, 9, 9, 0.684)";
 }
 //------------------------------------ cost of upgrades mouse out
 upgradeDamage.onmouseout = () => {
     costOfUps.innerText = 0;
+    costingMerchant.style.color = "white";
+    upgradeDamage.style.borderColor = "rgb(255, 165, 0, 0.684)";
+    upgradeDamage.style.color = "rgb(255, 165, 0, 0.684)";
 }
 upgradeHealth.onmouseout = () => {
     costOfUps.innerText = 0;
+    costingMerchant.style.color = "white";
+    upgradeHealth.style.borderColor = "rgb(0, 255, 0, 0.684)";
+    upgradeHealth.style.color = "rgb(0, 255, 0, 0.684)";
+}
+upgradeShield.onmouseout = () => {
+    costOfUps.innerText = 0;
+    costingMerchant.style.color = "white";
+    upgradeShield.style.borderColor = "rgb(0, 255, 255, 0.684)";
+    upgradeShield.style.color = "rgb(0, 255, 255, 0.684)";
+}
+upgradeCritical.onmouseout = () => {
+    costOfUps.innerText = 0;
+    costingMerchant.style.color = "white";
+    upgradeCritical.style.borderColor = "rgb(128, 9, 9, 0.684)";
+    upgradeCritical.style.color = "rgb(128, 9, 9, 0.684)";
 }
 //------------------------------------ back button shop
 backBtnShop.onclick = () => {
@@ -2853,10 +3037,6 @@ enemyHp.style.color = "rgb(255, 0, 0)";
 
 
 //------------------------------------ hero audio
-heroAttack.onmouseover = () => {
-    audioLobbyBackground.src = "./res/audio/bomb.mp3";
-    audioLobbyBackground.play();
-}
 heroIdle.onmouseover = () => {
     audioLobbyBackground.src = "./res/audio/bomb.mp3";
     audioLobbyBackground.play();
@@ -2870,18 +3050,15 @@ heroIdle.onmouseout = () => {
     audioLobbyBackground.currentTime = 0;
 }
 yourName.onmouseover = () => {
-    yourName.style.left = "35%";
     audioLobbyBackground.src = "./res/audio/bomb.mp3";
     audioLobbyBackground.play();
 }
 yourName.onmouseout = () => {
-    yourName.style.left = "15px";
     audioLobbyBackground.pause();
     audioLobbyBackground.currentTime = 0;
 }
 
 //------------------------------------ enemy system
-
 enemy.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
     if (gameResult.style.display == "block") {
@@ -2910,6 +3087,8 @@ enemy.onmousedown = () => {
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
         enemy.style.animation = "enemyMoving 1.1s infinite";
+    } else {
+        enemyHp.style.color = "red";
     }
     //------------------------------------ gif enemy effects
     let halfEnemyHp = (((enemyHp.innerText) / 2) + 7);
@@ -2958,6 +3137,8 @@ enemy.onmouseup = () => {
     if (enemyHp.innerText <= 15) {
         enemyHp.style.color = "pink";
         enemy.style.animation = "enemyMoving 1.1s infinite";
+    } else {
+        enemyHp.style.color = "red";
     }
     //------------------------------------ gif enemy effects
     let halfEnemyHp = (((enemyHp.innerText) / 2) + 7);
@@ -2989,6 +3170,27 @@ enemy.onmouseup = () => {
 }
 
 gameResult.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    levelsText.style.display = "block";
+    levelInfo.style.display = "block";
+    game.style.display = "none";
+    gameResult.style.display = "none";
+    heroAttack.style.display = "none";
+    heroIdle.style.display = "block";
+    heroIdle.style.left = "20%";
+    heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
+    heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
+
+    if (shieldInfo.innerText == "ON") {
+        console.log("shieldyyyyyyyyyyyyy");
+        shield.style.display = "block";
+    }
+    if (criticalInfo.innerText == "ON") {
+        console.log("criticalll hitt");
+        critical.style.display = "block";
+    }
+
     if (marvelPlanetClick) {
         document.body.style.backgroundColor = "red";
         levelONE.style.display = "block";
@@ -3164,6 +3366,8 @@ gameResult.onclick = () => {
                     planets.style.gap = "0px";
                     upgradeDamageValue = 9;
                     upgradeHealthValue = 7;
+                    upgradeShieldValue = 12;//12
+                    upgradeCriticalValue = 11;//11
                     redColorValue = 10;
                     greenColorValue = 12;
                     blueColorValue = 15;
@@ -3314,15 +3518,8 @@ gameResult.onclick = () => {
         dcLevelFIFTEEN.style.filter = "invert(100%)";
         dcLevelFIFTEEN.style.textDecoration = "underline";
     }
-
-    audioButtonClick.src = "./res/audio/buttonsound.mp3";
-    audioButtonClick.play();
-    levelsText.style.display = "block";
-    levelInfo.style.display = "block";
-    game.style.display = "none";
-    gameResult.style.display = "none";
-
 }
+
 
 collectionBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -3350,18 +3547,22 @@ for (let i = 0; i < styleColor.length; i++) {
 const killedEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
     "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
     "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-    "blackadam", "doctormanhattan", "darkseid"];
+    "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+    "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
 
 const killedEnemyNames = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
     "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
     "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-    "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+    "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID", "PIKACHU", "SUPER MARIO", "GROOT", "ROBOCOP", "PREDATOR", "TERMINATOR", "GERALT",
+    "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
 
 const killedEnemyDamagePerSec = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
     16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 
 const killedEnemyHP = [20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
-    95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165];
+    95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, pikachuHP, supermarioHP, grootHP, robocopHP,
+    predatorHP, terminatorHP, geraltHP, doomslayerHP, solidsnakeHP, mandalorianHP,
+    darthvaderHP, narutoHP, gokuHP, johnwickHP, kratosHP];
 
 const locations = ["MARVEL LEVEL ONE", "MARVEL LEVEL TWO", "MARVEL LEVEL THREE",
     "MARVEL LEVEL FOUR", "MARVEL LEVEL FIVE", "MARVEL LEVEL SIX", "MARVEL LEVEL SEVEN",
@@ -3380,7 +3581,7 @@ viewPhoto.style.display = "none";
 
 for (let i = 0; i < killedEnemies.length; i++) {
     const killedEnemiesId = document.getElementById(`${killedEnemies[i]}KilledEnemy`);
-    killedEnemiesId.style.filter = "blur(5px)";
+    killedEnemiesId.style.filter = "blur(3px)";
     killedEnemiesId.onmouseover = () => {
         audioButtonClick.src = "./res/audio/choose.mp3";
         audioButtonClick.play();
@@ -3399,6 +3600,6 @@ for (let i = 0; i < killedEnemies.length; i++) {
         infoOfKilledEnemyLocation.innerHTML = null;
         viewPhoto.src = "";
         viewPhoto.style.display = "none";
-        killedEnemiesId.style.filter = "blur(5px)";
+        killedEnemiesId.style.filter = "blur(3px)";
     }
 }

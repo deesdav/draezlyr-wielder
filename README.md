@@ -14,3 +14,6 @@
 - New Collection
 - New Choose Sound
 - Filtered Images
+- Prodleva v game fixed
+- Collection update
+- New upgrades : Shield and Critical hit

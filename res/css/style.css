@@ -201,11 +201,31 @@ body {
     font-size: x-large;
 }
 
-#yourXPText {
+#yourShieldText {
     display: none;
     color: rgb(255, 255, 255);
     position: absolute;
     top: 75px;
+    right: 25px;
+    font-size: x-large;
+    z-index: 999;
+}
+
+#yourCriticalText {
+    display: none;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 105px;
+    right: 25px;
+    font-size: x-large;
+    z-index: 999;
+}
+
+#yourXPText {
+    display: none;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 135px;
     right: 25px;
     font-size: x-large;
     z-index: 999;
@@ -579,6 +599,50 @@ body {
     text-transform: uppercase;
 }
 
+#shield {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    box-shadow: 2px 0 25px cyan;
+    text-shadow: 0 0 0px cyan;
+    border-radius: 0 1em 0 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+#shield:hover {
+    color: cyan;
+    text-decoration: underline;
+    box-shadow: 0 0 3px cyan;
+}
+
+#critical {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    box-shadow: 2px 0 25px rgb(128, 9, 9);
+    text-shadow: 0 0 0px rgb(128, 9, 9);
+    border-radius: 1em 0 0 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+#critical:hover {
+    color: rgb(128, 9, 9);
+    text-decoration: underline;
+    box-shadow: 0 0 3px rgb(128, 9, 9);
+}
+
 #gameResult {
     color: white;
     font-size: xxx-large;
@@ -722,6 +786,7 @@ body {
     margin-top: 10px;
     filter: blur(5px);
 }
+
 #infoBox #leftBox:hover {
     filter: blur(0px);
 }
@@ -736,6 +801,7 @@ body {
     padding-top: 80px;
     filter: blur(5px);
 }
+
 #infoBox #rightBox:hover {
     filter: blur(0px);
 }
@@ -842,28 +908,58 @@ tr:nth-child(7) td:nth-child(2) {
 #merchant {
     display: block;
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
     text-align: center;
     padding: 1em;
 }
 
 #merchant button {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    ;
+    height: 190px;
     border-radius: 10px;
+    padding: 15px;
     border: 3px solid black;
-    background-color: rgba(0, 0, 0, 0.684);
+    background-color: rgb(0, 0, 0, 0.684);
     color: #ffffff;
     font-size: xx-large;
     cursor: pointer;
     transition: .3 ease;
     text-transform: uppercase;
+    text-shadow: 0 0 0px rgb(251, 0, 0);
+}
+
+#merchant button[alt="damage"] {
+    color: rgb(255, 165, 0, 0.684);
+    border: 3px solid rgb(255, 165, 0, 0.684);
+    text-shadow: 0 0 0px rgb(255, 165, 0);
+}
+
+#merchant button[alt="health"] {
+    color: rgba(0, 255, 0, 0.684);
+    border: 3px solid rgba(0, 255, 0, 0.684);
+    text-shadow: 0 0 0px rgb(0, 255, 0);
+}
+
+#merchant button[alt="shield"] {
+    color: rgba(0, 255, 255, 0.684);
+    border: 3px solid rgba(0, 255, 255, 0.684);
+    font-size: 18px;
+    text-shadow: 0 0 0px rgb(0, 255, 255);
+}
+
+#merchant button[alt="critical"] {
+    color: rgba(128, 9, 9, 0.684);
+    border: 3px solid rgba(128, 9, 9, 0.684);
+    font-size: 18px;
+    text-shadow: 0 0 0px rgb(128, 9, 9);
 }
 
 #merchant button:hover {
     background-color: white;
     color: black;
     border-radius: 50% 20% / 10% 40%;
+    border: 3px solid black;
 }
 
 #customization {
@@ -1097,15 +1193,16 @@ tr:nth-child(7) td:nth-child(2) {
 #gridOfKilledEnemies {
     display: grid;
     margin: 0 auto;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
     gap: 5px;
-    width: fit-content;
     height: fit-content;
+    width: fit-content;
+    transform: scale(0.9);
 }
 
 #gridOfKilledEnemies img {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     padding: 1em;
     background-color: rgb(0, 0, 0);
 }
@@ -1116,6 +1213,41 @@ tr:nth-child(7) td:nth-child(2) {
 
 #gridOfKilledEnemies img[alt="dc"] {
     border: 3px solid blue;
+}
+
+#gridOfKilledEnemies img[alt="multiverse"] {
+    border: 3px solid white;
+    animation: multiverseBorder 5s linear alternate infinite;
+}
+
+@keyframes multiverseBorder {
+    0% {
+        border-color: violet;
+    }
+
+    16.666% {
+        border-color: indigo;
+    }
+
+    33.333% {
+        border-color: blue;
+    }
+
+    50% {
+        border-color: green;
+    }
+
+    66.666% {
+        border-color: yellow;
+    }
+
+    83.333% {
+        border-color: orange;
+    }
+
+    100% {
+        border-color: red;
+    }
 }
 
 
@@ -1141,5 +1273,5 @@ tr:nth-child(7) td:nth-child(2) {
     border: 4mm ridge rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     filter: saturate(150%);
-    
+
 }
