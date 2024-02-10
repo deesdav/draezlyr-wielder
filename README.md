@@ -17,3 +17,4 @@
 - Prodleva v game fixed
 - Collection update
 - New upgrades : Shield and Critical hit
+- New Easter egg 

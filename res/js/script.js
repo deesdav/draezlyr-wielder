@@ -120,6 +120,46 @@ const collectionBtn = document.getElementById("collectionBtn");
 const collectionsBox = document.getElementById("collectionsBox");
 const viewPhoto = document.getElementById("viewPhoto");
 
+
+//------------------------------------ easter egg
+storyPartInput.addEventListener("input", function () {
+    const nameV = storyPartInput.value;
+
+    if (nameV === "sepia" || nameV === "SEPIA") {
+        console.log("sepiaaaaaaaa");
+        document.body.style.filter = "sepia(150%)";
+    } else if (nameV === "hue" || nameV === "HUE") {
+        console.log("hueeeeee");
+        document.body.style.filter = "hue-rotate(90deg)";
+    } else if (nameV === "grayscale" || nameV === "GRAYSCALE") {
+        console.log("grayscaleeeee");
+        document.body.style.filter = "grayscale(100%)";
+    } else if (nameV === "brightness" || nameV === "BRIGHTNESS") {
+        console.log("brightnesseeee");
+        document.body.style.filter = "brightness(150%)";
+    } else if (nameV === "blur" || nameV === "BLUR") {
+        console.log("bluuuuuur");
+        document.body.style.filter = "blur(5px)";
+    } else if (nameV === "contrast" || nameV === "CONTRAST") {
+        console.log("contrasssst");
+        document.body.style.filter = "contrast(200%)";
+    } else if (nameV === "invert" || nameV === "INVERT") {
+        console.log("inverttttt");
+        document.body.style.filter = "invert(100%)";
+    } else if (nameV === "saturate" || nameV === "SATURATE") {
+        console.log("saturateeeee");
+        document.body.style.filter = "saturate(200%)";
+    } else if (nameV === "opacity" || nameV === "OPACITY") {
+        console.log("opacityyyyy");
+        document.body.style.filter = "opacity(50%)";
+    } else if (nameV === "dropshadow" || nameV === "DROPSHADOW") {
+        console.log("dropshadoooow");
+        document.body.style.filter = "drop-shadow(2px 2px red) drop-shadow(-2px -2px blue)";
+    } else {
+        document.body.style.filter = "none";
+    }
+});
+
 //------------------------------------ audios
 const audioButtonClick = document.getElementById("audioButtonClick");
 const audioButtonClickMulti = document.getElementById("audioButtonClickMulti");
@@ -3086,34 +3126,34 @@ enemy.onmousedown = () => {
         enemyHp.style.color = "red";
     }
     //------------------------------------ gif enemy effects
-        const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
-            "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
-            "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-            "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+    const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
+        "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
+        "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
+        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
 
-        const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
-            "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
-            "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-            "blackadam", "doctormanhattan", "darkseid"];
+    const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+        "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+        "blackadam", "doctormanhattan", "darkseid"];
 
-        const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
+    const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
 
-        for (let i = 0; i < enemyTextValue.length; i++) {
-            if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
-                game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
-                enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
-                enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
+    for (let i = 0; i < enemyTextValue.length; i++) {
+        if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
+            game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+            enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
+            enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
-                document.body.onmousemove = () => {
-                    if (enemyHp.innerText <= 15) {
-                        enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
-                    } else {
-                        enemy.style.filter = "none";
-                    }
+            document.body.onmousemove = () => {
+                if (enemyHp.innerText <= 15) {
+                    enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
+                } else {
+                    enemy.style.filter = "none";
                 }
-                break; // exit the loop once a match is found
             }
+            break; // exit the loop once a match is found
         }
+    }
 }
 
 enemy.onmouseup = () => {
@@ -3139,34 +3179,34 @@ enemy.onmouseup = () => {
         enemyHp.style.color = "red";
     }
     //------------------------------------ gif enemy effects
-        const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
-            "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
-            "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-            "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+    const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
+        "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
+        "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
+        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
 
-        const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
-            "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
-            "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-            "blackadam", "doctormanhattan", "darkseid"];
+    const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+        "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+        "blackadam", "doctormanhattan", "darkseid"];
 
-        const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
+    const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
 
-        for (let i = 0; i < enemyTextValue.length; i++) {
-            if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
-                game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
-                enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
-                enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
+    for (let i = 0; i < enemyTextValue.length; i++) {
+        if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
+            game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+            enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
+            enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
-                document.body.onmousemove = () => {
-                    if (enemyHp.innerText <= 15) {
-                        enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
-                    } else {
-                        enemy.style.filter = "none";
-                    }
+            document.body.onmousemove = () => {
+                if (enemyHp.innerText <= 15) {
+                    enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
+                } else {
+                    enemy.style.filter = "none";
                 }
-                break; // exit the loop once a match is found
             }
+            break; // exit the loop once a match is found
         }
+    }
 }
 
 gameResult.onclick = () => {
