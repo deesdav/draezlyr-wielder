@@ -527,9 +527,13 @@ body {
     transform: translate(-50%, -50%);
     filter: saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 0, 0.518));
 }
-
-
-
+/*
+@media (min-width: 1px) {
+    #game {
+        background: url('data:spidermanBG/gif;base64,iVBORw...') bottom/100% no-repeat;
+    }
+}
+*/
 #heroIdle {
     display: block;
     height: min-content;

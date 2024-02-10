@@ -57,7 +57,6 @@ const winsCounter = document.getElementById("winsCounter");
 const lossesCounter = document.getElementById("lossesCounter");
 const levelsBox = document.getElementById("levelsBox");
 
-
 const levelsText = document.getElementById("levelsText");
 const gridOfLevels = document.getElementById("gridOfLevels");
 const levelONE = document.getElementById("levelONE");
@@ -94,7 +93,6 @@ const dcLevelTHIRTEEN = document.getElementById("dcLevelTHIRTEEN");
 const dcLevelFOURTEEN = document.getElementById("dcLevelFOURTEEN");
 const dcLevelFIFTEEN = document.getElementById("dcLevelFIFTEEN");
 
-
 const storyrecap = document.getElementById("storyrecap");
 const game = document.getElementById("game");
 const heroIdle = document.getElementById("heroIdle");
@@ -118,7 +116,6 @@ const dcID = document.getElementById("dc-id");
 const marvelID = document.getElementById("marvel-id");
 const deesdavID = document.getElementById("deesdav-id");
 
-
 const collectionBtn = document.getElementById("collectionBtn");
 const collectionsBox = document.getElementById("collectionsBox");
 const viewPhoto = document.getElementById("viewPhoto");
@@ -132,6 +129,7 @@ const audioYouLost = document.getElementById("audioYouLost");
 
 const muteAudio = document.getElementById("muteAudio");
 
+//------------------------------------ mute audio
 muteAudio.onclick = () => {
     if (muteAudio.innerText == "MUTE AUDIO") {
         toggleMute();
@@ -142,8 +140,6 @@ muteAudio.onclick = () => {
     }
 }
 
-
-//------------------------------------ mute audio
 function toggleMute() {
     if (audioButtonClick.muted || audioButtonClickMulti.muted || audioLobbyBackground.muted || audioYouWin.muted || audioYouLost.muted) {
         audioButtonClick.muted = false;
@@ -168,6 +164,29 @@ function toggleUnMute() {
     audioYouLost.muted = !audioYouLost.muted;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    var yourElement = document.getElementById("game");
+    const urls = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+        "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+        "blackadam", "doctormanhattan", "darkseid"];
+
+    for (let i = 0; i < urls.length; i++) {
+        var imageUrl = `./res/img/finished.${urls[i]}BG.gif`;
+
+        // Create an Image object
+        var img = new Image();
+
+        // Set up an event handler for when the image is loaded
+        img.addEventListener("load", function () {
+            // Set the background image once it's loaded
+            yourElement.style.backgroundImage = `url(${imageUrl})`;
+        });
+
+        // Set the image source to trigger loading
+        img.src = imageUrl;
+    }
+});
 
 const multiverse = document.getElementById("multiverse");
 
