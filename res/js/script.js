@@ -164,31 +164,6 @@ function toggleUnMute() {
     audioYouLost.muted = !audioYouLost.muted;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    var yourElement = document.getElementById("game");
-    const urls = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
-        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
-        "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-        "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
-        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
-
-    for (let i = 0; i < urls.length; i++) {
-        var imageUrl = `./res/img/finished.${urls[i]}BG.gif`;
-
-        // Create an Image object
-        var img = new Image();
-
-        // Set up an event handler for when the image is loaded
-        img.addEventListener("load", function () {
-            // Set the background image once it's loaded
-            yourElement.style.backgroundImage = `url(${imageUrl})`;
-        });
-
-        // Set the image source to trigger loading
-        img.src = imageUrl;
-    }
-});
-
 const multiverse = document.getElementById("multiverse");
 
 //------------------------------------ multiverse
@@ -3111,31 +3086,34 @@ enemy.onmousedown = () => {
         enemyHp.style.color = "red";
     }
     //------------------------------------ gif enemy effects
-    let halfEnemyHp = (((enemyHp.innerText) / 2) + 7);
-    const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
-        "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
-        "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"]
-    const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
-        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
-        "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-        "blackadam", "doctormanhattan", "darkseid"];
-    for (let i = 0; i < enemyTextValue.length; i++) {
-        for (let j = 0; j < damagedAndFinishedEffectEnemies.length; j++) {
-            if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText == `${enemyTextValue[i]}´S HP:`) {
+        const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
+            "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
+            "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
+            "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+
+        const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+            "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+            "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+            "blackadam", "doctormanhattan", "darkseid"];
+
+        const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
+
+        for (let i = 0; i < enemyTextValue.length; i++) {
+            if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
                 game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
                 enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
-                enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
+
                 document.body.onmousemove = () => {
                     if (enemyHp.innerText <= 15) {
-                        enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                        enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
                     } else {
                         enemy.style.filter = "none";
                     }
                 }
+                break; // exit the loop once a match is found
             }
         }
-    }
 }
 
 enemy.onmouseup = () => {
@@ -3161,32 +3139,34 @@ enemy.onmouseup = () => {
         enemyHp.style.color = "red";
     }
     //------------------------------------ gif enemy effects
-    let halfEnemyHp = (((enemyHp.innerText) / 2) + 7);
-    const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
-        "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
-        "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"]
-    const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
-        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
-        "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-        "blackadam", "doctormanhattan", "darkseid"];
-    for (let i = 0; i < enemyTextValue.length; i++) {
-        for (let j = 0; j < damagedAndFinishedEffectEnemies.length; j++) {
-            if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText == `${enemyTextValue[i]}´S HP:`) {
+        const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
+            "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
+            "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
+            "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+
+        const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+            "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+            "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+            "blackadam", "doctormanhattan", "darkseid"];
+
+        const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
+
+        for (let i = 0; i < enemyTextValue.length; i++) {
+            if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
                 game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
                 enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
-                enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
+
                 document.body.onmousemove = () => {
                     if (enemyHp.innerText <= 15) {
-                        enemy.style.filter = "grayscale(100%)drop-shadow(0px 20px 10px red) ";
+                        enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
                     } else {
                         enemy.style.filter = "none";
                     }
                 }
+                break; // exit the loop once a match is found
             }
         }
-    }
-
 }
 
 gameResult.onclick = () => {
