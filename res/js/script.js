@@ -163,7 +163,7 @@ function toggleUnMute() {
     audioYouWin.muted = !audioYouWin.muted;
     audioYouLost.muted = !audioYouLost.muted;
 }
-
+/*
 document.addEventListener("DOMContentLoaded", function () {
     var yourElement = document.getElementById("game");
     const urls = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the image source to trigger loading
         img.src = imageUrl;
     }
-});
+});*/
 
 const multiverse = document.getElementById("multiverse");
 
