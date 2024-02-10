@@ -163,13 +163,14 @@ function toggleUnMute() {
     audioYouWin.muted = !audioYouWin.muted;
     audioYouLost.muted = !audioYouLost.muted;
 }
-/*
+
 document.addEventListener("DOMContentLoaded", function () {
     var yourElement = document.getElementById("game");
     const urls = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-        "blackadam", "doctormanhattan", "darkseid"];
+        "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
 
     for (let i = 0; i < urls.length; i++) {
         var imageUrl = `./res/img/finished.${urls[i]}BG.gif`;
@@ -186,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the image source to trigger loading
         img.src = imageUrl;
     }
-});*/
+});
 
 const multiverse = document.getElementById("multiverse");
 
