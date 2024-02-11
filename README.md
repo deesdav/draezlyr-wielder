@@ -17,3 +17,4 @@
 - Collection update
 - New upgrades : Shield and Critical hit
 - New Easter egg 
+- Multiverse fix

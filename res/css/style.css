@@ -995,11 +995,6 @@ tr:nth-child(7) td:nth-child(2) {
     border-radius: 50% 20% / 10% 40%;
 }
 
-#customization button:hover {
-    background-color: black;
-    color: white;
-}
-
 #redColor {
     background-color: rgba(255, 0, 0, 0.875);
 }

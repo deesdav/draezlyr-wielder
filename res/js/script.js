@@ -239,21 +239,21 @@ multiverse.onmouseover = () => {
 
 }
 
-let pikachuHP = 270;
-let supermarioHP = 275;
-let grootHP = 280;
-let robocopHP = 285;
-let predatorHP = 290;
-let terminatorHP = 300;
-let geraltHP = 305;
-let doomslayerHP = 310;
-let solidsnakeHP = 315;
-let mandalorianHP = 320;
-let darthvaderHP = 325;
-let narutoHP = 330;
-let gokuHP = 335;
-let johnwickHP = 340;
-let kratosHP = 345;
+let pikachuHP = 170;
+let supermarioHP = 175;
+let grootHP = 180;
+let robocopHP = 185;
+let predatorHP = 190;
+let terminatorHP = 200;
+let geraltHP = 205;
+let doomslayerHP = 210;
+let solidsnakeHP = 215;
+let mandalorianHP = 220;
+let darthvaderHP = 225;
+let narutoHP = 230;
+let gokuHP = 235;
+let johnwickHP = 240;
+let kratosHP = 245;
 
 multiverse.onclick = () => {
     /* if (winsCounter.innerText >= 5) {
@@ -1190,13 +1190,30 @@ console.log("Updated HP values:", multiverseEnemiesHP);
     backBtnShop.style.zIndex = "0";
 
     gameResult.onclick = () => {
+        console.log("multiverse gamee resultt");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         yourName.style.display = "block";
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
+        collectionBtn.style.display = "block";
         planets.style.display = "flex";
+        game.style.display = "none";
         gameResult.style.display = "none";
+        heroAttack.style.display = "none";
+        heroIdle.style.display = "block";
+        heroIdle.style.left = "20%";
+        heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
+        heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
+
+        if (shieldInfo.innerText == "ON") {
+            console.log("shieldyyyyyyyyyyyyy");
+            shield.style.display = "block";
+        }
+        if (criticalInfo.innerText == "ON") {
+            console.log("criticalll hitt");
+            critical.style.display = "block";
+        }
     }
 }
 
@@ -1810,6 +1827,9 @@ let blueColorOwned = false;
 let yellowColorOwned = false;
 let redColorValue = 5;
 redColor.onclick = () => {
+    redColor.style.borderColor = "red";
+    redColor.style.backgroundColor = "white";
+    redColor.style.color = "red";
     if (yourXP.innerText >= redColorValue) {
         redColor.style.display = "none";
         redColor.disable = false;
@@ -2078,6 +2098,9 @@ redColor.onclick = () => {
 }
 let greenColorValue = 7;
 greenColor.onclick = () => {
+    greenColor.style.borderColor = "red";
+    greenColor.style.backgroundColor = "white";
+    greenColor.style.color = "red";
     if (yourXP.innerText >= greenColorValue) {
         greenColor.style.display = "none";
         greenColor.disable = false;
@@ -2345,6 +2368,9 @@ greenColor.onclick = () => {
 }
 let blueColorValue = 10;
 blueColor.onclick = () => {
+    blueColor.style.borderColor = "red";
+    blueColor.style.backgroundColor = "white";
+    blueColor.style.color = "red";
     if (yourXP.innerText >= blueColorValue) {
         blueColor.style.display = "none";
         blueColor.disable = false;
@@ -2609,6 +2635,9 @@ blueColor.onclick = () => {
 }
 let yellowColorValue = 12;
 yellowColor.onclick = () => {
+    yellowColor.style.borderColor = "red";
+    yellowColor.style.backgroundColor = "white";
+    yellowColor.style.color = "red";
     if (yourXP.innerText >= yellowColorValue) {
         yellowColor.style.display = "none";
         yellowColor.disable = false;
@@ -2880,6 +2909,9 @@ redColor.onmouseover = () => {
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
     costingCustomization.style.color = "red";
+    redColor.style.borderColor = "red";
+    redColor.style.color = "red";
+    redColor.style.backgroundColor = "black";
 }
 greenColor.onmouseover = () => {
     costOfColors.innerText = greenColorValue;
@@ -2888,6 +2920,9 @@ greenColor.onmouseover = () => {
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
     costingCustomization.style.color = "rgb(0,255,0)";
+    greenColor.style.borderColor = "rgb(0,255,0)";
+    greenColor.style.color = "rgb(0,255,0)";
+    greenColor.style.backgroundColor = "black";
 }
 blueColor.onmouseover = () => {
     costOfColors.innerText = blueColorValue;
@@ -2896,6 +2931,9 @@ blueColor.onmouseover = () => {
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
     costingCustomization.style.color = "blue";
+    blueColor.style.borderColor = "blue";
+    blueColor.style.color = "blue";
+    blueColor.style.backgroundColor = "black";
 }
 yellowColor.onmouseover = () => {
     costOfColors.innerText = yellowColorValue;
@@ -2904,6 +2942,9 @@ yellowColor.onmouseover = () => {
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
     costingCustomization.style.color = "yellow";
+    yellowColor.style.borderColor = "yellow";
+    yellowColor.style.color = "yellow";
+    yellowColor.style.backgroundColor = "black";
 }
 //------------------------------------ cost of colors mouse out 
 redColor.onmouseout = () => {
@@ -2911,24 +2952,36 @@ redColor.onmouseout = () => {
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
+    redColor.style.borderColor = "black";
+    redColor.style.color = "black";
+    redColor.style.backgroundColor = "red";
 }
 greenColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
+    greenColor.style.borderColor = "black";
+    greenColor.style.color = "black";
+    greenColor.style.backgroundColor = "rgb(0,255,0)";
 }
 blueColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
+    blueColor.style.borderColor = "black";
+    blueColor.style.color = "black";
+    blueColor.style.backgroundColor = "blue";
 }
 yellowColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
+    yellowColor.style.borderColor = "black";
+    yellowColor.style.color = "black";
+    yellowColor.style.backgroundColor = "yellow";
 }
 upgradeDamage.onmouseout = () => {
     costOfColors.innerText = 0;
@@ -3213,6 +3266,7 @@ enemy.onmouseup = () => {
 }
 
 gameResult.onclick = () => {
+    console.log("gamee resultt");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
