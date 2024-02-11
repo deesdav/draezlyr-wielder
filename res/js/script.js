@@ -283,13 +283,14 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         game.style.backgroundImage = "url(./res/img/pikachuBG.png)";
         enemy.src = "./res/img/enemy.pikachu.png";
         enemyHpTextValue.innerText = `PIKACHU´S HP:`;
-        if (winsCounter.innerText >= 5) {
-            enemyHp.innerText = (pikachuHP + 50);
-        } else {
-            enemyHp.innerText = pikachuHP;
-        }
+        /*  if (winsCounter.innerText >= 5) {
+                       enemyHp.innerText = (pikachuHP + 50);
+                   } else {
+                       
+                   }*/
+        enemyHp.innerText = pikachuHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 3;
+            yourHp.innerText -= 31;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -311,11 +312,12 @@ console.log("Updated HP values:", multiverseEnemiesHP);
                 audioYouLost.play();
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                if (winsCounter.innerText >= 5) {
-                    enemyHp.innerText = (pikachuHP + 50);
-                } else {
-                    enemyHp.innerText = pikachuHP;
-                }
+                /*  if (winsCounter.innerText >= 5) {
+                       enemyHp.innerText = (pikachuHP + 50);
+                   } else {
+                       
+                   }*/
+                enemyHp.innerText = pikachuHP;
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -338,11 +340,12 @@ console.log("Updated HP values:", multiverseEnemiesHP);
                 yourXP.innerText = yourXPValue;
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
-                if (winsCounter.innerText >= 5) {
-                    enemyHp.innerText = (pikachuHP + 50);
-                } else {
-                    enemyHp.innerText = pikachuHP;
-                }
+                /*  if (winsCounter.innerText >= 5) {
+                      enemyHp.innerText = (pikachuHP + 50);
+                  } else {
+                      
+                  }*/
+                enemyHp.innerText = pikachuHP;
             }
 
         }, 1000);
@@ -355,7 +358,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `SUPER MARIO´S HP:`;
         enemyHp.innerText = supermarioHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 4;
+            yourHp.innerText -= 32;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -413,7 +416,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `GROOT´S HP:`;
         enemyHp.innerText = grootHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 5;
+            yourHp.innerText -= 33;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -471,7 +474,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `ROBOCOP´S HP:`;
         enemyHp.innerText = robocopHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 6;
+            yourHp.innerText -= 34;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -529,7 +532,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `PREDATOR´S HP:`;
         enemyHp.innerText = predatorHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 7;
+            yourHp.innerText -= 35;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -587,7 +590,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `TERMINATOR´S HP:`;
         enemyHp.innerText = terminatorHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 8;
+            yourHp.innerText -= 36;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -645,7 +648,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `GERALT´S HP:`;
         enemyHp.innerText = geraltHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 9;
+            yourHp.innerText -= 37;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -703,7 +706,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `DOOM SLAYER´S HP:`;
         enemyHp.innerText = doomslayerHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 10;
+            yourHp.innerText -= 38;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -761,7 +764,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `SOLID SNAKE´S HP:`;
         enemyHp.innerText = solidsnakeHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 11;
+            yourHp.innerText -= 39;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -819,7 +822,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `MANDALORIAN´S HP:`;
         enemyHp.innerText = mandalorianHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 12;
+            yourHp.innerText -= 40;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -877,7 +880,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `DARTH VADER´S HP:`;
         enemyHp.innerText = darthvaderHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 13;
+            yourHp.innerText -= 41;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -935,7 +938,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `NARUTO´S HP:`;
         enemyHp.innerText = narutoHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 14;
+            yourHp.innerText -= 42;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -993,7 +996,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `GOKU´S HP:`;
         enemyHp.innerText = gokuHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 15;
+            yourHp.innerText -= 43;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -1051,7 +1054,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `JOHN WICK´S HP:`;
         enemyHp.innerText = johnwickHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 16;
+            yourHp.innerText -= 44;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -1109,7 +1112,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         enemyHpTextValue.innerText = `KRATOS´S HP:`;
         enemyHp.innerText = kratosHP;
         const enemyDamage = setInterval(() => {
-            yourHp.innerText -= 17;
+            yourHp.innerText -= 45;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
             if (yourHp.innerText <= 0) {
@@ -3597,7 +3600,7 @@ const killedEnemyNames = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW
     "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
 
 const killedEnemyDamagePerSec = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-    16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+    16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
 
 const killedEnemyHP = [20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
     95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, pikachuHP, supermarioHP, grootHP, robocopHP,
@@ -3628,8 +3631,15 @@ for (let i = 0; i < killedEnemies.length; i++) {
         infoOfKilledEnemyName.innerText = `${killedEnemyNames[i]}`;
         infoOfKilledEnemyDamagePerSec.innerText = `${killedEnemyDamagePerSec[i]}`;
         infoOfKilledEnemyHP.innerText = `${killedEnemyHP[i]}`;
-        infoOfKilledEnemyLocation.innerText = `${locations[i]}`;
+        if (killedEnemiesId.alt == "marvel" || killedEnemiesId.alt == "dc") {
+            infoOfKilledEnemyLocation.innerText = `${locations[i]}`;
+        } else {
+            infoOfKilledEnemyLocation.innerText = "MULTIVERSE";
+        }
         viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.gif`;
+        if (killedEnemiesId.alt == "multiverse" || killedEnemiesId.alt == "dc") {
+            viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.png`;
+        }
         viewPhoto.style.display = "block";
         killedEnemiesId.style.filter = "blur(0px)";
     }
