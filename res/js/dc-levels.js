@@ -8,9 +8,17 @@ const enemiesDCNamesOver = ["BATMAN", "FLASH", "WONDER WOMAN", "JOKER", "SUPERMA
 for (let i = 0; i < dcLevels.length; i++) {
     dcLevels[i].onmouseover = () => {
         enemyName.innerText = enemiesDCNamesOver[i];
+        enemyHpTextPromName.style.backgroundColor = "#333";
     }
     dcLevels[i].onmouseout = () => {
         enemyName.innerText = " ";
+        enemyHpTextPromName.style.backgroundColor = "#333";
+    }
+    dcLevels[i].onmouseup = () => {
+        game.style.border = "5px solid";
+        game.style.borderImage = "linear-gradient(to bottom, #333, rgb(0, 0, 77)";
+        game.style.borderImageSlice = "1";
+        planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.9), rgba(0, 0, 0, 0.9)), url(./res/img/dcLevelsBG.png)";
     }
 }
 

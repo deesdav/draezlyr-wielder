@@ -199,6 +199,7 @@ body {
     top: 15px;
     left: 15px;
     font-size: x-large;
+    z-index: 999;
 }
 
 #yourShieldText {
@@ -267,11 +268,21 @@ body {
     align-items: center;
     gap: 70px;
     position: relative;
-    top: 0;
-    margin-right: auto;
+    top: 50%; 
     transform: scale(1.9);
     padding: 0;
+    height: 380px; 
+    margin-top: -100px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 0;
+}
 
+
+#planets button{
+    position: relative;
+    right: 5%;
+    margin: 10px;
 }
 
 #nameOfPlanet {
@@ -286,6 +297,7 @@ body {
     text-align: center;
     text-shadow: 1px 1px 0px rgb(255, 255, 255);
     display: none;
+    text-transform: uppercase;
 }
 
 #nameOfPlanetDC {
@@ -293,6 +305,7 @@ body {
     text-align: center;
     text-shadow: 1px 1px 0px blue;
     display: none;
+    text-transform: uppercase;
 }
 
 #marvelPlanet {
@@ -485,6 +498,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
 }
 
 #storyrecap {
@@ -511,18 +525,21 @@ body {
 
 #game {
     background-image: none;
+    transition: background-image 0.5s ease;
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
-    background-color: rgba(0, 0, 0, 0.764);
+    background-color: #1c0000;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 5px;
     text-transform: uppercase;
     display: none;
     margin: auto;
     width: 1111px;
     height: 666px;
-    border: 0.3em solid #333;
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, #333, rgb(70, 70, 70));
+    border-image-slice: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -575,7 +592,7 @@ body {
     transform: scale(1.5);
     left: 40%;
     cursor: crosshair;
-    animation: enemyMoving 1s infinite;
+    animation: enemyMoving ease 1s infinite alternate;
     filter: saturate(150%);
 }
 
@@ -590,6 +607,7 @@ body {
     background-color: #333;
     color: rgb(255, 255, 255);
     padding: 15px;
+    margin: 0;
     box-shadow: 2px 0 25px rgb(0, 255, 0);
     text-shadow: 0 0 0px rgb(0, 255, 0);
     border-radius: 0 0 1em 0;
@@ -604,7 +622,7 @@ body {
     background-color: #333;
     color: rgb(255, 255, 255);
     padding: 15px;
-    box-shadow: 2px 0 25px rgb(255, 0, 0);
+    box-shadow: -2px 0 25px rgb(255, 0, 0);
     text-shadow: 0 0 0px rgb(255, 0, 0);
     border-radius: 0 0 0 1em;
     text-transform: uppercase;
@@ -669,18 +687,17 @@ body {
 
 
 @keyframes enemyMoving {
-
-    from {
+    0% {
         left: 27%;
     }
 
-    ;
-
-    to {
-        left: 40%;
+    50% {
+        left: 35%;
     }
 
-    ;
+    100% {
+        left: 40%;
+    }
 }
 
 @keyframes heroMoving {
@@ -860,6 +877,13 @@ tr:nth-child(7) td:nth-child(2) {
     background-color: rgb(255, 0, 255);
 }
 
+tr:nth-child(8) td:nth-child(2) {
+    background-color: rgb(0, 255, 255, 0.684);
+}
+
+tr:nth-child(9) td:nth-child(2) {
+    background-color: rgb(128, 9, 9, 0.684);
+}
 
 #shopBtn {
     text-transform: uppercase;
@@ -885,9 +909,9 @@ tr:nth-child(7) td:nth-child(2) {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    position: relative;
-    bottom: 220px;
+    height: 102%;
+    position: absolute;
+    top: 0;
     color: white;
     text-shadow: 1px 1px 10px black;
     text-transform: uppercase;
@@ -1079,11 +1103,13 @@ tr:nth-child(7) td:nth-child(2) {
     background-image: url(../img/deesdav.dimension.png);
     animation: boxShadow 1s alternate linear infinite;
     border-radius: 15px;
-    position: relative;
-    top: 20px;
-    padding: 1em;
     background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 
 @keyframes boxShadow {
     from {
@@ -1118,9 +1144,14 @@ tr:nth-child(7) td:nth-child(2) {
     display: none;
     text-align: center;
     margin: 0 auto;
-    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -1150%);
+    color: rgb(255, 255, 255);
     font-size: xx-large;
     padding: 0;
+    z-index: 999;
 }
 
 #multiverse {
@@ -1134,6 +1165,49 @@ tr:nth-child(7) td:nth-child(2) {
 }
 
 #multiverse:hover {
+    transform: scale(1.2);
+}
+
+#hell {
+    display: none;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    height: 115px;
+    width: 115px;
+    cursor: pointer;
+    font-size: medium;
+    background-color: #850111;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 0, 0, 0)), url(../img/hellCover.png);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300%;
+}
+
+#hell:hover {
+    transform: scale(1.2);
+}
+
+#heaven {
+    display: none;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    height: 115px;
+    width: 115px;
+    cursor: pointer;
+    font-size: medium;
+    background-color: #87CEEB;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.436), rgba(254, 182, 0, 0)), url(../img/heavenCover.png);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300%;
+
+}
+
+#heaven:hover {
     transform: scale(1.2);
 }
 
@@ -1154,6 +1228,7 @@ tr:nth-child(7) td:nth-child(2) {
     height: min-content;
     width: fit-content;
     display: block;
+    z-index: 999;
 }
 
 #collectionBtn {
@@ -1266,7 +1341,7 @@ tr:nth-child(7) td:nth-child(2) {
     text-transform: uppercase;
     width: 50%;
     color: white;
-    font-size: xx-large;
+    font-size: 27px;
 }
 
 #viewPhoto {

@@ -8,10 +8,18 @@ const enemiesNamesOver = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW
 for (let i = 0; i < marvelLevels.length; i++) {
     marvelLevels[i].onmouseover = () => {
         enemyName.innerText = enemiesNamesOver[i];
+        enemyHpTextPromName.style.backgroundColor = "#333";
 
     }
     marvelLevels[i].onmouseout = () => {
         enemyName.innerText = " ";
+        enemyHpTextPromName.style.backgroundColor = "#333";
+    }
+    marvelLevels[i].onmouseup = () => {
+        game.style.border = "5px solid";
+        game.style.borderImage = "linear-gradient(to bottom, #333, rgb(77, 0, 0)";
+        game.style.borderImageSlice = "1";
+        planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.9), rgba(0, 0, 0, 0.9)), url(./res/img/marvelLevelsBG.png)";
     }
 }
 
@@ -31,7 +39,7 @@ levelONE.onclick = () => {
         console.log("Level is completed");
     }
     game.style.backgroundImage = "url(./res/img/spidermanBG.gif)";
-    enemy.src = "./res/img/enemy.spiderman.png";
+    enemy.src = "./res/img/enemy.spiderman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";

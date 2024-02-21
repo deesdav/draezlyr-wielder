@@ -212,7 +212,7 @@ const randomNumberFunciton = (max, min) => {
     return rdNum;
 }
 
-const multiverseChangingBGColor = () => {
+const multiverseHellHeavenChangingBGColor = () => {
     const red = randomNumberFunciton(0, 255);
     const green = randomNumberFunciton(0, 255);
     const blue = randomNumberFunciton(0, 255);
@@ -221,6 +221,8 @@ const multiverseChangingBGColor = () => {
     multiverse.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     multiverse.style.boxShadow = `0 0 ${animationPulse}px rgb(${red}, ${green}, ${blue})`;
 
+    hell.style.boxShadow = `0 0 ${animationPulse}px rgb(255,0,0)`;
+    heaven.style.boxShadow = `0 0 ${animationPulse}px gold`;
 }
 
 let multiverseAppeared = false;
@@ -229,14 +231,12 @@ let roundValueCounter = 1;
 multiverse.onmouseover = () => {
     multiverse.innerHTML = `ROUND ${roundValueCounter}`;
     const multi = setInterval(() => {
-        multiverseChangingBGColor();
+        multiverseHellHeavenChangingBGColor();
     }, 400);
     multiverse.onmouseout = () => {
         multiverse.innerText = "MULTIVERSE";
-        roundValueCounter.style.display = "none";
         clearInterval(multi)
     }
-
 }
 
 let pikachuHP = 170;
@@ -255,28 +255,18 @@ let gokuHP = 235;
 let johnwickHP = 240;
 let kratosHP = 245;
 
+
 multiverse.onclick = () => {
-    /* if (winsCounter.innerText >= 5) {
-         const multiverseEnemiesHP = [pikachuHP, supermarioHP, grootHP, robocopHP,
-             predatorHP, terminatorHP, geraltHP, doomslayerHP, solidsnakeHP, mandalorianHP,
-             darthvaderHP, narutoHP, gokuHP, johnwickHP, kratosHP]
-         for (let i = 0; i < multiverseEnemiesHP.length; i++) {
-             multiverseEnemiesHP[i] += 50;
-         }
-         console.log("Updated HP values:", multiverseEnemiesHP);
- 
-     }*/ /* if (winsCounter.innerText >= 5) {
-const multiverseEnemiesHP = [pikachu, supermario, groot, robocop,
-predator, terminator, geralt, doomslayer, solidsnake, mandalorian,
-darthvader, naruto, goku, johnwick, kratos]
-for (let i = 0; i < multiverseEnemiesHP.length; i++) {
-multiverseEnemiesHP[i] += 50;
-}
-console.log("Updated HP values:", multiverseEnemiesHP);
- 
-}*/
     const randomEnemy = Math.floor(Math.random() * 15);
     roundValueCounter++;
+    yourName.style.display = "block";
+    if (roundValueCounter == 70) {
+        dcPlanet.style.display = "none";
+        nameOfPlanetDC.style.display = "none";
+        marvelPlanet.style.display = "none";
+        nameOfPlanet.style.display = "none";
+        hell.style.display = "block";
+    }
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
@@ -1163,7 +1153,6 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         }, 1000);
     }
 
-    yourName.style.display = "none";
     shopBtn.style.display = "none";
     infoBtn.style.display = "none";
     planets.style.display = "none";
@@ -1176,7 +1165,7 @@ console.log("Updated HP values:", multiverseEnemiesHP);
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
     levelInfo.style.display = "none";
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
@@ -1217,6 +1206,271 @@ console.log("Updated HP values:", multiverseEnemiesHP);
     }
 }
 
+const hell = document.getElementById("hell");
+const heaven = document.getElementById("heaven");
+
+
+//------------------------------------ hell
+let devilHP = 500;
+let roundHellCounter = 1;
+
+hell.onmouseover = () => {
+    hell.innerText = `ROUND ${roundHellCounter}`;
+    document.body.style.backgroundImage = "url(./res/img/hellCover.png)";
+    hell.style.backgroundImage = "none";
+    setInterval(() => {
+        multiverseHellHeavenChangingBGColor();
+    }, 800);
+    hell.onmouseout = () => {
+        hell.innerText = "HELL";
+        hell.style.backgroundImage = "url(./res/img/hellCover.png)";
+        document.body.style.backgroundImage = "none";
+    }
+}
+
+hell.onclick = () => {
+    roundHellCounter++;
+    yourName.style.display = "block";
+    game.style.boxShadow = "0 0 120px #850111 inset";
+    game.style.backgroundImage = "url(./res/img/hellBG.png)";
+    enemy.src = "./res/img/enemy.devil.png";
+    enemyHpTextValue.innerText = `DEVIL´S HP:`;
+    enemyHp.innerText = devilHP;
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 50;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            yourHp.innerText = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerText = devilHP;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerText = devilHP;
+        }
+
+    }, 1000);
+
+    shopBtn.style.display = "none";
+    infoBtn.style.display = "none";
+    planets.style.display = "none";
+
+    const nameValue = storyPartInput.value;
+    const defaultName = "Draezlyr Wielder";
+    if (nameValue == "") {
+        yourHpTextValue.innerText = `${defaultName}´S HP:`;
+    } else {
+        yourHpTextValue.innerText = `${nameValue}´S HP:`;
+    }
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerText = yourHpValue;
+
+    backBtn.style.display = "none";
+    collectionBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+
+    gameResult.onclick = () => {
+        console.log("hell gamee resultt");
+        audioButtonClick.src = "./res/audio/buttonsound.mp3";
+        audioButtonClick.play();
+        yourName.style.display = "block";
+        shopBtn.style.display = "block";
+        infoBtn.style.display = "block";
+        collectionBtn.style.display = "block";
+        planets.style.display = "flex";
+        game.style.display = "none";
+        gameResult.style.display = "none";
+        heroAttack.style.display = "none";
+        heroIdle.style.display = "block";
+        heroIdle.style.left = "20%";
+        heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
+        heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
+
+        if (shieldInfo.innerText == "ON") {
+            console.log("shieldyyyyyyyyyyyyy");
+            shield.style.display = "block";
+        }
+        if (criticalInfo.innerText == "ON") {
+            console.log("criticalll hitt");
+            critical.style.display = "block";
+        }
+    }
+}
+
+
+
+//------------------------------------ heaven
+let angelHP = 1000;
+let roundHeavenCounter = 1;
+
+heaven.onmouseover = () => {
+    heaven.innerText = `ROUND ${roundHeavenCounter}`;
+    document.body.style.backgroundImage = "url(./res/img/heavenCover.png)";
+    heaven.style.backgroundImage = "none";
+    setInterval(() => {
+        multiverseHellHeavenChangingBGColor();
+    }, 800);
+    heaven.onmouseout = () => {
+        heaven.innerText = "HEAVEN";
+        heaven.style.backgroundImage = "url(./res/img/heavenCover.png)";
+        document.body.style.backgroundImage = "none";
+    }
+}
+
+heaven.onclick = () => {
+    roundHeavenCounter++;
+    yourName.style.display = "block";
+    game.style.boxShadow = "0 0 120px #87CEEB inset";
+    game.style.backgroundImage = "url(./res/img/heavenBG.png)";
+    enemy.src = "./res/img/enemy.angel.png";
+    enemyHpTextValue.innerText = `ANGEL´S HP:`;
+    enemyHp.innerText = angelHP;
+    const enemyDamage = setInterval(() => {
+        yourHp.innerText -= 100;
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        if (yourHp.innerText <= 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(255, 0, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} lost`;
+            } else {
+                gameResult.innerText = `${nameValue} lost`;
+            }
+            lossesCounter.innerText++;
+            audioYouLost.src = "./res/audio/youLost.mp3";
+            audioYouLost.play();
+            yourHp.innerText = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerText = angelHP;
+        }
+        if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
+            clearInterval(enemyDamage);
+
+            enemy.style.animation = "none";
+            game.style.display = "none";
+            gameResult.style.display = "block";
+            gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
+            if (nameValue == "") {
+                gameResult.innerText = `${defaultName} won`;
+            } else {
+                gameResult.innerText = `${nameValue} won`;
+            }
+            winsCounter.innerText++;
+            audioYouWin.src = "./res/audio/youWin.mp3";
+            audioYouWin.play();
+            yourXPValue += yourXPIncrease;
+            yourXP.innerText = yourXPValue;
+            yourHp.innerText = yourHpValue;
+            backBtn.style.zIndex = "999";
+            enemyHp.innerText = angelHP;
+        }
+
+    }, 1000);
+
+    shopBtn.style.display = "none";
+    infoBtn.style.display = "none";
+    planets.style.display = "none";
+
+    const nameValue = storyPartInput.value;
+    const defaultName = "Draezlyr Wielder";
+    if (nameValue == "") {
+        yourHpTextValue.innerText = `${defaultName}´S HP:`;
+    } else {
+        yourHpTextValue.innerText = `${nameValue}´S HP:`;
+    }
+    levelInfo.style.display = "none";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    enemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    levelsText.style.display = "none";
+    game.style.display = "flex";
+    gridOfLevels.style.display = "none";
+    yourHp.innerText = yourHpValue;
+
+    backBtn.style.display = "none";
+    collectionBtn.style.display = "none";
+    backBtnShop.style.zIndex = "0";
+
+    gameResult.onclick = () => {
+        console.log("heaven gamee resultt");
+        audioButtonClick.src = "./res/audio/buttonsound.mp3";
+        audioButtonClick.play();
+        yourName.style.display = "block";
+        shopBtn.style.display = "block";
+        infoBtn.style.display = "block";
+        collectionBtn.style.display = "block";
+        planets.style.display = "flex";
+        game.style.display = "none";
+        gameResult.style.display = "none";
+        heroAttack.style.display = "none";
+        heroIdle.style.display = "block";
+        heroIdle.style.left = "20%";
+        heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
+        heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
+
+        if (shieldInfo.innerText == "ON") {
+            console.log("shieldyyyyyyyyyyyyy");
+            shield.style.display = "block";
+        }
+        if (criticalInfo.innerText == "ON") {
+            console.log("criticalll hitt");
+            critical.style.display = "block";
+        }
+    }
+}
 
 //------------------------------------ img dragging disabled
 const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, heroIdle, heroAttack, viewPhoto];
@@ -1318,6 +1572,15 @@ infoBox.onclick = () => {
     audioButtonClick.play();
     infoBox.style.display = "none";
     collectionBtn.style.display = "block";
+}
+
+infoBox.onmouseover = () => {
+    yourName.style.zIndex = "0";
+    muteAudio.style.zIndex = "0";
+}
+infoBox.onmouseout = () => {
+    yourName.style.zIndex = "999";
+    muteAudio.style.zIndex = "999";
 }
 
 
@@ -1482,6 +1745,7 @@ function sendEnter() {
     infoBtn.style.display = "block";
     muteAudio.style.display = "block";
     collectionBtn.style.display = "block";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
 }
 sendInputBtn.onclick = () => {
     sendEnter();
@@ -1509,13 +1773,27 @@ document.addEventListener("keyup", (e) => {
             }, 5000);
             break;
 
-        case ("d" || "D"): //black and white default hero color
+        case ("d"): //black and white default hero color
+        case ("D"):
             heroIdle.src = "./res/img/hero.idle.png";
             heroAttack.src = "./res/img/hero.attack.png";
             break;
         case ("Enter"): //Enter function
             if (storyPartInput.style.display == "block") {
                 sendEnter();
+            }
+            break;
+        case ("c"): //Critical hit function
+        case ("C"):
+            console.log("ou critical hit works");
+            if (critical.style.display == "block") {
+                criticalFce();
+            }
+            break;
+        case (" "): //Shield function
+            console.log("ou shield works");
+            if (shield.style.display == "block") {
+                shieldFce();
             }
             break;
         default:
@@ -1535,7 +1813,13 @@ marvelPlanet.onmouseover = () => {
 marvelPlanet.onmouseout = () => {
     document.body.style.boxShadow = "0 0 0px red inset";
 }
+
 marvelPlanet.onclick = () => {
+    planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/marvelLevelsBG.png)";
+    planets.style.height = "100%";
+    yourName.style.zIndex = "999";
+    muteAudio.style.zIndex = "999";
+
     collectionBtn.style.display = "none";
     yourName.style.display = "block";
     marvelPlanetClick = true;
@@ -1572,6 +1856,11 @@ dcPlanet.onmouseout = () => {
 }
 if (multiverseAppeared == false) {
     dcPlanet.onclick = () => {
+        planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/dcLevelsBG.png)";
+        planets.style.height = "100%";
+        yourName.style.zIndex = "999";
+        muteAudio.style.zIndex = "999";
+
         collectionBtn.style.display = "none";
         yourName.style.display = "block";
         dcPlanetClick = true;
@@ -1601,6 +1890,9 @@ if (multiverseAppeared == false) {
 }
 //------------------------------------ back button to planets
 backBtn.onclick = () => {
+    planets.style.backgroundImage = "none";
+    planets.style.height = "380px";
+
     collectionBtn.style.display = "block";
     yourName.style.display = "block";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1612,7 +1904,7 @@ backBtn.onclick = () => {
     levelONE.style.display = "none";
     marvelPlanet.style.display = "block";
     nameOfPlanet.style.display = "block";
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
     backBtn.style.display = "none";
     backBtnDC.style.display = "none";
     shopBtn.style.display = "block";
@@ -1625,6 +1917,9 @@ backBtn.onclick = () => {
 }
 
 backBtnDC.onclick = () => {
+    planets.style.backgroundImage = "none";
+    planets.style.height = "380px";
+
     collectionBtn.style.display = "block";
     yourName.style.display = "block";
     marvelPlanet.disable = true;
@@ -1637,7 +1932,7 @@ backBtnDC.onclick = () => {
     levelONE.style.display = "none";
     marvelPlanet.style.display = "block";
     nameOfPlanet.style.display = "block";
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
     backBtn.style.display = "none";
     backBtnDC.style.display = "none";
     shopBtn.style.display = "block";
@@ -1756,7 +2051,8 @@ upgradeShield.onclick = () => {
         upgradeShield.disable = true;
     }
 }
-shield.onclick = () => {
+
+function shieldFce() {
     audioButtonClick.src = "./res/audio/shield.mp3";
     audioButtonClick.play();
     shield.style.display = "none";
@@ -1769,6 +2065,10 @@ shield.onclick = () => {
         heroIdle.style.filter = "drop-shadow(3px 3px 5px rgb(0, 255, 255))drop-shadow(-3px -3px 5px rgb(128, 9, 9))";
         heroAttack.style.filter = "drop-shadow(3px 3px 5px rgb(128, 9, 9))drop-shadow(-3px -3px 5px rgb(0, 255, 255))";
     }
+}
+
+shield.onclick = () => {
+    shieldFce();
 }
 
 upgradeCritical.onclick = () => {
@@ -1790,7 +2090,8 @@ upgradeCritical.onclick = () => {
         upgradeCritical.disable = true;
     }
 }
-critical.onclick = () => {
+
+function criticalFce() {
     audioButtonClick.src = "./res/audio/critical.mp3";
     audioButtonClick.play();
     critical.style.display = "none";
@@ -1807,6 +2108,10 @@ critical.onclick = () => {
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
     }
+}
+
+critical.onclick = () => {
+    criticalFce();
 }
 critical.onmousedown = () => {
     heroAttack.style.left = "35%";
@@ -1858,11 +2163,13 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1883,23 +2190,28 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1919,15 +2231,18 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1947,19 +2262,23 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -1979,15 +2298,18 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2007,19 +2329,23 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2039,19 +2365,23 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2071,15 +2401,18 @@ redColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2129,11 +2462,13 @@ greenColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2154,23 +2489,28 @@ greenColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2190,15 +2530,18 @@ greenColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2218,19 +2561,23 @@ greenColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2252,15 +2599,18 @@ greenColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2282,19 +2632,23 @@ greenColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2314,20 +2668,24 @@ greenColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
 
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2348,16 +2706,19 @@ greenColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
 
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2399,11 +2760,13 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2424,23 +2787,28 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2460,16 +2828,19 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2490,19 +2861,23 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2523,15 +2898,18 @@ blueColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2551,19 +2929,23 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2583,20 +2965,24 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2616,15 +3002,18 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2666,11 +3055,13 @@ yellowColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2691,23 +3082,28 @@ yellowColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2727,16 +3123,19 @@ yellowColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2756,19 +3155,23 @@ yellowColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2789,16 +3192,19 @@ yellowColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
 
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2819,19 +3225,23 @@ yellowColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g" || "G"): //green hero color
+                case ("g"): //green hero color
+                case ("G"):
                     heroIdle.src = "./res/img/green.hero.idle.png";
                     heroAttack.src = "./res/img/green.hero.attack.png";
                     break;
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2851,20 +3261,24 @@ yellowColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r" || "R"): //red hero color
+                case ("r"): //redhero color
+                case ("R"):
                     heroIdle.src = "./res/img/red.hero.idle.png";
                     heroAttack.src = "./res/img/red.hero.attack.png";
                     break;
 
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -2885,15 +3299,18 @@ yellowColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("b" || "B"): //blue hero color
+                case ("b"): //blue hero color
+                case ("B"):
                     heroIdle.src = "./res/img/blue.hero.idle.png";
                     heroAttack.src = "./res/img/blue.hero.attack.png";
                     break;
-                case ("y" || "Y"): //yellow hero color
+                case ("y"): //yellow hero color
+                case ("Y"):
                     heroIdle.src = "./res/img/yellow.hero.idle.png";
                     heroAttack.src = "./res/img/yellow.hero.attack.png";
                     break;
-                case ("d" || "D"): //black and white default hero color
+                case ("d"): //black and white default hero color
+                case ("D"):
                     heroIdle.src = "./res/img/hero.idle.png";
                     heroAttack.src = "./res/img/hero.attack.png";
                     break;
@@ -3075,7 +3492,7 @@ backBtnShop.onclick = () => {
     dcLevelONE.style.display = "none";
     marvelPlanet.style.display = "block";
     nameOfPlanet.style.display = "block";
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgb(0, 0, 22)";
     shopBtn.style.display = "block";
     shop.style.display = "none";
     infoBtn.style.display = "block";
@@ -3158,6 +3575,22 @@ enemy.onmouseout = () => {
         enemy.style.borderBottom = "none";
         enemy.style.borderRadius = "none";
     }
+    if (enemyHp.innerText == 0 || enemyHp.innerText <= 0) {
+        audioButtonClick.pause();
+        audioButtonClick.currentTime = 0;
+        enemyHp.innerText = 0;
+        yourHp.innerText = yourHpValue;
+        enemyHpTextPromName.style.backgroundColor = "#333";
+    }
+}
+enemy.onclick = () => {
+    if (enemyHp.innerText == 0 || enemyHp.innerText <= 0) {
+        audioButtonClick.pause();
+        audioButtonClick.currentTime = 0;
+        enemyHp.innerText = 0;
+        yourHp.innerText = yourHpValue;
+        enemyHpTextPromName.style.backgroundColor = "#333";
+    }
 }
 enemy.onmousedown = () => {
     document.body.style.boxShadow = "0 0 77px red inset";
@@ -3173,13 +3606,18 @@ enemy.onmousedown = () => {
         audioButtonClick.currentTime = 0;
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
-
+        enemyHpTextPromName.style.backgroundColor = "#333";
     }
     if (enemyHp.innerText <= 15) {
-        enemyHp.style.color = "pink";
+        enemyHp.style.color = "darkred";
         enemy.style.animation = "enemyMoving 1.1s infinite";
+        enemyHpTextPromName.style.backgroundColor = "#1c0000";
+        enemyHpTextPromName.style.color = "white";
+        enemyHpTextPromName.style.transition = "none";
     } else {
         enemyHp.style.color = "red";
+        enemyHpTextPromName.style.backgroundColor = "#333";
+        enemyHpTextPromName.style.transition = "none";
     }
     //------------------------------------ gif enemy effects
     const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
@@ -3192,10 +3630,10 @@ enemy.onmousedown = () => {
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
         "blackadam", "doctormanhattan", "darkseid"];
 
-    const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
+    // const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
 
     for (let i = 0; i < enemyTextValue.length; i++) {
-        if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
+        if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
             game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
             enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
             enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
@@ -3227,12 +3665,18 @@ enemy.onmouseup = () => {
         audioButtonClick.currentTime = 0;
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
+        enemyHpTextPromName.style.backgroundColor = "#333";
     }
     if (enemyHp.innerText <= 15) {
-        enemyHp.style.color = "pink";
+        enemyHp.style.color = "darkred";
         enemy.style.animation = "enemyMoving 1.1s infinite";
+        enemyHpTextPromName.style.color = "white";
+        enemyHpTextPromName.style.backgroundColor = "#1c0000";
+        enemyHpTextPromName.style.transition = "none";
     } else {
         enemyHp.style.color = "red";
+        enemyHpTextPromName.style.backgroundColor = "#333";
+        enemyHpTextPromName.style.transition = "none";
     }
     //------------------------------------ gif enemy effects
     const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
@@ -3245,10 +3689,10 @@ enemy.onmouseup = () => {
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
         "blackadam", "doctormanhattan", "darkseid"];
 
-    const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
+    // const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
 
     for (let i = 0; i < enemyTextValue.length; i++) {
-        if (enemyHp.innerText <= halfEnemyHp && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
+        if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
             game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
             enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
             enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
@@ -3289,6 +3733,7 @@ gameResult.onclick = () => {
     }
 
     if (marvelPlanetClick) {
+        planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/marvelLevelsBG.png)";
         document.body.style.backgroundColor = "red";
         levelONE.style.display = "block";
         gridOfLevels.style.display = "grid";
@@ -3299,91 +3744,106 @@ gameResult.onclick = () => {
 
     if (levelONECompleted) {
         levelTWO.style.display = "block";
-        levelONE.style.backgroundColor = "transparent";
+        levelONE.style.backgroundColor = "white";
+        levelONE.style.color = "black";
         levelONE.style.filter = "invert(100%)";
         levelONE.style.textDecoration = "underline";
     }
     if (levelTWOCompleted) {
         levelTHREE.style.display = "block";
-        levelTWO.style.backgroundColor = "transparent";
+        levelTWO.style.backgroundColor = "white";
+        levelTWO.style.color = "black";
         levelTWO.style.filter = "invert(100%)";
         levelTWO.style.textDecoration = "underline";
     }
     if (levelTHREECompleted) {
         levelFOUR.style.display = "block";
-        levelTHREE.style.backgroundColor = "transparent";
+        levelTHREE.style.backgroundColor = "white";
+        levelTHREE.style.color = "black";
         levelTHREE.style.filter = "invert(100%)";
         levelTHREE.style.textDecoration = "underline";
     }
     if (levelFOURCompleted) {
         levelFIVE.style.display = "block";
-        levelFOUR.style.backgroundColor = "transparent";
+        levelFOUR.style.backgroundColor = "white";
+        levelFOUR.style.color = "black";
         levelFOUR.style.filter = "invert(100%)";
         levelFOUR.style.textDecoration = "underline";
     }
     if (levelFIVECompleted) {
         levelSIX.style.display = "block";
-        levelFIVE.style.backgroundColor = "transparent";
+        levelFIVE.style.backgroundColor = "white";
+        levelFIVE.style.color = "black";
         levelFIVE.style.filter = "invert(100%)";
         levelFIVE.style.textDecoration = "underline";
     }
     if (levelSIXCompleted) {
         levelSEVEN.style.display = "block";
-        levelSIX.style.backgroundColor = "transparent";
+        levelSIX.style.backgroundColor = "white";
+        levelSIX.style.color = "black";
         levelSIX.style.filter = "invert(100%)";
         levelSIX.style.textDecoration = "underline";
     }
     if (levelSEVENCompleted) {
         levelEIGHT.style.display = "block";
-        levelSEVEN.style.backgroundColor = "transparent";
+        levelSEVEN.style.backgroundColor = "white";
+        levelSEVEN.style.color = "black";
         levelSEVEN.style.filter = "invert(100%)";
         levelSEVEN.style.textDecoration = "underline";
     }
     if (levelEIGHTCompleted) {
         levelNINE.style.display = "block";
-        levelEIGHT.style.backgroundColor = "transparent";
+        levelEIGHT.style.backgroundColor = "white";
+        levelEIGHT.style.color = "black";
         levelEIGHT.style.filter = "invert(100%)";
         levelEIGHT.style.textDecoration = "underline";
     }
     if (levelNINECompleted) {
         levelTEN.style.display = "block";
-        levelNINE.style.backgroundColor = "transparent";
+        levelNINE.style.backgroundColor = "white";
+        levelNINE.style.color = "black";
         levelNINE.style.filter = "invert(100%)";
         levelNINE.style.textDecoration = "underline";
     }
     if (levelTENCompleted) {
         levelELEVEN.style.display = "block";
-        levelTEN.style.backgroundColor = "transparent";
+        levelTEN.style.backgroundColor = "white";
+        levelTEN.style.color = "black";
         levelTEN.style.filter = "invert(100%)";
         levelTEN.style.textDecoration = "underline";
     }
     if (levelELEVENCompleted) {
         levelTWELVE.style.display = "block";
-        levelELEVEN.style.backgroundColor = "transparent";
+        levelELEVEN.style.backgroundColor = "white";
+        levelELEVEN.style.color = "black";
         levelELEVEN.style.filter = "invert(100%)";
         levelELEVEN.style.textDecoration = "underline";
     }
     if (levelTWELVECompleted) {
         levelTHIRTEEN.style.display = "block";
-        levelTWELVE.style.backgroundColor = "transparent";
+        levelTWELVE.style.backgroundColor = "white";
+        levelTWELVE.style.color = "black";
         levelTWELVE.style.filter = "invert(100%)";
         levelTWELVE.style.textDecoration = "underline";
     }
     if (levelTHIRTEENCompleted) {
         levelFOURTEEN.style.display = "block";
-        levelTHIRTEEN.style.backgroundColor = "transparent";
+        levelTHIRTEEN.style.backgroundColor = "white";
+        levelTHIRTEEN.style.color = "black";
         levelTHIRTEEN.style.filter = "invert(100%)";
         levelTHIRTEEN.style.textDecoration = "underline";
     }
     if (levelFOURTEENCompleted) {
         levelFIFTEEN.style.display = "block";
-        levelFOURTEEN.style.backgroundColor = "transparent";
+        levelFOURTEEN.style.backgroundColor = "white";
+        levelFOURTEEN.style.color = "black";
         levelFOURTEEN.style.filter = "invert(100%)";
         levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
         marvelPlanet.style.filter = "grayscale(100%)";
-        levelFIFTEEN.style.backgroundColor = "transparent";
+        levelFIFTEEN.style.backgroundColor = "white";
+        levelFIFTEEN.style.color = "black";
         levelFIFTEEN.style.filter = "invert(100%)";
         levelFIFTEEN.style.textDecoration = "underline";
         console.log("level 15 hotov");
@@ -3395,9 +3855,11 @@ gameResult.onclick = () => {
         }
         deesdavPlanet.onmouseover = () => {
             document.body.style.boxShadow = "0 0 999px white inset";
+            document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/deesdav.dimension.png)";
         }
         deesdavPlanet.onmouseout = () => {
             document.body.style.boxShadow = "0 0 0px white inset";
+            document.body.style.backgroundImage = "none";
         }
         deesdavPlanet.onclick = () => {
             collectionBtn.style.display = "none";
@@ -3406,7 +3868,7 @@ gameResult.onclick = () => {
             marvelPlanet.style.display = "none";
             nameOfPlanet.style.display = "none";
             nameOfPlanetDeesdav.style.display = "none";
-            document.body.style.backgroundColor = "black";
+            document.body.style.backgroundColor = "rgb(0, 0, 22)";
             storyPartInput.style.display = "none";
             deesdavPlanet.style.display = "none";
             deesdavDimension.style.display = "block";
@@ -3428,7 +3890,7 @@ gameResult.onclick = () => {
                     nameOfPlanet.style.display = "block";
                     deesdavPlanet.style.display = "block";
                     nameOfPlanetDeesdav.style.display = "block";
-                    document.body.style.backgroundColor = "black";
+                    document.body.style.backgroundColor = "rgb(0, 0, 22)";
                     backBtn.style.display = "none";
                     dot.innerText = 0;
                     audioLobbyBackground.src = "";
@@ -3514,6 +3976,7 @@ gameResult.onclick = () => {
         }
     }
     if (dcPlanetClick) {
+        planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/dcLevelsBG.png)";
         document.body.style.backgroundColor = "blue";
         dcLevelONE.style.display = "block";
         gridOfLevels.style.display = "none";
@@ -3523,85 +3986,99 @@ gameResult.onclick = () => {
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
-        dcLevelONE.style.backgroundColor = "transparent";
+        dcLevelONE.style.backgroundColor = "white";
+        dcLevelONE.style.color = "black";
         dcLevelONE.style.filter = "invert(100%)";
         dcLevelONE.style.textDecoration = "underline";
     }
     if (dcLevelTWOCompleted) {
         dcLevelTHREE.style.display = "block";
-        dcLevelTWO.style.backgroundColor = "transparent";
+        dcLevelTWO.style.backgroundColor = "white";
+        dcLevelTWO.style.color = "black";
         dcLevelTWO.style.filter = "invert(100%)";
         dcLevelTWO.style.textDecoration = "underline";
     }
     if (dcLevelTHREECompleted) {
         dcLevelFOUR.style.display = "block";
-        dcLevelTHREE.style.backgroundColor = "transparent";
+        dcLevelTHREE.style.backgroundColor = "white";
+        dcLevelTHREE.style.color = "black";
         dcLevelTHREE.style.filter = "invert(100%)";
         dcLevelTHREE.style.textDecoration = "underline";
     }
     if (dcLevelFOURCompleted) {
         dcLevelFIVE.style.display = "block";
-        dcLevelFOUR.style.backgroundColor = "transparent";
+        dcLevelFOUR.style.backgroundColor = "white";
+        dcLevelFOUR.style.color = "black";
         dcLevelFOUR.style.filter = "invert(100%)";
         dcLevelFOUR.style.textDecoration = "underline";
     }
     if (dcLevelFIVECompleted) {
         dcLevelSIX.style.display = "block";
-        dcLevelFIVE.style.backgroundColor = "transparent";
+        dcLevelFIVE.style.backgroundColor = "white";
+        dcLevelFIVE.style.color = "black";
         dcLevelFIVE.style.filter = "invert(100%)";
         dcLevelFIVE.style.textDecoration = "underline";
     }
     if (dcLevelSIXCompleted) {
         dcLevelSEVEN.style.display = "block";
-        dcLevelSIX.style.backgroundColor = "transparent";
+        dcLevelSIX.style.backgroundColor = "white";
+        dcLevelSIX.style.color = "black";
         dcLevelSIX.style.filter = "invert(100%)";
         dcLevelSIX.style.textDecoration = "underline";
     }
     if (dcLevelSEVENCompleted) {
         dcLevelEIGHT.style.display = "block";
-        dcLevelSEVEN.style.backgroundColor = "transparent";
+        dcLevelSEVEN.style.backgroundColor = "white";
+        dcLevelSEVEN.style.color = "black";
         dcLevelSEVEN.style.filter = "invert(100%)";
         dcLevelSEVEN.style.textDecoration = "underline";
     }
     if (dcLevelEIGHTCompleted) {
         dcLevelNINE.style.display = "block";
-        dcLevelEIGHT.style.backgroundColor = "transparent";
+        dcLevelEIGHT.style.backgroundColor = "white";
+        dcLevelEIGHT.style.color = "black";
         dcLevelEIGHT.style.filter = "invert(100%)";
         dcLevelEIGHT.style.textDecoration = "underline";
     }
     if (dcLevelNINECompleted) {
         dcLevelTEN.style.display = "block";
-        dcLevelNINE.style.backgroundColor = "transparent";
+        dcLevelNINE.style.backgroundColor = "white";
+        dcLevelNINE.style.color = "black";
         dcLevelNINE.style.filter = "invert(100%)";
         dcLevelNINE.style.textDecoration = "underline";
     }
     if (dcLevelTENCompleted) {
         dcLevelELEVEN.style.display = "block";
-        dcLevelTEN.style.backgroundColor = "transparent";
+        dcLevelTEN.style.backgroundColor = "white";
+        dcLevelTEN.style.color = "black";
         dcLevelTEN.style.filter = "invert(100%)";
         dcLevelTEN.style.textDecoration = "underline";
     }
     if (dcLevelELEVENCompleted) {
         dcLevelTWELVE.style.display = "block";
-        dcLevelELEVEN.style.backgroundColor = "transparent";
+        dcLevelELEVEN.style.backgroundColor = "white";
+        dcLevelELEVEN.style.color = "black";
         dcLevelELEVEN.style.filter = "invert(100%)";
         dcLevelELEVEN.style.textDecoration = "underline";
     }
     if (dcLevelTWELVECompleted) {
         dcLevelTHIRTEEN.style.display = "block";
-        dcLevelTWELVE.style.backgroundColor = "transparent";
+        dcLevelTWELVE.style.backgroundColor = "white";
+        dcLevelTWELVE.style.color = "black";
         dcLevelTWELVE.style.filter = "invert(100%)";
         dcLevelTWELVE.style.textDecoration = "underline";
     }
     if (dcLevelTHIRTEENCompleted) {
         dcLevelFOURTEEN.style.display = "block";
-        dcLevelTHIRTEEN.style.backgroundColor = "transparent";
+        dcLevelTHIRTEEN.style.backgroundColor = "white";
+        dcLevelTHIRTEEN.style.color = "black";
         dcLevelTHIRTEEN.style.filter = "invert(100%)";
         dcLevelTHIRTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFOURTEENCompleted) {
         dcLevelFIFTEEN.style.display = "block";
-        dcLevelFOURTEEN.style.backgroundColor = "transparent";
+        dcLevelFOURTEEN.style.backgroundColor = "white";
+        dcLevelFOURTEEN.style.color = "black";
         dcLevelFOURTEEN.style.filter = "invert(100%)";
         dcLevelFOURTEEN.style.textDecoration = "underline";
     }
@@ -3611,7 +4088,8 @@ gameResult.onclick = () => {
         multiverse.style.display = "none";
         lossesCounter.innerText = 0;
         winsCounter.innerText = 0;
-        dcLevelFIFTEEN.style.backgroundColor = "transparent";
+        dcLevelFIFTEEN.style.backgroundColor = "white";
+        dcLevelFIFTEEN.style.color = "black";
         dcLevelFIFTEEN.style.filter = "invert(100%)";
         dcLevelFIFTEEN.style.textDecoration = "underline";
     }

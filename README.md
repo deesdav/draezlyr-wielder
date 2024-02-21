@@ -18,3 +18,6 @@
 - New upgrades : Shield and Critical hit
 - New Easter egg 
 - Multiverse fix
+- New upgrades have addEventListener
+- Hell and Heaven
+- Visual planets update
