@@ -21,3 +21,4 @@
 - New upgrades have addEventListener
 - Hell and Heaven
 - Visual planets update
+- New logo
