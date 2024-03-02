@@ -56,6 +56,9 @@ const winAndLoss = document.getElementById("winAndLoss");
 const winsCounter = document.getElementById("winsCounter");
 const lossesCounter = document.getElementById("lossesCounter");
 const levelsBox = document.getElementById("levelsBox");
+const backToLobby = document.getElementById("backToLobby");
+const noLobby = document.getElementById("noLobby");
+const yesLobby = document.getElementById("yesLobby");
 
 const levelsText = document.getElementById("levelsText");
 const gridOfLevels = document.getElementById("gridOfLevels");
@@ -124,7 +127,10 @@ const viewPhoto = document.getElementById("viewPhoto");
 //------------------------------------ easter egg
 storyPartInput.addEventListener("input", function () {
     const nameV = storyPartInput.value;
-
+    if (storyPartInput.style.display == "block") {
+        audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+        audioButtonClick.play();
+    }
     if (nameV === "sepia" || nameV === "SEPIA") {
         console.log("sepiaaaaaaaa");
         document.body.style.filter = "sepia(150%)";
@@ -204,9 +210,9 @@ function toggleUnMute() {
     audioYouLost.muted = !audioYouLost.muted;
 }
 
+//------------------------------------ multiverse
 const multiverse = document.getElementById("multiverse");
 
-//------------------------------------ multiverse
 const randomNumberFunciton = (max, min) => {
     const rdNum = Math.floor(Math.random() * (max - min + 1)) + min;
     return rdNum;
@@ -260,12 +266,18 @@ multiverse.onclick = () => {
     const randomEnemy = Math.floor(Math.random() * 15);
     roundValueCounter++;
     yourName.style.display = "block";
-    if (roundValueCounter == 70) {
+    if (roundValueCounter >= 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+        console.log("hell is here");
         dcPlanet.style.display = "none";
         nameOfPlanetDC.style.display = "none";
         marvelPlanet.style.display = "none";
         nameOfPlanet.style.display = "none";
         hell.style.display = "block";
+    }
+    if (roundValueCounter >= 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+        console.log("heaven is here");
+        hell.style.display = "none";
+        heaven.style.display = "block";
     }
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
@@ -1195,6 +1207,20 @@ multiverse.onclick = () => {
         heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
         heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
 
+        if (roundValueCounter >= 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+            console.log("hell is here");
+            dcPlanet.style.display = "none";
+            nameOfPlanetDC.style.display = "none";
+            marvelPlanet.style.display = "none";
+            nameOfPlanet.style.display = "none";
+            hell.style.display = "block";
+        }
+        if (roundValueCounter >= 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+            console.log("heaven is here");
+            hell.style.display = "none";
+            heaven.style.display = "block";
+        }
+
         if (shieldInfo.innerText == "ON") {
             console.log("shieldyyyyyyyyyyyyy");
             shield.style.display = "block";
@@ -1227,6 +1253,27 @@ hell.onmouseover = () => {
         document.body.style.backgroundImage = "none";
     }
 }
+
+
+/**
+    if (roundValueCounter == 20 && (winsCounter.innerText > lossesCounter.innerText )) {
+        dcPlanet.style.display = "none";
+        nameOfPlanetDC.style.display = "none";
+        marvelPlanet.style.display = "none";
+        nameOfPlanet.style.display = "none";
+        hell.style.display = "block";
+    }
+ */
+
+if (roundValueCounter == 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+    dcPlanet.style.display = "none";
+    nameOfPlanetDC.style.display = "none";
+    marvelPlanet.style.display = "none";
+    nameOfPlanet.style.display = "none";
+    hell.style.display = "block";
+}
+
+
 
 hell.onclick = () => {
     roundHellCounter++;
@@ -1283,6 +1330,8 @@ hell.onclick = () => {
             yourHp.innerText = yourHpValue;
             backBtn.style.zIndex = "999";
             enemyHp.innerText = devilHP;
+            hell.style.display = "none";
+
         }
 
     }, 1000);
@@ -1328,6 +1377,7 @@ hell.onclick = () => {
         heroIdle.style.left = "20%";
         heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
         heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
+
 
         if (shieldInfo.innerText == "ON") {
             console.log("shieldyyyyyyyyyyyyy");
@@ -1415,6 +1465,8 @@ heaven.onclick = () => {
             yourHp.innerText = yourHpValue;
             backBtn.style.zIndex = "999";
             enemyHp.innerText = angelHP;
+            heaven.style.display = "none";
+
         }
 
     }, 1000);
@@ -1490,7 +1542,7 @@ imagesDragDisable.forEach(image => {
 });
 
 //------------------------------------ btns onmouseover and onmouseout
-const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio, collectionBtn];
+const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio, collectionBtn, yesLobby, noLobby];
 
 for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
     btnsOnMouseOverAndOut[i].onmouseover = () => {
@@ -1511,9 +1563,11 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 
 //------------------------------------ dynamic title
 const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
-    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio, collectionBtn];
+    backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio,
+    collectionBtn, hell, heaven, backToLobby];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
-    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO", "COLLECTION"];
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO",
+    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -1526,31 +1580,10 @@ for (let i = 0; i < dynamicTitleElements.length; i++) {
     });
 }
 
-
-
 //------------------------------------ date
 const realtime = new Date();
 const hours = realtime.getHours();
 console.log(hours);
-
-
-//------------------------------------ respon
-const responsivityForPhones = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (responsivityForPhones == true) {
-    document.body.style.zoom = "60%";
-    document.body.style.position = "relative";
-    document.body.style.top = "20%";
-    game.style.transform = "scale(0.9)";
-    game.style.top = "75px";
-    game.style.width = "auto";
-    game.style.height = "90%";
-    game.style.backgroundSize = "cover";
-    headline.style.textAlign = "center";
-    storyPartInput.style.marginRight = "50px";
-    document.addEventListener('touchstart', function (t) {
-        t.preventDefault();
-    });
-}
 
 if (hours >= 0 && hours < 12) {
     realtimepresented.innerText = `Good morning`;
@@ -1751,53 +1784,96 @@ sendInputBtn.onclick = () => {
     sendEnter();
 }
 
-//------------------------------------ fast refresh page function, secret color, Enter function and F11 function
+//------------------------------------ secret color and god mode, Enter function, Critical hit and Shield function
 document.addEventListener("keyup", (e) => {
-    console.log(e);
     switch (e.key) {
-        /*case ("Escape"):
-            window.location.reload();
-            break;*/
-        case ("7"): //god mode
+        case ("7"): //god mode and secret hero color
+            if (game.style.display == "flex") {
+                audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                audioButtonClick.play();
+            }
             heroIdle.src = "./res/img/secret.hero.idle.png";
             heroAttack.src = "./res/img/secret.hero.attack.png";
-            /*
-             if (winsCounter.innerText >= 10) {
-                 heroIdle.src = "./res/img/secret.hero.idle.gif";
-                 heroAttack.src = "./res/img/secret.hero.attack.gif";
-             }*/
             yourHp.innerText += 0;
-            // Revert to normal state
+            // normal mode
             setTimeout(() => {
                 yourHp.innerText = yourHpValue;
             }, 5000);
             break;
-
         case ("d"): //black and white default hero color
         case ("D"):
+            if (game.style.display == "flex") {
+                audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                audioButtonClick.play();
+            }
             heroIdle.src = "./res/img/hero.idle.png";
             heroAttack.src = "./res/img/hero.attack.png";
             break;
         case ("Enter"): //Enter function
+            if (storyPartInput.style.display == "flex") {
+                audioButtonClick.src = "./res/audio/buttonsound.mp3";
+                audioButtonClick.play();
+            }
+            if (storyPartInput.style.display == "none") {
+                audioButtonClick.src = "";
+                audioButtonClick.play();
+            }
             if (storyPartInput.style.display == "block") {
                 sendEnter();
             }
             break;
         case ("c"): //Critical hit function
         case ("C"):
-            console.log("ou critical hit works");
+            if (game.style.display == "flex") {
+                audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                audioButtonClick.play();
+            }
+            console.log("critical hit works");
             if (critical.style.display == "block") {
                 criticalFce();
             }
             break;
         case (" "): //Shield function
-            console.log("ou shield works");
+            if (game.style.display == "flex") {
+                audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                audioButtonClick.play();
+            }
+            console.log("shield works");
             if (shield.style.display == "block") {
                 shieldFce();
             }
             break;
+        case ("Escape"): //Escape function
+            console.log("escape works");
+            if (backToLobby.style.display == "none") {
+                audioButtonClick.src = "./res/audio/buttonsound.mp3";
+                audioButtonClick.play();
+            }
+            if (backToLobby.style.display == "flex") {
+                audioButtonClick.src = "";
+                audioButtonClick.play();
+            }
+            /*if (confirm("RETURN TO LOBBY?")) {
+                window.location.reload();
+            }*/
+            backToLobby.style.display = "flex";
+
+            document.body.onclick = () => {
+                backToLobby.style.display = "none";
+            }
+            noLobby.onclick = () => {
+                backToLobby.style.display = "none";
+                audioButtonClick.src = "./res/audio/buttonsound.mp3";
+                audioButtonClick.play();
+            }
+            yesLobby.onclick = () => {
+                window.location.reload();
+                audioButtonClick.src = "./res/audio/buttonsound.mp3";
+                audioButtonClick.play();
+            }
+            break;
         default:
-            console.log("you type something wrong");
+            console.log("you typed something wrong");
             break;
     }
 });
@@ -3630,8 +3706,6 @@ enemy.onmousedown = () => {
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
         "blackadam", "doctormanhattan", "darkseid"];
 
-    // const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
-
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
             game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
@@ -3645,7 +3719,7 @@ enemy.onmousedown = () => {
                     enemy.style.filter = "none";
                 }
             }
-            break; // exit the loop once a match is found
+            break;
         }
     }
 }
@@ -3689,8 +3763,6 @@ enemy.onmouseup = () => {
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
         "blackadam", "doctormanhattan", "darkseid"];
 
-    // const halfEnemyHp = parseFloat(((enemyHp.innerText) / 2) + 7);
-
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
             game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
@@ -3704,7 +3776,7 @@ enemy.onmouseup = () => {
                     enemy.style.filter = "none";
                 }
             }
-            break; // exit the loop once a match is found
+            break;
         }
     }
 }

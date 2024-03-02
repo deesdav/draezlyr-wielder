@@ -81,7 +81,8 @@ levelONE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/hulkBG.gif)";
+            enemy.src = "./res/img/enemy.hulk.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -159,7 +160,8 @@ levelTWO.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/ironmanBG.gif)";
+            enemy.src = "./res/img/enemy.ironman.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -238,7 +240,8 @@ levelTHREE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/thorBG.gif)";
+            enemy.src = "./res/img/enemy.thor.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -317,7 +320,8 @@ levelFOUR.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/blackwidowBG.gif)";
+            enemy.src = "./res/img/enemy.blackwidow.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -396,7 +400,8 @@ levelFIVE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/captainamericaBG.gif)";
+            enemy.src = "./res/img/enemy.captainamerica.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -471,7 +476,8 @@ levelSIX.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/doctorstrangeBG.gif)";
+            enemy.src = "./res/img/enemy.doctorstrange.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -548,7 +554,8 @@ levelSEVEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/venomBG.gif)";
+            enemy.src = "./res/img/enemy.venom.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -625,7 +632,8 @@ levelEIGHT.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/wolverineBG.gif)";
+            enemy.src = "./res/img/enemy.wolverine.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -702,7 +710,8 @@ levelNINE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/deadpoolBG.gif)";
+            enemy.src = "./res/img/enemy.deadpool.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -779,7 +788,8 @@ levelTEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/blackpantherBG.gif)";
+            enemy.src = "./res/img/enemy.blackpanther.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -857,7 +867,8 @@ levelELEVEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/ghostriderBG.gif)";
+            enemy.src = "./res/img/enemy.ghostrider.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -935,7 +946,8 @@ levelTWELVE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/lokiBG.gif)";
+            enemy.src = "./res/img/enemy.loki.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1013,7 +1025,8 @@ levelTHIRTEEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/captainmarvelBG.gif)";
+            enemy.src = "./res/img/enemy.captainmarvel.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1090,7 +1103,8 @@ levelFOURTEEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/thanosBG.gif)";
+            enemy.src = "./res/img/enemy.thanos.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";

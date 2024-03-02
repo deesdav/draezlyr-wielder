@@ -268,10 +268,10 @@ body {
     align-items: center;
     gap: 70px;
     position: relative;
-    top: 50%; 
+    top: 50%;
     transform: scale(1.9);
     padding: 0;
-    height: 380px; 
+    height: 380px;
     margin-top: -100px;
     margin-right: auto;
     margin-left: auto;
@@ -279,7 +279,7 @@ body {
 }
 
 
-#planets button{
+#planets button {
     position: relative;
     right: 5%;
     margin: 10px;
@@ -498,7 +498,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
 }
 
 #storyrecap {
@@ -548,16 +548,9 @@ body {
 
 .transition-bg {
     transition: background-image 0.5s ease-in-out;
-    /* Adjust timing and easing as needed */
+
 }
 
-/*
-@media (min-width: 1px) {
-    #game {
-        background: url('data:spidermanBG/gif;base64,iVBORw...') bottom/100% no-repeat;
-    }
-}
-*/
 #heroIdle {
     display: block;
     height: min-content;
@@ -565,7 +558,7 @@ body {
     position: relative;
     top: 72%;
     left: 20%;
-    transform: scale(1.5);
+    transform: scale(1.35);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
     filter: drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod);
@@ -578,7 +571,7 @@ body {
     position: relative;
     top: 72%;
     left: 35%;
-    transform: scale(1.5);
+    transform: scale(1.35);
     transition: 0.5s ease;
     animation: heroMoving 1s infinite alternate linear;
     filter: drop-shadow(3px 3px 5px #333) drop-shadow(-3px -3px 5px silver);
@@ -1355,4 +1348,98 @@ tr:nth-child(9) td:nth-child(2) {
     border-radius: 10px;
     filter: saturate(150%);
 
+}
+
+#backToLobby {
+    position: absolute;
+    box-shadow: 0 0 9999px rgb(0, 0, 0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    border: 3px solid rgb(255, 255, 255);
+    height: 300px;
+    width: max-content;
+    padding: 1em;
+    font-size: 5em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.816);
+    color: white;
+}
+
+#backToLobby button {
+    border: 3px solid rgb(255, 255, 255);
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 25px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+
+
+/*responsivita*/
+@media only screen and (max-width: 768px) {
+    body {
+        zoom: 60%;
+        position: relative;
+        top: 20%;
+        font-size: small;
+    }
+
+    #game {
+        width: 80%;
+        height: 80%;
+    }
+
+    #game {
+        height: 600px;
+        width: 666px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        zoom: 40%;
+        position: relative;
+        top: 10%;
+        font-size: small;
+    }
+
+    #game {
+        width: 80%;
+        height: 80%;
+    }
+
+    #game {
+        height: 600px;
+        width: 666px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body {
+        zoom: 100%;
+        position: relative;
+        top: 0;
+        font-size: small;
+    }
+
+    #game {
+        width: 100%;
+        height: auto;
+        position: static;
+        transform: none;
+    }
 }

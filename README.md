@@ -8,13 +8,6 @@
 
 **Latest Update Highlights:**
 
-- New Effects
-- God Mode Functional Nerf
-- Marvel Level Edits
-- New Collection
-- New Choose Sound
-- Filtered Images
-- Collection update
 - New upgrades : Shield and Critical hit
 - New Easter egg 
 - Multiverse fix
@@ -22,3 +15,7 @@
 - Hell and Heaven
 - Visual planets update
 - New logo
+- Escape function works = return to lobby
+- New keyboard sound
+- Input for name updated
+- Marvel PLanet is completed
