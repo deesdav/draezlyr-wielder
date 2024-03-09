@@ -37,8 +37,8 @@ dcLevelONE.onclick = () => {
     if (dcLevelONECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/batmanBG.png)";
-    enemy.src = "./res/img/enemy.batman.png";
+    game.style.backgroundImage = "url(./res/img/batmanBG.gif)";
+    enemy.src = "./res/img/enemy.batman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -83,7 +83,8 @@ dcLevelONE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/flashBG.png)";
+            enemy.src = "./res/img/enemy.flash.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -165,7 +166,8 @@ dcLevelTWO.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/batmanBG.png)";
+            enemy.src = "./res/img/enemy.wonderwoman.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -247,7 +249,8 @@ dcLevelTHREE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/batmanBG.png)";
+            enemy.src = "./res/img/enemy.joker.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -328,7 +331,8 @@ dcLevelFOUR.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/batmanBG.png)";
+            enemy.src = "./res/img/enemy.superman.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -409,7 +413,8 @@ dcLevelFIVE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/aquamanBG.png)";
+            enemy.src = "./res/img/enemy.aquaman.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -490,7 +495,8 @@ dcLevelSIX.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/batmanBG.png)";
+            enemy.src = "./res/img/enemy.catwoman.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -571,7 +577,8 @@ dcLevelSEVEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/cyborgBG.png)";
+            enemy.src = "./res/img/enemy.cyborg.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -652,7 +659,8 @@ dcLevelEIGHT.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/greenlanternBG.png)";
+            enemy.src = "./res/img/enemy.greenlantern.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -733,7 +741,8 @@ dcLevelNINE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/greenarrowBG.png)";
+            enemy.src = "./res/img/enemy.greenarrow.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -814,7 +823,8 @@ dcLevelTEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/batmanBG.png)";
+            enemy.src = "./res/img/enemy.nightwing.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -895,7 +905,8 @@ dcLevelELEVEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/shazamBG.png)";
+            enemy.src = "./res/img/enemy.shazam.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -976,7 +987,8 @@ dcLevelTWELVE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/blackadamBG.png)";
+            enemy.src = "./res/img/enemy.blackadam.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1057,7 +1069,8 @@ dcLevelTHIRTEEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/doctormanhattanBG.png)";
+            enemy.src = "./res/img/enemy.doctormanhattan.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1138,7 +1151,8 @@ dcLevelFOURTEEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            game.style.backgroundImage = "url(./res/img/darkseidBG.png)";
+            enemy.src = "./res/img/enemy.darkseid.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";

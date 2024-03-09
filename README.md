@@ -8,11 +8,7 @@
 
 **Latest Update Highlights:**
 
-- New upgrades : Shield and Critical hit
-- New Easter egg 
-- Multiverse fix
-- New upgrades have addEventListener
-- Hell and Heaven
+- Hell and Heaven not done
 - Visual planets update
 - New logo
 - Escape function works = return to lobby
