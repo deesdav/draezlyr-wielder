@@ -3699,12 +3699,14 @@ enemy.onmousedown = () => {
     const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
         "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
         "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID", "PIKACHU", "SUPER MARIO", "GROOT", "ROBOCOP", "PREDATOR", "TERMINATOR", "GERALT",
+        "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
 
     const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-        "blackadam", "doctormanhattan", "darkseid"];
+        "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
 
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
@@ -3756,12 +3758,14 @@ enemy.onmouseup = () => {
     const enemyTextValue = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
         "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
         "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
-        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID"];
+        "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID", "PIKACHU", "SUPER MARIO", "GROOT", "ROBOCOP", "PREDATOR", "TERMINATOR", "GERALT",
+        "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
 
     const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
-        "blackadam", "doctormanhattan", "darkseid"];
+        "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
 
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
@@ -4241,7 +4245,7 @@ for (let i = 0; i < killedEnemies.length; i++) {
             infoOfKilledEnemyLocation.innerText = "MULTIVERSE";
         }
         viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.gif`;
-        if (killedEnemiesId.alt == "multiverse" || killedEnemiesId.alt == "dc") {
+        if (killedEnemiesId.alt == "multiverse" ) {
             viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.png`;
         }
         viewPhoto.style.display = "block";

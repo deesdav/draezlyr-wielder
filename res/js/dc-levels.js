@@ -83,8 +83,8 @@ dcLevelONE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/flashBG.png)";
-            enemy.src = "./res/img/enemy.flash.png";
+            game.style.backgroundImage = "url(./res/img/flashBG.jpg)";
+            enemy.src = "./res/img/enemy.flash.jpg";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -120,8 +120,8 @@ dcLevelTWO.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/flashBG.png)";
-    enemy.src = "./res/img/enemy.flash.png";
+    game.style.backgroundImage = "url(./res/img/flashBG.jpg)";
+    enemy.src = "./res/img/enemy.flash.jpg";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -166,8 +166,8 @@ dcLevelTWO.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/batmanBG.png)";
-            enemy.src = "./res/img/enemy.wonderwoman.png";
+            game.style.backgroundImage = "url(./res/img/batmanBG.jpg)";
+            enemy.src = "./res/img/enemy.wonderwoman.jpg";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -203,8 +203,8 @@ dcLevelTHREE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/batmanBG.png)";
-    enemy.src = "./res/img/enemy.wonderwoman.png";
+    game.style.backgroundImage = "url(./res/img/batmanBG.jpg)";
+    enemy.src = "./res/img/enemy.wonderwoman.jpg";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
