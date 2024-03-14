@@ -12,21 +12,22 @@
 <body>
     <div id="realtimepresented"></div>
     <button id="muteAudio">MUTE AUDIO</button>
+    <button id="inGameStoryRecapBtn">STORY RECAP</button>
     <div id="lobby">
         <h1 id="headline">DRAEZLYR WIELDER</h1>
         <button id="play">PLAY</button>
-
         <button id="story">STORY RECAP</button>
         <a href="https://github.com/deesdav"> <button id="author">AUTHOR</button></a>
+
     </div>
     <div id="backToLobby">
-        <p>RETURN TO LOBBY?</p>
+        <p>RETURN TO LOBBY AND START AGAIN?</p>
         <button id="noLobby">NO</button>
         <button id="yesLobby">YES</button>
     </div>
     <button id="skipIntroBtn">SKIP INTRO</button>
     <div id="loader"></div>
-    <div id="storyrecap">
+    <div id="storyRecap">
         <h3>Recapitulation of the story</h3>
         <p>You were a knight named John Guiscard Coral Ironside
             who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was
@@ -34,6 +35,19 @@
             stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the
             dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality,
             great strength, and was controlled by anger.</p>
+        <a href="https://deesdav.github.io/draezlyr/"> <button id="playDraezlyr1">PLAY DRAEZLYR SWORD
+                MASSACRE</button></a>
+    </div>
+    <div id="inGameStoryRecap">
+        <h3>Recapitulation of the story</h3>
+        <p>You were a knight named John Guiscard Coral Ironside
+            who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was
+            in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword
+            stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the
+            dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality,
+            great strength, and was controlled by anger.</p>
+        <a href="https://deesdav.github.io/draezlyr/"> <button id="playDraezlyr1">PLAY DRAEZLYR SWORD
+                MASSACRE</button></a>
     </div>
 
     <div id="storyinfo">
@@ -44,6 +58,7 @@
         <button id="nextBtn">next</button>
         <button id="sendInputBtn">send</button>
     </div>
+
     <div id="yourName"></div>
     <div id="yourXPText">XP: <span id="yourXP">0</span></div>
     <div id="yourDamageText">DAMAGE: <span id="damageInfo">1</span></div>
@@ -126,17 +141,17 @@
     <div id="infoBox">
         <div id="leftBox">
             <h2>Info</h2>
-            <div>1. so if you complete marvel planet, Deesdav planet appear. </div>
-            <div>2. in deesdav planet you need to get 120 or more xp to get dc planet, when you got 120 xp, 100 xp will
-                be
-                taken from you, due to harder difficulty, when you get 150 xp you will have to wait until countdown end
-            </div>
-            <div>3. The colors of player you can change by typing on keyboard current color, so if your hero is yellow
-                and
-                you
-                want a red color just type r, for the color change you need to have that colors bought </div>
-            <div>4. default color is black and white so type: d</div>
-            <div>5. secret color <span title="7">?</span></div>
+            <div>1. So, if you complete Marvel Planet, Deesdav Planet appears.</div>
+            <div>2. In Deesdav Planet, you need to earn 120 or more XP to unlock DC Planet. However, when you reach 120
+                XP, 100 XP will be deducted due to the higher difficulty. If you reach 150 XP, you will have to wait
+                until the countdown ends.</div>
+            <div>3. You can change the color of your hero by typing the current color on the keyboard. For example, if
+                your hero is yellow and you want a red color, just type 'r'. To change colors, you need to have
+                purchased them beforehand.</div>
+            <div>4. The default color is black and white, so type: 'd'.</div>
+            <div>5. Secret color? <span title="7">?</span>?</div>
+            <div>6. After achieving the 20th round and having more wins than losses in the Multiverse Planet, the Hell
+                Planet appears. Additionally, after the 40th round, the Heaven Planet appears.</div>
         </div>
         <div id="rightBox">
             <h2>Table</h2>
@@ -176,6 +191,10 @@
                 <tr>
                     <td>c (or C)</td>
                     <td>critical hit upgrade</td>
+                </tr>
+                <tr>
+                    <td>a (or A)</td>
+                    <td>attack hit on enemy instead of mouseclick</td>
                 </tr>
             </table>
 

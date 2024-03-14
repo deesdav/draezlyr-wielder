@@ -4,6 +4,7 @@ const play = document.getElementById("play");
 const skipIntroBtn = document.getElementById("skipIntroBtn");
 const story = document.getElementById("story");
 const author = document.getElementById("author");
+const playDraezlyr1 = document.getElementById("playDraezlyr1");
 const storyinfo = document.getElementById("storyinfo");
 const nextBtn = document.getElementById("nextBtn");
 const storyPart = document.getElementById("storyPart");
@@ -59,6 +60,7 @@ const levelsBox = document.getElementById("levelsBox");
 const backToLobby = document.getElementById("backToLobby");
 const noLobby = document.getElementById("noLobby");
 const yesLobby = document.getElementById("yesLobby");
+const inGameStoryRecapBtn = document.getElementById("inGameStoryRecapBtn");
 
 const levelsText = document.getElementById("levelsText");
 const gridOfLevels = document.getElementById("gridOfLevels");
@@ -96,7 +98,8 @@ const dcLevelTHIRTEEN = document.getElementById("dcLevelTHIRTEEN");
 const dcLevelFOURTEEN = document.getElementById("dcLevelFOURTEEN");
 const dcLevelFIFTEEN = document.getElementById("dcLevelFIFTEEN");
 
-const storyrecap = document.getElementById("storyrecap");
+const storyRecap = document.getElementById("storyRecap");
+const inGameStoryRecap = document.getElementById("inGameStoryRecap");
 const game = document.getElementById("game");
 const heroIdle = document.getElementById("heroIdle");
 const heroAttack = document.getElementById("heroAttack");
@@ -1188,6 +1191,7 @@ multiverse.onclick = () => {
 
     backBtn.style.display = "none";
     collectionBtn.style.display = "none";
+    inGameStoryRecapBtn.style.display = "none";
     backBtnShop.style.zIndex = "0";
 
     gameResult.onclick = () => {
@@ -1198,6 +1202,7 @@ multiverse.onclick = () => {
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
         collectionBtn.style.display = "block";
+        inGameStoryRecapBtn.style.display = "block";
         planets.style.display = "flex";
         game.style.display = "none";
         gameResult.style.display = "none";
@@ -1356,9 +1361,9 @@ hell.onclick = () => {
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
-
     backBtn.style.display = "none";
     collectionBtn.style.display = "none";
+    inGameStoryRecapBtn.style.display = "none";
     backBtnShop.style.zIndex = "0";
 
     gameResult.onclick = () => {
@@ -1369,6 +1374,7 @@ hell.onclick = () => {
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
         collectionBtn.style.display = "block";
+        inGameStoryRecapBtn.style.display = "block";
         planets.style.display = "flex";
         game.style.display = "none";
         gameResult.style.display = "none";
@@ -1491,9 +1497,9 @@ heaven.onclick = () => {
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
-
     backBtn.style.display = "none";
     collectionBtn.style.display = "none";
+    inGameStoryRecapBtn.style.display = "none";
     backBtnShop.style.zIndex = "0";
 
     gameResult.onclick = () => {
@@ -1504,6 +1510,7 @@ heaven.onclick = () => {
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
         collectionBtn.style.display = "block";
+        inGameStoryRecapBtn.style.display = "block";
         planets.style.display = "flex";
         game.style.display = "none";
         gameResult.style.display = "none";
@@ -1542,7 +1549,7 @@ imagesDragDisable.forEach(image => {
 });
 
 //------------------------------------ btns onmouseover and onmouseout
-const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio, collectionBtn, yesLobby, noLobby];
+const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio, collectionBtn, yesLobby, noLobby, playDraezlyr1, inGameStoryRecapBtn];
 
 for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
     btnsOnMouseOverAndOut[i].onmouseover = () => {
@@ -1562,12 +1569,12 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 }
 
 //------------------------------------ dynamic title
-const dynamicTitleElements = [play, story, author, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
+const dynamicTitleElements = [play, story, author, playDraezlyr1, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
     backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio,
-    collectionBtn, hell, heaven, backToLobby];
-const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
+    collectionBtn, hell, heaven, backToLobby, inGameStoryRecapBtn];
+const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "PLAY DRAEZLYR SWORD MASSACRE", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
     "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO",
-    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY"];
+    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY", "IN GAME STORY RECAP"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -1594,17 +1601,22 @@ if (hours >= 0 && hours < 12) {
 }
 
 //------------------------------------ info button
-infoBtn.onclick = () => {
+function showInfoBox() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     infoBox.style.display = "flex";
     collectionBtn.style.display = "none";
+    inGameStoryRecapBtn.style.display = "none";
+}
+infoBtn.onclick = () => {
+    showInfoBox();
 }
 infoBox.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     infoBox.style.display = "none";
     collectionBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
 }
 
 infoBox.onmouseover = () => {
@@ -1658,22 +1670,51 @@ for (let i = 0; i < lobbyElements.length; i++) {
 
 
 //------------------------------------ lobby buttons
-
-story.onclick = () => {
+function showStoryRecap() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
-    storyrecap.style.display = "block";
+    storyRecap.style.display = "block";
     lobby.style.display = "none";
+}
+function showInGameStoryRecap() {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    inGameStoryRecap.style.display = "block";
+    planets.style.display = "none";
+    collectionBtn.style.display = "none";
+    infoBtn.style.display = "none";
+    shopBtn.style.display = "none";
+    inGameStoryRecapBtn.style.display = "none";
 
 }
-storyrecap.onclick = () => {
+story.onclick = () => {
+    showStoryRecap();
+}
+inGameStoryRecapBtn.onclick = () => {
+    showInGameStoryRecap();
+}
+storyRecap.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
-    storyrecap.style.display = "none";
+    storyRecap.style.display = "none";
     lobby.style.display = "flex";
 
 }
+inGameStoryRecap.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+    inGameStoryRecap.style.display = "none";
+    planets.style.display = "flex";
+    collectionBtn.style.display = "block";
+    infoBtn.style.display = "block";
+    shopBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
+}
 author.onclick = () => {
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    audioButtonClick.play();
+}
+playDraezlyr1.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
 }
@@ -1692,6 +1733,7 @@ function playGame() {
     play.style.display = "none";
     story.style.display = "none";
     author.style.display = "none";
+    playDraezlyr1.style.display = "none";
     lobby.style.display = "none";
     loader.style.display = "block";
     sendInputBtn.style.display = "none";
@@ -1778,7 +1820,9 @@ function sendEnter() {
     infoBtn.style.display = "block";
     muteAudio.style.display = "block";
     collectionBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
     document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    showInfoBox();
 }
 sendInputBtn.onclick = () => {
     sendEnter();
@@ -1872,6 +1916,12 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.play();
             }
             break;
+
+        case ("a"):
+        case ("A"):
+            enemyKeyUp();
+            break;
+
         default:
             console.log("you typed something wrong");
             break;
@@ -1897,6 +1947,7 @@ marvelPlanet.onclick = () => {
     muteAudio.style.zIndex = "999";
 
     collectionBtn.style.display = "none";
+    inGameStoryRecapBtn.style.display = "none";
     yourName.style.display = "block";
     marvelPlanetClick = true;
     console.log("MARVEL PLANET");
@@ -1938,6 +1989,7 @@ if (multiverseAppeared == false) {
         muteAudio.style.zIndex = "999";
 
         collectionBtn.style.display = "none";
+        inGameStoryRecapBtn.style.display = "none";
         yourName.style.display = "block";
         dcPlanetClick = true;
         console.log("DC PLANET");
@@ -1970,6 +2022,7 @@ backBtn.onclick = () => {
     planets.style.height = "380px";
 
     collectionBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
     yourName.style.display = "block";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -1997,6 +2050,7 @@ backBtnDC.onclick = () => {
     planets.style.height = "380px";
 
     collectionBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
     yourName.style.display = "block";
     marvelPlanet.disable = true;
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -2052,6 +2106,7 @@ let upgradeCriticalValue = 6;//6
 
 shopBtn.onclick = () => {
     collectionBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     shopBtn.style.display = "none";
@@ -3557,6 +3612,7 @@ upgradeCritical.onmouseout = () => {
 //------------------------------------ back button shop
 backBtnShop.onclick = () => {
     collectionBtn.style.display = "block";
+    inGameStoryRecapBtn.style.display = "block";
     backBtnShop.style.display = "none";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -3642,8 +3698,107 @@ yourName.onmouseout = () => {
     audioLobbyBackground.currentTime = 0;
 }
 
+
+
 //------------------------------------ enemy system
-enemy.onmouseout = () => {
+let enemyCrosshair = false;
+
+enemy.onmouseover = () => {
+    enemy.style.cursor = "crosshair";
+    enemyCrosshair = true;
+    document.addEventListener("mouseout", onMouseOut);
+    document.addEventListener("click", onClick);
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("keyup", onKeyUp);
+};
+
+enemy.onmouseleave = () => {
+    enemy.style.cursor = "";
+    enemyCrosshair = false;
+    document.removeEventListener("mouseout", onMouseOut);
+    document.removeEventListener("click", onClick);
+    document.removeEventListener("keydown", onKeyDown);
+    document.removeEventListener("keyup", onKeyUp);
+};
+
+function onMouseOut(e) {
+    switch (e.key) {
+        case "a":
+        case "A":
+            enemyOnMouseOut();
+            break;
+    }
+}
+
+function onClick(e) {
+    switch (e.key) {
+        case "a":
+        case "A":
+            enemyOnClick();
+            enemyKeyDown();
+            break;
+    }
+}
+
+let aKeyDown = false;
+
+function updateMouseEvents() {
+    if (aKeyDown == true) {
+        enemy.onmouseout = () => {
+            return;
+        };
+        enemy.onclick = () => {
+            return;
+        };
+        enemy.onmousedown = () => {
+            return;
+        };
+        enemy.onmouseup = () => {
+            return;
+        };
+    } else {
+        enemy.onmouseout = () => {
+            enemyOnMouseOut();
+        };
+        enemy.onclick = () => {
+            enemyOnClick();
+        };
+        enemy.onmousedown = () => {
+            enemyKeyDown();
+        };
+        enemy.onmouseup = () => {
+            enemyKeyUp();
+        };
+    }
+}
+
+updateMouseEvents();
+
+function onKeyDown(e) {
+    if ((e.key === "a" || e.key === "A") && !aKeyDown) {
+        aKeyDown = true;
+        enemyKeyDown();
+        updateMouseEvents();
+
+    }
+}
+
+function onKeyUp(e) {
+    if (e.key === "a" || e.key === "A") {
+        aKeyDown = false;
+        updateMouseEvents();
+    }
+}
+
+document.addEventListener("mousedown", (e) => {
+    if (aKeyDown) {
+        console.log("ZABRANUJU");
+        e.preventDefault();
+    }
+});
+
+function enemyOnMouseOut() {
+    enemy.style.cursor = "default";
     document.body.style.boxShadow = "0 0 0px red inset";
     if (gameResult.style.display == "block") {
         enemyHp.style.color = "red";
@@ -3659,7 +3814,8 @@ enemy.onmouseout = () => {
         enemyHpTextPromName.style.backgroundColor = "#333";
     }
 }
-enemy.onclick = () => {
+
+function enemyOnClick() {
     if (enemyHp.innerText == 0 || enemyHp.innerText <= 0) {
         audioButtonClick.pause();
         audioButtonClick.currentTime = 0;
@@ -3668,7 +3824,8 @@ enemy.onclick = () => {
         enemyHpTextPromName.style.backgroundColor = "#333";
     }
 }
-enemy.onmousedown = () => {
+
+function enemyKeyDown() {
     document.body.style.boxShadow = "0 0 77px red inset";
     heroAttack.style.left = "35%";
     heroAttack.style.display = "block";
@@ -3726,7 +3883,7 @@ enemy.onmousedown = () => {
     }
 }
 
-enemy.onmouseup = () => {
+function enemyKeyUp() {
     document.body.style.boxShadow = "0 0 0px red inset";
     enemyHp.style.color = "red";
     enemy.style.animation = "enemyMoving 1s infinite";
@@ -3939,6 +4096,7 @@ gameResult.onclick = () => {
         }
         deesdavPlanet.onclick = () => {
             collectionBtn.style.display = "none";
+            inGameStoryRecapBtn.style.display = "none";
             audioButtonClick.src = "./res/audio/buttonsound.mp3";
             audioButtonClick.play();
             marvelPlanet.style.display = "none";
@@ -4176,12 +4334,14 @@ collectionBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     collectionsBox.style.display = "flex";
+    inGameStoryRecapBtn.style.zIndex = "0";
 }
 
 collectionsBox.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     collectionsBox.style.display = "none";
+    inGameStoryRecapBtn.style.zIndex = "1";
 }
 
 const infoOfKilledEnemyName = document.getElementById("infoOfKilledEnemyName");
@@ -4245,7 +4405,7 @@ for (let i = 0; i < killedEnemies.length; i++) {
             infoOfKilledEnemyLocation.innerText = "MULTIVERSE";
         }
         viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.gif`;
-        if (killedEnemiesId.alt == "multiverse" ) {
+        if (killedEnemiesId.alt == "multiverse") {
             viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.png`;
         }
         viewPhoto.style.display = "block";

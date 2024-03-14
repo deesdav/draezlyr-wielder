@@ -1,417 +1,473 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    font-family: 'VT323', monospace;
-    transition: 0.5s all;
-    overflow: hidden;
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: "VT323", monospace;
+  transition: 0.5s all;
+  overflow: hidden;
 }
 
 body,
 html {
-    height: 100vh;
+  height: 100vh;
 }
 
 body {
-    background-image: url(../img/lobbyBackground.png);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-color: black;
-
+  background-image: url(../img/lobbyBackground.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 #lobby {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-
 #loader {
-    border: 13px solid #ffffff;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
-    border-radius: 50%;
-    border-top: 13px solid blueviolet;
-    width: 100px;
-    height: 100px;
-    display: none;
-    margin: 0 auto;
-    position: relative;
-    top: 43%;
-    animation: spin 2s linear infinite;
+  border: 13px solid #ffffff;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  border-radius: 50%;
+  border-top: 13px solid blueviolet;
+  width: 100px;
+  height: 100px;
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  top: 43%;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #headline {
-    font-size: 100px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0;
-    color: black;
-    text-shadow: 3px 3px 3px rgb(255, 255, 255);
-    z-index: 999;
-
+  font-size: 100px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+  color: black;
+  text-shadow: 3px 3px 3px rgb(255, 255, 255);
+  z-index: 999;
 }
 
 #play,
 #author,
 #story {
-    font-size: 60px;
-    padding: 20px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.5s ease;
-    text-transform: uppercase;
+  font-size: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s ease;
+  text-transform: uppercase;
+}
+
+#storyRecap #playDraezlyr1 {
+  font-size: 34px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid white;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s ease;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  color: white;
+  background-color: #000000;
+}
+#inGameStoryRecap #playDraezlyr1 {
+  font-size: 34px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid white;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s ease;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  color: white;
+  background-color: #000000;
 }
 
 #skipIntroBtn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 60px;
-    padding: 20px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    transition: 0.5s ease;
-    text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  transition: 0.5s ease;
+  text-transform: uppercase;
 }
 
 #author a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+#storyRecap #playDraezlyr1 a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+#inGameStoryRecap #playDraezlyr1 a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
 }
 
 #play:hover {
-    text-decoration: underline;
-    color: white;
-    background-color: black;
+  text-decoration: underline;
+  color: white;
+  background-color: black;
 }
 
 #skipIntroBtn:hover {
-    text-decoration: underline;
-    color: rgb(255, 0, 0);
+  text-decoration: underline;
+  color: rgb(255, 0, 0);
 }
 
 #author:hover {
-    text-decoration: underline;
-    color: white;
-    background-color: black;
+  text-decoration: underline;
+  color: white;
+  background-color: black;
+}
+
+#storyRecap #playDraezlyr1:hover {
+  text-decoration: underline;
+  color: black;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
+}
+#inGameStoryRecap #playDraezlyr1:hover {
+  text-decoration: underline;
+  color: black;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
 }
 
 #author a:hover {
-    text-decoration: underline;
-    color: white;
+  text-decoration: underline;
+  color: white;
+}
+
+#storyRecap #playDraezlyr1 a:hover {
+  text-decoration: underline;
+  color: black;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
+}
+#inGameStoryRecap #playDraezlyr1 a:hover {
+  text-decoration: underline;
+  color: black;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
 }
 
 #story:hover {
-    text-decoration: underline;
-    color: white;
-    background-color: black;
+  text-decoration: underline;
+  color: white;
+  background-color: black;
 }
 
 #storyinfo {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: black;
-    text-align: center;
-    font-size: xx-large;
-    padding: 1em;
-    height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-size: xx-large;
+  padding: 1em;
+  height: 100vh;
 }
 
 #storyinfo p {
-    width: 1000px;
+  width: 1000px;
 }
 
 #storyinfo #nextBtn {
-    width: 200px;
-    color: white;
-    background-color: black;
-    padding: 1em;
+  width: 200px;
+  color: white;
+  background-color: black;
+  padding: 1em;
 
-    border: 3px solid white;
-    cursor: pointer;
-    font-size: xx-large;
-    transition: 0.3s ease;
-    box-shadow: 0 0 25px white;
+  border: 3px solid white;
+  cursor: pointer;
+  font-size: xx-large;
+  transition: 0.3s ease;
+  box-shadow: 0 0 25px white;
 }
 
 #storyinfo #sendInputBtn {
-    width: 200px;
-    color: white;
-    background-color: black;
-    padding: 1em;
+  width: 200px;
+  color: white;
+  background-color: black;
+  padding: 1em;
 
-    border: 3px solid white;
-    cursor: pointer;
-    font-size: xx-large;
-    transition: 0.3s ease;
-    box-shadow: 0 0 25px white;
+  border: 3px solid white;
+  cursor: pointer;
+  font-size: xx-large;
+  transition: 0.3s ease;
+  box-shadow: 0 0 25px white;
 }
 
 #storyinfo #nextBtn:hover {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 #storyinfo #sendInputBtn:hover {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 #storyPartInput {
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    transform: scale(3);
-    display: none;
-    position: absolute;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  transform: scale(3);
+  display: none;
+  position: absolute;
 }
 
 #yourName {
-    display: none;
-    text-transform: uppercase;
-    color: white;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: x-large;
-    z-index: 999;
+  display: none;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: x-large;
+  z-index: 999;
 }
 
 #yourShieldText {
-    display: none;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 75px;
-    right: 25px;
-    font-size: x-large;
-    z-index: 999;
+  display: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 75px;
+  right: 25px;
+  font-size: x-large;
+  z-index: 999;
 }
 
 #yourCriticalText {
-    display: none;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 105px;
-    right: 25px;
-    font-size: x-large;
-    z-index: 999;
+  display: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 105px;
+  right: 25px;
+  font-size: x-large;
+  z-index: 999;
 }
 
 #yourXPText {
-    display: none;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 135px;
-    right: 25px;
-    font-size: x-large;
-    z-index: 999;
+  display: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 135px;
+  right: 25px;
+  font-size: x-large;
+  z-index: 999;
 }
 
 #yourHPText {
-    display: none;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: x-large;
-    z-index: 999;
+  display: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: x-large;
+  z-index: 999;
 }
 
 #yourDamageText {
-    display: none;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 45px;
-    right: 25px;
-    font-size: x-large;
-    z-index: 999;
+  display: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 45px;
+  right: 25px;
+  font-size: x-large;
+  z-index: 999;
 }
 
 #realtimepresented {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: xx-large;
-    display: block;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: xx-large;
+  display: block;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
 }
 
 #planets {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 70px;
-    position: relative;
-    top: 50%;
-    transform: scale(1.9);
-    padding: 0;
-    height: 380px;
-    margin-top: -100px;
-    margin-right: auto;
-    margin-left: auto;
-    z-index: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  position: relative;
+  top: 50%;
+  transform: scale(1.9);
+  padding: 0;
+  height: 380px;
+  margin-top: -80px;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 0;
 }
 
-
 #planets button {
-    position: relative;
-    right: 5%;
-    margin: 10px;
+  position: relative;
+  right: 5%;
+  margin: 10px;
 }
 
 #nameOfPlanet {
-    color: white;
-    text-align: center;
-    text-shadow: 1px 1px 0px red;
-    text-transform: uppercase;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 0px red;
+  text-transform: uppercase;
 }
 
 #nameOfPlanetDeesdav {
-    color: white;
-    text-align: center;
-    text-shadow: 1px 1px 0px rgb(255, 255, 255);
-    display: none;
-    text-transform: uppercase;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgb(255, 255, 255);
+  display: none;
+  text-transform: uppercase;
 }
 
 #nameOfPlanetDC {
-    color: white;
-    text-align: center;
-    text-shadow: 1px 1px 0px blue;
-    display: none;
-    text-transform: uppercase;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 0px blue;
+  display: none;
+  text-transform: uppercase;
 }
 
 #marvelPlanet {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 0;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
 }
 
 #marvelPlanet:hover {
-    animation: boxPlanet 1s alternate infinite;
+  animation: boxPlanet 1s alternate infinite;
 }
 
 #deesdavPlanet {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 0;
-    display: none;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  display: none;
 }
 
 #deesdavPlanet:hover {
-    animation: boxPlanet2 1s alternate infinite;
+  animation: boxPlanet2 1s alternate infinite;
 }
 
 #dcPlanet {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 0;
-    display: none;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  display: none;
 }
 
 #dcPlanet:hover {
-    animation: boxPlanet3 1s alternate infinite;
+  animation: boxPlanet3 1s alternate infinite;
 }
 
 @keyframes boxPlanet {
-    from {
-        box-shadow: 0 0 25px brown inset;
-    }
+  from {
+    box-shadow: 0 0 25px brown inset;
+  }
 
-    ;
-
-    to {
-        box-shadow: 0 0 25px red inset;
-    }
-
-    ;
+  to {
+    box-shadow: 0 0 25px red inset;
+  }
 }
 
 @keyframes boxPlanet2 {
-    from {
-        box-shadow: 0 0 25px gray inset;
-    }
+  from {
+    box-shadow: 0 0 25px gray inset;
+  }
 
-    ;
-
-    to {
-        box-shadow: 0 0 25px rgb(255, 255, 255) inset;
-    }
-
-    ;
+  to {
+    box-shadow: 0 0 25px rgb(255, 255, 255) inset;
+  }
 }
 
 @keyframes boxPlanet3 {
-    from {
-        box-shadow: 0 0 25px skyblue inset;
-    }
+  from {
+    box-shadow: 0 0 25px skyblue inset;
+  }
 
-    ;
-
-    to {
-        box-shadow: 0 0 25px blue inset;
-    }
-
-    ;
+  to {
+    box-shadow: 0 0 25px blue inset;
+  }
 }
 
 #levelsText {
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    display: none;
-    padding-bottom: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  display: none;
+  padding-bottom: 30px;
 }
 
 #levelInfo {
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    display: none;
-    padding-bottom: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  display: none;
+  padding-bottom: 30px;
 }
 
 #gridOfLevels {
-    display: none;
-    margin: 0 auto;
-    grid-template-columns: auto auto auto auto auto;
-    gap: 10px;
-    height: auto;
-    width: 650px;
-    padding-bottom: 30px;
+  display: none;
+  margin: 0 auto;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+  height: auto;
+  width: 650px;
+  padding-bottom: 30px;
 }
 
 #levelONE,
@@ -429,33 +485,33 @@ body {
 #levelTHIRTEEN,
 #levelFOURTEEN,
 #levelFIFTEEN {
-    border: 3px solid white;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    display: none;
-    margin: 0 auto;
-    width: 120px;
-    height: 120px;
-    padding: 1em;
-    background-color: transparent;
+  border: 3px solid white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  padding: 1em;
+  background-color: transparent;
 }
 
 #gridOfLevels button:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.555);
-    border: 3px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.555);
+  border: 3px solid rgb(255, 255, 255);
 }
 
 #gridOfLevelsDC {
-    display: none;
-    margin: 0 auto;
-    grid-template-columns: auto auto auto auto auto;
-    gap: 10px;
-    height: auto;
-    width: 650px;
+  display: none;
+  margin: 0 auto;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+  height: auto;
+  width: 650px;
 }
 
 #dcLevelONE,
@@ -473,973 +529,1006 @@ body {
 #dcLevelTHIRTEEN,
 #dcLevelFOURTEEN,
 #dcLevelFIFTEEN {
-    border: 3px solid white;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    display: none;
-    margin: 0 auto;
-    width: 120px;
-    height: 120px;
-    padding: 1em;
-    background-color: transparent;
+  border: 3px solid white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  padding: 1em;
+  background-color: transparent;
 }
 
 #gridOfLevelsDC button:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.555);
-    border: 3px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.555);
+  border: 3px solid rgb(255, 255, 255);
 }
 
 #levelsBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#storyrecap {
-    padding: 1em;
-    position: relative;
-    top: 0;
-    padding-top: 220px;
-    font-size: xx-large;
-    display: none;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.931);
-    width: fit-content;
-    height: 100%;
-    color: white;
-    cursor: pointer;
-    text-transform: uppercase;
+#storyRecap {
+  padding: 1em;
+  position: relative;
+  top: 0;
+  padding-top: 220px;
+  font-size: xx-large;
+  display: none;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.931);
+  width: fit-content;
+  height: 100%;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#inGameStoryRecap {
+  padding: 1em;
+  position: relative;
+  top: 0;
+  padding-top: 220px;
+  font-size: xx-large;
+  display: none;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.931);
+  width: fit-content;
+  height: 100%;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
-#storyrecap p {
-    padding: 1em;
-    color: white;
-    font-size: xx-large;
+#storyRecap p {
+  padding: 1em;
+  color: white;
+  font-size: xx-large;
+}
+#inGameStoryRecap p {
+  padding: 1em;
+  color: white;
+  font-size: xx-large;
 }
 
 #game {
-    background-image: none;
-    transition: background-image 0.5s ease;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100%;
-    background-color: #1c0000;
-    position: absolute;
-    border-radius: 5px;
-    text-transform: uppercase;
-    display: none;
-    margin: auto;
-    width: 1111px;
-    height: 666px;
-    border: 5px solid;
-    border-image: linear-gradient(to bottom, #333, rgb(70, 70, 70));
-    border-image-slice: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 0, 0.518));
+  background-image: none;
+  transition: background-image 0.5s ease;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+  background-color: #1c0000;
+  position: absolute;
+  border-radius: 5px;
+  text-transform: uppercase;
+  display: none;
+  margin: auto;
+  width: 1111px;
+  height: 666px;
+  border: 5px solid;
+  border-image: linear-gradient(to bottom, #333, rgb(70, 70, 70));
+  border-image-slice: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 0, 0.518));
 }
 
 .transition-bg {
-    transition: background-image 0.5s ease-in-out;
-
+  transition: background-image 0.5s ease-in-out;
 }
 
 #heroIdle {
-    display: block;
-    height: min-content;
-    width: min-content;
-    position: relative;
-    top: 72%;
-    left: 20%;
-    transform: scale(1.35);
-    transition: 0.5s ease;
-    animation: heroMoving 1s infinite alternate linear;
-    filter: drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod);
+  display: block;
+  height: min-content;
+  width: min-content;
+  position: relative;
+  top: 72%;
+  left: 20%;
+  transform: scale(1.35);
+  transition: 0.5s ease;
+  animation: heroMoving 1s infinite alternate linear;
+  filter: drop-shadow(3px 3px 5px #333) drop-shadow(-3px -3px 5px goldenrod);
 }
 
 #heroAttack {
-    display: none;
-    height: min-content;
-    width: min-content;
-    position: relative;
-    top: 72%;
-    left: 35%;
-    transform: scale(1.35);
-    transition: 0.5s ease;
-    animation: heroMoving 1s infinite alternate linear;
-    filter: drop-shadow(3px 3px 5px #333) drop-shadow(-3px -3px 5px silver);
+  display: none;
+  height: min-content;
+  width: min-content;
+  position: relative;
+  top: 72%;
+  left: 35%;
+  transform: scale(1.35);
+  transition: 0.5s ease;
+  animation: heroMoving 1s infinite alternate linear;
+  filter: drop-shadow(3px 3px 5px #333) drop-shadow(-3px -3px 5px silver);
 }
 
 #enemy {
-    height: 120px;
-    width: 120px;
-    position: relative;
-    top: 75%;
-    transform: scale(1.5);
-    left: 40%;
-    cursor: crosshair;
-    animation: enemyMoving ease 1s infinite alternate;
-    filter: saturate(150%);
+  height: 120px;
+  width: 120px;
+  position: relative;
+  top: 75%;
+  transform: scale(1.5);
+  left: 40%;
+  animation: enemyMoving ease 1s infinite alternate;
+  filter: saturate(150%);
 }
 
 #enemyName {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 #yourHpTextPromName {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    margin: 0;
-    box-shadow: 2px 0 25px rgb(0, 255, 0);
-    text-shadow: 0 0 0px rgb(0, 255, 0);
-    border-radius: 0 0 1em 0;
-    text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  margin: 0;
+  box-shadow: 2px 0 25px rgb(0, 255, 0);
+  text-shadow: 0 0 0px rgb(0, 255, 0);
+  border-radius: 0 0 1em 0;
+  text-transform: uppercase;
 }
 
-
 #enemyHpTextPromName {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    box-shadow: -2px 0 25px rgb(255, 0, 0);
-    text-shadow: 0 0 0px rgb(255, 0, 0);
-    border-radius: 0 0 0 1em;
-    text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  box-shadow: -2px 0 25px rgb(255, 0, 0);
+  text-shadow: 0 0 0px rgb(255, 0, 0);
+  border-radius: 0 0 0 1em;
+  text-transform: uppercase;
 }
 
 #shield {
-    display: none;
-    position: absolute;
-    bottom: 5px;
-    left: 15px;
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    box-shadow: 2px 0 25px cyan;
-    text-shadow: 0 0 0px cyan;
-    border-radius: 0 1em 0 0;
-    text-transform: uppercase;
-    cursor: pointer;
-    transform: scale(1.5);
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  box-shadow: 2px 0 25px cyan;
+  text-shadow: 0 0 0px cyan;
+  border-radius: 0 1em 0 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: scale(1.5);
 }
 
 #shield:hover {
-    color: cyan;
-    text-decoration: underline;
-    box-shadow: 0 0 3px cyan;
+  color: cyan;
+  text-decoration: underline;
+  box-shadow: 0 0 3px cyan;
 }
 
 #critical {
-    display: none;
-    position: absolute;
-    bottom: 5px;
-    right: 20px;
-    background-color: #333;
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    box-shadow: 2px 0 25px rgb(128, 9, 9);
-    text-shadow: 0 0 0px rgb(128, 9, 9);
-    border-radius: 1em 0 0 0;
-    text-transform: uppercase;
-    cursor: pointer;
-    transform: scale(1.5);
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  box-shadow: 2px 0 25px rgb(128, 9, 9);
+  text-shadow: 0 0 0px rgb(128, 9, 9);
+  border-radius: 1em 0 0 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: scale(1.5);
 }
 
 #critical:hover {
-    color: rgb(128, 9, 9);
-    text-decoration: underline;
-    box-shadow: 0 0 3px rgb(128, 9, 9);
+  color: rgb(128, 9, 9);
+  text-decoration: underline;
+  box-shadow: 0 0 3px rgb(128, 9, 9);
 }
 
 #gameResult {
-    color: white;
-    font-size: xxx-large;
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
+  color: white;
+  font-size: xxx-large;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-
 @keyframes enemyMoving {
-    0% {
-        left: 27%;
-    }
+  0% {
+    left: 27%;
+  }
 
-    50% {
-        left: 35%;
-    }
+  50% {
+    left: 35%;
+  }
 
-    100% {
-        left: 40%;
-    }
+  100% {
+    left: 40%;
+  }
 }
 
 @keyframes heroMoving {
+  from {
+    top: 73%;
+  }
 
-    from {
-        top: 73%;
-    }
-
-    ;
-
-    to {
-        top: 72%;
-    }
-
-    ;
+  to {
+    top: 72%;
+  }
 }
 
 #backBtn {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    display: block;
-    font-size: x-large;
-    height: min-content;
-    width: min-content;
-    display: none;
-    z-index: 999;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: block;
+  font-size: x-large;
+  height: min-content;
+  width: min-content;
+  display: none;
+  z-index: 999;
 }
 
 #backBtnDC {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    display: none;
-    font-size: x-large;
-    height: min-content;
-    width: min-content;
-    display: none;
-    z-index: 999;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: none;
+  font-size: x-large;
+  height: min-content;
+  width: min-content;
+  display: none;
+  z-index: 999;
 }
 
 #infoBtn {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    display: none;
-    font-size: x-large;
-    height: min-content;
-    width: min-content;
-    display: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: none;
+  font-size: x-large;
+  height: min-content;
+  width: min-content;
+  display: none;
 }
 
 #infoBox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    font-size: xx-large;
-    background-color: rgba(0, 0, 0, 0.931);
-    color: white;
-    cursor: pointer;
-    text-transform: uppercase;
-    display: none;
-    overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  font-size: xx-large;
+  background-color: rgba(0, 0, 0, 0.931);
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: none;
+  justify-content: baseline;
+  align-items: baseline;
+  overflow: auto;
 }
 
 #infoBox #leftBox h2 {
-    text-align: center;
-    text-decoration: underline;
+  text-align: center;
+  text-decoration: underline;
 }
 
 #infoBox #rightBox h2 {
-    text-align: center;
-    text-decoration: underline;
+  text-align: center;
+  text-decoration: underline;
 }
 
 #infoBox #leftBox:hover h2 {
-    text-decoration-color: blue;
+  text-decoration-color: blue;
 }
 
 #infoBox #rightBox:hover h2 {
-    text-decoration-color: blue;
+  text-decoration-color: blue;
 }
 
 #infoBox #leftBox {
-    padding-top: 50px;
-    padding-left: 20px;
-    width: 50%;
-    color: white;
-    font-size: xx-large;
-    margin-top: 10px;
-    filter: blur(5px);
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 7px;
+  width: 50%;
+  color: white;
+  font-size: xx-large;
+  margin-top: 10px;
+  filter: blur(5px);
+  border-right: 3px solid white;
+  height: auto;
 }
 
 #infoBox #leftBox:hover {
-    filter: blur(0px);
+  filter: blur(0px);
 }
 
 #infoBox #leftBox div::first-letter {
-    color: blue;
-    text-shadow: 0 1px 2px white;
+  color: blue;
+  text-shadow: 0 1px 2px white;
 }
 
 #infoBox #rightBox {
-    border-left: 3px solid white;
-    padding-top: 80px;
-    filter: blur(5px);
+  border-left: 3px solid white;
+  padding-top: 50px;
+  margin-top: 10px;
+  filter: blur(5px);
+  width: 50%;
+  height: auto;
 }
 
 #infoBox #rightBox:hover {
-    filter: blur(0px);
+  filter: blur(0px);
 }
 
 table {
-    text-transform: none;
-    border: 2px solid rgb(255, 255, 255);
-    border-collapse: collapse;
-    transform: scale(0.8);
+  padding: 0;
+  margin-top: -55px;
+  text-transform: none;
+  border: 2px solid rgb(255, 255, 255);
+  border-collapse: collapse;
+  transform: scale(0.8);
 }
 
 tr th,
 tr td {
-    border: 2px solid white;
-    padding: 10px;
+  border: 2px solid white;
+  padding: 10px;
 }
 
 tr th {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 tr:nth-child(2) td:nth-child(2) {
-    background-color: red;
+  background-color: red;
 }
 
 tr:nth-child(3) td:nth-child(2) {
-    background-color: rgb(0, 255, 0);
+  background-color: rgb(0, 255, 0);
 }
 
 tr:nth-child(4) td:nth-child(2) {
-    background-color: rgb(0, 0, 255);
+  background-color: rgb(0, 0, 255);
 }
 
 tr:nth-child(5) td:nth-child(2) {
-    background-color: rgb(255, 255, 0);
+  background-color: rgb(255, 255, 0);
 }
 
 tr:nth-child(6) td:nth-child(2) {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 tr:nth-child(7) td:nth-child(2) {
-    background-color: rgb(255, 0, 255);
+  background-color: rgb(255, 0, 255);
 }
 
 tr:nth-child(8) td:nth-child(2) {
-    background-color: rgb(0, 255, 255, 0.684);
+  background-color: rgb(0, 255, 255, 0.684);
 }
 
 tr:nth-child(9) td:nth-child(2) {
-    background-color: rgb(128, 9, 9, 0.684);
+  background-color: rgb(128, 9, 9, 0.684);
 }
 
 #shopBtn {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    display: none;
-    font-size: x-large;
-    height: min-content;
-    width: min-content;
-    display: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: none;
+  font-size: x-large;
+  height: min-content;
+  width: min-content;
+  display: none;
 }
 
 #shop {
-    z-index: 1;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 102%;
-    position: absolute;
-    top: 0;
-    color: white;
-    text-shadow: 1px 1px 10px black;
-    text-transform: uppercase;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url(../img/shop.png);
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 102%;
+  position: absolute;
+  top: 0;
+  color: white;
+  text-shadow: 1px 1px 10px black;
+  text-transform: uppercase;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../img/shop.png);
 }
 
 #shop h2 {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    font-size: xx-large;
-    text-shadow: 1px 1px 5px black;
-    font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  font-size: xx-large;
+  text-shadow: 1px 1px 5px black;
+  font-weight: bold;
 }
 
 #shop div {
-    text-align: center;
-    padding: 1em;
-    font-size: xx-large;
-    text-shadow: 1px 1px 5px black;
-    font-weight: bolder;
+  text-align: center;
+  padding: 1em;
+  font-size: xx-large;
+  text-shadow: 1px 1px 5px black;
+  font-weight: bolder;
 }
 
 #merchant {
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-    text-align: center;
-    padding: 1em;
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  padding: 1em;
 }
 
 #merchant button {
-    width: 190px;
-    ;
-    height: 190px;
-    border-radius: 10px;
-    padding: 15px;
-    border: 3px solid black;
-    background-color: rgb(0, 0, 0, 0.684);
-    color: #ffffff;
-    font-size: xx-large;
-    cursor: pointer;
-    transition: .3 ease;
-    text-transform: uppercase;
-    text-shadow: 0 0 0px rgb(251, 0, 0);
+  width: 190px;
+  height: 190px;
+  border-radius: 10px;
+  padding: 15px;
+  border: 3px solid black;
+  background-color: rgb(0, 0, 0, 0.684);
+  color: #ffffff;
+  font-size: xx-large;
+  cursor: pointer;
+  transition: 0.3 ease;
+  text-transform: uppercase;
+  text-shadow: 0 0 0px rgb(251, 0, 0);
 }
 
 #merchant button[alt="damage"] {
-    color: rgb(255, 165, 0, 0.684);
-    border: 3px solid rgb(255, 165, 0, 0.684);
-    text-shadow: 0 0 0px rgb(255, 165, 0);
+  color: rgb(255, 165, 0, 0.684);
+  border: 3px solid rgb(255, 165, 0, 0.684);
+  text-shadow: 0 0 0px rgb(255, 165, 0);
 }
 
 #merchant button[alt="health"] {
-    color: rgba(0, 255, 0, 0.684);
-    border: 3px solid rgba(0, 255, 0, 0.684);
-    text-shadow: 0 0 0px rgb(0, 255, 0);
+  color: rgba(0, 255, 0, 0.684);
+  border: 3px solid rgba(0, 255, 0, 0.684);
+  text-shadow: 0 0 0px rgb(0, 255, 0);
 }
 
 #merchant button[alt="shield"] {
-    color: rgba(0, 255, 255, 0.684);
-    border: 3px solid rgba(0, 255, 255, 0.684);
-    font-size: 18px;
-    text-shadow: 0 0 0px rgb(0, 255, 255);
+  color: rgba(0, 255, 255, 0.684);
+  border: 3px solid rgba(0, 255, 255, 0.684);
+  font-size: 18px;
+  text-shadow: 0 0 0px rgb(0, 255, 255);
 }
 
 #merchant button[alt="critical"] {
-    color: rgba(128, 9, 9, 0.684);
-    border: 3px solid rgba(128, 9, 9, 0.684);
-    font-size: 18px;
-    text-shadow: 0 0 0px rgb(128, 9, 9);
+  color: rgba(128, 9, 9, 0.684);
+  border: 3px solid rgba(128, 9, 9, 0.684);
+  font-size: 18px;
+  text-shadow: 0 0 0px rgb(128, 9, 9);
 }
 
 #merchant button:hover {
-    background-color: white;
-    color: black;
-    border-radius: 50% 20% / 10% 40%;
-    border: 3px solid black;
+  background-color: white;
+  color: black;
+  border-radius: 50% 20% / 10% 40%;
+  border: 3px solid black;
 }
 
 #customization {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-    text-align: center;
-    padding: 1em;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 1em;
 }
 
 #customization button {
-    width: 100px;
-    border-radius: 10px;
-    height: 100px;
-    border: 3px solid white;
-    color: #000000;
-    font-size: xx-large;
-    border: 1px solid black;
-    cursor: pointer;
-    transition: 0.3 ease;
-    text-transform: uppercase;
-    border-radius: 50% 20% / 10% 40%;
+  width: 100px;
+  border-radius: 10px;
+  height: 100px;
+  border: 3px solid white;
+  color: #000000;
+  font-size: xx-large;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.3 ease;
+  text-transform: uppercase;
+  border-radius: 50% 20% / 10% 40%;
 }
 
 #redColor {
-    background-color: rgba(255, 0, 0, 0.875);
+  background-color: rgba(255, 0, 0, 0.875);
 }
 
 #greenColor {
-    background-color: rgba(0, 255, 0, 0.875);
+  background-color: rgba(0, 255, 0, 0.875);
 }
 
 #blueColor {
-    background-color: rgba(0, 0, 255, 0.875);
+  background-color: rgba(0, 0, 255, 0.875);
 }
 
 #yellowColor {
-    background-color: rgba(255, 255, 0, 0.875);
+  background-color: rgba(255, 255, 0, 0.875);
 }
 
 #backBtnShop {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: white;
-    display: block;
-    font-size: x-large;
-    height: min-content;
-    width: min-content;
-    display: none;
-    z-index: 999;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: white;
+  display: block;
+  font-size: x-large;
+  height: min-content;
+  width: min-content;
+  display: none;
+  z-index: 999;
 }
 
 #overview {
-    display: none;
-    margin: 0 auto;
-    color: white;
-    padding: 1em;
-    position: absolute;
-    right: 235px;
+  display: none;
+  margin: 0 auto;
+  color: white;
+  padding: 1em;
+  position: absolute;
+  right: 235px;
 }
 
 #overview img {
-    height: 250px;
-    width: 250px;
-    position: relative;
-    bottom: 50px;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  bottom: 50px;
 }
 
 #winAndLoss {
-    text-align: center;
-    font-size: x-large;
-    color: white;
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 156px;
+  text-align: center;
+  font-size: x-large;
+  color: white;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 156px;
 }
 
 #winsCounter {
-    color: rgb(0, 255, 0);
-    text-shadow: 0 0 2px black;
-    font-weight: bold;
+  color: rgb(0, 255, 0);
+  text-shadow: 0 0 2px black;
+  font-weight: bold;
 }
 
 #lossesCounter {
-    color: red;
-    text-shadow: 0 0 2px black;
-    font-weight: bold;
+  color: red;
+  text-shadow: 0 0 2px black;
+  font-weight: bold;
 }
 
 #deesdavDimension {
-    font-size: 135px;
-    padding: 1em;
-    text-align: center;
-    display: none;
-    margin: 0 auto;
-    height: 666px;
-    width: 666px;
-    background-image: url(../img/deesdav.dimension.png);
-    animation: boxShadow 1s alternate linear infinite;
-    border-radius: 15px;
-    background-position: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  font-size: 135px;
+  padding: 1em;
+  text-align: center;
+  display: none;
+  margin: 0 auto;
+  height: 666px;
+  width: 666px;
+  background-image: url(../img/deesdav.dimension.png);
+  animation: boxShadow 1s alternate linear infinite;
+  border-radius: 15px;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
 @keyframes boxShadow {
-    from {
-        box-shadow: 0 0 50px white;
-    }
+  from {
+    box-shadow: 0 0 50px white;
+  }
 
-    ;
-
-    to {
-        box-shadow: 0 0 10px white;
-    }
-
-    ;
+  to {
+    box-shadow: 0 0 10px white;
+  }
 }
 
 #dot {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 1px solid #333;
-    background-color: rgb(0, 0, 0);
-    position: relative;
-    cursor: pointer;
-    color: white;
-    text-align: center;
-    font-size: 45px;
-    font-weight: bold;
-    display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  display: block;
 }
 
 #countDownText {
-    display: none;
-    text-align: center;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -1150%);
-    color: rgb(255, 255, 255);
-    font-size: xx-large;
-    padding: 0;
-    z-index: 999;
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -1150%);
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  padding: 0;
+  z-index: 999;
 }
 
 #multiverse {
-    display: none;
-    border: 3px solid white;
-    border-radius: 50%;
-    height: 115px;
-    width: 115px;
-    cursor: pointer;
-    font-size: medium;
+  display: none;
+  border: 3px solid white;
+  border-radius: 50%;
+  height: 115px;
+  width: 115px;
+  cursor: pointer;
+  font-size: medium;
 }
 
 #multiverse:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 #hell {
-    display: none;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    height: 115px;
-    width: 115px;
-    cursor: pointer;
-    font-size: medium;
-    background-color: #850111;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 0, 0, 0)), url(../img/hellCover.png);
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 300%;
+  display: none;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  height: 115px;
+  width: 115px;
+  cursor: pointer;
+  font-size: medium;
+  background-color: #850111;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 0, 0, 0)),
+    url(../img/hellCover.png);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 300%;
 }
 
 #hell:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 #heaven {
-    display: none;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    height: 115px;
-    width: 115px;
-    cursor: pointer;
-    font-size: medium;
-    background-color: #87CEEB;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.436), rgba(254, 182, 0, 0)), url(../img/heavenCover.png);
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 300%;
-
+  display: none;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  height: 115px;
+  width: 115px;
+  cursor: pointer;
+  font-size: medium;
+  background-color: #87ceeb;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.436),
+      rgba(254, 182, 0, 0)
+    ),
+    url(../img/heavenCover.png);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 300%;
 }
 
 #heaven:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 #muteAudio {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: fixed;
-    top: 12%;
-    left: 5%;
-    transform: translate(-50%, -50%);
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: white;
-    display: block;
-    font-size: large;
-    height: min-content;
-    width: fit-content;
-    display: block;
-    z-index: 999;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: fixed;
+  top: 12%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: white;
+  display: block;
+  font-size: large;
+  height: min-content;
+  width: fit-content;
+  display: block;
+  z-index: 999;
+}
+
+#inGameStoryRecapBtn {
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  transform: translateX(-50%);
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: none;
+  font-size: large;
+  height: min-content;
+  width: auto;
+  z-index: 1;
 }
 
 #collectionBtn {
-    text-transform: uppercase;
-    cursor: pointer;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1em;
-    border: 3px solid white;
-    border-radius: 1em;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    display: none;
-    font-size: x-large;
-    height: min-content;
-    width: min-content;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: none;
+  font-size: x-large;
+  height: min-content;
+  width: min-content;
 }
 
-
 #collectionsBox {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  cursor: pointer;
 }
 
 #collectionsBoxHealine {
-    font-size: xxx-large;
-    color: white;
-    text-align: center;
-    position: absolute;
-    text-transform: uppercase;
-    top: 50px;
+  font-size: xxx-large;
+  color: white;
+  text-align: center;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50px;
 }
 
 #gridOfKilledEnemies {
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    gap: 5px;
-    height: fit-content;
-    width: fit-content;
-    transform: scale(0.9);
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  gap: 5px;
+  height: fit-content;
+  width: fit-content;
+  transform: scale(0.9);
 }
 
 #gridOfKilledEnemies img {
-    height: 80px;
-    width: 80px;
-    padding: 1em;
-    background-color: rgb(0, 0, 0);
+  height: 80px;
+  width: 80px;
+  padding: 1em;
+  background-color: rgb(0, 0, 0);
 }
 
 #gridOfKilledEnemies img[alt="marvel"] {
-    border: 3px solid red;
+  border: 3px solid red;
 }
 
 #gridOfKilledEnemies img[alt="dc"] {
-    border: 3px solid blue;
+  border: 3px solid blue;
 }
 
 #gridOfKilledEnemies img[alt="multiverse"] {
-    border: 3px solid white;
-    animation: multiverseBorder 5s linear alternate infinite;
+  border: 3px solid white;
+  animation: multiverseBorder 5s linear alternate infinite;
 }
 
 @keyframes multiverseBorder {
-    0% {
-        border-color: violet;
-    }
+  0% {
+    border-color: violet;
+  }
 
-    16.666% {
-        border-color: indigo;
-    }
+  16.666% {
+    border-color: indigo;
+  }
 
-    33.333% {
-        border-color: blue;
-    }
+  33.333% {
+    border-color: blue;
+  }
 
-    50% {
-        border-color: green;
-    }
+  50% {
+    border-color: green;
+  }
 
-    66.666% {
-        border-color: yellow;
-    }
+  66.666% {
+    border-color: yellow;
+  }
 
-    83.333% {
-        border-color: orange;
-    }
+  83.333% {
+    border-color: orange;
+  }
 
-    100% {
-        border-color: red;
-    }
+  100% {
+    border-color: red;
+  }
 }
 
-
 #gridOfKilledEnemies img:hover {
-    border: 3px solid #f39c12;
-    box-shadow: 0 0 100px rgba(49, 49, 49, 0.89) inset;
+  border: 3px solid #f39c12;
+  box-shadow: 0 0 100px rgba(49, 49, 49, 0.89) inset;
 }
 
 #infoOfKilledEnemiesBox {
-    text-transform: uppercase;
-    width: 50%;
-    color: white;
-    font-size: 27px;
+  text-transform: uppercase;
+  width: 50%;
+  color: white;
+  font-size: 27px;
 }
 
 #viewPhoto {
-    width: min-content;
-    height: min-content;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    border: 4mm ridge rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    filter: saturate(150%);
-
+  width: min-content;
+  height: min-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  border: 4mm ridge rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  filter: saturate(150%);
 }
 
 #backToLobby {
-    position: absolute;
-    box-shadow: 0 0 9999px rgb(0, 0, 0);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    border: 3px solid rgb(255, 255, 255);
-    height: 300px;
-    width: max-content;
-    padding: 1em;
-    font-size: 5em;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.816);
-    color: white;
+  position: absolute;
+  box-shadow: 0 0 9999px rgb(0, 0, 0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border: 3px solid rgb(255, 255, 255);
+  height: 300px;
+  width: max-content;
+  padding: 1em;
+  font-size: 5em;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.816);
+  color: white;
 }
 
 #backToLobby button {
-    border: 3px solid rgb(255, 255, 255);
-    font-size: 1.2em;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 25px;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    cursor: pointer;
+  border: 3px solid rgb(255, 255, 255);
+  font-size: 1.1em;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
 }
-
 
 /*responsivita*/
 @media only screen and (max-width: 768px) {
-    body {
-        zoom: 60%;
-        position: relative;
-        top: 20%;
-        font-size: small;
-    }
+  body {
+    zoom: 60%;
+    position: relative;
+    top: 20%;
+    font-size: small;
+  }
 
-    #game {
-        width: 80%;
-        height: 80%;
-    }
+  #game {
+    width: 80%;
+    height: 80%;
+  }
 
-    #game {
-        height: 600px;
-        width: 666px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+  #game {
+    height: 600px;
+    width: 666px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media only screen and (max-width: 480px) {
-    body {
-        zoom: 40%;
-        position: relative;
-        top: 10%;
-        font-size: small;
-    }
+  body {
+    zoom: 40%;
+    position: relative;
+    top: 10%;
+    font-size: small;
+  }
 
-    #game {
-        width: 80%;
-        height: 80%;
-    }
+  #game {
+    width: 80%;
+    height: 80%;
+  }
 
-    #game {
-        height: 600px;
-        width: 666px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+  #game {
+    height: 600px;
+    width: 666px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media only screen and (max-width: 375px) {
-    body {
-        zoom: 100%;
-        position: relative;
-        top: 0;
-        font-size: small;
-    }
+  body {
+    zoom: 100%;
+    position: relative;
+    top: 0;
+    font-size: small;
+  }
 
-    #game {
-        width: 100%;
-        height: auto;
-        position: static;
-        transform: none;
-    }
+  #game {
+    width: 100%;
+    height: auto;
+    position: static;
+    transform: none;
+  }
 }
