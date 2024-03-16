@@ -45,6 +45,7 @@ dcLevelONE.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -128,6 +129,7 @@ dcLevelTWO.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -211,6 +213,7 @@ dcLevelTHREE.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -293,6 +296,7 @@ dcLevelFOUR.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -375,6 +379,7 @@ dcLevelFIVE.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -457,6 +462,7 @@ dcLevelSIX.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -539,6 +545,7 @@ dcLevelSEVEN.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -621,6 +628,7 @@ dcLevelEIGHT.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -703,6 +711,7 @@ dcLevelNINE.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -785,6 +794,7 @@ dcLevelTEN.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -867,6 +877,7 @@ dcLevelELEVEN.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -949,6 +960,7 @@ dcLevelTWELVE.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -1031,6 +1043,7 @@ dcLevelTHIRTEEN.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -1113,6 +1126,7 @@ dcLevelFOURTEEN.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -1195,6 +1209,7 @@ dcLevelFIFTEEN.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -1241,9 +1256,9 @@ dcLevelFIFTEEN.onclick = () => {
             const nameValue = storyPartInput.value;
             const defaultName = "Draezlyr Wielder";
             if (nameValue == "") {
-                gameResult.innerText = `${defaultName} won`;
+                gameResult.innerText = `${defaultName} won and the reward is achieved`;
             } else {
-                gameResult.innerText = `${nameValue} won`;
+                gameResult.innerText = `${nameValue} won and the reward is achieved`;
             }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";

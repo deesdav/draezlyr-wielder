@@ -46,6 +46,7 @@ levelONE.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -125,6 +126,7 @@ levelTWO.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -205,6 +207,7 @@ levelTHREE.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -285,6 +288,7 @@ levelFOUR.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -365,6 +369,7 @@ levelFIVE.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -441,6 +446,7 @@ levelSIX.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -519,6 +525,7 @@ levelSEVEN.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -597,6 +604,7 @@ levelEIGHT.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -675,6 +683,7 @@ levelNINE.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -753,6 +762,7 @@ levelTEN.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -832,6 +842,7 @@ levelELEVEN.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -911,6 +922,7 @@ levelTWELVE.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -990,6 +1002,7 @@ levelTHIRTEEN.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -1068,6 +1081,7 @@ levelFOURTEEN.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -1146,6 +1160,7 @@ levelFIFTEEN.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -1189,9 +1204,9 @@ levelFIFTEEN.onclick = () => {
             const nameValue = storyPartInput.value;
             const defaultName = "Draezlyr Wielder";
             if (nameValue == "") {
-                gameResult.innerText = `${defaultName} won`;
+                gameResult.innerText = `${defaultName} won and the reward is achieved`;
             } else {
-                gameResult.innerText = `${nameValue} won`;
+                gameResult.innerText = `${nameValue} won and the reward is achieved`;
             }
             winsCounter.innerText++;
             audioYouWin.src = "./res/audio/youWin.mp3";

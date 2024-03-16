@@ -57,6 +57,8 @@ const winAndLoss = document.getElementById("winAndLoss");
 const winsCounter = document.getElementById("winsCounter");
 const lossesCounter = document.getElementById("lossesCounter");
 const levelsBox = document.getElementById("levelsBox");
+const lastLevelReward = document.getElementById("lastLevelReward");
+const rewardOverview = document.getElementById("rewardOverview");
 const backToLobby = document.getElementById("backToLobby");
 const noLobby = document.getElementById("noLobby");
 const yesLobby = document.getElementById("yesLobby");
@@ -112,6 +114,8 @@ const enemyName = document.getElementById("enemyName");
 const yourXP = document.getElementById("yourXP");
 
 const deesdavPlanet = document.getElementById("deesdavPlanet");
+const lastLevelRewardHeadline = document.getElementById("lastLevelRewardHeadline");
+const lastLevelRewardSwitch = document.getElementById("lastLevelRewardSwitch");
 const nameOfPlanetDeesdav = document.getElementById("nameOfPlanetDeesdav");
 const dot = document.getElementById("dot");
 const deesdavDimension = document.getElementById("deesdavDimension");
@@ -1185,6 +1189,7 @@ multiverse.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -1358,6 +1363,7 @@ hell.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -1494,6 +1500,7 @@ heaven.onclick = () => {
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     game.style.display = "flex";
     gridOfLevels.style.display = "none";
     yourHp.innerText = yourHpValue;
@@ -1627,8 +1634,6 @@ infoBox.onmouseout = () => {
     yourName.style.zIndex = "999";
     muteAudio.style.zIndex = "999";
 }
-
-
 headline.onmouseover = () => {
     audioLobbyBackground.src = "./res/audio/lobbymusic.mp3";
     audioLobbyBackground.play();
@@ -1643,6 +1648,7 @@ headline.onmouseover = () => {
     author.style.color = "transparent";
     document.body.style.backgroundImage = "url(./res/img/draezlyr.lobbyBackground.gif)";
 }
+
 headline.onmouseout = () => {
     audioLobbyBackground.pause();
     audioLobbyBackground.currentTime = 0;
@@ -1670,12 +1676,18 @@ for (let i = 0; i < lobbyElements.length; i++) {
 
 
 //------------------------------------ lobby buttons
+const storyRecapP = document.querySelectorAll("#storyRecap p");
+const inGameStoryRecapP = document.querySelectorAll("#inGameStoryRecap p");
 function showStoryRecap() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     storyRecap.style.display = "block";
     lobby.style.display = "none";
+    storyRecapP.forEach(p => {
+        p.innerText = "You were a knight named John Guiscard Coral Ironside who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality, great strength, and was controlled by anger.";
+    });
 }
+
 function showInGameStoryRecap() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -1685,7 +1697,9 @@ function showInGameStoryRecap() {
     infoBtn.style.display = "none";
     shopBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
-
+    inGameStoryRecapP.forEach(p => {
+        p.innerText = "You were a knight named John Guiscard Coral Ironside who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality, great strength, and was controlled by anger.";
+    });
 }
 story.onclick = () => {
     showStoryRecap();
@@ -1850,8 +1864,8 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
-            heroIdle.src = "./res/img/hero.idle.png";
-            heroAttack.src = "./res/img/hero.attack.png";
+            heroIdle.src = "./res/img/default.hero.idle.png";
+            heroAttack.src = "./res/img/default.hero.attack.png";
             break;
         case ("Enter"): //Enter function
             if (storyPartInput.style.display == "flex") {
@@ -1871,8 +1885,9 @@ document.addEventListener("keyup", (e) => {
             if (game.style.display == "flex") {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
+                console.log("critical hit works");
             }
-            console.log("critical hit works");
+
             if (critical.style.display == "block") {
                 criticalFce();
             }
@@ -1881,8 +1896,9 @@ document.addEventListener("keyup", (e) => {
             if (game.style.display == "flex") {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
+                console.log("shield works");
             }
-            console.log("shield works");
+
             if (shield.style.display == "block") {
                 shieldFce();
             }
@@ -1897,9 +1913,6 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "";
                 audioButtonClick.play();
             }
-            /*if (confirm("RETURN TO LOBBY?")) {
-                window.location.reload();
-            }*/
             backToLobby.style.display = "flex";
 
             document.body.onclick = () => {
@@ -1916,10 +1929,43 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.play();
             }
             break;
-
         case ("a"):
         case ("A"):
             enemyKeyUp();
+            break;
+
+        case ("b"): //bronze hero color = reward from marvel planet
+        case ("B"):
+            if (levelFIFTEENCompleted) {
+                if (game.style.display == "flex") {
+                    audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                    audioButtonClick.play();
+                }
+                heroIdle.src = "./res/img/bronze.hero.idle.png";
+                heroAttack.src = "./res/img/bronze.hero.attack.png";
+            }
+            break;
+        case ("s"): //silver hero color = reward from deesdav dimension
+        case ("S"):
+            if (deesdavDimensionCompleted) {
+                if (game.style.display == "flex") {
+                    audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                    audioButtonClick.play();
+                }
+                heroIdle.src = "./res/img/silver.hero.idle.png";
+                heroAttack.src = "./res/img/silver.hero.attack.png";
+            }
+            break;
+        case ("g"): //gold hero color = reward from dc planet
+        case ("G"):
+            if (dcLevelFIFTEENCompleted) {
+                if (game.style.display == "flex") {
+                    audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
+                    audioButtonClick.play();
+                }
+                heroIdle.src = "./res/img/gold.hero.idle.png";
+                heroAttack.src = "./res/img/gold.hero.attack.png";
+            }
             break;
 
         default:
@@ -1941,11 +1987,14 @@ marvelPlanet.onmouseout = () => {
 }
 
 marvelPlanet.onclick = () => {
+    lastLevelRewardHeadline.innerText = "reward for completing level 15";
+    lastLevelRewardSwitch.innerText = "b or B";
     planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/marvelLevelsBG.png)";
     planets.style.height = "100%";
     yourName.style.zIndex = "999";
     muteAudio.style.zIndex = "999";
-
+    rewardOverview.style.display = "block";
+    rewardOverview.src = "./res/img/bronze.hero.idle.png";
     collectionBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
     yourName.style.display = "block";
@@ -1954,6 +2003,7 @@ marvelPlanet.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
+    lastLevelReward.style.display = "block";
     levelInfo.style.display = "block";
     gridOfLevels.style.display = "grid";
     gridOfLevelsDC.style.display = "none";
@@ -1983,11 +2033,14 @@ dcPlanet.onmouseout = () => {
 }
 if (multiverseAppeared == false) {
     dcPlanet.onclick = () => {
+        lastLevelRewardHeadline.innerText = "reward for completing level 15";
+        lastLevelRewardSwitch.innerText = "g or G";
         planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/dcLevelsBG.png)";
         planets.style.height = "100%";
         yourName.style.zIndex = "999";
         muteAudio.style.zIndex = "999";
-
+        rewardOverview.style.display = "block";
+        rewardOverview.src = "./res/img/gold.hero.idle.png";
         collectionBtn.style.display = "none";
         inGameStoryRecapBtn.style.display = "none";
         yourName.style.display = "block";
@@ -1996,6 +2049,7 @@ if (multiverseAppeared == false) {
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         levelsText.style.display = "block";
+        lastLevelReward.style.display = "block";
         levelInfo.style.display = "block";
         gridOfLevels.style.display = "none";
         gridOfLevelsDC.style.display = "grid";
@@ -2027,6 +2081,7 @@ backBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     levelInfo.style.display = "none";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -2040,7 +2095,9 @@ backBtn.onclick = () => {
     infoBtn.style.display = "block";
     if (levelFIFTEENCompleted) {
         shopBtn.style.display = "none";
+        inGameStoryRecap.style.display = "none";
         deesdavPlanet.style.display = "block";
+        lastLevelReward.style.display = "none";
         nameOfPlanetDeesdav.style.display = "block";
     }
 }
@@ -2056,6 +2113,7 @@ backBtnDC.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     levelInfo.style.display = "none";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -2071,9 +2129,11 @@ backBtnDC.onclick = () => {
 
     if (deesdavDimensionCompleted) {
         shopBtn.style.display = "block";
+        inGameStoryRecap.style.display = "block";
         infoBtn.style.display = "block";
         deesdavDimension.style.display = "none";
         deesdavPlanet.style.display = "none";
+        lastLevelReward.style.display = "none";
         nameOfPlanetDeesdav.style.display = "none";
         dcPlanet.style.display = "block";
         nameOfPlanetDC.style.display = "block";
@@ -2301,8 +2361,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2343,8 +2403,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2374,8 +2434,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2410,8 +2470,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2441,8 +2501,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2477,8 +2537,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2513,8 +2573,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2544,8 +2604,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2600,8 +2660,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2642,8 +2702,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2673,8 +2733,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2709,8 +2769,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
 
             }
@@ -2742,8 +2802,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
 
             }
@@ -2780,8 +2840,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2817,8 +2877,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2850,8 +2910,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
 
@@ -2898,8 +2958,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2940,8 +3000,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -2972,8 +3032,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
 
             }
@@ -3009,8 +3069,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3041,8 +3101,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3077,8 +3137,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3114,8 +3174,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3145,8 +3205,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3193,8 +3253,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3235,8 +3295,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3267,8 +3327,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3303,8 +3363,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3336,8 +3396,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3373,8 +3433,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3410,8 +3470,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3442,8 +3502,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/hero.idle.png";
-                    heroAttack.src = "./res/img/hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.png";
+                    heroAttack.src = "./res/img/default.hero.attack.png";
                     break;
             }
         });
@@ -3497,7 +3557,7 @@ yellowColor.onmouseover = () => {
 //------------------------------------ cost of colors mouse out 
 redColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     redColor.style.borderColor = "black";
@@ -3506,7 +3566,7 @@ redColor.onmouseout = () => {
 }
 greenColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     greenColor.style.borderColor = "black";
@@ -3515,7 +3575,7 @@ greenColor.onmouseout = () => {
 }
 blueColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     blueColor.style.borderColor = "black";
@@ -3524,7 +3584,7 @@ blueColor.onmouseout = () => {
 }
 yellowColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.png";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     yellowColor.style.borderColor = "black";
@@ -3617,6 +3677,7 @@ backBtnShop.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "none";
+    lastLevelReward.style.display = "none";
     levelInfo.style.display = "none";
     gridOfLevels.style.display = "none";
     gridOfLevelsDC.style.display = "none";
@@ -3947,6 +4008,7 @@ gameResult.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     levelsText.style.display = "block";
+    lastLevelReward.style.display = "block";
     levelInfo.style.display = "block";
     game.style.display = "none";
     gameResult.style.display = "none";
@@ -4074,6 +4136,8 @@ gameResult.onclick = () => {
         levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
+        heroIdle.src = "./res/img/bronze.hero.idle.png";
+        heroAttack.src = "./res/img/bronze.hero.attack.png";
         marvelPlanet.style.filter = "grayscale(100%)";
         levelFIFTEEN.style.backgroundColor = "white";
         levelFIFTEEN.style.color = "black";
@@ -4095,6 +4159,8 @@ gameResult.onclick = () => {
             document.body.style.backgroundImage = "none";
         }
         deesdavPlanet.onclick = () => {
+            lastLevelRewardHeadline.innerText = "reward for completing Deesdav Dimension";
+            lastLevelRewardSwitch.innerText = "s or S";
             collectionBtn.style.display = "none";
             inGameStoryRecapBtn.style.display = "none";
             audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -4105,6 +4171,7 @@ gameResult.onclick = () => {
             document.body.style.backgroundColor = "rgb(0, 0, 22)";
             storyPartInput.style.display = "none";
             deesdavPlanet.style.display = "none";
+            lastLevelReward.style.display = "block";
             deesdavDimension.style.display = "block";
             backBtn.style.display = "none";
             countDownText.style.display = "block";
@@ -4112,7 +4179,8 @@ gameResult.onclick = () => {
             shopBtn.style.display = "none";
             infoBtn.style.display = "none";
             winAndLoss.style.display = "none";
-
+            rewardOverview.style.display = "block";
+            rewardOverview.src = "./res/img/silver.hero.idle.png";
             const timerDimension = setInterval(() => {
                 countDown.innerText--;
                 if (countDown.innerText == 0) {
@@ -4123,6 +4191,7 @@ gameResult.onclick = () => {
                     marvelPlanet.style.display = "block";
                     nameOfPlanet.style.display = "block";
                     deesdavPlanet.style.display = "block";
+                    lastLevelReward.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "block";
                     document.body.style.backgroundColor = "rgb(0, 0, 22)";
                     backBtn.style.display = "none";
@@ -4143,12 +4212,15 @@ gameResult.onclick = () => {
                 }
 
                 if (deesdavDimensionCompleted) {
+                    heroIdle.src = "./res/img/silver.hero.idle.png";
+                    heroAttack.src = "./res/img/silver.hero.attack.png";
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
                     infoBtn.style.display = "block";
                     deesdavDimension.style.display = "none";
                     deesdavPlanet.style.display = "none";
+                    lastLevelReward.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "none";
                     dcPlanet.style.display = "block";
                     nameOfPlanetDC.style.display = "block";
@@ -4190,7 +4262,7 @@ gameResult.onclick = () => {
                 deesdavDimension.style.color = "white";
                 deesdavDimension.style.backgroundColor = "black";
                 dot.style.display = "none";
-                deesdavDimension.innerText += `NOW YOU WAIT`;
+                deesdavDimension.innerText += `NOW WAIT AND THE REWARD IS ACHIEVED`;
             }
         }
         dot.onmouseover = () => {
@@ -4317,6 +4389,8 @@ gameResult.onclick = () => {
         dcLevelFOURTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFIFTEENCompleted) {
+        heroIdle.src = "./res/img/gold.hero.idle.png";
+        heroAttack.src = "./res/img/gold.hero.attack.png";
         dcPlanet.style.filter = "grayscale(100%)";
         multiverseAppeared = true;
         multiverse.style.display = "none";
@@ -4329,7 +4403,7 @@ gameResult.onclick = () => {
     }
 }
 
-
+//------------------------------------ collections functionality
 collectionBtn.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
@@ -4421,3 +4495,16 @@ for (let i = 0; i < killedEnemies.length; i++) {
         killedEnemiesId.style.filter = "blur(3px)";
     }
 }
+
+//------------------------------------ body appear effect functionality
+const appearEffect = () => {
+    document.body.style.opacity = "1";
+}
+
+const appearEffectInterval = setInterval(() => {
+    appearEffect();
+}, 1000);
+
+window.onload = () => {
+    appearEffect();
+};

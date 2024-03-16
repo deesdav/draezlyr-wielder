@@ -29,23 +29,13 @@
     <div id="loader"></div>
     <div id="storyRecap">
         <h3>Recapitulation of the story</h3>
-        <p>You were a knight named John Guiscard Coral Ironside
-            who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was
-            in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword
-            stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the
-            dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality,
-            great strength, and was controlled by anger.</p>
+        <p></p>
         <a href="https://deesdav.github.io/draezlyr/"> <button id="playDraezlyr1">PLAY DRAEZLYR SWORD
                 MASSACRE</button></a>
     </div>
     <div id="inGameStoryRecap">
         <h3>Recapitulation of the story</h3>
-        <p>You were a knight named John Guiscard Coral Ironside
-            who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was
-            in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword
-            stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the
-            dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality,
-            great strength, and was controlled by anger.</p>
+        <p></p>
         <a href="https://deesdav.github.io/draezlyr/"> <button id="playDraezlyr1">PLAY DRAEZLYR SWORD
                 MASSACRE</button></a>
     </div>
@@ -83,6 +73,13 @@
     <div id="winAndLoss">
         <div id="yourWins">Ws: <span id="winsCounter">0</span></div>
         <div id="yourLosses">Ls: <span id="lossesCounter">0</span></div>
+    </div>
+    <div id="lastLevelReward">
+        <h3 id="lastLevelRewardHeadline">reward for completing level 15</h3>
+        <img id="rewardOverview" src="./res/img/bronze.hero.idle.png" alt="marvel-planet-reward">
+        <img id="rewardOverview" src="./res/img/silver.hero.idle.png" alt="deesdav-dimension-reward">
+        <img id="rewardOverview" src="./res/img/gold.hero.idle.png" alt="dc-planet-reward">
+        <p>key: <span id="lastLevelRewardSwitch"></span></p>
     </div>
     <div id="levelsBox">
         <h2 id="levelsText">Levels: 1-15</h2>
@@ -130,8 +127,8 @@
         <div id="enemyHpTextPromName"><span id="enemyHpTextValue">enemy HP:</span> <span id="enemyHp">0</span></div>
         <div id="shield">SHIELD</div>
         <div id="critical">CRITICAL</div>
-        <img src="./res/img/hero.idle.png" alt="photo" id="heroIdle" loading="eager">
-        <img src="./res/img/hero.attack.png" alt="photo" id="heroAttack" loading="eager">
+        <img src="./res/img/default.hero.idle.png" alt="photo" id="heroIdle" loading="eager">
+        <img src="./res/img/default.hero.attack.png" alt="photo" id="heroAttack" loading="eager">
         <img src="" alt="photo" id="enemy" loading="eager">
     </div>
     <div id="gameResult"></div>
@@ -149,55 +146,69 @@
                 your hero is yellow and you want a red color, just type 'r'. To change colors, you need to have
                 purchased them beforehand.</div>
             <div>4. The default color is black and white, so type: 'd'.</div>
-            <div>5. Secret color? <span title="7">?</span>?</div>
+            <div>5. Secret color ?<span title="7">?</span>?</div>
             <div>6. After achieving the 20th round and having more wins than losses in the Multiverse Planet, the Hell
                 Planet appears. Additionally, after the 40th round, the Heaven Planet appears.</div>
         </div>
+        <div id="infoMiddle"></div>
         <div id="rightBox">
             <h2>Table</h2>
-            <table>
-                <tr>
-                    <th>shortcuts to type</th>
-                    <th>hero colors</th>
-                </tr>
-                <tr>
-                    <td>r (or R)</td>
-                    <td>red hero color</td>
-                </tr>
-                <tr>
-                    <td>g (or G)</td>
-                    <td>green hero color</td>
-                </tr>
-                <tr>
-                    <td>b (or B)</td>
-                    <td>blue hero color</td>
-                </tr>
-                <tr>
-                    <td>y (or Y)</td>
-                    <td>yellow hero color</td>
-                </tr>
-                <tr>
-                    <td>d (or D)</td>
-                    <td>default black and white hero color</td>
-                </tr>
-                <tr>
-                    <td>? - just find out</td>
-                    <td>secret color</td>
-                </tr>
-                <tr>
-                    <td>space on keyboard</td>
-                    <td>shield upgrade</td>
-                </tr>
-                <tr>
-                    <td>c (or C)</td>
-                    <td>critical hit upgrade</td>
-                </tr>
-                <tr>
-                    <td>a (or A)</td>
-                    <td>attack hit on enemy instead of mouseclick</td>
-                </tr>
-            </table>
-
+            <div style="overflow-y: auto;">
+                <table>
+                    <tr>
+                        <th>shortcuts to type</th>
+                        <th>hero colors</th>
+                    </tr>
+                    <tr>
+                        <td>r (or R)</td>
+                        <td>red hero color</td>
+                    </tr>
+                    <tr>
+                        <td>g (or G)</td>
+                        <td>green hero color</td>
+                    </tr>
+                    <tr>
+                        <td>b (or B)</td>
+                        <td>blue hero color</td>
+                    </tr>
+                    <tr>
+                        <td>y (or Y)</td>
+                        <td>yellow hero color</td>
+                    </tr>
+                    <tr>
+                        <td>d (or D)</td>
+                        <td>default black and white hero color</td>
+                    </tr>
+                    <tr>
+                        <td>? - just find out</td>
+                        <td>secret color</td>
+                    </tr>
+                    <tr>
+                        <td>space on keyboard</td>
+                        <td>shield upgrade</td>
+                    </tr>
+                    <tr>
+                        <td>c (or C)</td>
+                        <td>critical hit upgrade</td>
+                    </tr>
+                    <tr>
+                        <td>a (or A)</td>
+                        <td>attack hit on enemy instead of mouseclick</td>
+                    </tr>
+                    <tr>
+                        <td>b (or B)</td>
+                        <td>bronze hero color = reward from marvel planet</td>
+                    </tr>
+                    <tr>
+                        <td>s (or S)</td>
+                        <td>silver hero color = reward from deesdav dimension</td>
+                    </tr>
+                    <tr>
+                        <td>g (or G)</td>
+                        <td>gold hero color = reward from dc planet</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <div id="shop">

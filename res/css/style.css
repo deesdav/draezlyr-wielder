@@ -22,6 +22,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: black;
+  opacity: 0;
 }
 
 #lobby {
@@ -257,6 +258,7 @@ body {
   transform: scale(3);
   display: none;
   position: absolute;
+  caret-color: goldenrod;
 }
 
 #yourName {
@@ -848,12 +850,24 @@ body {
   overflow: auto;
 }
 
-#infoBox #leftBox h2 {
-  text-align: center;
-  text-decoration: underline;
+#infoBox #leftBox {
+  width: 50%;
+  height: auto;
+  color: white;
+  font-size: xx-large;
+  filter: blur(5px);
+  position: fixed;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -45%);
 }
 
-#infoBox #rightBox h2 {
+#infoBox #leftBox:hover {
+  filter: blur(0px);
+}
+
+#infoBox #leftBox h2 {
   text-align: center;
   text-decoration: underline;
 }
@@ -862,63 +876,80 @@ body {
   text-decoration-color: blue;
 }
 
-#infoBox #rightBox:hover h2 {
-  text-decoration-color: blue;
-}
-
-#infoBox #leftBox {
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 7px;
-  width: 50%;
-  color: white;
-  font-size: xx-large;
-  margin-top: 10px;
-  filter: blur(5px);
-  border-right: 3px solid white;
-  height: auto;
-}
-
-#infoBox #leftBox:hover {
-  filter: blur(0px);
-}
-
 #infoBox #leftBox div::first-letter {
   color: blue;
   text-shadow: 0 1px 2px white;
 }
 
+#infoBox #leftBox div:nth-child(6) {
+  cursor: help;
+}
+
+#infoBox #infoMiddle {
+  border: 3px solid white;
+  height: 90vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
 #infoBox #rightBox {
-  border-left: 3px solid white;
-  padding-top: 50px;
-  margin-top: 10px;
   filter: blur(5px);
-  width: 50%;
+  font-size: xx-large;
+  color: white;
   height: auto;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -45%);
 }
 
 #infoBox #rightBox:hover {
   filter: blur(0px);
 }
 
-table {
-  padding: 0;
-  margin-top: -55px;
+#infoBox #rightBox h2 {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 110px;
+  margin-bottom: -110px;
+  width: 100%;
+}
+
+#infoBox #rightBox:hover h2 {
+  text-decoration-color: blue;
+}
+
+#infoBox #rightBox table {
   text-transform: none;
   border: 2px solid rgb(255, 255, 255);
   border-collapse: collapse;
-  transform: scale(0.8);
+  transform: scale(0.62);
+  margin: 0 auto;
+  width: 110%;
+  font-size: xx-large;
+  overflow-y: auto;
 }
 
 tr th,
 tr td {
-  border: 2px solid white;
+  border: 2px solid rgb(255, 255, 255);
   padding: 10px;
 }
 
 tr th {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
   color: black;
+}
+
+tr td:nth-child(1) {
+  text-align: center;
+  font-size: 28px;
+  width: min-content;
 }
 
 tr:nth-child(2) td:nth-child(2) {
@@ -952,6 +983,18 @@ tr:nth-child(8) td:nth-child(2) {
 
 tr:nth-child(9) td:nth-child(2) {
   background-color: rgb(128, 9, 9, 0.684);
+}
+tr:nth-child(10) td:nth-child(2) {
+  background-color: rgba(0, 0, 0, 0.684);
+}
+tr:nth-child(11) td:nth-child(2) {
+  background-color: rgba(176, 140, 87, 0.684);
+}
+tr:nth-child(12) td:nth-child(2) {
+  background-color: rgba(192, 192, 192, 0.684);
+}
+tr:nth-child(13) td:nth-child(2) {
+  background-color: rgba(255, 217, 0, 0.684);
 }
 
 #shopBtn {
@@ -1468,6 +1511,60 @@ tr:nth-child(9) td:nth-child(2) {
   background-color: rgba(0, 0, 0, 0);
   color: white;
   cursor: pointer;
+}
+
+#lastLevelReward {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 3px solid white;
+  text-transform: uppercase;
+  background-color: #333333e6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: large;
+  border-radius: 0 10px 0 0;
+  height: auto;
+  width: min-content;
+}
+
+#lastLevelReward #rewardOverview[alt="marvel-planet-reward"] {
+  margin: 0 auto;
+  width: min-content;
+  height: min-content;
+  display: none;
+  filter: blur(3px);
+  cursor: help;
+}
+#lastLevelReward #rewardOverview[alt="marvel-planet-reward"]:hover {
+  filter: blur(0px);
+}
+#lastLevelReward #rewardOverview[alt="deesdav-dimension-reward"] {
+  margin: 0 auto;
+  width: min-content;
+  height: min-content;
+  display: none;
+  filter: blur(3px);
+  cursor: help;
+}
+#lastLevelReward #rewardOverview[alt="deesdav-dimension-reward"]:hover {
+  filter: blur(0px);
+}
+#lastLevelReward #rewardOverview[alt="dc-planet-reward"] {
+  margin: 0 auto;
+  width: min-content;
+  height: min-content;
+  display: none;
+  filter: blur(3px);
+  cursor: help;
+}
+#lastLevelReward #rewardOverview[alt="dc-planet-reward"]:hover {
+  filter: blur(0px);
+}
+#lastLevelRewardSwitch {
+  text-transform: none;
 }
 
 /*responsivita*/

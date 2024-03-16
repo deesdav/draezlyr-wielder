@@ -18,4 +18,8 @@
 - Draezlyr Sword Massacre button link added
 - New in game story recap
 - Info is showing first
+- Hero images update
+- 3 new hero colors added
+- last levels rewards
+- Infobox fix
 
