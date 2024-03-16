@@ -57,6 +57,21 @@ levelONE.onclick = () => {
         yourHp.innerText--;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -137,6 +152,21 @@ levelTWO.onclick = () => {
         yourHp.innerText -= 2;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -218,6 +248,21 @@ levelTHREE.onclick = () => {
         yourHp.innerText -= 3;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -299,6 +344,21 @@ levelFOUR.onclick = () => {
         yourHp.innerText -= 4;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -380,6 +440,21 @@ levelFIVE.onclick = () => {
         yourHp.innerText -= 5;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -457,6 +532,21 @@ levelSIX.onclick = () => {
         yourHp.innerText -= 6;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -536,6 +626,21 @@ levelSEVEN.onclick = () => {
         yourHp.innerText -= 7;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -615,6 +720,21 @@ levelEIGHT.onclick = () => {
         yourHp.innerText -= 8;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -694,6 +814,21 @@ levelNINE.onclick = () => {
         yourHp.innerText -= 9;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -773,6 +908,21 @@ levelTEN.onclick = () => {
         yourHp.innerText -= 10;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -853,6 +1003,21 @@ levelELEVEN.onclick = () => {
         yourHp.innerText -= 11;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -933,6 +1098,21 @@ levelTWELVE.onclick = () => {
         yourHp.innerText -= 12;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -1013,6 +1193,21 @@ levelTHIRTEEN.onclick = () => {
         yourHp.innerText -= 13;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -1092,6 +1287,21 @@ levelFOURTEEN.onclick = () => {
         yourHp.innerText -= 14;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 
@@ -1171,6 +1381,21 @@ levelFIFTEEN.onclick = () => {
         yourHp.innerText -= 15;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
 

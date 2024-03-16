@@ -1184,7 +1184,16 @@ multiverse.onclick = () => {
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
     levelInfo.style.display = "none";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
@@ -1358,7 +1367,16 @@ hell.onclick = () => {
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
     levelInfo.style.display = "none";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
@@ -1495,7 +1513,16 @@ heaven.onclick = () => {
         yourHpTextValue.innerText = `${nameValue}´S HP:`;
     }
     levelInfo.style.display = "none";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     enemy.style.animation = "enemyMoving 1s infinite";
     audioButtonClick.play();
@@ -1601,11 +1628,15 @@ console.log(hours);
 
 if (hours >= 0 && hours < 12) {
     realtimepresented.innerText = `Good morning`;
+    document.body.style.backgroundColor = "#2d0020";
 } else if (hours >= 12 && hours <= 16) {
     realtimepresented.innerText = `Good afternoon`;
+    document.body.style.backgroundColor = "#1a0019";
 } else {
     realtimepresented.innerText = `Good evening`;
+    document.body.style.backgroundColor = "#01021f";
 }
+
 
 //------------------------------------ info button
 function showInfoBox() {
@@ -1835,7 +1866,16 @@ function sendEnter() {
     muteAudio.style.display = "block";
     collectionBtn.style.display = "block";
     inGameStoryRecapBtn.style.display = "block";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     showInfoBox();
 }
 sendInputBtn.onclick = () => {
@@ -2088,7 +2128,16 @@ backBtn.onclick = () => {
     levelONE.style.display = "none";
     marvelPlanet.style.display = "block";
     nameOfPlanet.style.display = "block";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     backBtn.style.display = "none";
     backBtnDC.style.display = "none";
     shopBtn.style.display = "block";
@@ -2120,7 +2169,16 @@ backBtnDC.onclick = () => {
     levelONE.style.display = "none";
     marvelPlanet.style.display = "block";
     nameOfPlanet.style.display = "block";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     backBtn.style.display = "none";
     backBtnDC.style.display = "none";
     shopBtn.style.display = "block";
@@ -3685,7 +3743,16 @@ backBtnShop.onclick = () => {
     dcLevelONE.style.display = "none";
     marvelPlanet.style.display = "block";
     nameOfPlanet.style.display = "block";
-    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+    if (hours >= 0 && hours < 12) {
+        realtimepresented.innerText = `Good morning`;
+        document.body.style.backgroundColor = "#2d0020";
+    } else if (hours >= 12 && hours <= 16) {
+        realtimepresented.innerText = `Good afternoon`;
+        document.body.style.backgroundColor = "#1a0019";
+    } else {
+        realtimepresented.innerText = `Good evening`;
+        document.body.style.backgroundColor = "#01021f";
+    }
     shopBtn.style.display = "block";
     shop.style.display = "none";
     infoBtn.style.display = "block";
@@ -3758,6 +3825,8 @@ yourName.onmouseout = () => {
     audioLobbyBackground.pause();
     audioLobbyBackground.currentTime = 0;
 }
+
+//------------------------------------ hero hp 
 
 
 
@@ -4168,7 +4237,16 @@ gameResult.onclick = () => {
             marvelPlanet.style.display = "none";
             nameOfPlanet.style.display = "none";
             nameOfPlanetDeesdav.style.display = "none";
-            document.body.style.backgroundColor = "rgb(0, 0, 22)";
+            if (hours >= 0 && hours < 12) {
+                realtimepresented.innerText = `Good morning`;
+                document.body.style.backgroundColor = "#e1f8ff";
+            } else if (hours >= 12 && hours <= 16) {
+                realtimepresented.innerText = `Good afternoon`;
+                document.body.style.backgroundColor = "#abb5ff";
+            } else {
+                realtimepresented.innerText = `Good evening`;
+                document.body.style.backgroundColor = "#5148b2";
+            }
             storyPartInput.style.display = "none";
             deesdavPlanet.style.display = "none";
             lastLevelReward.style.display = "block";
@@ -4193,7 +4271,16 @@ gameResult.onclick = () => {
                     deesdavPlanet.style.display = "block";
                     lastLevelReward.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "block";
-                    document.body.style.backgroundColor = "rgb(0, 0, 22)";
+                    if (hours >= 0 && hours < 12) {
+                        realtimepresented.innerText = `Good morning`;
+                        document.body.style.backgroundColor = "#e1f8ff";
+                    } else if (hours >= 12 && hours <= 16) {
+                        realtimepresented.innerText = `Good afternoon`;
+                        document.body.style.backgroundColor = "#abb5ff";
+                    } else {
+                        realtimepresented.innerText = `Good evening`;
+                        document.body.style.backgroundColor = "#5148b2";
+                    }
                     backBtn.style.display = "none";
                     dot.innerText = 0;
                     audioLobbyBackground.src = "";
