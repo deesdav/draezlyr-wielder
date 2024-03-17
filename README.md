@@ -20,3 +20,4 @@
 - Infobox fix
 - Dynamic background color by realtime hours
 - New hero heart beat
+- Sctructure of img directory

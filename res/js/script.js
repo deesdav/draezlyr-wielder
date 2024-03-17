@@ -289,8 +289,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
-        game.style.backgroundImage = "url(./res/img/pikachuBG.png)";
-        enemy.src = "./res/img/enemy.pikachu.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/pikachuBG.png)";
+        enemy.src = "./res/img/enemies/enemy.pikachu.png";
         enemyHpTextValue.innerText = `PIKACHU´S HP:`;
         /*  if (winsCounter.innerText >= 5) {
                        enemyHp.innerText = (pikachuHP + 50);
@@ -362,8 +362,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy super mario
     if (randomEnemy == 1) {
         game.style.boxShadow = "0 0 120px red inset";
-        game.style.backgroundImage = "url(./res/img/supermarioBG.png)";
-        enemy.src = "./res/img/enemy.supermario.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/supermarioBG.png)";
+        enemy.src = "./res/img/enemies/enemy.supermario.png";
         enemyHpTextValue.innerText = `SUPER MARIO´S HP:`;
         enemyHp.innerText = supermarioHP;
         const enemyDamage = setInterval(() => {
@@ -420,8 +420,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy groot
     if (randomEnemy == 2) {
         game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "url(./res/img/grootBG.png)";
-        enemy.src = "./res/img/enemy.groot.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/grootBG.png)";
+        enemy.src = "./res/img/enemies/enemy.groot.png";
         enemyHpTextValue.innerText = `GROOT´S HP:`;
         enemyHp.innerText = grootHP;
         const enemyDamage = setInterval(() => {
@@ -478,8 +478,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy robocop
     if (randomEnemy == 3) {
         game.style.boxShadow = "0 0 120px gray inset";
-        game.style.backgroundImage = "url(./res/img/robocopBG.png)";
-        enemy.src = "./res/img/enemy.robocop.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/robocopBG.png)";
+        enemy.src = "./res/img/enemies/enemy.robocop.png";
         enemyHpTextValue.innerText = `ROBOCOP´S HP:`;
         enemyHp.innerText = robocopHP;
         const enemyDamage = setInterval(() => {
@@ -536,8 +536,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy predator
     if (randomEnemy == 4) {
         game.style.boxShadow = "0 0 120px green inset";
-        game.style.backgroundImage = "url(./res/img/predatorBG.png)";
-        enemy.src = "./res/img/enemy.predator.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/predatorBG.png)";
+        enemy.src = "./res/img/enemies/enemy.predator.png";
         enemyHpTextValue.innerText = `PREDATOR´S HP:`;
         enemyHp.innerText = predatorHP;
         const enemyDamage = setInterval(() => {
@@ -594,8 +594,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy terminator
     if (randomEnemy == 5) {
         game.style.boxShadow = "0 0 120px black inset";
-        game.style.backgroundImage = "url(./res/img/terminatorBG.png)";
-        enemy.src = "./res/img/enemy.terminator.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/terminatorBG.png)";
+        enemy.src = "./res/img/enemies/enemy.terminator.png";
         enemyHpTextValue.innerText = `TERMINATOR´S HP:`;
         enemyHp.innerText = terminatorHP;
         const enemyDamage = setInterval(() => {
@@ -652,8 +652,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy geralt
     if (randomEnemy == 6) {
         game.style.boxShadow = "0 0 120px rgb(100,50,10) inset";
-        game.style.backgroundImage = "url(./res/img/geraltBG.png)";
-        enemy.src = "./res/img/enemy.geralt.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/geraltBG.png)";
+        enemy.src = "./res/img/enemies/enemy.geralt.png";
         enemyHpTextValue.innerText = `GERALT´S HP:`;
         enemyHp.innerText = geraltHP;
         const enemyDamage = setInterval(() => {
@@ -710,8 +710,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy doom slayer
     if (randomEnemy == 7) {
         game.style.boxShadow = "0 0 120px rgb(10,150,10) inset";
-        game.style.backgroundImage = "url(./res/img/doomslayerBG.png)";
-        enemy.src = "./res/img/enemy.doomslayer.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/doomslayerBG.png)";
+        enemy.src = "./res/img/enemies/enemy.doomslayer.png";
         enemyHpTextValue.innerText = `DOOM SLAYER´S HP:`;
         enemyHp.innerText = doomslayerHP;
         const enemyDamage = setInterval(() => {
@@ -768,8 +768,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy solid snake
     if (randomEnemy == 8) {
         game.style.boxShadow = "0 0 120px rgb(20,20,120) inset";
-        game.style.backgroundImage = "url(./res/img/solidsnakeBG.png)";
-        enemy.src = "./res/img/enemy.solidsnake.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/solidsnakeBG.png)";
+        enemy.src = "./res/img/enemies/enemy.solidsnake.png";
         enemyHpTextValue.innerText = `SOLID SNAKE´S HP:`;
         enemyHp.innerText = solidsnakeHP;
         const enemyDamage = setInterval(() => {
@@ -826,8 +826,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy mandalorian
     if (randomEnemy == 9) {
         game.style.boxShadow = "0 0 120px silver inset";
-        game.style.backgroundImage = "url(./res/img/mandalorianBG.png)";
-        enemy.src = "./res/img/enemy.mandalorian.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/mandalorianBG.png)";
+        enemy.src = "./res/img/enemies/enemy.mandalorian.png";
         enemyHpTextValue.innerText = `MANDALORIAN´S HP:`;
         enemyHp.innerText = mandalorianHP;
         const enemyDamage = setInterval(() => {
@@ -884,8 +884,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy darth vader
     if (randomEnemy == 10) {
         game.style.boxShadow = "0 0 120px rgb(100,0,0) inset";
-        game.style.backgroundImage = "url(./res/img/darthvaderBG.png)";
-        enemy.src = "./res/img/enemy.darthvader.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/darthvaderBG.png)";
+        enemy.src = "./res/img/enemies/enemy.darthvader.png";
         enemyHpTextValue.innerText = `DARTH VADER´S HP:`;
         enemyHp.innerText = darthvaderHP;
         const enemyDamage = setInterval(() => {
@@ -942,8 +942,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy naruto
     if (randomEnemy == 11) {
         game.style.boxShadow = "0 0 120px rgb(255,205,0) inset";
-        game.style.backgroundImage = "url(./res/img/narutoBG.png)";
-        enemy.src = "./res/img/enemy.naruto.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/narutoBG.png)";
+        enemy.src = "./res/img/enemies/enemy.naruto.png";
         enemyHpTextValue.innerText = `NARUTO´S HP:`;
         enemyHp.innerText = narutoHP;
         const enemyDamage = setInterval(() => {
@@ -1000,8 +1000,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy goku
     if (randomEnemy == 12) {
         game.style.boxShadow = "0 0 120px lightblue inset";
-        game.style.backgroundImage = "url(./res/img/gokuBG.png)";
-        enemy.src = "./res/img/enemy.goku.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/gokuBG.png)";
+        enemy.src = "./res/img/enemies/enemy.goku.png";
         enemyHpTextValue.innerText = `GOKU´S HP:`;
         enemyHp.innerText = gokuHP;
         const enemyDamage = setInterval(() => {
@@ -1058,8 +1058,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy john wick
     if (randomEnemy == 13) {
         game.style.boxShadow = "0 0 120px goldenrod inset";
-        game.style.backgroundImage = "url(./res/img/johnwickBG.png)";
-        enemy.src = "./res/img/enemy.johnwick.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/johnwickBG.png)";
+        enemy.src = "./res/img/enemies/enemy.johnwick.png";
         enemyHpTextValue.innerText = `JOHN WICK´S HP:`;
         enemyHp.innerText = johnwickHP;
         const enemyDamage = setInterval(() => {
@@ -1116,8 +1116,8 @@ multiverse.onclick = () => {
     //------------------------------------ enemy kratos
     if (randomEnemy == 14 || randomEnemy == 15) {
         game.style.boxShadow = "0 0 120px rgb(160,20,20) inset";
-        game.style.backgroundImage = "url(./res/img/kratosBG.png)";
-        enemy.src = "./res/img/enemy.kratos.png";
+        game.style.backgroundImage = "url(./res/img/backgrounds/kratosBG.png)";
+        enemy.src = "./res/img/enemies/enemy.kratos.png";
         enemyHpTextValue.innerText = `KRATOS´S HP:`;
         enemyHp.innerText = kratosHP;
         const enemyDamage = setInterval(() => {
@@ -1298,8 +1298,8 @@ hell.onclick = () => {
     roundHellCounter++;
     yourName.style.display = "block";
     game.style.boxShadow = "0 0 120px #850111 inset";
-    game.style.backgroundImage = "url(./res/img/hellBG.png)";
-    enemy.src = "./res/img/enemy.devil.png";
+    game.style.backgroundImage = "url(./res/img/backgrounds/hellBG.png)";
+    enemy.src = "./res/img/enemies/enemy.devil.png";
     enemyHpTextValue.innerText = `DEVIL´S HP:`;
     enemyHp.innerText = devilHP;
     const enemyDamage = setInterval(() => {
@@ -1444,8 +1444,8 @@ heaven.onclick = () => {
     roundHeavenCounter++;
     yourName.style.display = "block";
     game.style.boxShadow = "0 0 120px #87CEEB inset";
-    game.style.backgroundImage = "url(./res/img/heavenBG.png)";
-    enemy.src = "./res/img/enemy.angel.png";
+    game.style.backgroundImage = "url(./res/img/backgrounds/heavenBG.png)";
+    enemy.src = "./res/img/enemies/enemy.angel.png";
     enemyHpTextValue.innerText = `ANGEL´S HP:`;
     enemyHp.innerText = angelHP;
     const enemyDamage = setInterval(() => {
@@ -3997,8 +3997,8 @@ function enemyKeyDown() {
 
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
-            game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
-            enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
+            game.style.backgroundImage = `url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+            enemy.src = `./res/img/enemies/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
             enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
             document.body.onmousemove = () => {
@@ -4056,8 +4056,8 @@ function enemyKeyUp() {
 
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
-            game.style.backgroundImage = `url(./res/img/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
-            enemy.src = `./res/img/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
+            game.style.backgroundImage = `url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+            enemy.src = `./res/img/enemies/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
             enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
             document.body.onmousemove = () => {
@@ -4554,6 +4554,7 @@ viewPhoto.style.display = "none";
 for (let i = 0; i < killedEnemies.length; i++) {
     const killedEnemiesId = document.getElementById(`${killedEnemies[i]}KilledEnemy`);
     killedEnemiesId.style.filter = "blur(3px)";
+    killedEnemiesId.style.backgroundColor = "#111";
     killedEnemiesId.onmouseover = () => {
         audioButtonClick.src = "./res/audio/choose.mp3";
         audioButtonClick.play();
@@ -4565,9 +4566,9 @@ for (let i = 0; i < killedEnemies.length; i++) {
         } else {
             infoOfKilledEnemyLocation.innerText = "MULTIVERSE";
         }
-        viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.gif`;
-        if (killedEnemiesId.alt == "multiverse") {
-            viewPhoto.src = `./res/img/enemy.${killedEnemies[i]}.png`;
+        viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.gif`;
+            if (killedEnemiesId.alt == "multiverse") {
+            viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
         }
         viewPhoto.style.display = "block";
         killedEnemiesId.style.filter = "blur(0px)";
