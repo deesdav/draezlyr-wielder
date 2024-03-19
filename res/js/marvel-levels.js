@@ -486,6 +486,8 @@ levelFIVE.onclick = () => {
             game.style.display = "none";
             gameResult.style.display = "block";
             gameResult.style.textShadow = "0 0 25px rgb(0, 255, 0)";
+            const nameValue = storyPartInput.value;
+            const defaultName = "Draezlyr Wielder";
             if (nameValue == "") {
                 gameResult.innerText = `${defaultName} won`;
             } else {

@@ -37,8 +37,8 @@ dcLevelONE.onclick = () => {
     if (dcLevelONECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.gif)";
-    enemy.src = "./res/img/enemies/enemy.batman.gif";
+    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
+    enemy.src = "./res/img/enemies/enemy.batman.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -99,8 +99,8 @@ dcLevelONE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/flashBG.jpg)";
-            enemy.src = "./res/img/enemies/enemy.flash.jpg";
+            game.style.backgroundImage = "url(./res/img/backgrounds/flashBG.png)";
+            enemy.src = "./res/img/enemies/enemy.flash.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -136,8 +136,8 @@ dcLevelTWO.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/flashBG.jpg)";
-    enemy.src = "./res/img/enemies/enemy.flash.jpg";
+    game.style.backgroundImage = "url(./res/img/backgrounds/flashBG.png)";
+    enemy.src = "./res/img/enemies/enemy.flash.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -198,8 +198,8 @@ dcLevelTWO.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.jpg)";
-            enemy.src = "./res/img/enemies/enemy.wonderwoman.jpg";
+            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
+            enemy.src = "./res/img/enemies/enemy.wonderwoman.png";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -235,8 +235,8 @@ dcLevelTHREE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.jpg)";
-    enemy.src = "./res/img/enemies/enemy.wonderwoman.jpg";
+    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
+    enemy.src = "./res/img/enemies/enemy.wonderwoman.png";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";

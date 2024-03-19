@@ -22,6 +22,7 @@ const yourDamageText = document.getElementById("yourDamageText");
 const sendInputBtn = document.getElementById("sendInputBtn");
 const realtimepresented = document.getElementById("realtimepresented");
 const planets = document.getElementById("planets");
+const theEndOfTheGame = document.getElementById("theEndOfTheGame");
 const marvelPlanet = document.getElementById("marvelPlanet");
 const dcPlanet = document.getElementById("dcPlanet");
 const nameOfPlanet = document.getElementById("nameOfPlanet");
@@ -268,24 +269,14 @@ let gokuHP = 235;
 let johnwickHP = 240;
 let kratosHP = 245;
 
+let hellBossCompleted = false;
+let heavenBossCompleted = false;
 
 multiverse.onclick = () => {
     const randomEnemy = Math.floor(Math.random() * 15);
     roundValueCounter++;
     yourName.style.display = "block";
-    if (roundValueCounter >= 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-        console.log("hell is here");
-        dcPlanet.style.display = "none";
-        nameOfPlanetDC.style.display = "none";
-        marvelPlanet.style.display = "none";
-        nameOfPlanet.style.display = "none";
-        hell.style.display = "block";
-    }
-    if (roundValueCounter >= 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-        console.log("heaven is here");
-        hell.style.display = "none";
-        heaven.style.display = "block";
-    }
+
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
@@ -343,6 +334,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -406,6 +411,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -464,6 +483,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -522,6 +555,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -580,6 +627,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -638,6 +699,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -696,6 +771,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -754,6 +843,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -812,6 +915,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -870,6 +987,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -928,6 +1059,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -986,6 +1131,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -1044,6 +1203,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -1102,6 +1275,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -1160,6 +1347,20 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
+                if (hellBossCompleted == false) {
+                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
+                        console.log("hell is here");
+                        hell.style.display = "block";
+                    }
+                }
+                if (heavenBossCompleted == false) {
+                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
+                        console.log("heaven is here");
+                        hell.style.display = "none";
+                        heaven.style.display = "block";
+                    }
+                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -1226,20 +1427,6 @@ multiverse.onclick = () => {
         heroIdle.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px goldenrod)";
         heroAttack.style.filter = "drop-shadow(3px 3px 5px #333)drop-shadow(-3px -3px 5px silver)";
 
-        if (roundValueCounter >= 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-            console.log("hell is here");
-            dcPlanet.style.display = "none";
-            nameOfPlanetDC.style.display = "none";
-            marvelPlanet.style.display = "none";
-            nameOfPlanet.style.display = "none";
-            hell.style.display = "block";
-        }
-        if (roundValueCounter >= 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-            console.log("heaven is here");
-            hell.style.display = "none";
-            heaven.style.display = "block";
-        }
-
         if (shieldInfo.innerText == "ON") {
             console.log("shieldyyyyyyyyyyyyy");
             shield.style.display = "block";
@@ -1284,13 +1471,6 @@ hell.onmouseover = () => {
     }
  */
 
-if (roundValueCounter == 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-    dcPlanet.style.display = "none";
-    nameOfPlanetDC.style.display = "none";
-    marvelPlanet.style.display = "none";
-    nameOfPlanet.style.display = "none";
-    hell.style.display = "block";
-}
 
 
 
@@ -1308,7 +1488,7 @@ hell.onclick = () => {
         audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
-
+            hellBossCompleted = false;
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1329,7 +1509,7 @@ hell.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            hellBossCompleted = true;
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1454,7 +1634,7 @@ heaven.onclick = () => {
         audioButtonClick.play();
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
-
+            heavenBossCompleted = false;
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1475,7 +1655,7 @@ heaven.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-
+            heavenBossCompleted = true;
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1562,9 +1742,62 @@ heaven.onclick = () => {
             console.log("criticalll hitt");
             critical.style.display = "block";
         }
+
+        if (hellBossCompleted && heavenBossCompleted) {
+            dcPlanet.style.display = "none";
+            nameOfPlanetDC.style.display = "none";
+            marvelPlanet.style.display = "none";
+            nameOfPlanet.style.display = "none";
+            heaven.style.display = "none";
+            hell.style.display = "none";
+            inGameStoryRecapBtn.style.display = "none";
+            collectionBtn.style.display = "none";
+            shopBtn.style.display = "none";
+            infoBtn.style.display = "none";
+            multiverse.style.display = "none";
+            theEndOfTheGame.style.display = "block";
+        }
     }
 }
 
+theEndOfTheGame.onclick = () => {
+    dcPlanet.style.display = "block";
+    nameOfPlanetDC.style.display = "block";
+    marvelPlanet.style.display = "none";//
+    nameOfPlanet.style.display = "none";//
+    heaven.style.display = "none";
+    hell.style.display = "none";
+    inGameStoryRecapBtn.style.display = "block";
+    collectionBtn.style.display = "block";
+    shopBtn.style.display = "block";
+    infoBtn.style.display = "block";
+    multiverse.style.display = "block";
+    theEndOfTheGame.style.display = "none";
+    pikachuHP = 220;
+    supermarioHP = 225;
+    grootHP = 230;
+    robocopHP = 235;
+    predatorHP = 240;
+    terminatorHP = 250;
+    geraltHP = 255;
+    doomslayerHP = 260;
+    solidsnakeHP = 265;
+    mandalorianHP = 270;
+    darthvaderHP = 275;
+    narutoHP = 280;
+    gokuHP = 285;
+    johnwickHP = 290;
+    kratosHP = 295;
+}
+
+theEndOfTheGame.onmouseover = () => {
+    theEndOfTheGame.style.textDecoration = "underline";
+    theEndOfTheGame.innerText = "DO YOU WANT TO PLAY ENDLESSLY?";
+}
+theEndOfTheGame.onmouseout = () => {
+    theEndOfTheGame.style.textDecoration = "none";
+    theEndOfTheGame.innerText = "CONGRATULATIONS, YOU HAVE COMPLETED THE GAME AND THE AUTHOR DAVID GIVES YOU A 👍";
+}
 //------------------------------------ img dragging disabled
 const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, heroIdle, heroAttack, viewPhoto];
 
@@ -1605,10 +1838,10 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 //------------------------------------ dynamic title
 const dynamicTitleElements = [play, story, author, playDraezlyr1, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
     backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio,
-    collectionBtn, hell, heaven, backToLobby, inGameStoryRecapBtn];
+    collectionBtn, hell, heaven, backToLobby, inGameStoryRecapBtn, theEndOfTheGame];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "PLAY DRAEZLYR SWORD MASSACRE", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
     "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO",
-    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY", "IN GAME STORY RECAP"];
+    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY", "IN GAME STORY RECAP", "THE END"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -2187,7 +2420,7 @@ backBtnDC.onclick = () => {
 
     if (deesdavDimensionCompleted) {
         shopBtn.style.display = "block";
-        inGameStoryRecap.style.display = "block";
+        inGameStoryRecap.style.display = "none";
         infoBtn.style.display = "block";
         deesdavDimension.style.display = "none";
         deesdavPlanet.style.display = "none";
@@ -3995,9 +4228,15 @@ function enemyKeyDown() {
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
         "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
 
+    const damagedAndFinishedEffectEnemiesBGs = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+        "batman", "batman", "batman", "aquaman", "batman", "cyborg", "greenlantern", "greenarrow", "batman", "shazam",
+        "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
-            game.style.backgroundImage = `url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+            game.style.backgroundImage = `url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemiesBGs[i]}BG.gif)`;
             enemy.src = `./res/img/enemies/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
             enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
@@ -4054,9 +4293,15 @@ function enemyKeyUp() {
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
         "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
 
+    const damagedAndFinishedEffectEnemiesBGs = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+        "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+        "batman", "batman", "batman", "aquaman", "batman", "cyborg", "greenlantern", "greenarrow", "batman", "shazam",
+        "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+
     for (let i = 0; i < enemyTextValue.length; i++) {
         if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
-            game.style.backgroundImage = `url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemies[i]}BG.gif)`;
+            game.style.backgroundImage = `url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemiesBGs[i]}BG.gif)`;
             enemy.src = `./res/img/enemies/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
             enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
@@ -4228,6 +4473,7 @@ gameResult.onclick = () => {
             document.body.style.backgroundImage = "none";
         }
         deesdavPlanet.onclick = () => {
+            planets.style.backgroundImage = "url(./res/img/marvelLevelsBG.png)"
             lastLevelRewardHeadline.innerText = "reward for completing Deesdav Dimension";
             lastLevelRewardSwitch.innerText = "s or S";
             collectionBtn.style.display = "none";
@@ -4239,13 +4485,13 @@ gameResult.onclick = () => {
             nameOfPlanetDeesdav.style.display = "none";
             if (hours >= 0 && hours < 12) {
                 realtimepresented.innerText = `Good morning`;
-                document.body.style.backgroundColor = "#e1f8ff";
+                document.body.style.backgroundColor = "#2d0020";
             } else if (hours >= 12 && hours <= 16) {
                 realtimepresented.innerText = `Good afternoon`;
-                document.body.style.backgroundColor = "#abb5ff";
+                document.body.style.backgroundColor = "#1a0019";
             } else {
                 realtimepresented.innerText = `Good evening`;
-                document.body.style.backgroundColor = "#5148b2";
+                document.body.style.backgroundColor = "#01021f";
             }
             storyPartInput.style.display = "none";
             deesdavPlanet.style.display = "none";
@@ -4273,13 +4519,13 @@ gameResult.onclick = () => {
                     nameOfPlanetDeesdav.style.display = "block";
                     if (hours >= 0 && hours < 12) {
                         realtimepresented.innerText = `Good morning`;
-                        document.body.style.backgroundColor = "#e1f8ff";
+                        document.body.style.backgroundColor = "#2d0020";
                     } else if (hours >= 12 && hours <= 16) {
                         realtimepresented.innerText = `Good afternoon`;
-                        document.body.style.backgroundColor = "#abb5ff";
+                        document.body.style.backgroundColor = "#1a0019";
                     } else {
                         realtimepresented.innerText = `Good evening`;
-                        document.body.style.backgroundColor = "#5148b2";
+                        document.body.style.backgroundColor = "#01021f";
                     }
                     backBtn.style.display = "none";
                     dot.innerText = 0;
@@ -4305,6 +4551,8 @@ gameResult.onclick = () => {
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
                     infoBtn.style.display = "block";
+                    inGameStoryRecapBtn.style.display = "block";
+                    collectionBtn.style.display = "block";
                     deesdavDimension.style.display = "none";
                     deesdavPlanet.style.display = "none";
                     lastLevelReward.style.display = "none";
@@ -4517,32 +4765,44 @@ for (let i = 0; i < styleColor.length; i++) {
 }
 
 const killedEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
-    "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
+    "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "dot", "batman", "flash",
     "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
     "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
-    "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+    "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "devil", "angel"];
 
 const killedEnemyNames = ["SPIDER MAN", "HULK", "IRON MAN", "THOR", "BLACK WIDOW", "CAPTAIN AMERICA", "DOCTOR STRANGE",
-    "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
+    "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "DOT", "BATMAN", "FLASH",
     "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
     "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID", "PIKACHU", "SUPER MARIO", "GROOT", "ROBOCOP", "PREDATOR", "TERMINATOR", "GERALT",
-    "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
+    "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS", "DEVIL", "ANGEL"];
 
-const killedEnemyDamagePerSec = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-    16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
+const killedEnemyDamagePerSec = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, "NONE",
+    16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
+    38, 39, 40, 41, 42, 43, 44, 45, 50, 100];
 
-const killedEnemyHP = [20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
-    95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, pikachuHP, supermarioHP, grootHP, robocopHP,
-    predatorHP, terminatorHP, geraltHP, doomslayerHP, solidsnakeHP, mandalorianHP,
-    darthvaderHP, narutoHP, gokuHP, johnwickHP, kratosHP];
+const killedEnemyHP = [
+    20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 1,
+    95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165,
+    `${pikachuHP}, AFTER THE END 220`, `${supermarioHP}, AFTER THE END 225`,
+    `${grootHP}, AFTER THE END 230`, `${robocopHP}, AFTER THE END 235`,
+    `${predatorHP}, AFTER THE END 240`, `${terminatorHP}, AFTER THE END 250`,
+    `${geraltHP}, AFTER THE END 255`, `${doomslayerHP}, AFTER THE END 260`,
+    `${solidsnakeHP}, AFTER THE END 265`, `${mandalorianHP}, AFTER THE END 270`,
+    `${darthvaderHP}, AFTER THE END 275`, `${narutoHP}, AFTER THE END 280`,
+    `${gokuHP}, AFTER THE END 285`, `${johnwickHP}, AFTER THE END 290`,
+    `${kratosHP}, AFTER THE END 295`, devilHP, angelHP
+];
+
 
 const locations = ["MARVEL LEVEL ONE", "MARVEL LEVEL TWO", "MARVEL LEVEL THREE",
     "MARVEL LEVEL FOUR", "MARVEL LEVEL FIVE", "MARVEL LEVEL SIX", "MARVEL LEVEL SEVEN",
     "MARVEL LEVEL EIGHT", "MARVEL LEVEL NINE", "MARVEL LEVEL TEN", "MARVEL LEVEL ELEVEN",
     "MARVEL LEVEL TWELVE", "MARVEL LEVEL THIRTEEN", "MARVEL LEVEL FOURTEEN", "MARVEL LEVEL FIFTEEN",
-    "DC LEVEL ONE", "DC LEVEL TWO", "DC LEVEL THREE", "DC LEVEL FOUR", "DC LEVEL FIVE",
-    "DC LEVEL SIX", "DC LEVEL SEVEN", "DC LEVEL EIGHT", "DC LEVEL NINE", "DC LEVEL TEN",
-    "DC LEVEL ELEVEN", "DC LEVEL TWELVE", "DC LEVEL THIRTEEN", "DC LEVEL FOURTEEN", "DC LEVEL FIFTEEN"];
+    "DEESDAV DIMENSION", "DC LEVEL ONE", "DC LEVEL TWO", "DC LEVEL THREE", "DC LEVEL FOUR", "DC LEVEL FIVE",
+    "DC LEVEL SIX", "DC LEVEL SEVEN", "DC LEVEL EIGHT", "DC LEVEL NINE", "DC LEVEL TEN", "DC LEVEL ELEVEN",
+    "DC LEVEL TWELVE", "DC LEVEL THIRTEEN", "DC LEVEL FOURTEEN", "DC LEVEL FIFTEEN"];
+
+const hellAndHeavenLocation = ["HELL", "HEAVEN"];
 
 infoOfKilledEnemyName.innerHTML = 0;
 infoOfKilledEnemyDamagePerSec.innerHTML = 0;
@@ -4561,13 +4821,21 @@ for (let i = 0; i < killedEnemies.length; i++) {
         infoOfKilledEnemyName.innerText = `${killedEnemyNames[i]}`;
         infoOfKilledEnemyDamagePerSec.innerText = `${killedEnemyDamagePerSec[i]}`;
         infoOfKilledEnemyHP.innerText = `${killedEnemyHP[i]}`;
-        if (killedEnemiesId.alt == "marvel" || killedEnemiesId.alt == "dc") {
+        if (killedEnemiesId.alt == "marvel" || killedEnemiesId.alt == "dc" || killedEnemiesId.alt == "deesdav-dimension" || killedEnemiesId.alt == "hell" || killedEnemiesId.alt == "heaven") {
             infoOfKilledEnemyLocation.innerText = `${locations[i]}`;
         } else {
             infoOfKilledEnemyLocation.innerText = "MULTIVERSE";
         }
+
+        if (killedEnemiesId.alt == "hell") {
+            infoOfKilledEnemyLocation.innerText = "HELL";
+        }
+        if (killedEnemiesId.alt == "heaven") {
+            infoOfKilledEnemyLocation.innerText = "HEAVEN";
+        }
         viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.gif`;
-            if (killedEnemiesId.alt == "multiverse") {
+        if (killedEnemiesId.alt == "multiverse" || killedEnemiesId.alt == "deesdav-dimension"
+            || killedEnemiesId.alt == "hell" || killedEnemiesId.alt == "heaven") {
             viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
         }
         viewPhoto.style.display = "block";
