@@ -8,8 +8,6 @@
 
 **Latest Update Highlights:**
 
-- Hell and Heaven not done
-- Escape function works = return to lobby
 - functional a or A button, which works almost same as mouseclick
 - Draezlyr Sword Massacre button link added
 - New in game story recap
@@ -22,3 +20,5 @@
 - New hero heart beat
 - Sctructure of img directory
 - All enemies in collections now
+- Ending of the game is here
+- Bugs fix
