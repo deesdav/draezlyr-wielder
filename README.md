@@ -22,3 +22,4 @@
 - All enemies in collections now
 - Ending of the game is here
 - Bugs fix
+- Tutorial added

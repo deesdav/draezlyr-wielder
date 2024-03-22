@@ -70,7 +70,7 @@ body {
 
 #play,
 #author,
-#story {
+#story, #tutorial {
   font-size: 60px;
   padding: 20px;
   border-radius: 10px;
@@ -196,6 +196,12 @@ body {
 }
 
 #story:hover {
+  text-decoration: underline;
+  color: white;
+  background-color: black;
+}
+
+#tutorial:hover {
   text-decoration: underline;
   color: white;
   background-color: black;
@@ -427,7 +433,7 @@ body {
   cursor: pointer;
   border-radius: 50%;
   padding: 0;
-  display: block;
+  display: none;
 }
 
 #dcPlanet:hover {
@@ -680,6 +686,23 @@ body {
   left: 40%;
   animation: enemyMoving ease 1s infinite alternate;
   filter: saturate(150%);
+}
+#tutorialEnemy {
+  height: 120px;
+  width: 120px;
+  position: relative;
+  top: 75%;
+  transform: scale(1.5);
+  left: 40%;
+  animation: enemyMoving ease 1s infinite alternate;
+  filter: saturate(150%);
+  display: none;
+  cursor: crosshair;
+  border: 3px solid rgb(0, 0, 0);
+}
+#tutorialEnemy:hover {
+ border: 3px solid red;
+ border-radius: 10%;
 }
 
 #enemyName {

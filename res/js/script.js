@@ -4,6 +4,8 @@ const play = document.getElementById("play");
 const skipIntroBtn = document.getElementById("skipIntroBtn");
 const story = document.getElementById("story");
 const author = document.getElementById("author");
+const tutorial = document.getElementById("tutorial");
+const tutorialEnemy = document.getElementById("tutorialEnemy");
 const playDraezlyr1 = document.getElementById("playDraezlyr1");
 const storyinfo = document.getElementById("storyinfo");
 const nextBtn = document.getElementById("nextBtn");
@@ -1799,7 +1801,7 @@ theEndOfTheGame.onmouseout = () => {
     theEndOfTheGame.innerText = "CONGRATULATIONS, YOU HAVE COMPLETED THE GAME AND THE AUTHOR DAVID GIVES YOU A 👍";
 }
 //------------------------------------ img dragging disabled
-const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, heroIdle, heroAttack, viewPhoto];
+const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, tutorialEnemy, heroIdle, heroAttack, viewPhoto];
 
 for (let i = 0; i < elements.length; i++) {
     elements[i].ondragstart = function () {
@@ -1838,10 +1840,10 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
 //------------------------------------ dynamic title
 const dynamicTitleElements = [play, story, author, playDraezlyr1, marvelPlanet, dcPlanet, deesdavPlanet, backBtn,
     backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio,
-    collectionBtn, hell, heaven, backToLobby, inGameStoryRecapBtn, theEndOfTheGame];
+    collectionBtn, hell, heaven, backToLobby, inGameStoryRecapBtn, theEndOfTheGame, tutorial];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "PLAY DRAEZLYR SWORD MASSACRE", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
     "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO",
-    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY", "IN GAME STORY RECAP", "THE END"];
+    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY", "IN GAME STORY RECAP", "THE END", "TUTORIAL"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -1910,6 +1912,7 @@ headline.onmouseover = () => {
     play.style.color = "transparent";
     story.style.color = "transparent";
     author.style.color = "transparent";
+    tutorial.style.color = "transparent";
     document.body.style.backgroundImage = "url(./res/img/draezlyr.lobbyBackground.gif)";
 }
 
@@ -1925,10 +1928,11 @@ headline.onmouseout = () => {
     play.style.color = "black";
     story.style.color = "black";
     author.style.color = "black";
+    tutorial.style.color = "black";
     document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
 }
 
-const lobbyElements = [play, story, author]
+const lobbyElements = [play, story, author, tutorial]
 for (let i = 0; i < lobbyElements.length; i++) {
     lobbyElements[i].onmouseover = () => {
         lobbyElements[i].style.color = "white";
@@ -1996,6 +2000,59 @@ playDraezlyr1.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
 }
+
+//------------------------------------ tutorial button function
+tutorial.onclick = () => {
+    tutorialShow();
+}
+function tutorialShow() {
+    headline.style.display = "none";
+    skipIntroBtn.style.display = "none";
+    realtimepresented.style.display = "none";
+    muteAudio.style.display = "none";
+    enemy.style.display = "none";
+    tutorialEnemy.style.display = "block";
+    enemyHpTextValue.innerText = `ENEMY´S HP:`;
+    const nameValue = storyPartInput.value;
+    const defaultName = "Draezlyr Wielder";
+    if (nameValue == "") {
+        yourHpTextValue.innerText = `${defaultName}´S HP:`;
+    } else {
+        yourHpTextValue.innerText = `${nameValue}´S HP:`;
+    }
+    if (levelONECompleted) {
+        console.log("Level is completed");
+    }
+    game.style.backgroundImage = "url(./res/img/enemyBG.png)";
+    document.body.style.backgroundImage = "none";
+    tutorialEnemy.src = "./res/img/enemy.png";
+    audioButtonClick.src = "./res/audio/buttonsound.mp3";
+    tutorialEnemy.style.animation = "enemyMoving 1s infinite";
+    audioButtonClick.play();
+    game.style.display = "flex";
+    yourHp.innerText = "number";
+    enemyHp.innerText = "number";
+    tutorialEnemy.onclick = () => {
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
+        audioButtonClick.play();
+        game.style.display = "none";
+        tutorialEnemy.style.display = "none";
+        enemy.style.display = "block";
+        headline.style.display = "block";
+        skipIntroBtn.style.display = "block";
+        realtimepresented.style.display = "block";
+        muteAudio.style.display = "block";
+        document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
+        const nameValue = storyPartInput.value;
+        const defaultName = "Draezlyr Wielder";
+        if (nameValue == "") {
+            gameResult.innerText = `${defaultName} won`;
+        } else {
+            gameResult.innerText = `${nameValue} won`;
+        }
+    }
+}
+
 
 let playClickTime = 7000;
 let nextBtnClickTime = 5000;
@@ -4473,7 +4530,6 @@ gameResult.onclick = () => {
             document.body.style.backgroundImage = "none";
         }
         deesdavPlanet.onclick = () => {
-            planets.style.backgroundImage = "url(./res/img/marvelLevelsBG.png)"
             lastLevelRewardHeadline.innerText = "reward for completing Deesdav Dimension";
             lastLevelRewardSwitch.innerText = "s or S";
             collectionBtn.style.display = "none";
