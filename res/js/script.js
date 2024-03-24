@@ -1872,7 +1872,6 @@ if (hours >= 0 && hours < 12) {
     document.body.style.backgroundColor = "#01021f";
 }
 
-
 //------------------------------------ info button
 function showInfoBox() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1880,6 +1879,8 @@ function showInfoBox() {
     infoBox.style.display = "flex";
     collectionBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
+    marvelPlanetClick = false;
+    dcPlanetClick = false;
 }
 infoBtn.onclick = () => {
     showInfoBox();
@@ -1968,6 +1969,8 @@ function showInGameStoryRecap() {
     inGameStoryRecapP.forEach(p => {
         p.innerText = "You were a knight named John Guiscard Coral Ironside who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality, great strength, and was controlled by anger.";
     });
+    marvelPlanetClick = false;
+    dcPlanetClick = false;
 }
 story.onclick = () => {
     showStoryRecap();
@@ -2177,19 +2180,18 @@ document.addEventListener("keyup", (e) => {
     console.log(e);
     switch (e.key) {
         case ("ArrowLeft"):
-            if (marvelPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none"
-                && inGameStoryRecap.style.display == "none" && infoBox.style.display == "none") {
+            if (marvelPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
+                backBtn.innerText = "BACK OR ←";
                 backBtnFunction();
             } else {
-                audioButtonClick.src = "";
-                audioButtonClick.play();
+                audioButtonClick.pause();
             }
-            if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none"
-                && inGameStoryRecap.style.display == "none" && infoBox.style.display == "none") {
+
+            if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
+                backBtnDC.innerText = "BACK OR ←";
                 backBtnDCFunction();
             } else {
-                audioButtonClick.src = "";
-                audioButtonClick.play();
+                audioButtonClick.pause();
             }
             break;
         case ("7"): //god mode and secret hero color
@@ -2368,7 +2370,11 @@ marvelPlanet.onclick = () => {
     backBtn.enable = true;
     shopBtn.style.display = "none";
     infoBtn.style.display = "none";
-
+    if (marvelPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
+        backBtn.innerText = "BACK OR ←";
+    } else {
+        backBtn.innerText = "BACK";
+    }
 }
 
 //------------------------------------ dc planet
@@ -2415,6 +2421,11 @@ if (multiverseAppeared == false) {
         winAndLoss.style.display = "block";
         infoBtn.style.display = "none";
         multiverse.style.display = "none";
+        if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
+            backBtnDC.innerText = "BACK OR ←";
+        } else {
+            backBtnDC.innerText = "BACK";
+        }
     }
 }
 //------------------------------------ back button to planets
@@ -4397,6 +4408,8 @@ function enemyKeyUp() {
 }
 
 gameResult.onclick = () => {
+    backBtnDC.innerText = "BACK OR ←";
+    backBtn.innerText = "BACK OR ←";
     console.log("gamee resultt");
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();

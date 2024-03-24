@@ -831,7 +831,7 @@ body {
   display: block;
   font-size: x-large;
   height: min-content;
-  width: min-content;
+  width: fit-content;
   display: none;
   z-index: 999;
 }
@@ -850,7 +850,7 @@ body {
   display: none;
   font-size: x-large;
   height: min-content;
-  width: min-content;
+  width: fit-content;
   display: none;
   z-index: 999;
 }

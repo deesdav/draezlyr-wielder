@@ -21,7 +21,8 @@
 - Sctructure of img directory
 - All enemies in collections now
 - Ending of the game is here
-- Bugs fix
 - Tutorial added
 - Function of left Arrow added
 - New look of Planets
+- Bugs fix
+
