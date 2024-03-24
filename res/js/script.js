@@ -1457,7 +1457,7 @@ hell.onmouseover = () => {
     }, 800);
     hell.onmouseout = () => {
         hell.innerText = "HELL";
-        hell.style.backgroundImage = "url(./res/img/hellCover.png)";
+        hell.style.backgroundImage = "url(./res/img/hellCover2.png)";
         document.body.style.backgroundImage = "none";
     }
 }
@@ -1617,7 +1617,7 @@ heaven.onmouseover = () => {
     }, 800);
     heaven.onmouseout = () => {
         heaven.innerText = "HEAVEN";
-        heaven.style.backgroundImage = "url(./res/img/heavenCover.png)";
+        heaven.style.backgroundImage = "url(./res/img/heavenCover2.png)";
         document.body.style.backgroundImage = "none";
     }
 }
@@ -2174,7 +2174,24 @@ sendInputBtn.onclick = () => {
 
 //------------------------------------ secret color and god mode, Enter function, Critical hit and Shield function
 document.addEventListener("keyup", (e) => {
+    console.log(e);
     switch (e.key) {
+        case ("ArrowLeft"):
+            if (marvelPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none"
+                && inGameStoryRecap.style.display == "none" && infoBox.style.display == "none") {
+                backBtnFunction();
+            } else {
+                audioButtonClick.src = "";
+                audioButtonClick.play();
+            }
+            if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none"
+                && inGameStoryRecap.style.display == "none" && infoBox.style.display == "none") {
+                backBtnDCFunction();
+            } else {
+                audioButtonClick.src = "";
+                audioButtonClick.play();
+            }
+            break;
         case ("7"): //god mode and secret hero color
             if (game.style.display == "flex") {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
@@ -2401,7 +2418,7 @@ if (multiverseAppeared == false) {
     }
 }
 //------------------------------------ back button to planets
-backBtn.onclick = () => {
+function backBtnFunction() {
     planets.style.backgroundImage = "none";
     planets.style.height = "380px";
 
@@ -2440,8 +2457,10 @@ backBtn.onclick = () => {
         nameOfPlanetDeesdav.style.display = "block";
     }
 }
-
-backBtnDC.onclick = () => {
+backBtn.onclick = () => {
+    backBtnFunction();
+}
+function backBtnDCFunction() {
     planets.style.backgroundImage = "none";
     planets.style.height = "380px";
 
@@ -2496,6 +2515,9 @@ backBtnDC.onclick = () => {
         planets.style.gap = "70px";
         dcPlanet.disable = true;
     }
+}
+backBtnDC.onclick = () => {
+    backBtnDCFunction();
 }
 //------------------------------------ shop button, shop system, upgrades 
 let yourDamage = 1;

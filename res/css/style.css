@@ -1252,7 +1252,7 @@ tr:nth-child(13) td:nth-child(2) {
   margin: 0 auto;
   height: 666px;
   width: 666px;
-  background-image: url(../img/deesdav.dimension.png);
+  background-image: url(../img/deesdav.dimension2.png);
   animation: boxShadow 1s alternate linear infinite;
   border-radius: 15px;
   background-position: center;
@@ -1325,12 +1325,12 @@ tr:nth-child(13) td:nth-child(2) {
   font-size: medium;
   background-color: #850111;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 0, 0, 0)),
-    url(../img/hellCover.png);
+    url(../img/hellCover2.png);
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 300%;
+  background-size: cover;
 }
 
 #hell:hover {
@@ -1350,12 +1350,12 @@ tr:nth-child(13) td:nth-child(2) {
       rgba(255, 255, 255, 0.436),
       rgba(254, 182, 0, 0)
     ),
-    url(../img/heavenCover.png);
+    url(../img/heavenCover2.png);
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 300%;
+  background-size: cover;
 }
 
 #heaven:hover {

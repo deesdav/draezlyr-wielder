@@ -23,3 +23,5 @@
 - Ending of the game is here
 - Bugs fix
 - Tutorial added
+- Function of left Arrow added
+- New look of Planets
