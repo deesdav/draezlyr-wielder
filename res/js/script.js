@@ -1881,6 +1881,7 @@ function showInfoBox() {
     inGameStoryRecapBtn.style.display = "none";
     marvelPlanetClick = false;
     dcPlanetClick = false;
+
 }
 infoBtn.onclick = () => {
     showInfoBox();
@@ -1994,6 +1995,11 @@ inGameStoryRecap.onclick = () => {
     infoBtn.style.display = "block";
     shopBtn.style.display = "block";
     inGameStoryRecapBtn.style.display = "block";
+    if (deesdavPlanet.style.display == "block") {
+        shopBtn.style.display = "none";
+    } else {
+        shopBtn.style.display = "block";
+    }
 }
 author.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -2186,8 +2192,7 @@ document.addEventListener("keyup", (e) => {
             } else {
                 audioButtonClick.pause();
             }
-
-            if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
+            if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevelsDC.style.display == "grid") {
                 backBtnDC.innerText = "BACK OR ←";
                 backBtnDCFunction();
             } else {
@@ -2421,7 +2426,7 @@ if (multiverseAppeared == false) {
         winAndLoss.style.display = "block";
         infoBtn.style.display = "none";
         multiverse.style.display = "none";
-        if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
+        if (dcPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevelsDC.style.display == "grid") {
             backBtnDC.innerText = "BACK OR ←";
         } else {
             backBtnDC.innerText = "BACK";
@@ -2466,6 +2471,7 @@ function backBtnFunction() {
         deesdavPlanet.style.display = "block";
         lastLevelReward.style.display = "none";
         nameOfPlanetDeesdav.style.display = "block";
+        marvelPlanetClick = false;
     }
 }
 backBtn.onclick = () => {
@@ -2525,6 +2531,7 @@ function backBtnDCFunction() {
         multiverse.style.display = "block";
         planets.style.gap = "70px";
         dcPlanet.disable = true;
+        dcPlanetClick = false;
     }
 }
 backBtnDC.onclick = () => {
@@ -4406,6 +4413,7 @@ function enemyKeyUp() {
         }
     }
 }
+let timerDimensionValue = 1000;
 
 gameResult.onclick = () => {
     backBtnDC.innerText = "BACK OR ←";
@@ -4550,7 +4558,6 @@ gameResult.onclick = () => {
         levelFIFTEEN.style.filter = "invert(100%)";
         levelFIFTEEN.style.textDecoration = "underline";
         console.log("level 15 hotov");
-        marvelPlanetClick = false;
         //------------------------------------ deesdav planet into the dimension
         deesdavDimension.onmouseover = () => {
             audioLobbyBackground.src = "./res/audio/deesdav.mp3";
@@ -4608,6 +4615,10 @@ gameResult.onclick = () => {
                     deesdavPlanet.style.display = "block";
                     lastLevelReward.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "block";
+                    collectionBtn.style.display = "block";
+                    shopBtn.style.display = "none";
+                    infoBtn.style.display = "block";
+                    inGameStoryRecapBtn.style.display = "block";
                     if (hours >= 0 && hours < 12) {
                         realtimepresented.innerText = `Good morning`;
                         document.body.style.backgroundColor = "#2d0020";
@@ -4665,7 +4676,7 @@ gameResult.onclick = () => {
                     yellowColorValue = 17;
                     yourXPIncrease = 4;
                 }
-            }, 1000);
+            }, timerDimensionValue);
 
         }
         setInterval(() => {
@@ -4689,6 +4700,8 @@ gameResult.onclick = () => {
                 deesdavDimension.style.backgroundColor = "black";
                 dot.style.display = "none";
                 deesdavDimension.innerText += `NOW WAIT AND THE REWARD IS ACHIEVED`;
+                timerDimensionValue = 500;
+                countDown.innerText -= 20;
             }
         }
         dot.onmouseover = () => {

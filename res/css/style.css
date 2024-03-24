@@ -1252,7 +1252,7 @@ tr:nth-child(13) td:nth-child(2) {
   margin: 0 auto;
   height: 666px;
   width: 666px;
-  background-image: url(../img/deesdav.dimension2.png);
+  background-image: url(../img/deesdav.dimension.png);
   animation: boxShadow 1s alternate linear infinite;
   border-radius: 15px;
   background-position: center;
