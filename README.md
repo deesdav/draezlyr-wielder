@@ -28,3 +28,4 @@
 - DC planet is completed
 - Collections update with images
 
+![alt text](res/img/heroAnimation.gif)
