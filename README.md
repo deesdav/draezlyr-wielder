@@ -25,4 +25,6 @@
 - Function of left Arrow added
 - New look of Planets
 - Bugs fix
+- DC planet is completed
+- Collections update with images
 

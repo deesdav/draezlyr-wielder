@@ -37,8 +37,8 @@ dcLevelONE.onclick = () => {
     if (dcLevelONECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.batman.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.batman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -99,8 +99,8 @@ dcLevelONE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/flashBG.png)";
-            enemy.src = "./res/img/enemies/enemy.flash.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/flashBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.flash.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -136,8 +136,8 @@ dcLevelTWO.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/flashBG.png)";
-    enemy.src = "./res/img/enemies/enemy.flash.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/flashBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.flash.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -198,8 +198,8 @@ dcLevelTWO.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.wonderwoman.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.wonderwoman.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -235,8 +235,8 @@ dcLevelTHREE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.wonderwoman.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.wonderwoman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -297,8 +297,8 @@ dcLevelTHREE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.joker.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.joker.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -333,8 +333,8 @@ dcLevelFOUR.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.joker.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.joker.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -395,8 +395,8 @@ dcLevelFOUR.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.superman.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.superman.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -431,8 +431,8 @@ dcLevelFIVE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.superman.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.superman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -493,8 +493,8 @@ dcLevelFIVE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/aquamanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.aquaman.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/aquamanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.aquaman.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -529,8 +529,8 @@ dcLevelSIX.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/aquamanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.aquaman.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/aquamanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.aquaman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -591,8 +591,8 @@ dcLevelSIX.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.catwoman.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.catwoman.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -627,8 +627,8 @@ dcLevelSEVEN.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.catwoman.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.catwoman.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -689,8 +689,8 @@ dcLevelSEVEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/cyborgBG.png)";
-            enemy.src = "./res/img/enemies/enemy.cyborg.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/cyborgBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.cyborg.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -725,8 +725,8 @@ dcLevelEIGHT.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/cyborgBG.png)";
-    enemy.src = "./res/img/enemies/enemy.cyborg.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/cyborgBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.cyborg.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -787,8 +787,8 @@ dcLevelEIGHT.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/greenlanternBG.png)";
-            enemy.src = "./res/img/enemies/enemy.greenlantern.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/greenlanternBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.greenlantern.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -823,8 +823,8 @@ dcLevelNINE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/greenlanternBG.png)";
-    enemy.src = "./res/img/enemies/enemy.greenlantern.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/greenlanternBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.greenlantern.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -885,8 +885,8 @@ dcLevelNINE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/greenarrowBG.png)";
-            enemy.src = "./res/img/enemies/enemy.greenarrow.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/greenarrowBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.greenarrow.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -921,8 +921,8 @@ dcLevelTEN.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/greenarrowBG.png)";
-    enemy.src = "./res/img/enemies/enemy.greenarrow.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/greenarrowBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.greenarrow.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -983,8 +983,8 @@ dcLevelTEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.nightwing.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.nightwing.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1019,8 +1019,8 @@ dcLevelELEVEN.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/batmanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.nightwing.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/batmanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.nightwing.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1081,8 +1081,8 @@ dcLevelELEVEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/shazamBG.png)";
-            enemy.src = "./res/img/enemies/enemy.shazam.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/shazamBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.shazam.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1117,8 +1117,8 @@ dcLevelTWELVE.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/shazamBG.png)";
-    enemy.src = "./res/img/enemies/enemy.shazam.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/shazamBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.shazam.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1179,8 +1179,8 @@ dcLevelTWELVE.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/blackadamBG.png)";
-            enemy.src = "./res/img/enemies/enemy.blackadam.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/blackadamBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.blackadam.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1215,8 +1215,8 @@ dcLevelTHIRTEEN.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/blackadamBG.png)";
-    enemy.src = "./res/img/enemies/enemy.blackadam.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/blackadamBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.blackadam.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1277,8 +1277,8 @@ dcLevelTHIRTEEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/doctormanhattanBG.png)";
-            enemy.src = "./res/img/enemies/enemy.doctormanhattan.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/doctormanhattanBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.doctormanhattan.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1313,8 +1313,8 @@ dcLevelFOURTEEN.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/doctormanhattanBG.png)";
-    enemy.src = "./res/img/enemies/enemy.doctormanhattan.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/doctormanhattanBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.doctormanhattan.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -1375,8 +1375,8 @@ dcLevelFOURTEEN.onclick = () => {
         }
         if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
             clearInterval(enemyDamage);
-            game.style.backgroundImage = "url(./res/img/backgrounds/darkseidBG.png)";
-            enemy.src = "./res/img/enemies/enemy.darkseid.png";
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/darkseidBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.darkseid.gif";
             enemy.style.animation = "none";
             game.style.display = "none";
             gameResult.style.display = "block";
@@ -1411,8 +1411,8 @@ dcLevelFIFTEEN.onclick = () => {
     if (dcLevelONECompleted || dcLevelTWOCompleted || dcLevelTHREECompleted || dcLevelFOURCompleted || dcLevelFIVECompleted || dcLevelSIXCompleted || dcLevelSEVENCompleted || dcLevelEIGHTCompleted || dcLevelNINECompleted || dcLevelTENCompleted || dcLevelELEVENCompleted || dcLevelTWELVECompleted || dcLevelTHIRTEENCompleted || dcLevelFOURTEENCompleted || dcLevelFIFTEENCompleted) {
         console.log("Level is completed");
     }
-    game.style.backgroundImage = "url(./res/img/backgrounds/darkseidBG.png)";
-    enemy.src = "./res/img/enemies/enemy.darkseid.png";
+    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/darkseidBG.gif)";
+    enemy.src = "./res/img/enemies/enemy.darkseid.gif";
     levelInfo.style.display = "none";
     document.body.style.backgroundColor = "black";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
