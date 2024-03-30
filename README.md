@@ -27,5 +27,6 @@
 - Bugs fix
 - DC planet is completed
 - Collections update with images
+- DC and MARVEL enemies are completely update
 
 ![alt text](res/img/heroAnimation.gif) ![alt text](res/img/planetsAnimation.gif)

@@ -2203,8 +2203,8 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
-            heroIdle.src = "./res/img/default.hero.idle.png";
-            heroAttack.src = "./res/img/default.hero.attack.png";
+            heroIdle.src = "./res/img/default.hero.idle.gif";
+            heroAttack.src = "./res/img/default.hero.attack.gif";
             break;
         case ("Enter"): //Enter function
             if (storyPartInput.style.display == "flex") {
@@ -2212,7 +2212,7 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.play();
             }
             if (storyPartInput.style.display == "none") {
-                audioButtonClick.src = "";
+                audioButtonClick.src = "";D
                 audioButtonClick.play();
             }
             if (storyPartInput.style.display == "block") {
@@ -2734,8 +2734,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2776,8 +2776,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2807,8 +2807,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2843,8 +2843,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2874,8 +2874,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2910,8 +2910,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2946,8 +2946,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -2977,8 +2977,8 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3033,8 +3033,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3075,8 +3075,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3106,8 +3106,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3142,8 +3142,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
 
             }
@@ -3175,8 +3175,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
 
             }
@@ -3213,8 +3213,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3250,8 +3250,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3283,8 +3283,8 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
 
@@ -3331,8 +3331,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3373,8 +3373,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3405,8 +3405,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
 
             }
@@ -3442,8 +3442,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3474,8 +3474,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3510,8 +3510,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3547,8 +3547,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3578,8 +3578,8 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3626,8 +3626,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3668,8 +3668,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3700,8 +3700,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3736,8 +3736,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3769,8 +3769,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3806,8 +3806,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3843,8 +3843,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3875,8 +3875,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    heroIdle.src = "./res/img/default.hero.idle.png";
-                    heroAttack.src = "./res/img/default.hero.attack.png";
+                    heroIdle.src = "./res/img/default.hero.idle.gif";
+                    heroAttack.src = "./res/img/default.hero.attack.gif";
                     break;
             }
         });
@@ -3930,7 +3930,7 @@ yellowColor.onmouseover = () => {
 //------------------------------------ cost of colors mouse out 
 redColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/default.hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.gif";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     redColor.style.borderColor = "black";
@@ -3939,7 +3939,7 @@ redColor.onmouseout = () => {
 }
 greenColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/default.hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.gif";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     greenColor.style.borderColor = "black";
@@ -3948,7 +3948,7 @@ greenColor.onmouseout = () => {
 }
 blueColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/default.hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.gif";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     blueColor.style.borderColor = "black";
@@ -3957,7 +3957,7 @@ blueColor.onmouseout = () => {
 }
 yellowColor.onmouseout = () => {
     costOfColors.innerText = 0;
-    overviewSrc.src = "./res/img/default.hero.idle.png";
+    overviewSrc.src = "./res/img/default.hero.idle.gif";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
     yellowColor.style.borderColor = "black";

@@ -1530,6 +1530,7 @@ tr:nth-child(13) td:nth-child(2) {
   transform: translateY(-50%);
   right: 20px;
   border: 4px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 250px rgba(0, 0, 0, 0.918) inset;
   border-radius: 10px;
   filter: saturate(150%);
 }
