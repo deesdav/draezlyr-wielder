@@ -2189,8 +2189,8 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
-            heroIdle.src = "./res/img/secret.hero.idle.png";
-            heroAttack.src = "./res/img/secret.hero.attack.png";
+            heroIdle.src = "./res/img/secret.hero.idle.gif";
+            heroAttack.src = "./res/img/secret.hero.attack.gif";
             yourHp.innerText += 0;
             // normal mode
             setTimeout(() => {
@@ -2280,8 +2280,8 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                heroIdle.src = "./res/img/bronze.hero.idle.png";
-                heroAttack.src = "./res/img/bronze.hero.attack.png";
+                heroIdle.src = "./res/img/bronze.hero.idle.gif";
+                heroAttack.src = "./res/img/bronze.hero.attack.gif";
             }
             break;
         case ("s"): //silver hero color = reward from deesdav dimension
@@ -2291,8 +2291,8 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                heroIdle.src = "./res/img/silver.hero.idle.png";
-                heroAttack.src = "./res/img/silver.hero.attack.png";
+                heroIdle.src = "./res/img/silver.hero.idle.gif";
+                heroAttack.src = "./res/img/silver.hero.attack.gif";
             }
             break;
         case ("g"): //gold hero color = reward from dc planet
@@ -2302,8 +2302,8 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                heroIdle.src = "./res/img/gold.hero.idle.png";
-                heroAttack.src = "./res/img/gold.hero.attack.png";
+                heroIdle.src = "./res/img/gold.hero.idle.gif";
+                heroAttack.src = "./res/img/gold.hero.attack.gif";
             }
             break;
 
@@ -2333,7 +2333,7 @@ marvelPlanet.onclick = () => {
     yourName.style.zIndex = "999";
     muteAudio.style.zIndex = "999";
     rewardOverview.style.display = "block";
-    rewardOverview.src = "./res/img/bronze.hero.idle.png";
+    rewardOverview.src = "./res/img/bronze.hero.idle.gif";
     collectionBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
     yourName.style.display = "block";
@@ -2383,7 +2383,7 @@ if (multiverseAppeared == false) {
         yourName.style.zIndex = "999";
         muteAudio.style.zIndex = "999";
         rewardOverview.style.display = "block";
-        rewardOverview.src = "./res/img/gold.hero.idle.png";
+        rewardOverview.src = "./res/img/gold.hero.idle.gif";
         collectionBtn.style.display = "none";
         inGameStoryRecapBtn.style.display = "none";
         yourName.style.display = "block";
@@ -2704,8 +2704,8 @@ redColor.onclick = () => {
         redColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/red.hero.idle.png";
-        heroAttack.src = "./res/img/red.hero.attack.png";
+        heroIdle.src = "./res/img/red.hero.idle.gif";
+        heroAttack.src = "./res/img/red.hero.attack.gif";
         yourXPValue -= redColorValue;
         yourXP.innerText = yourXPValue;
         redColorOwned = true;
@@ -2718,8 +2718,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2729,8 +2729,8 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2745,8 +2745,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2756,23 +2756,23 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2786,8 +2786,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2797,13 +2797,13 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2817,8 +2817,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2828,18 +2828,18 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2853,8 +2853,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2864,13 +2864,13 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2884,8 +2884,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2895,18 +2895,18 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2920,8 +2920,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2931,18 +2931,18 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -2956,8 +2956,8 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -2967,13 +2967,13 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3003,8 +3003,8 @@ greenColor.onclick = () => {
         greenColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/green.hero.idle.png";
-        heroAttack.src = "./res/img/green.hero.attack.png";
+        heroIdle.src = "./res/img/green.hero.idle.gif";
+        heroAttack.src = "./res/img/green.hero.attack.gif";
         yourXPValue -= greenColorValue;
         yourXP.innerText = yourXPValue;
         greenColorOwned = true;
@@ -3017,8 +3017,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3028,8 +3028,8 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3044,8 +3044,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3055,23 +3055,23 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3085,8 +3085,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3096,13 +3096,13 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3116,8 +3116,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3127,18 +3127,18 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3153,8 +3153,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3165,13 +3165,13 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3186,8 +3186,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3198,18 +3198,18 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3223,8 +3223,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3234,19 +3234,19 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3260,8 +3260,8 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3272,14 +3272,14 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3301,8 +3301,8 @@ blueColor.onclick = () => {
         blueColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/blue.hero.idle.png";
-        heroAttack.src = "./res/img/blue.hero.attack.png";
+        heroIdle.src = "./res/img/blue.hero.idle.gif";
+        heroAttack.src = "./res/img/blue.hero.attack.gif";
         yourXPValue -= blueColorValue;
         yourXP.innerText = yourXPValue;
         blueColor = true;
@@ -3315,8 +3315,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3326,8 +3326,8 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3342,8 +3342,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3353,23 +3353,23 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3383,8 +3383,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3394,14 +3394,14 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3416,8 +3416,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3427,18 +3427,18 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3452,8 +3452,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3464,13 +3464,13 @@ blueColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3484,8 +3484,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3495,18 +3495,18 @@ blueColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3520,8 +3520,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3531,19 +3531,19 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3557,8 +3557,8 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3568,13 +3568,13 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3596,8 +3596,8 @@ yellowColor.onclick = () => {
         yellowColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/yellow.hero.idle.png";
-        heroAttack.src = "./res/img/yellow.hero.attack.png";
+        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+        heroAttack.src = "./res/img/yellow.hero.attack.gif";
         yourXPValue -= yellowColorValue;
         yourXP.innerText = yourXPValue;
         yellowColorOwned = true;
@@ -3610,8 +3610,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3621,8 +3621,8 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3637,8 +3637,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3648,23 +3648,23 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3678,8 +3678,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3689,14 +3689,14 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3710,8 +3710,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3721,18 +3721,18 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3746,8 +3746,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3758,14 +3758,14 @@ yellowColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3779,8 +3779,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3791,18 +3791,18 @@ yellowColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.png";
-                    heroAttack.src = "./res/img/green.hero.attack.png";
+                    heroIdle.src = "./res/img/green.hero.idle.gif";
+                    heroAttack.src = "./res/img/green.hero.attack.gif";
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3816,8 +3816,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3827,19 +3827,19 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.png";
-                    heroAttack.src = "./res/img/red.hero.attack.png";
+                    heroIdle.src = "./res/img/red.hero.idle.gif";
+                    heroAttack.src = "./res/img/red.hero.attack.gif";
                     break;
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3853,8 +3853,8 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
-                    heroIdle.src = "./res/img/secret.hero.idle.png";
-                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                    heroIdle.src = "./res/img/secret.hero.idle.gif";
+                    heroAttack.src = "./res/img/secret.hero.attack.gif";
 
                     yourHp.innerText += 0;
                     // Revert to normal state
@@ -3865,13 +3865,13 @@ yellowColor.onclick = () => {
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.png";
-                    heroAttack.src = "./res/img/blue.hero.attack.png";
+                    heroIdle.src = "./res/img/blue.hero.idle.gif";
+                    heroAttack.src = "./res/img/blue.hero.attack.gif";
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.png";
-                    heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
@@ -3885,7 +3885,7 @@ yellowColor.onclick = () => {
 //------------------------------------ cost of colors mouse over
 redColor.onmouseover = () => {
     costOfColors.innerText = redColorValue;
-    overviewSrc.src = "./res/img/red.hero.idle.png";
+    overviewSrc.src = "./res/img/red.hero.idle.gif";
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -3896,7 +3896,7 @@ redColor.onmouseover = () => {
 }
 greenColor.onmouseover = () => {
     costOfColors.innerText = greenColorValue;
-    overviewSrc.src = "./res/img/green.hero.idle.png";
+    overviewSrc.src = "./res/img/green.hero.idle.gif";
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -3907,7 +3907,7 @@ greenColor.onmouseover = () => {
 }
 blueColor.onmouseover = () => {
     costOfColors.innerText = blueColorValue;
-    overviewSrc.src = "./res/img/blue.hero.idle.png";
+    overviewSrc.src = "./res/img/blue.hero.idle.gif";
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -3918,7 +3918,7 @@ blueColor.onmouseover = () => {
 }
 yellowColor.onmouseover = () => {
     costOfColors.innerText = yellowColorValue;
-    overviewSrc.src = "./res/img/yellow.hero.idle.png";
+    overviewSrc.src = "./res/img/yellow.hero.idle.gif";
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -4535,8 +4535,8 @@ gameResult.onclick = () => {
         levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
-        heroIdle.src = "./res/img/bronze.hero.idle.png";
-        heroAttack.src = "./res/img/bronze.hero.attack.png";
+        heroIdle.src = "./res/img/bronze.hero.idle.gif";
+        heroAttack.src = "./res/img/bronze.hero.attack.gif";
         marvelPlanet.style.filter = "grayscale(100%)";
         levelFIFTEEN.style.backgroundColor = "white";
         levelFIFTEEN.style.color = "black";
@@ -4587,7 +4587,7 @@ gameResult.onclick = () => {
             infoBtn.style.display = "none";
             winAndLoss.style.display = "none";
             rewardOverview.style.display = "block";
-            rewardOverview.src = "./res/img/silver.hero.idle.png";
+            rewardOverview.src = "./res/img/silver.hero.idle.gif";
             const timerDimension = setInterval(() => {
                 countDown.innerText--;
                 if (countDown.innerText == 0) {
@@ -4632,8 +4632,8 @@ gameResult.onclick = () => {
                 }
 
                 if (deesdavDimensionCompleted) {
-                    heroIdle.src = "./res/img/silver.hero.idle.png";
-                    heroAttack.src = "./res/img/silver.hero.attack.png";
+                    heroIdle.src = "./res/img/silver.hero.idle.gif";
+                    heroAttack.src = "./res/img/silver.hero.attack.gif";
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
@@ -4813,8 +4813,8 @@ gameResult.onclick = () => {
         dcLevelFOURTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFIFTEENCompleted) {
-        heroIdle.src = "./res/img/gold.hero.idle.png";
-        heroAttack.src = "./res/img/gold.hero.attack.png";
+        heroIdle.src = "./res/img/gold.hero.idle.gif";
+        heroAttack.src = "./res/img/gold.hero.attack.gif";
         dcPlanet.style.filter = "grayscale(100%)";
         multiverseAppeared = true;
         multiverse.style.display = "none";
