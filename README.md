@@ -30,4 +30,4 @@
 - DC and MARVEL enemies are completely update into new gifs
 - Hero is in gifs
 
-![alt text](ezgif-3-a2c25f8a07.gif)
+![alt text](ezgif-3-a2c25f8a07.gif) ![alt text](res/img/allofthem.gif)
