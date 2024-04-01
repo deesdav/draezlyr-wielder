@@ -238,7 +238,9 @@ const multiverseHellHeavenChangingBGColor = () => {
 
     hell.style.boxShadow = `0 0 ${animationPulse}px rgb(255,0,0)`;
     heaven.style.boxShadow = `0 0 ${animationPulse}px gold`;
+
 }
+
 
 let multiverseAppeared = false;
 let roundValueCounter = 1;
@@ -277,7 +279,10 @@ multiverse.onclick = () => {
     const randomEnemy = Math.floor(Math.random() * 15);
     roundValueCounter++;
     yourName.style.display = "block";
-
+    game.style.border = "5px solid";
+    game.style.borderImage = "linear-gradient(to bottom, #333, rgba(255, 0, 2555, 0.41)";
+    game.style.borderImageSlice = "1";
+    game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 2555, 0.41))";
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
@@ -2212,7 +2217,7 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.play();
             }
             if (storyPartInput.style.display == "none") {
-                audioButtonClick.src = "";D
+                audioButtonClick.src = ""; D
                 audioButtonClick.play();
             }
             if (storyPartInput.style.display == "block") {

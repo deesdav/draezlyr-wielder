@@ -1302,7 +1302,7 @@ tr:nth-child(13) td:nth-child(2) {
 }
 
 #multiverse {
-  display: none;
+  display: block;
   border: 3px solid white;
   border-radius: 50%;
   height: 115px;
