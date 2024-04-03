@@ -29,5 +29,6 @@
 - Collections update with images
 - DC and MARVEL enemies are completely update into new gifs
 - Hero is in gifs
+- Working on detection of slow PCs
 
-![alt text](ezgif-5-1316de1f0c.gif) ![alt text](ezgif-3-d3734eac02.gif)
+![alt text](res/img/allHeroesView.gif) ![alt text](res/img/allEnemiesView.gif)

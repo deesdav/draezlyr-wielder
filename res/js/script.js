@@ -133,6 +133,28 @@ const collectionBtn = document.getElementById("collectionBtn");
 const collectionsBox = document.getElementById("collectionsBox");
 const viewPhoto = document.getElementById("viewPhoto");
 
+//------------------------------------ detection of slow PCs
+const ram = navigator.deviceMemory;
+const cpu = navigator.hardwareConcurrency;
+setInterval(() => {
+    console.log(`your ram: ${ram}GB`)
+    console.log(`your cpu cores: ${cpu}`)
+}, 1000);
+
+const gifPlanets = [marvelPlanet, dcPlanet, heroIdle, heroAttack]
+const gifPlanetsSrc = ["marvelRedPlanet2", "dcBluePlanet2", "default.hero.idle", "default.hero.attack"]
+
+if (ram >= 8 || cpu >= 16) {
+    for (let i = 0; i < gifPlanets.length; i++) {
+        gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.gif`;
+    }
+} else {
+    for (let i = 0; i < gifPlanets.length; i++) {
+        gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.png`;
+    }
+}
+
+
 //------------------------------------ easter egg
 storyPartInput.addEventListener("input", function () {
     const nameV = storyPartInput.value;
