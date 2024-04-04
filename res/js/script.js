@@ -144,7 +144,7 @@ setInterval(() => {
 const gifPlanets = [marvelPlanet, dcPlanet, heroIdle, heroAttack]
 const gifPlanetsSrc = ["marvelRedPlanet2", "dcBluePlanet2", "default.hero.idle", "default.hero.attack"]
 
-if (ram >= 8 || cpu >= 16) {
+if (ram >= 8 && cpu >= 16) {
     for (let i = 0; i < gifPlanets.length; i++) {
         gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.gif`;
     }
@@ -1926,7 +1926,12 @@ headline.onmouseover = () => {
     story.style.color = "transparent";
     author.style.color = "transparent";
     tutorial.style.color = "transparent";
-    document.body.style.backgroundImage = "url(./res/img/draezlyr.lobbyBackground.gif)";
+    if (ram >= 8 && cpu >= 16) {
+        document.body.style.backgroundImage = "url(./res/img/draezlyr.lobbyBackground.gif)";
+    } else {
+        document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
+    }
+
 }
 
 headline.onmouseout = () => {
@@ -2216,8 +2221,14 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
-            heroIdle.src = "./res/img/secret.hero.idle.gif";
-            heroAttack.src = "./res/img/secret.hero.attack.gif";
+            if (ram >= 8 && cpu >= 16) {
+                heroIdle.src = "./res/img/secret.hero.idle.gif";
+                heroAttack.src = "./res/img/secret.hero.attack.gif";
+            } else {
+                heroIdle.src = "./res/img/secret.hero.idle.png";
+                heroAttack.src = "./res/img/secret.hero.attack.png";
+            }
+
             yourHp.innerText += 0;
             // normal mode
             setTimeout(() => {
@@ -2745,9 +2756,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2772,9 +2787,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2813,9 +2832,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2844,9 +2867,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2880,9 +2907,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2911,9 +2942,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2947,9 +2982,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -2983,9 +3022,13 @@ redColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3044,9 +3087,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3071,9 +3118,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3112,9 +3163,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3143,9 +3198,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3180,9 +3239,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3213,9 +3276,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3250,9 +3317,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3287,9 +3358,13 @@ greenColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3342,9 +3417,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3369,9 +3448,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3410,9 +3493,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3443,9 +3530,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3479,9 +3570,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3511,9 +3606,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3547,9 +3646,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3584,9 +3687,13 @@ blueColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3637,9 +3744,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3664,9 +3775,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3705,9 +3820,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3737,9 +3856,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3773,9 +3896,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3806,9 +3933,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3843,9 +3974,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -3880,9 +4015,13 @@ yellowColor.onclick = () => {
             console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
+                if (ram >= 8 && cpu >= 16) {
                     heroIdle.src = "./res/img/secret.hero.idle.gif";
                     heroAttack.src = "./res/img/secret.hero.attack.gif";
-
+                } else {
+                    heroIdle.src = "./res/img/secret.hero.idle.png";
+                    heroAttack.src = "./res/img/secret.hero.attack.png";
+                }
                     yourHp.innerText += 0;
                     // Revert to normal state
                     setTimeout(() => {
@@ -4959,8 +5098,13 @@ for (let i = 0; i < killedEnemies.length; i++) {
         if (killedEnemiesId.alt == "heaven") {
             infoOfKilledEnemyLocation.innerText = "HEAVEN";
         }
-        viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.gif`;
-        viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/finished.${killedEnemiesBGs[i]}BG.gif)`;
+        if (ram >= 8 && cpu >= 16) {
+            viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.gif`;
+            viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/finished.${killedEnemiesBGs[i]}BG.gif)`;
+        } else {
+            viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
+            viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/${killedEnemiesBGs[i]}BG.png)`;
+        }
         viewPhoto.style.backgroundSize = "cover";
         viewPhoto.style.backgroundRepeat = "no-repeat";
         viewPhoto.style.backgroundPosition = "center";
