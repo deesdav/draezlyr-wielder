@@ -1382,11 +1382,31 @@ tr:nth-child(13) td:nth-child(2) {
   z-index: 999;
 }
 
+#highDetailBtn {
+  text-transform: uppercase;
+  cursor: pointer;
+  position: fixed;
+  top: 22%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border: 3px solid white;
+  border-radius: 1em;
+  background-color: transparent;
+  color: white;
+  display: block;
+  font-size: large;
+  height: min-content;
+  width: fit-content;
+  display: block;
+  z-index: 999;
+}
+
 #inGameStoryRecapBtn {
   text-transform: uppercase;
   cursor: pointer;
   position: absolute;
-  top: 18%;
+  top: 28%;
   left: 5%;
   transform: translateX(-50%);
   padding: 1em;
@@ -1442,12 +1462,14 @@ tr:nth-child(13) td:nth-child(2) {
 
 #gridOfKilledEnemies {
   display: grid;
-  margin: 0 auto;
+  margin: 0px auto;
   grid-template-columns: auto auto auto auto auto auto auto auto auto;
   gap: 5px;
   height: fit-content;
   width: fit-content;
   transform: scale(0.9);
+  position: relative;
+  top: 70px;
 }
 
 #gridOfKilledEnemies img {
