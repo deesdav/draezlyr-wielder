@@ -66,6 +66,7 @@ const backToLobby = document.getElementById("backToLobby");
 const noLobby = document.getElementById("noLobby");
 const yesLobby = document.getElementById("yesLobby");
 const inGameStoryRecapBtn = document.getElementById("inGameStoryRecapBtn");
+const infoDetectionOfYourPC = document.getElementById("infoDetectionOfYourPC");
 
 const levelsText = document.getElementById("levelsText");
 const gridOfLevels = document.getElementById("gridOfLevels");
@@ -136,18 +137,33 @@ const viewPhoto = document.getElementById("viewPhoto");
 //------------------------------------ detection of slow PCs
 const ram = navigator.deviceMemory;
 const cpu = navigator.hardwareConcurrency;
-setInterval(() => {
-    console.log(`your ram: ${ram}GB`)
-    console.log(`your cpu cores: ${cpu}`)
-}, 1500);
+console.log(`your ram: ${ram}GB`)
+console.log(`your cpu cores: ${cpu}`)
 
+document.addEventListener("DOMContentLoaded", function () {
+    infoDetectionOfYourPC.innerText = `YOUR PC HAS CPU CORE: ${cpu} AND ESTIMATED RAM: ${ram}GB`;
+});
 
 //------------------------------------ hight detail and low detail
 let highDetail = true;
 const highDetailBtn = document.getElementById("highDetailBtn");
 
 const gifPlanets = [marvelPlanet, dcPlanet, heroIdle, heroAttack, rewardOverview]
-const gifPlanetsSrc = ["marvelRedPlanet2", "dcBluePlanet2", "default.hero.idle", "default.hero.attack", "bronze.hero.idle", "silver.hero.idle", "gold.hero.idle"]
+
+const gifPlanetsSrc = ["marvelRedPlanet2", "dcBluePlanet2", "default.hero.idle",
+    "default.hero.attack", "bronze.hero.idle", "silver.hero.idle", "gold.hero.idle"]
+
+const detailedEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+    "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "dot", "batman", "flash",
+    "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+    "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+    "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "devil", "angel"];
+
+const detailedEnemiesAndBGs = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
+    "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "dot", "batman", "flash",
+    "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
+    "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
+    "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "devil", "angel"];
 
 highDetailBtn.onclick = () => {
     if (highDetailBtn.innerText == "HIGH DETAIL") {
@@ -157,34 +173,36 @@ highDetailBtn.onclick = () => {
         highDetail = true;
         highDetailBtn.innerText = "HIGH DETAIL";
     }
-
-    if (highDetail == true) {
-        for (let i = 0; i < gifPlanets.length; i++) {
-            gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.gif`;
-        }
-        if (rewardOverview.alt == "marvel-planet-reward") {
-            gifPlanets[4].src = `./res/img/${gifPlanetsSrc[4]}.gif`
-        }
-        if (rewardOverview.alt == "deesdav-dimension-reward") {
-            gifPlanets[4].src = `./res/img/${gifPlanetsSrc[5]}.gif`
-        }
-        if (rewardOverview.alt == "dc-planet-reward") {
-            gifPlanets[4].src = `./res/img/${gifPlanetsSrc[6]}.gif`
-        }
-    } else if (highDetail == false) {
-        for (let i = 0; i < gifPlanets.length; i++) {
-            gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.png`;
-        }
-        if (rewardOverview.alt == "marvel-planet-reward") {
-            gifPlanets[4].src = `./res/img/${gifPlanetsSrc[4]}.png`
-        }
-        if (rewardOverview.alt == "deesdav-dimension-reward") {
-            gifPlanets[4].src = `./res/img/${gifPlanetsSrc[5]}.png`
-        }
-        if (rewardOverview.alt == "dc-planet-reward") {
-            gifPlanets[4].src = `./res/img/${gifPlanetsSrc[6]}.png`
+    document.body.onmouseover = () => {
+        if (highDetail == true) {
+            for (let i = 0; i < gifPlanets.length; i++) {
+                gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.gif`;
+            }
+            if (rewardOverview.alt == "marvel-planet-reward") {
+                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[4]}.gif`
+            }
+            if (rewardOverview.alt == "deesdav-dimension-reward") {
+                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[5]}.gif`
+            }
+            if (rewardOverview.alt == "dc-planet-reward") {
+                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[6]}.gif`
+            }
+        } else if (highDetail == false) {
+            for (let i = 0; i < gifPlanets.length; i++) {
+                gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.png`;
+            }
+            if (rewardOverview.alt == "marvel-planet-reward") {
+                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[4]}.png`
+            }
+            if (rewardOverview.alt == "deesdav-dimension-reward") {
+                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[5]}.png`
+            }
+            if (rewardOverview.alt == "dc-planet-reward") {
+                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[6]}.png`
+            }
         }
     }
+
 }
 
 //------------------------------------ easter egg
@@ -331,8 +349,11 @@ let heavenBossCompleted = false;
 
 multiverse.onclick = () => {
     const randomEnemy = Math.floor(Math.random() * 15);
+    //const randomEnemy = 2;
     roundValueCounter++;
     yourName.style.display = "block";
+    winAndLoss.style.display = "none";
+    highDetailBtn.style.display = "none";
     game.style.border = "5px solid";
     game.style.borderImage = "linear-gradient(to bottom, #333, rgba(255, 0, 2555, 0.41)";
     game.style.borderImageSlice = "1";
@@ -340,8 +361,13 @@ multiverse.onclick = () => {
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/pikachuBG.png)";
-        enemy.src = "./res/img/enemies/enemy.pikachu.png";
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/pikachuBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.pikachu.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/pikachuBG.png)";
+            enemy.src = "./res/img/enemies/enemy.pikachu.png";
+        }
         enemyHpTextValue.innerText = `PIKACHU´S HP:`;
         enemyHp.innerText = pikachuHP;
         const enemyDamage = setInterval(() => {
@@ -411,8 +437,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy super mario
     if (randomEnemy == 1) {
         game.style.boxShadow = "0 0 120px red inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/supermarioBG.png)";
-        enemy.src = "./res/img/enemies/enemy.supermario.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/supermarioBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.supermario.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/supermarioBG.png)";
+            enemy.src = "./res/img/enemies/enemy.supermario.png";
+        }
         enemyHpTextValue.innerText = `SUPER MARIO´S HP:`;
         enemyHp.innerText = supermarioHP;
         const enemyDamage = setInterval(() => {
@@ -483,8 +515,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy groot
     if (randomEnemy == 2) {
         game.style.boxShadow = "0 0 120px brown inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/grootBG.png)";
-        enemy.src = "./res/img/enemies/enemy.groot.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/grootBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.groot.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/grootBG.png)";
+            enemy.src = "./res/img/enemies/enemy.groot.png";
+        }
         enemyHpTextValue.innerText = `GROOT´S HP:`;
         enemyHp.innerText = grootHP;
         const enemyDamage = setInterval(() => {
@@ -555,9 +593,16 @@ multiverse.onclick = () => {
     //------------------------------------ enemy robocop
     if (randomEnemy == 3) {
         game.style.boxShadow = "0 0 120px gray inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/robocopBG.png)";
-        enemy.src = "./res/img/enemies/enemy.robocop.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/robocopBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.robocop.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/robocopBG.png)";
+            enemy.src = "./res/img/enemies/enemy.robocop.png";
+        }
         enemyHpTextValue.innerText = `ROBOCOP´S HP:`;
+
         enemyHp.innerText = robocopHP;
         const enemyDamage = setInterval(() => {
             yourHp.innerText -= 34;
@@ -627,8 +672,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy predator
     if (randomEnemy == 4) {
         game.style.boxShadow = "0 0 120px green inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/predatorBG.png)";
-        enemy.src = "./res/img/enemies/enemy.predator.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/predatorBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.predator.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/predatorBG.png)";
+            enemy.src = "./res/img/enemies/enemy.predator.png";
+        }
         enemyHpTextValue.innerText = `PREDATOR´S HP:`;
         enemyHp.innerText = predatorHP;
         const enemyDamage = setInterval(() => {
@@ -699,8 +750,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy terminator
     if (randomEnemy == 5) {
         game.style.boxShadow = "0 0 120px black inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/terminatorBG.png)";
-        enemy.src = "./res/img/enemies/enemy.terminator.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/terminatorBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.terminator.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/terminatorBG.png)";
+            enemy.src = "./res/img/enemies/enemy.terminator.png";
+        }
         enemyHpTextValue.innerText = `TERMINATOR´S HP:`;
         enemyHp.innerText = terminatorHP;
         const enemyDamage = setInterval(() => {
@@ -771,8 +828,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy geralt
     if (randomEnemy == 6) {
         game.style.boxShadow = "0 0 120px rgb(100,50,10) inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/geraltBG.png)";
-        enemy.src = "./res/img/enemies/enemy.geralt.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/geraltBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.geralt.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/geraltBG.png)";
+            enemy.src = "./res/img/enemies/enemy.geralt.png";
+        }
         enemyHpTextValue.innerText = `GERALT´S HP:`;
         enemyHp.innerText = geraltHP;
         const enemyDamage = setInterval(() => {
@@ -843,8 +906,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy doom slayer
     if (randomEnemy == 7) {
         game.style.boxShadow = "0 0 120px rgb(10,150,10) inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/doomslayerBG.png)";
-        enemy.src = "./res/img/enemies/enemy.doomslayer.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/doomslayerBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.doomslayer.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/doomslayerBG.png)";
+            enemy.src = "./res/img/enemies/enemy.doomslayer.png";
+        }
         enemyHpTextValue.innerText = `DOOM SLAYER´S HP:`;
         enemyHp.innerText = doomslayerHP;
         const enemyDamage = setInterval(() => {
@@ -915,8 +984,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy solid snake
     if (randomEnemy == 8) {
         game.style.boxShadow = "0 0 120px rgb(20,20,120) inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/solidsnakeBG.png)";
-        enemy.src = "./res/img/enemies/enemy.solidsnake.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/solidsnakeBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.solidsnake.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/solidsnakeBG.png)";
+            enemy.src = "./res/img/enemies/enemy.solidsnake.png";
+        }
         enemyHpTextValue.innerText = `SOLID SNAKE´S HP:`;
         enemyHp.innerText = solidsnakeHP;
         const enemyDamage = setInterval(() => {
@@ -987,8 +1062,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy mandalorian
     if (randomEnemy == 9) {
         game.style.boxShadow = "0 0 120px silver inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/mandalorianBG.png)";
-        enemy.src = "./res/img/enemies/enemy.mandalorian.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/mandalorianBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.mandalorian.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/mandalorianBG.png)";
+            enemy.src = "./res/img/enemies/enemy.mandalorian.png";
+        }
         enemyHpTextValue.innerText = `MANDALORIAN´S HP:`;
         enemyHp.innerText = mandalorianHP;
         const enemyDamage = setInterval(() => {
@@ -1059,8 +1140,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy darth vader
     if (randomEnemy == 10) {
         game.style.boxShadow = "0 0 120px rgb(100,0,0) inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/darthvaderBG.png)";
-        enemy.src = "./res/img/enemies/enemy.darthvader.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/darthvaderBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.darthvader.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/darthvaderBG.png)";
+            enemy.src = "./res/img/enemies/enemy.darthvader.png";
+        }
         enemyHpTextValue.innerText = `DARTH VADER´S HP:`;
         enemyHp.innerText = darthvaderHP;
         const enemyDamage = setInterval(() => {
@@ -1131,8 +1218,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy naruto
     if (randomEnemy == 11) {
         game.style.boxShadow = "0 0 120px rgb(255,205,0) inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/narutoBG.png)";
-        enemy.src = "./res/img/enemies/enemy.naruto.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/narutoBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.naruto.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/narutoBG.png)";
+            enemy.src = "./res/img/enemies/enemy.naruto.png";
+        }
         enemyHpTextValue.innerText = `NARUTO´S HP:`;
         enemyHp.innerText = narutoHP;
         const enemyDamage = setInterval(() => {
@@ -1203,8 +1296,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy goku
     if (randomEnemy == 12) {
         game.style.boxShadow = "0 0 120px lightblue inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/gokuBG.png)";
-        enemy.src = "./res/img/enemies/enemy.goku.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/gokuBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.goku.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/gokuBG.png)";
+            enemy.src = "./res/img/enemies/enemy.goku.png";
+        }
         enemyHpTextValue.innerText = `GOKU´S HP:`;
         enemyHp.innerText = gokuHP;
         const enemyDamage = setInterval(() => {
@@ -1275,8 +1374,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy john wick
     if (randomEnemy == 13) {
         game.style.boxShadow = "0 0 120px goldenrod inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/johnwickBG.png)";
-        enemy.src = "./res/img/enemies/enemy.johnwick.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/johnwickBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.johnwick.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/johnwickBG.png)";
+            enemy.src = "./res/img/enemies/enemy.johnwick.png";
+        }
         enemyHpTextValue.innerText = `JOHN WICK´S HP:`;
         enemyHp.innerText = johnwickHP;
         const enemyDamage = setInterval(() => {
@@ -1347,8 +1452,14 @@ multiverse.onclick = () => {
     //------------------------------------ enemy kratos
     if (randomEnemy == 14 || randomEnemy == 15) {
         game.style.boxShadow = "0 0 120px rgb(160,20,20) inset";
-        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/kratosBG.png)";
-        enemy.src = "./res/img/enemies/enemy.kratos.png";
+
+        if (highDetail == true) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/kratosBG.gif)";
+            enemy.src = "./res/img/enemies/enemy.kratos.gif";
+        } else if (highDetail == false) {
+            game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/kratosBG.png)";
+            enemy.src = "./res/img/enemies/enemy.kratos.png";
+        }
         enemyHpTextValue.innerText = `KRATOS´S HP:`;
         enemyHp.innerText = kratosHP;
         const enemyDamage = setInterval(() => {
@@ -1457,6 +1568,8 @@ multiverse.onclick = () => {
         console.log("multiverse gamee resultt");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
+        winAndLoss.style.display = "block";
+        highDetailBtn.style.display = "block";
         yourName.style.display = "block";
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
@@ -1521,9 +1634,17 @@ hell.onmouseover = () => {
 hell.onclick = () => {
     roundHellCounter++;
     yourName.style.display = "block";
+    winAndLoss.style.display = "none";
+    highDetailBtn.style.display = "none";
     game.style.boxShadow = "0 0 120px #850111 inset";
-    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/hellBG.png)";
-    enemy.src = "./res/img/enemies/enemy.devil.png";
+
+    if (highDetail == true) {
+        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/hellBG.gif)";
+        enemy.src = "./res/img/enemies/enemy.devil.gif";
+    } else if (highDetail == false) {
+        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/hellBG.png)";
+        enemy.src = "./res/img/enemies/enemy.devil.png";
+    }
     enemyHpTextValue.innerText = `DEVIL´S HP:`;
     enemyHp.innerText = devilHP;
     const enemyDamage = setInterval(() => {
@@ -1618,6 +1739,8 @@ hell.onclick = () => {
         console.log("hell gamee resultt");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
+        winAndLoss.style.display = "block";
+        highDetailBtn.style.display = "block";
         yourName.style.display = "block";
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
@@ -1668,8 +1791,15 @@ heaven.onclick = () => {
     roundHeavenCounter++;
     yourName.style.display = "block";
     game.style.boxShadow = "0 0 120px #87CEEB inset";
-    game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/heavenBG.png)";
-    enemy.src = "./res/img/enemies/enemy.angel.png";
+    winAndLoss.style.display = "none";
+    highDetailBtn.style.display = "none";
+    if (highDetail == true) {
+        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/heavenBG.gif)";
+        enemy.src = "./res/img/enemies/enemy.angel.gif";
+    } else if (highDetail == false) {
+        game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/heavenBG.png)";
+        enemy.src = "./res/img/enemies/enemy.angel.png";
+    }
     enemyHpTextValue.innerText = `ANGEL´S HP:`;
     enemyHp.innerText = angelHP;
     const enemyDamage = setInterval(() => {
@@ -1764,6 +1894,8 @@ heaven.onclick = () => {
         console.log("heaven gamee resultt");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
+        winAndLoss.style.display = "block";
+        highDetailBtn.style.display = "block";
         yourName.style.display = "block";
         shopBtn.style.display = "block";
         infoBtn.style.display = "block";
@@ -1875,6 +2007,7 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
         btnsOnMouseOverAndOut[i].style.backgroundColor = "transparent";
         btnsOnMouseOverAndOut[i].style.color = "white";
         btnsOnMouseOverAndOut[i].style.boxShadow = "0 0 0px white";
+
     }
 
 }
@@ -1954,6 +2087,7 @@ headline.onmouseover = () => {
     headline.style.transform = "scale(1.9)";
     headline.style.paddingTop = "50px";
     realtimepresented.style.display = "none";
+    infoDetectionOfYourPC.style.display = "none";
     skipIntroBtn.style.display = "none";
     muteAudio.style.display = "none";
     highDetailBtn.style.display = "none";
@@ -1964,18 +2098,19 @@ headline.onmouseover = () => {
     if (highDetail == true) {
         document.body.style.backgroundImage = "url(./res/img/draezlyr.lobbyBackground.gif)";
     } else if (highDetail == false) {
-        document.body.style.backgroundImage = "url(./res/img/lobbyBackground.png)";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.5), rgba(30, 150, 255, 0.3)), url(./res/img/lobbyBackground.png)";
     }
 
 }
 
 headline.onmouseout = () => {
-    audioLobbyBackground.src = "";
-    audioLobbyBackground.play();
+    audioLobbyBackground.src = "./res/audio/lobbymusic.mp3";
+    audioLobbyBackground.pause();
     headline.style.color = "black";
     headline.style.transform = "none";
     headline.style.paddingTop = "0px";
     realtimepresented.style.display = "block";
+    infoDetectionOfYourPC.style.display = "block";
     skipIntroBtn.style.display = "block";
     muteAudio.style.display = "block";
     highDetailBtn.style.display = "block";
@@ -2128,6 +2263,7 @@ function playGame() {
     document.body.style.backgroundImage = "url(./res/img/multiverse.png)";
     document.body.style.bakcgroundColor = "rgba(0, 0, 0, 0.727)";
     document.body.style.cursor = "none";
+    infoDetectionOfYourPC.style.display = "none";
     play.style.display = "none";
     story.style.display = "none";
     author.style.display = "none";
@@ -2144,10 +2280,10 @@ function playGame() {
         planets.style.display = "none";
         document.body.style.cursor = "default";
         loader.style.display = "none";
+        audioButtonClickMulti.src = "./res/audio/loadingtheme.mp3";
         audioButtonClickMulti.pause();
         document.body.style.bakcgroundColor = "black";
         document.body.style.backgroundImage = "none";
-        audioButtonClickMulti.currentTime = 0;
         storyinfo.style.display = "flex";
     }, playClickTime);
     if (storyinfo.style.display == "flex") {
@@ -2621,6 +2757,13 @@ let upgradeDamageValue = 4;
 let upgradeHealthValue = 2;
 let upgradeShieldValue = 7;//7
 let upgradeCriticalValue = 6;//6
+
+if (highDetail == true) {
+    shop.backgroundImage = "url()";
+} else if (highDetail == false) {
+
+}
+
 
 shopBtn.onclick = () => {
     collectionBtn.style.display = "block";
@@ -4250,7 +4393,11 @@ yellowColor.onclick = () => {
 //------------------------------------ cost of colors mouse over
 redColor.onmouseover = () => {
     costOfColors.innerText = redColorValue;
-    overviewSrc.src = "./res/img/red.hero.idle.gif";
+    if (highDetail == true) {
+        overviewSrc.src = "./res/img/red.hero.idle.gif";
+    } else if (highDetail == false) {
+        overviewSrc.src = "./res/img/red.hero.idle.png";
+    }
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -4261,7 +4408,11 @@ redColor.onmouseover = () => {
 }
 greenColor.onmouseover = () => {
     costOfColors.innerText = greenColorValue;
-    overviewSrc.src = "./res/img/green.hero.idle.gif";
+    if (highDetail == true) {
+        overviewSrc.src = "./res/img/green.hero.idle.gif";
+    } else if (highDetail == false) {
+        overviewSrc.src = "./res/img/green.hero.idle.png";
+    }
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -4272,7 +4423,11 @@ greenColor.onmouseover = () => {
 }
 blueColor.onmouseover = () => {
     costOfColors.innerText = blueColorValue;
-    overviewSrc.src = "./res/img/blue.hero.idle.gif";
+    if (highDetail == true) {
+        overviewSrc.src = "./res/img/blue.hero.idle.gif";
+    } else if (highDetail == false) {
+        overviewSrc.src = "./res/img/blue.hero.idle.png";
+    }
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -4283,7 +4438,11 @@ blueColor.onmouseover = () => {
 }
 yellowColor.onmouseover = () => {
     costOfColors.innerText = yellowColorValue;
-    overviewSrc.src = "./res/img/yellow.hero.idle.gif";
+    if (highDetail == true) {
+        overviewSrc.src = "./res/img/yellow.hero.idle.gif";
+    } else if (highDetail == false) {
+        overviewSrc.src = "./res/img/yellow.hero.idle.png";
+    }
     overview.style.display = "block";
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
@@ -4618,6 +4777,7 @@ function enemyOnMouseOut() {
     }
     if (enemyHp.innerText == 0 || enemyHp.innerText <= 0) {
         audioButtonClick.pause();
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.currentTime = 0;
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
@@ -4628,6 +4788,7 @@ function enemyOnMouseOut() {
 function enemyOnClick() {
     if (enemyHp.innerText == 0 || enemyHp.innerText <= 0) {
         audioButtonClick.pause();
+        audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.currentTime = 0;
         enemyHp.innerText = 0;
         yourHp.innerText = yourHpValue;
@@ -4687,7 +4848,7 @@ function enemyKeyDown() {
                 enemy.src = `./res/img/enemies/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
                 enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
-                document.body.onmousemove = () => {
+                document.body.onmouseover = () => {
                     if (enemyHp.innerText <= 15) {
                         enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
                     } else {
@@ -4707,10 +4868,8 @@ function enemyKeyDown() {
                 document.body.onmousemove = () => {
                     if (enemyHp.innerText <= 15) {
                         enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
-                        game.style.filter = "grayscale(100%)";
                     } else {
                         enemy.style.filter = "none";
-                        game.style.filter = "none";
                     }
                 }
                 break;
@@ -4774,7 +4933,7 @@ function enemyKeyUp() {
                 enemy.src = `./res/img/enemies/enemy.${damagedAndFinishedEffectEnemies[i]}.png`;
                 enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
 
-                document.body.onmousemove = () => {
+                document.body.onmouseover = () => {
                     if (enemyHp.innerText <= 15) {
                         enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
                     } else {
@@ -4794,20 +4953,21 @@ function enemyKeyUp() {
                 document.body.onmousemove = () => {
                     if (enemyHp.innerText <= 15) {
                         enemy.style.filter = "grayscale(100%) drop-shadow(0px 20px 10px red)";
-                        game.style.filter = "grayscale(100%)";
                     } else {
                         enemy.style.filter = "none";
-                        game.style.filter = "none";
                     }
                 }
                 break;
             }
+
         }
     }
 }
 let timerDimensionValue = 1000;
 
 gameResult.onclick = () => {
+    winAndLoss.style.display = "block";
+    highDetailBtn.style.display = "block";
     backBtnDC.innerText = "BACK OR ←";
     backBtn.innerText = "BACK OR ←";
     console.log("gamee resultt");
@@ -5349,10 +5509,10 @@ for (let i = 0; i < killedEnemies.length; i++) {
         viewPhoto.style.backgroundSize = "cover";
         viewPhoto.style.backgroundRepeat = "no-repeat";
         viewPhoto.style.backgroundPosition = "center";
-        if (killedEnemiesId.alt == "multiverse" || killedEnemiesId.alt == "deesdav-dimension"
-            || killedEnemiesId.alt == "hell" || killedEnemiesId.alt == "heaven") {
-            viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
-        }
+        /*   if (killedEnemiesId.alt == "multiverse" || killedEnemiesId.alt == "deesdav-dimension"
+               || killedEnemiesId.alt == "hell" || killedEnemiesId.alt == "heaven") {
+               viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
+           }*/
         viewPhoto.style.display = "block";
         killedEnemiesId.style.filter = "blur(0px)";
     }

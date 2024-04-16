@@ -30,6 +30,6 @@
 - DC and MARVEL enemies are completely update into new gifs
 - Hero is in gifs
 - Detection of slow PCs in console
-- High/Low detail is here but not completed ye
+- High/Low detail is completed
 
 ![alt text](res/img/allHeroesView.gif) ![alt text](res/img/allEnemiesView.gif)

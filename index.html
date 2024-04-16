@@ -83,6 +83,9 @@
         <img id="rewardOverview" src="./res/img/gold.hero.idle.gif" alt="dc-planet-reward">
         <p>key: <span id="lastLevelRewardSwitch"></span></p>
     </div>
+    <div id="infoDetectionOfYourPC">
+
+    </div>
     <div id="levelsBox">
         <h2 id="levelsText">Levels: 1-15</h2>
 
@@ -124,7 +127,7 @@
     </div>
     <button id="backBtn"></button>
     <button id="backBtnDC"></button>
-    <div id="game" class="transition-bg" loading="eager">
+    <div id="game" loading="eager">
         <div id="yourHpTextPromName"><span id="yourHpTextValue">your HP:</span> <span id="yourHp">0</span></div>
         <div id="enemyHpTextPromName"><span id="enemyHpTextValue">enemy HP:</span> <span id="enemyHp">0</span></div>
         <div id="shield">SHIELD</div>
@@ -308,7 +311,7 @@
     <audio id="audioYouWin" src="" preload="auto"></audio>
     <audio id="audioYouLost" src="" preload="auto"></audio>
     <audio id="audioButtonClickMulti" src="" preload="auto"></audio>
-    <audio id="audioLobbyBackground" src="" preload="auto"></audio>
+    <audio id="audioLobbyBackground" src="" preload="auto" webkit-playsinline="true" playsinline="true"></audio>
     <script src="./res/js/script.js"></script>
     <script src="./res/js/marvel-levels.js"></script>
     <script src="./res/js/dc-levels.js"></script>
