@@ -18,7 +18,7 @@
 - Infobox fix
 - Dynamic background color by realtime hours
 - New hero heart beat
-- Sctructure of img directory
+- Sctructure of img directory 
 - All enemies in collections now
 - Ending of the game is here
 - Tutorial added
