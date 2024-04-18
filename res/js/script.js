@@ -4828,19 +4828,19 @@ function enemyKeyDown() {
         "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
         "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
         "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID", "PIKACHU", "SUPER MARIO", "GROOT", "ROBOCOP", "PREDATOR", "TERMINATOR", "GERALT",
-        "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
+        "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS", "DEVIL", "ANGEL"];
 
     const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
-        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "devil", "angel"];
 
     const damagedAndFinishedEffectEnemiesBGs = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "batman", "batman", "batman", "aquaman", "batman", "cyborg", "greenlantern", "greenarrow", "batman", "shazam",
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
-        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "hell", "heaven"];
     if (highDetail == true) {
         for (let i = 0; i < enemyTextValue.length; i++) {
             if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
@@ -4912,19 +4912,19 @@ function enemyKeyUp() {
         "VENOM", "WOLVERINE", "DEADPOOL", "BLACK PANTHER", "GHOST RIDER", "LOKI", "CAPTAIN MARVEL", "THANOS", "BATMAN", "FLASH",
         "WONDER WOMAN", "JOKER", "SUPERMAN", "AQUAMAN", "CATWOMAN", "CYBORG", "GREEN LANTERN", "GREEN ARROW", "NIGHTWING", "SHAZAM",
         "BLACK ADAM", "DOCTOR MANHATTAN", "DARKSEID", "PIKACHU", "SUPER MARIO", "GROOT", "ROBOCOP", "PREDATOR", "TERMINATOR", "GERALT",
-        "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS"];
+        "DOOMSLAYER", "SOLID SNAKE", "MANDALORIAN", "DARTH VADER", "NARUTO", "GOKU", "JOHN WICK", "KRATOS", "DEVIL", "ANGEL"];
 
     const damagedAndFinishedEffectEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "wonderwoman", "joker", "superman", "aquaman", "catwoman", "cyborg", "greenlantern", "greenarrow", "nightwing", "shazam",
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
-        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "devil", "angel"];
 
     const damagedAndFinishedEffectEnemiesBGs = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
         "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "batman", "flash",
         "batman", "batman", "batman", "aquaman", "batman", "cyborg", "greenlantern", "greenarrow", "batman", "shazam",
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
-        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos"];
+        "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "hell", "heaven"];
 
     if (highDetail == true) {
         for (let i = 0; i < enemyTextValue.length; i++) {
@@ -5409,6 +5409,7 @@ collectionsBox.onclick = () => {
     inGameStoryRecapBtn.style.zIndex = "1";
 }
 
+const infoOfKilledEnemiesBox = document.getElementById("infoOfKilledEnemiesBox");
 const infoOfKilledEnemyName = document.getElementById("infoOfKilledEnemyName");
 const infoOfKilledEnemyDamagePerSec = document.getElementById("infoOfKilledEnemyDamagePerSec");
 const infoOfKilledEnemyHP = document.getElementById("infoOfKilledEnemyHP");
@@ -5466,12 +5467,14 @@ const locations = ["MARVEL LEVEL ONE", "MARVEL LEVEL TWO", "MARVEL LEVEL THREE",
 
 const hellAndHeavenLocation = ["HELL", "HEAVEN"];
 
-infoOfKilledEnemyName.innerHTML = 0;
-infoOfKilledEnemyDamagePerSec.innerHTML = 0;
-infoOfKilledEnemyHP.innerHTML = 0;
-infoOfKilledEnemyLocation.innerHTML = 0;
-viewPhoto.src = "";
-viewPhoto.style.display = "none";
+infoOfKilledEnemyName.innerHTML = "UNSELECTED";
+infoOfKilledEnemyDamagePerSec.innerHTML = "UNSELECTED";
+infoOfKilledEnemyHP.innerHTML = "UNSELECTED";
+infoOfKilledEnemyLocation.innerHTML = "UNSELECTED";
+viewPhoto.src = "./res/img/enemy.png";
+viewPhoto.style.display = "block";
+viewPhoto.style.width = "360px";
+viewPhoto.style.height = "360px";
 
 for (let i = 0; i < killedEnemies.length; i++) {
     const killedEnemiesId = document.getElementById(`${killedEnemies[i]}KilledEnemy`);
@@ -5502,6 +5505,10 @@ for (let i = 0; i < killedEnemies.length; i++) {
         if (highDetail == true) {
             viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.gif`;
             viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/finished.${killedEnemiesBGs[i]}BG.gif)`;
+            if (killedEnemiesId.alt == "deesdav-dimension") {
+                viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
+                viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/${killedEnemiesBGs[i]}BG.png)`;
+            }
         } else if (highDetail == false) {
             viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
             viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/${killedEnemiesBGs[i]}BG.png)`;
@@ -5517,12 +5524,15 @@ for (let i = 0; i < killedEnemies.length; i++) {
         killedEnemiesId.style.filter = "blur(0px)";
     }
     killedEnemiesId.onmouseout = () => {
-        infoOfKilledEnemyName.innerHTML = null;
-        infoOfKilledEnemyDamagePerSec.innerHTML = null;
-        infoOfKilledEnemyHP.innerHTML = null;
-        infoOfKilledEnemyLocation.innerHTML = null;
-        viewPhoto.src = "";
-        viewPhoto.style.display = "none";
+        infoOfKilledEnemyName.innerHTML = "UNSELECTED";
+        infoOfKilledEnemyDamagePerSec.innerHTML = "UNSELECTED";
+        infoOfKilledEnemyHP.innerHTML = "UNSELECTED";
+        infoOfKilledEnemyLocation.innerHTML = "UNSELECTED";
+        viewPhoto.src = "./res/img/enemy.png";
+        viewPhoto.style.backgroundImage = "none";
+        viewPhoto.style.display = "block";
+        viewPhoto.style.width = "360px";
+        viewPhoto.style.height = "360px";
         killedEnemiesId.style.filter = "blur(3px)";
         killedEnemiesId.style.backgroundImage = "none";
     }

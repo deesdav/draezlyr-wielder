@@ -1299,7 +1299,7 @@ tr:nth-child(13) td:nth-child(2) {
 }
 
 #multiverse {
-  display: block;
+  display: none;
   border: 3px solid white;
   border-radius: 50%;
   height: 115px;
@@ -1461,7 +1461,7 @@ tr:nth-child(13) td:nth-child(2) {
   display: grid;
   margin: 0px auto;
   grid-template-columns: auto auto auto auto auto auto auto auto auto;
-  gap: 5px;
+  gap: 0.3px;
   height: fit-content;
   width: fit-content;
   transform: scale(0.9);
@@ -1472,7 +1472,7 @@ tr:nth-child(13) td:nth-child(2) {
 #gridOfKilledEnemies img {
   height: 80px;
   width: 80px;
-  padding: 1em;
+  padding: 0.9em;
   background-color: rgb(0, 0, 0);
 }
 
