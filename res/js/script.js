@@ -67,6 +67,8 @@ const noLobby = document.getElementById("noLobby");
 const yesLobby = document.getElementById("yesLobby");
 const inGameStoryRecapBtn = document.getElementById("inGameStoryRecapBtn");
 const infoDetectionOfYourPC = document.getElementById("infoDetectionOfYourPC");
+const yourAppearanceBox = document.getElementById("yourAppearanceBox");
+const heroIdleAppearance = document.getElementById("heroIdleAppearance");
 
 const levelsText = document.getElementById("levelsText");
 const gridOfLevels = document.getElementById("gridOfLevels");
@@ -148,10 +150,10 @@ document.addEventListener("DOMContentLoaded", function () {
 let highDetail = true;
 const highDetailBtn = document.getElementById("highDetailBtn");
 
-const gifPlanets = [marvelPlanet, dcPlanet, heroIdle, heroAttack, rewardOverview]
+const gifPlanetsAndRewardOverview = [marvelPlanet, dcPlanet, rewardOverview]
 
-const gifPlanetsSrc = ["marvelRedPlanet2", "dcBluePlanet2", "default.hero.idle",
-    "default.hero.attack", "bronze.hero.idle", "silver.hero.idle", "gold.hero.idle"]
+const gifPlanetsAndRewardOverviewSrc = ["marvelRedPlanet2", "dcBluePlanet2", "bronze.hero.idle", "silver.hero.idle", "gold.hero.idle"]
+
 
 const detailedEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
     "venom", "wolverine", "deadpool", "blackpanther", "ghostrider", "loki", "captainmarvel", "thanos", "dot", "batman", "flash",
@@ -165,6 +167,7 @@ const detailedEnemiesAndBGs = ["spiderman", "hulk", "ironman", "thor", "blackwid
     "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
     "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "devil", "angel"];
 
+
 highDetailBtn.onclick = () => {
     if (highDetailBtn.innerText == "HIGH DETAIL") {
         highDetail = false;
@@ -173,36 +176,47 @@ highDetailBtn.onclick = () => {
         highDetail = true;
         highDetailBtn.innerText = "HIGH DETAIL";
     }
+
+    if (highDetail == true) {
+        heroIdle.src = "./res/img/default.hero.idle.gif";
+        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
+        heroAttack.src = "./res/img/default.hero.attack.gif";
+    } else if (highDetail == false) {
+        heroIdle.src = "./res/img/default.hero.idle.png";
+        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
+        heroAttack.src = "./res/img/default.hero.attack.png";
+    }
+
     document.body.onmouseover = () => {
         if (highDetail == true) {
-            for (let i = 0; i < gifPlanets.length; i++) {
-                gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.gif`;
+            for (let i = 0; i < gifPlanetsAndRewardOverview.length; i++) {
+                gifPlanetsAndRewardOverview[i].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[i]}.gif`;
             }
+
             if (rewardOverview.alt == "marvel-planet-reward") {
-                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[4]}.gif`
+                gifPlanetsAndRewardOverview[2].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[2]}.gif`
             }
             if (rewardOverview.alt == "deesdav-dimension-reward") {
-                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[5]}.gif`
+                gifPlanetsAndRewardOverview[2].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[3]}.gif`
             }
             if (rewardOverview.alt == "dc-planet-reward") {
-                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[6]}.gif`
+                gifPlanetsAndRewardOverview[2].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[4]}.gif`
             }
         } else if (highDetail == false) {
-            for (let i = 0; i < gifPlanets.length; i++) {
-                gifPlanets[i].src = `./res/img/${gifPlanetsSrc[i]}.png`;
+            for (let i = 0; i < gifPlanetsAndRewardOverview.length; i++) {
+                gifPlanetsAndRewardOverview[i].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[i]}.png`;
             }
             if (rewardOverview.alt == "marvel-planet-reward") {
-                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[4]}.png`
+                gifPlanetsAndRewardOverview[2].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[2]}.png`
             }
             if (rewardOverview.alt == "deesdav-dimension-reward") {
-                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[5]}.png`
+                gifPlanetsAndRewardOverview[2].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[3]}.png`
             }
             if (rewardOverview.alt == "dc-planet-reward") {
-                gifPlanets[4].src = `./res/img/${gifPlanetsSrc[6]}.png`
+                gifPlanetsAndRewardOverview[2].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[4]}.png`
             }
         }
     }
-
 }
 
 //------------------------------------ easter egg
@@ -358,6 +372,15 @@ multiverse.onclick = () => {
     game.style.borderImage = "linear-gradient(to bottom, #333, rgba(255, 0, 2555, 0.41)";
     game.style.borderImageSlice = "1";
     game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 2555, 0.41))";
+   /* if (highDetail == true) {
+        heroIdle.src = "./res/img/gold.hero.idle.gif";
+        heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
+        heroAttack.src = "./res/img/gold.hero.attack.gif";
+    } else if (highDetail == false) {
+        heroIdle.src = "./res/img/gold.hero.idle.png";
+        heroIdleAppearance.src = "./res/img/gold.hero.idle.png";
+        heroAttack.src = "./res/img/gold.hero.attack.png";
+    }*/
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
@@ -1975,10 +1998,10 @@ theEndOfTheGame.onmouseout = () => {
     theEndOfTheGame.innerText = "CONGRATULATIONS, YOU HAVE COMPLETED THE GAME AND THE AUTHOR DAVID GIVES YOU A 👍";
 }
 //------------------------------------ img dragging disabled
-const elements = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, tutorialEnemy, heroIdle, heroAttack, viewPhoto];
+const disabledImages = [marvelPlanet, deesdavPlanet, dcPlanet, enemy, tutorialEnemy, heroIdle, heroAttack, viewPhoto, lastLevelReward, heroIdleAppearance];
 
-for (let i = 0; i < elements.length; i++) {
-    elements[i].ondragstart = function () {
+for (let i = 0; i < disabledImages.length; i++) {
+    disabledImages[i].ondragstart = function () {
         return false;
     };
 
@@ -1999,6 +2022,7 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
         btnsOnMouseOverAndOut[i].style.backgroundColor = "white";
         btnsOnMouseOverAndOut[i].style.color = "black";
         btnsOnMouseOverAndOut[i].style.boxShadow = "0 0 100px white";
+        btnsOnMouseOverAndOut[i].style.textShadow = "0 0 3.5px white";
     }
 }
 
@@ -2007,6 +2031,7 @@ for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
         btnsOnMouseOverAndOut[i].style.backgroundColor = "transparent";
         btnsOnMouseOverAndOut[i].style.color = "white";
         btnsOnMouseOverAndOut[i].style.boxShadow = "0 0 0px white";
+        btnsOnMouseOverAndOut[i].style.textShadow = "0 0 0px white";
 
     }
 
@@ -2150,6 +2175,7 @@ function showInGameStoryRecap() {
     audioButtonClick.play();
     inGameStoryRecap.style.display = "block";
     planets.style.display = "none";
+    yourAppearanceBox.style.display = "none";
     collectionBtn.style.display = "none";
     infoBtn.style.display = "none";
     shopBtn.style.display = "none";
@@ -2178,6 +2204,7 @@ inGameStoryRecap.onclick = () => {
     audioButtonClick.play();
     inGameStoryRecap.style.display = "none";
     planets.style.display = "flex";
+    yourAppearanceBox.style.display = "block";
     collectionBtn.style.display = "block";
     infoBtn.style.display = "block";
     shopBtn.style.display = "block";
@@ -2340,6 +2367,7 @@ function sendEnter() {
         yourName.innerText = `Your name: ${nameValue}`;
     }
     yourName.style.display = "block";
+    yourAppearanceBox.style.display = "block";
     yourXPText.style.display = "block";
     yourHPText.style.display = "block";
     yourShieldText.style.display = "block";
@@ -2373,7 +2401,6 @@ function sendEnter() {
 sendInputBtn.onclick = () => {
     sendEnter();
 }
-
 //------------------------------------ secret color and god mode, Enter function, Critical hit and Shield function
 document.addEventListener("keyup", (e) => {
     console.log(e);
@@ -2399,11 +2426,14 @@ document.addEventListener("keyup", (e) => {
             }
             if (highDetail == true) {
                 heroIdle.src = "./res/img/secret.hero.idle.gif";
+                heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                 heroAttack.src = "./res/img/secret.hero.attack.gif";
             } else if (highDetail == false) {
                 heroIdle.src = "./res/img/secret.hero.idle.png";
+                heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                 heroAttack.src = "./res/img/secret.hero.attack.png";
             }
+
 
             yourHp.innerText += 0;
             // normal mode
@@ -2413,15 +2443,18 @@ document.addEventListener("keyup", (e) => {
             break;
         case ("d"): //black and white default hero color
         case ("D"):
+
             if (game.style.display == "flex") {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
             if (highDetail == true) {
                 heroIdle.src = "./res/img/default.hero.idle.gif";
+                heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                 heroAttack.src = "./res/img/default.hero.attack.gif";
             } else if (highDetail == false) {
                 heroIdle.src = "./res/img/default.hero.idle.png";
+                heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                 heroAttack.src = "./res/img/default.hero.attack.png";
             }
             break;
@@ -2499,8 +2532,15 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                heroIdle.src = "./res/img/bronze.hero.idle.gif";
-                heroAttack.src = "./res/img/bronze.hero.attack.gif";
+                if (highDetail == true) {
+                    heroIdle.src = "./res/img/bronze.hero.idle.gif";
+                    heroIdleAppearance.src = "./res/img/bronze.hero.idle.gif";
+                    heroAttack.src = "./res/img/bronze.hero.attack.gif";
+                } else if (highDetail == false) {
+                    heroIdle.src = "./res/img/bronze.hero.idle.png";
+                    heroIdleAppearance.src = "./res/img/bronze.hero.idle.png";
+                    heroAttack.src = "./res/img/bronze.hero.attack.png";
+                }
             }
             break;
         case ("s"): //silver hero color = reward from deesdav dimension
@@ -2510,8 +2550,15 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                heroIdle.src = "./res/img/silver.hero.idle.gif";
-                heroAttack.src = "./res/img/silver.hero.attack.gif";
+                if (highDetail == true) {
+                    heroIdle.src = "./res/img/silver.hero.idle.gif";
+                    heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
+                    heroAttack.src = "./res/img/silver.hero.attack.gif";
+                } else if (highDetail == false) {
+                    heroIdle.src = "./res/img/silver.hero.idle.png";
+                    heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
+                    heroAttack.src = "./res/img/silver.hero.attack.png";
+                }
             }
             break;
         case ("g"): //gold hero color = reward from dc planet
@@ -2521,8 +2568,15 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                heroIdle.src = "./res/img/gold.hero.idle.gif";
-                heroAttack.src = "./res/img/gold.hero.attack.gif";
+                if (highDetail == true) {
+                    heroIdle.src = "./res/img/gold.hero.idle.gif";
+                    heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
+                    heroAttack.src = "./res/img/gold.hero.attack.gif";
+                } else if (highDetail == false) {
+                    heroIdle.src = "./res/img/gold.hero.idle.png";
+                    heroIdleAppearance.src = "./res/img/gold.hero.idle.png";
+                    heroAttack.src = "./res/img/gold.hero.attack.png";
+                }
             }
             break;
 
@@ -2553,7 +2607,12 @@ marvelPlanet.onclick = () => {
     muteAudio.style.zIndex = "999";
     highDetailBtn.style.zIndex = "999";
     rewardOverview.style.display = "block";
-    rewardOverview.src = "./res/img/bronze.hero.idle.gif";
+    rewardOverview.alt = "marvel-planet-reward";
+    if (highDetail == true) {
+        rewardOverview.src = "./res/img/bronze.hero.idle.gif";
+    } else if (highDetail == false) {
+        rewardOverview.src = "./res/img/bronze.hero.idle.png";
+    }
     collectionBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
     yourName.style.display = "block";
@@ -2604,7 +2663,12 @@ if (multiverseAppeared == false) {
         muteAudio.style.zIndex = "999";
         highDetailBtn.style.zIndex = "999";
         rewardOverview.style.display = "block";
-        rewardOverview.src = "./res/img/gold.hero.idle.gif";
+        rewardOverview.alt = "dc-planet-reward";
+        if (highDetail == true) {
+            rewardOverview.src = "./res/img/gold.hero.idle.gif";
+        } else if (highDetail == false) {
+            rewardOverview.src = "./res/img/gold.hero.idle.png";
+        }
         collectionBtn.style.display = "none";
         inGameStoryRecapBtn.style.display = "none";
         yourName.style.display = "block";
@@ -2932,8 +2996,15 @@ redColor.onclick = () => {
         redColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/red.hero.idle.gif";
-        heroAttack.src = "./res/img/red.hero.attack.gif";
+        if (highDetail == true) {
+            heroIdle.src = "./res/img/red.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+            heroAttack.src = "./res/img/red.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/red.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+            heroAttack.src = "./res/img/red.hero.attack.png";
+        }
         yourXPValue -= redColorValue;
         yourXP.innerText = yourXPValue;
         redColorOwned = true;
@@ -2948,9 +3019,12 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -2961,16 +3035,25 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -2984,9 +3067,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -2997,31 +3082,61 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3034,9 +3149,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3047,21 +3164,37 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3074,9 +3207,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3087,26 +3222,49 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3119,9 +3277,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3132,21 +3292,37 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3159,9 +3335,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3172,26 +3350,49 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3204,9 +3405,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3217,26 +3420,49 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3249,9 +3475,11 @@ redColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3262,21 +3490,37 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3295,8 +3539,15 @@ greenColor.onclick = () => {
         greenColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/green.hero.idle.gif";
-        heroAttack.src = "./res/img/green.hero.attack.gif";
+        if (highDetail == true) {
+            heroIdle.src = "./res/img/green.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+            heroAttack.src = "./res/img/green.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/green.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+            heroAttack.src = "./res/img/green.hero.attack.png";
+        }
         yourXPValue -= greenColorValue;
         yourXP.innerText = yourXPValue;
         greenColorOwned = true;
@@ -3311,9 +3562,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3324,16 +3577,25 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3347,9 +3609,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3360,31 +3624,61 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3397,9 +3691,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3410,21 +3706,37 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3437,9 +3749,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3450,26 +3764,49 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3483,9 +3820,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3497,21 +3836,37 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3525,9 +3880,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3539,26 +3896,49 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3571,9 +3951,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3584,27 +3966,50 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3617,9 +4022,11 @@ greenColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3631,22 +4038,38 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3665,8 +4088,15 @@ blueColor.onclick = () => {
         blueColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/blue.hero.idle.gif";
-        heroAttack.src = "./res/img/blue.hero.attack.gif";
+        if (highDetail == true) {
+            heroIdle.src = "./res/img/blue.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+            heroAttack.src = "./res/img/blue.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/blue.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+            heroAttack.src = "./res/img/blue.hero.attack.png";
+        }
         yourXPValue -= blueColorValue;
         yourXP.innerText = yourXPValue;
         blueColor = true;
@@ -3681,9 +4111,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3694,16 +4126,25 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3717,9 +4158,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3730,31 +4173,61 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3767,9 +4240,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3780,22 +4255,38 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3809,9 +4300,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3822,26 +4315,49 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3854,9 +4370,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3868,21 +4386,37 @@ blueColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3895,9 +4429,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3908,26 +4444,49 @@ blueColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3940,9 +4499,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3953,27 +4514,50 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -3986,9 +4570,11 @@ blueColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -3999,21 +4585,37 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4032,8 +4634,15 @@ yellowColor.onclick = () => {
         yellowColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        heroIdle.src = "./res/img/yellow.hero.idle.gif";
-        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+        if (highDetail == true) {
+            heroIdle.src = "./res/img/yellow.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+            heroAttack.src = "./res/img/yellow.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/yellow.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+            heroAttack.src = "./res/img/yellow.hero.attack.png";
+        }
         yourXPValue -= yellowColorValue;
         yourXP.innerText = yourXPValue;
         yellowColorOwned = true;
@@ -4048,9 +4657,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4061,16 +4672,25 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4084,9 +4704,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4097,31 +4719,61 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4134,9 +4786,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4147,22 +4801,38 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4175,9 +4845,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4188,26 +4860,49 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4220,9 +4915,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4234,22 +4931,38 @@ yellowColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4262,9 +4975,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4276,26 +4991,49 @@ yellowColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    heroIdle.src = "./res/img/green.hero.idle.gif";
-                    heroAttack.src = "./res/img/green.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/green.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
+                        heroAttack.src = "./res/img/green.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/green.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/green.hero.idle.png";
+                        heroAttack.src = "./res/img/green.hero.attack.png";
+                    }
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4308,9 +5046,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4321,27 +5061,50 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //redhero color
                 case ("R"):
-                    heroIdle.src = "./res/img/red.hero.idle.gif";
-                    heroAttack.src = "./res/img/red.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/red.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
+                        heroAttack.src = "./res/img/red.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/red.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/red.hero.idle.png";
+                        heroAttack.src = "./res/img/red.hero.attack.png";
+                    }
                     break;
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -4354,9 +5117,11 @@ yellowColor.onclick = () => {
                 case ("7"): //god mode
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/secret.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/secret.hero.idle.png";
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
@@ -4368,21 +5133,37 @@ yellowColor.onclick = () => {
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    heroIdle.src = "./res/img/blue.hero.idle.gif";
-                    heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/blue.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
+                        heroAttack.src = "./res/img/blue.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/blue.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/blue.hero.idle.png";
+                        heroAttack.src = "./res/img/blue.hero.attack.png";
+                    }
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    heroIdle.src = "./res/img/yellow.hero.idle.gif";
-                    heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    if (highDetail == true) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
+                        heroAttack.src = "./res/img/yellow.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/yellow.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/yellow.hero.idle.png";
+                        heroAttack.src = "./res/img/yellow.hero.attack.png";
+                    }
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
                     } else if (highDetail == false) {
                         heroIdle.src = "./res/img/default.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/default.hero.idle.png";
                         heroAttack.src = "./res/img/default.hero.attack.png";
                     }
                     break;
@@ -5102,8 +5883,15 @@ gameResult.onclick = () => {
         levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
-        heroIdle.src = "./res/img/bronze.hero.idle.gif";
-        heroAttack.src = "./res/img/bronze.hero.attack.gif";
+      /*  if (highDetail == true) {
+            heroIdle.src = "./res/img/bronze.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/bronze.hero.idle.gif";
+            heroAttack.src = "./res/img/bronze.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/bronze.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/bronze.hero.idle.png";
+            heroAttack.src = "./res/img/bronze.hero.attack.png";
+        }*/
         marvelPlanet.style.filter = "grayscale(100%)";
         levelFIFTEEN.style.backgroundColor = "white";
         levelFIFTEEN.style.color = "black";
@@ -5128,6 +5916,7 @@ gameResult.onclick = () => {
             lastLevelRewardSwitch.innerText = "s or S";
             collectionBtn.style.display = "none";
             inGameStoryRecapBtn.style.display = "none";
+            highDetailBtn.style.display = "none";
             audioButtonClick.src = "./res/audio/buttonsound.mp3";
             audioButtonClick.play();
             marvelPlanet.style.display = "none";
@@ -5154,7 +5943,12 @@ gameResult.onclick = () => {
             infoBtn.style.display = "none";
             winAndLoss.style.display = "none";
             rewardOverview.style.display = "block";
-            rewardOverview.src = "./res/img/silver.hero.idle.gif";
+            rewardOverview.alt = "deesdav-dimension-reward";
+            if (highDetail == true) {
+                rewardOverview.src = "./res/img/silver.hero.idle.gif";
+            } else if (highDetail == false) {
+                rewardOverview.src = "./res/img/silver.hero.idle.png";
+            }
             const timerDimension = setInterval(() => {
                 countDown.innerText--;
                 if (countDown.innerText == 0) {
@@ -5165,6 +5959,7 @@ gameResult.onclick = () => {
                     marvelPlanet.style.display = "block";
                     nameOfPlanet.style.display = "block";
                     deesdavPlanet.style.display = "block";
+                    highDetailBtn.style.display = "none";
                     lastLevelReward.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "block";
                     collectionBtn.style.display = "block";
@@ -5199,14 +5994,22 @@ gameResult.onclick = () => {
                 }
 
                 if (deesdavDimensionCompleted) {
-                    heroIdle.src = "./res/img/silver.hero.idle.gif";
-                    heroAttack.src = "./res/img/silver.hero.attack.gif";
+                  /*  if (highDetail == true) {
+                        heroIdle.src = "./res/img/silver.hero.idle.gif";
+                        heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
+                        heroAttack.src = "./res/img/silver.hero.attack.gif";
+                    } else if (highDetail == false) {
+                        heroIdle.src = "./res/img/silver.hero.idle.png";
+                        heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
+                        heroAttack.src = "./res/img/silver.hero.attack.png";
+                    }*/
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
                     infoBtn.style.display = "block";
                     inGameStoryRecapBtn.style.display = "block";
                     collectionBtn.style.display = "block";
+                    highDetailBtn.style.display = "block";
                     deesdavDimension.style.display = "none";
                     deesdavPlanet.style.display = "none";
                     lastLevelReward.style.display = "none";
@@ -5253,7 +6056,6 @@ gameResult.onclick = () => {
                 dot.style.display = "none";
                 deesdavDimension.innerText += `NOW WAIT AND THE REWARD IS ACHIEVED`;
                 timerDimensionValue = 500;
-                countDown.innerText -= 20;
             }
         }
         dot.onmouseover = () => {
@@ -5280,6 +6082,15 @@ gameResult.onclick = () => {
         gridOfLevelsDC.style.display = "grid";
         backBtn.style.display = "none";
         backBtnDC.style.display = "block";
+       /* if (highDetail == true) {
+            heroIdle.src = "./res/img/silver.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
+            heroAttack.src = "./res/img/silver.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/silver.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
+            heroAttack.src = "./res/img/silver.hero.attack.png";
+        }*/
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
@@ -5380,8 +6191,15 @@ gameResult.onclick = () => {
         dcLevelFOURTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFIFTEENCompleted) {
-        heroIdle.src = "./res/img/gold.hero.idle.gif";
-        heroAttack.src = "./res/img/gold.hero.attack.gif";
+        if (highDetail == true) {
+            heroIdle.src = "./res/img/gold.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
+            heroAttack.src = "./res/img/gold.hero.attack.gif";
+        } else if (highDetail == false) {
+            heroIdle.src = "./res/img/gold.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/gold.hero.idle.png";
+            heroAttack.src = "./res/img/gold.hero.attack.png";
+        }
         dcPlanet.style.filter = "grayscale(100%)";
         multiverseAppeared = true;
         multiverse.style.display = "none";

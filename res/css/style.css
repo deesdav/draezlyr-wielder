@@ -277,6 +277,7 @@ body {
   left: 15px;
   font-size: x-large;
   z-index: 999;
+  text-shadow: 0 0 3.5px white;
 }
 
 #yourShieldText {
@@ -287,6 +288,7 @@ body {
   right: 25px;
   font-size: x-large;
   z-index: 999;
+  text-shadow: 0 0 3.5px white;
 }
 
 #yourCriticalText {
@@ -297,6 +299,7 @@ body {
   right: 25px;
   font-size: x-large;
   z-index: 999;
+  text-shadow: 0 0 3.5px white;
 }
 
 #yourXPText {
@@ -307,6 +310,7 @@ body {
   right: 25px;
   font-size: x-large;
   z-index: 999;
+  text-shadow: 0 0 3.5px white;
 }
 
 #yourHPText {
@@ -317,6 +321,7 @@ body {
   right: 15px;
   font-size: x-large;
   z-index: 999;
+  text-shadow: 0 0 3.5px white;
 }
 
 #yourDamageText {
@@ -327,6 +332,7 @@ body {
   right: 25px;
   font-size: x-large;
   z-index: 999;
+  text-shadow: 0 0 3.5px white;
 }
 
 #realtimepresented {
@@ -1227,6 +1233,7 @@ tr:nth-child(13) td:nth-child(2) {
   position: absolute;
   top: 10px;
   right: 156px;
+  text-shadow: 0 0 3.5px white;
 }
 
 #winsCounter {
@@ -1615,6 +1622,39 @@ tr:nth-child(13) td:nth-child(2) {
   font-size: large;
   height: auto;
   width: 150px;
+}
+
+#yourAppearanceBox {
+  display: none;
+  position: absolute;
+  top: 180px;
+  right: 0;
+  border: 3px solid rgba(255, 255, 255, 0.304);
+  border-radius: 10px 0 0 10px;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.112);
+  color: white;
+  text-align: center;
+  height: auto;
+  width: 130px;
+  padding: 1em;
+}
+
+#yourAppearanceBox h3 {
+  width: fit-content;
+  font-size: medium;
+  text-shadow: 0 0 3.5px white;
+}
+#yourAppearanceBox #heroIdleAppearance {
+  animation: none;
+  margin: 10px -100px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  padding: 1em;
+  transform: scale(3.7);
 }
 
 #lastLevelReward #rewardOverview[alt="marvel-planet-reward"] {

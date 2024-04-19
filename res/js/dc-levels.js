@@ -43,6 +43,15 @@ for (let i = 0; i < dcLevels.length; i++) {
 
 //------------------------------------ dc level 1
 dcLevelONE.onclick = () => {
+    if (highDetail == true) {
+        heroIdle.src = "./res/img/silver.hero.idle.gif";
+        heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
+        heroAttack.src = "./res/img/silver.hero.attack.gif";
+    } else if (highDetail == false) {
+        heroIdle.src = "./res/img/silver.hero.idle.png";
+        heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
+        heroAttack.src = "./res/img/silver.hero.attack.png";
+    }
     game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(0, 0, 255, 0.41))";
     enemyHpTextValue.innerText = `BATMAN´S HP:`;
     const nameValue = storyPartInput.value;
