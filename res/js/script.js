@@ -152,7 +152,7 @@ const highDetailBtn = document.getElementById("highDetailBtn");
 
 const gifPlanetsAndRewardOverview = [marvelPlanet, dcPlanet, rewardOverview]
 
-const gifPlanetsAndRewardOverviewSrc = ["marvelRedPlanet2", "dcBluePlanet2", "bronze.hero.idle", "silver.hero.idle", "gold.hero.idle"]
+const gifPlanetsAndRewardOverviewSrc = ["marvelRedPlanet2", "dcBluePlanet2", "tan.hero.idle", "silver.hero.idle", "gold.hero.idle"]
 
 
 const detailedEnemies = ["spiderman", "hulk", "ironman", "thor", "blackwidow", "captainamerica", "doctorstrange",
@@ -2525,21 +2525,21 @@ document.addEventListener("keyup", (e) => {
             enemyKeyUp();
             break;
 
-        case ("b"): //bronze hero color = reward from marvel planet
-        case ("B"):
+        case ("t"): //tan hero color = reward from marvel planet
+        case ("T"):
             if (levelFIFTEENCompleted) {
                 if (game.style.display == "flex") {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
                 if (highDetail == true) {
-                    heroIdle.src = "./res/img/bronze.hero.idle.gif";
-                    heroIdleAppearance.src = "./res/img/bronze.hero.idle.gif";
-                    heroAttack.src = "./res/img/bronze.hero.attack.gif";
+                    heroIdle.src = "./res/img/tan.hero.idle.gif";
+                    heroIdleAppearance.src = "./res/img/tan.hero.idle.gif";
+                    heroAttack.src = "./res/img/tan.hero.attack.gif";
                 } else if (highDetail == false) {
-                    heroIdle.src = "./res/img/bronze.hero.idle.png";
-                    heroIdleAppearance.src = "./res/img/bronze.hero.idle.png";
-                    heroAttack.src = "./res/img/bronze.hero.attack.png";
+                    heroIdle.src = "./res/img/tan.hero.idle.png";
+                    heroIdleAppearance.src = "./res/img/tan.hero.idle.png";
+                    heroAttack.src = "./res/img/tan.hero.attack.png";
                 }
             }
             break;
@@ -2600,7 +2600,7 @@ marvelPlanet.onmouseout = () => {
 
 marvelPlanet.onclick = () => {
     lastLevelRewardHeadline.innerText = "reward for completing level 15";
-    lastLevelRewardSwitch.innerText = "b or B";
+    lastLevelRewardSwitch.innerText = "t or T";
     planets.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.436), rgba(0, 0, 0, 0.436)), url(./res/img/marvelLevelsBG.png)";
     planets.style.height = "100%";
     yourName.style.zIndex = "999";
@@ -2609,9 +2609,9 @@ marvelPlanet.onclick = () => {
     rewardOverview.style.display = "block";
     rewardOverview.alt = "marvel-planet-reward";
     if (highDetail == true) {
-        rewardOverview.src = "./res/img/bronze.hero.idle.gif";
+        rewardOverview.src = "./res/img/tan.hero.idle.gif";
     } else if (highDetail == false) {
-        rewardOverview.src = "./res/img/bronze.hero.idle.png";
+        rewardOverview.src = "./res/img/tan.hero.idle.png";
     }
     collectionBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
@@ -5884,13 +5884,13 @@ gameResult.onclick = () => {
     }
     if (levelFIFTEENCompleted) {
       /*  if (highDetail == true) {
-            heroIdle.src = "./res/img/bronze.hero.idle.gif";
-            heroIdleAppearance.src = "./res/img/bronze.hero.idle.gif";
-            heroAttack.src = "./res/img/bronze.hero.attack.gif";
+            heroIdle.src = "./res/img/tan.hero.idle.gif";
+            heroIdleAppearance.src = "./res/img/tan.hero.idle.gif";
+            heroAttack.src = "./res/img/tan.hero.attack.gif";
         } else if (highDetail == false) {
-            heroIdle.src = "./res/img/bronze.hero.idle.png";
-            heroIdleAppearance.src = "./res/img/bronze.hero.idle.png";
-            heroAttack.src = "./res/img/bronze.hero.attack.png";
+            heroIdle.src = "./res/img/tan.hero.idle.png";
+            heroIdleAppearance.src = "./res/img/tan.hero.idle.png";
+            heroAttack.src = "./res/img/tan.hero.attack.png";
         }*/
         marvelPlanet.style.filter = "grayscale(100%)";
         levelFIFTEEN.style.backgroundColor = "white";
