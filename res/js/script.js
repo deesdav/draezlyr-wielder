@@ -372,15 +372,15 @@ multiverse.onclick = () => {
     game.style.borderImage = "linear-gradient(to bottom, #333, rgba(255, 0, 2555, 0.41)";
     game.style.borderImageSlice = "1";
     game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 2555, 0.41))";
-   /* if (highDetail == true) {
-        heroIdle.src = "./res/img/gold.hero.idle.gif";
-        heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
-        heroAttack.src = "./res/img/gold.hero.attack.gif";
-    } else if (highDetail == false) {
-        heroIdle.src = "./res/img/gold.hero.idle.png";
-        heroIdleAppearance.src = "./res/img/gold.hero.idle.png";
-        heroAttack.src = "./res/img/gold.hero.attack.png";
-    }*/
+    /* if (highDetail == true) {
+         heroIdle.src = "./res/img/gold.hero.idle.gif";
+         heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
+         heroAttack.src = "./res/img/gold.hero.attack.gif";
+     } else if (highDetail == false) {
+         heroIdle.src = "./res/img/gold.hero.idle.png";
+         heroIdleAppearance.src = "./res/img/gold.hero.idle.png";
+         heroAttack.src = "./res/img/gold.hero.attack.png";
+     }*/
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
@@ -2403,7 +2403,6 @@ sendInputBtn.onclick = () => {
 }
 //------------------------------------ secret color and god mode, Enter function, Critical hit and Shield function
 document.addEventListener("keyup", (e) => {
-    console.log(e);
     switch (e.key) {
         case ("ArrowLeft"):
             if (marvelPlanetClick == true && game.style.display == "none" && gameResult.style.display == "none" && gridOfLevels.style.display == "grid") {
@@ -2578,10 +2577,6 @@ document.addEventListener("keyup", (e) => {
                     heroAttack.src = "./res/img/gold.hero.attack.png";
                 }
             }
-            break;
-
-        default:
-            console.log("you typed something wrong");
             break;
     }
 });
@@ -3014,7 +3009,6 @@ redColor.onclick = () => {
     }
     if (redColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3062,7 +3056,6 @@ redColor.onclick = () => {
     }
     if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3144,7 +3137,6 @@ redColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3202,7 +3194,6 @@ redColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3272,7 +3263,6 @@ redColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3330,7 +3320,6 @@ redColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3400,7 +3389,6 @@ redColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3470,7 +3458,6 @@ redColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3557,7 +3544,6 @@ greenColor.onclick = () => {
     }
     if (greenColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3604,7 +3590,6 @@ greenColor.onclick = () => {
     }
     if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3686,7 +3671,7 @@ greenColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3744,7 +3729,7 @@ greenColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3815,7 +3800,7 @@ greenColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3875,7 +3860,7 @@ greenColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -3946,7 +3931,7 @@ greenColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4017,7 +4002,7 @@ greenColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4106,7 +4091,7 @@ blueColor.onclick = () => {
     }
     if (blueColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4153,7 +4138,7 @@ blueColor.onclick = () => {
     }
     if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4235,7 +4220,7 @@ blueColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4295,7 +4280,7 @@ blueColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4365,7 +4350,7 @@ blueColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4424,7 +4409,7 @@ blueColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4494,7 +4479,7 @@ blueColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4565,7 +4550,7 @@ blueColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4652,7 +4637,7 @@ yellowColor.onclick = () => {
     }
     if (yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4699,7 +4684,7 @@ yellowColor.onclick = () => {
     }
     if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4781,7 +4766,7 @@ yellowColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4840,7 +4825,7 @@ yellowColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4910,7 +4895,7 @@ yellowColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -4970,7 +4955,7 @@ yellowColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -5041,7 +5026,7 @@ yellowColor.onclick = () => {
         });
     } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -5112,7 +5097,7 @@ yellowColor.onclick = () => {
         });
     } else if (redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
-            console.log(e);
+
             switch (e.key) {
                 case ("7"): //god mode
                     if (highDetail == true) {
@@ -5883,15 +5868,15 @@ gameResult.onclick = () => {
         levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
-      /*  if (highDetail == true) {
-            heroIdle.src = "./res/img/tan.hero.idle.gif";
-            heroIdleAppearance.src = "./res/img/tan.hero.idle.gif";
-            heroAttack.src = "./res/img/tan.hero.attack.gif";
-        } else if (highDetail == false) {
-            heroIdle.src = "./res/img/tan.hero.idle.png";
-            heroIdleAppearance.src = "./res/img/tan.hero.idle.png";
-            heroAttack.src = "./res/img/tan.hero.attack.png";
-        }*/
+        /*  if (highDetail == true) {
+              heroIdle.src = "./res/img/tan.hero.idle.gif";
+              heroIdleAppearance.src = "./res/img/tan.hero.idle.gif";
+              heroAttack.src = "./res/img/tan.hero.attack.gif";
+          } else if (highDetail == false) {
+              heroIdle.src = "./res/img/tan.hero.idle.png";
+              heroIdleAppearance.src = "./res/img/tan.hero.idle.png";
+              heroAttack.src = "./res/img/tan.hero.attack.png";
+          }*/
         marvelPlanet.style.filter = "grayscale(100%)";
         levelFIFTEEN.style.backgroundColor = "white";
         levelFIFTEEN.style.color = "black";
@@ -5994,15 +5979,15 @@ gameResult.onclick = () => {
                 }
 
                 if (deesdavDimensionCompleted) {
-                  /*  if (highDetail == true) {
-                        heroIdle.src = "./res/img/silver.hero.idle.gif";
-                        heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
-                        heroAttack.src = "./res/img/silver.hero.attack.gif";
-                    } else if (highDetail == false) {
-                        heroIdle.src = "./res/img/silver.hero.idle.png";
-                        heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
-                        heroAttack.src = "./res/img/silver.hero.attack.png";
-                    }*/
+                    /*  if (highDetail == true) {
+                          heroIdle.src = "./res/img/silver.hero.idle.gif";
+                          heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
+                          heroAttack.src = "./res/img/silver.hero.attack.gif";
+                      } else if (highDetail == false) {
+                          heroIdle.src = "./res/img/silver.hero.idle.png";
+                          heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
+                          heroAttack.src = "./res/img/silver.hero.attack.png";
+                      }*/
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
@@ -6082,15 +6067,15 @@ gameResult.onclick = () => {
         gridOfLevelsDC.style.display = "grid";
         backBtn.style.display = "none";
         backBtnDC.style.display = "block";
-       /* if (highDetail == true) {
-            heroIdle.src = "./res/img/silver.hero.idle.gif";
-            heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
-            heroAttack.src = "./res/img/silver.hero.attack.gif";
-        } else if (highDetail == false) {
-            heroIdle.src = "./res/img/silver.hero.idle.png";
-            heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
-            heroAttack.src = "./res/img/silver.hero.attack.png";
-        }*/
+        /* if (highDetail == true) {
+             heroIdle.src = "./res/img/silver.hero.idle.gif";
+             heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
+             heroAttack.src = "./res/img/silver.hero.attack.gif";
+         } else if (highDetail == false) {
+             heroIdle.src = "./res/img/silver.hero.idle.png";
+             heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
+             heroAttack.src = "./res/img/silver.hero.attack.png";
+         }*/
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
