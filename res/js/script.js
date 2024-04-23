@@ -2059,7 +2059,6 @@ for (let i = 0; i < dynamicTitleElements.length; i++) {
 //------------------------------------ date
 const realtime = new Date();
 const hours = realtime.getHours();
-console.log(hours);
 
 if (hours >= 0 && hours < 12) {
     realtimepresented.innerText = `Good morning`;
