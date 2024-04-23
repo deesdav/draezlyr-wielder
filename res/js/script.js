@@ -139,8 +139,6 @@ const viewPhoto = document.getElementById("viewPhoto");
 //------------------------------------ detection of slow PCs
 const ram = navigator.deviceMemory;
 const cpu = navigator.hardwareConcurrency;
-console.log(`your ram: ${ram}GB`)
-console.log(`your cpu cores: ${cpu}`)
 
 document.addEventListener("DOMContentLoaded", function () {
     infoDetectionOfYourPC.innerText = `YOUR PC HAS CPU CORE: ${cpu} AND ESTIMATED RAM: ${ram}GB`;
