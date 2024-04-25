@@ -1695,35 +1695,12 @@ tr:nth-child(13) td:nth-child(2) {
 }
 
 /*responsivita*/
-@media only screen and (max-width: 768px) {
-  body {
-    zoom: 60%;
-    position: relative;
-    top: 20%;
-    font-size: small;
-  }
-
-  #game {
-    width: 80%;
-    height: 80%;
-  }
-
-  #game {
-    height: 600px;
-    width: 666px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   body {
     zoom: 40%;
     position: relative;
-    top: 10%;
-    font-size: small;
+    top: 25%;
+    font-size: smaller;
   }
 
   #game {
@@ -1739,20 +1716,22 @@ tr:nth-child(13) td:nth-child(2) {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-}
-
-@media only screen and (max-width: 375px) {
-  body {
-    zoom: 100%;
-    position: relative;
-    top: 0;
-    font-size: small;
+  #planets {
+    height: fit-content;
   }
-
-  #game {
-    width: 100%;
-    height: auto;
-    position: static;
-    transform: none;
+  #headline {
+    font-size: 80px;
+  }
+  #viewPhoto {
+    transform: scale(0.6);
+  }
+  #infoBox #leftBox {
+    font-size: x-large;
+  }
+  #infoBox #rightBox {
+    font-size: x-large;
+  }
+  #overview img {
+    transform: scale(0.8) translate(10%, -25%);
   }
 }

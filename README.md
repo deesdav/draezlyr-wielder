@@ -30,5 +30,6 @@
 - High/Low detail is completed
 - Current Appearance of hero is added
 - Bugs fix
+- Resp. fix
 
 ![alt text](res/img/allHeroesView.gif) ![alt text](res/img/allEnemiesView.gif)
