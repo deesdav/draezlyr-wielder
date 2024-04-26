@@ -92,7 +92,7 @@ dcLevelONE.onclick = () => {
         yourHp.innerText -= 16;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -202,7 +202,7 @@ dcLevelTWO.onclick = () => {
         yourHp.innerText -= 17;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -312,7 +312,7 @@ dcLevelTHREE.onclick = () => {
         yourHp.innerText -= 18;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -421,7 +421,7 @@ dcLevelFOUR.onclick = () => {
         yourHp.innerText -= 19;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -530,7 +530,7 @@ dcLevelFIVE.onclick = () => {
         yourHp.innerText -= 20;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -639,7 +639,7 @@ dcLevelSIX.onclick = () => {
         yourHp.innerText -= 21;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -749,7 +749,7 @@ dcLevelSEVEN.onclick = () => {
         yourHp.innerText -= 22;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -858,7 +858,7 @@ dcLevelEIGHT.onclick = () => {
         yourHp.innerText -= 23;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -967,7 +967,7 @@ dcLevelNINE.onclick = () => {
         yourHp.innerText -= 24;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -1076,7 +1076,7 @@ dcLevelTEN.onclick = () => {
         yourHp.innerText -= 25;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -1185,7 +1185,7 @@ dcLevelELEVEN.onclick = () => {
         yourHp.innerText -= 26;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -1294,7 +1294,7 @@ dcLevelTWELVE.onclick = () => {
         yourHp.innerText -= 27;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -1403,7 +1403,7 @@ dcLevelTHIRTEEN.onclick = () => {
         yourHp.innerText -= 28;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -1512,7 +1512,7 @@ dcLevelFOURTEEN.onclick = () => {
         yourHp.innerText -= 29;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {
@@ -1621,7 +1621,7 @@ dcLevelFIFTEEN.onclick = () => {
         yourHp.innerText -= 30;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
-        //------------------------------------ hero heart beat
+        //------------------------------------ hero heart beat effect
         if (yourHp.innerText <= 10) {
             const startPulse = Math.floor(Math.random() * 20);
             setInterval(() => {

@@ -361,24 +361,15 @@ let heavenBossCompleted = false;
 
 multiverse.onclick = () => {
     const randomEnemy = Math.floor(Math.random() * 15);
-    //const randomEnemy = 2;
     roundValueCounter++;
     yourName.style.display = "block";
     winAndLoss.style.display = "none";
     highDetailBtn.style.display = "none";
+    dcPlanet.style.pointerEvents = "none";
     game.style.border = "5px solid";
     game.style.borderImage = "linear-gradient(to bottom, #333, rgba(255, 0, 2555, 0.41)";
     game.style.borderImageSlice = "1";
     game.style.filter = "saturate(120%) drop-shadow(0px 0px 1000px rgba(255, 0, 2555, 0.41))";
-    /* if (highDetail == true) {
-         heroIdle.src = "./res/img/gold.hero.idle.gif";
-         heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
-         heroAttack.src = "./res/img/gold.hero.attack.gif";
-     } else if (highDetail == false) {
-         heroIdle.src = "./res/img/gold.hero.idle.png";
-         heroIdleAppearance.src = "./res/img/gold.hero.idle.png";
-         heroAttack.src = "./res/img/gold.hero.attack.png";
-     }*/
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
@@ -395,6 +386,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 31;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -472,6 +478,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 32;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -550,6 +571,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 33;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -629,6 +665,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 34;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -707,6 +758,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 35;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -785,6 +851,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 36;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -863,6 +944,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 37;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -941,6 +1037,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 38;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1019,6 +1130,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 39;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1097,6 +1223,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 40;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1175,6 +1316,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 41;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1253,6 +1409,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 42;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1331,6 +1502,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 43;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1409,6 +1595,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 44;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1487,6 +1688,21 @@ multiverse.onclick = () => {
             yourHp.innerText -= 45;
             audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
             audioButtonClick.play();
+            //------------------------------------ hero heart beat effect
+            if (yourHp.innerText <= 10) {
+                const startPulse = Math.floor(Math.random() * 20);
+                setInterval(() => {
+                    startPulse;
+                }, 500);
+                const endPulse = Math.floor(Math.random() * 25);
+                setInterval(() => {
+                    endPulse;
+                }, 500);
+                console.log(`${startPulse} and ${endPulse}`);
+                heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+                heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+            }
             if (yourHp.innerText <= 0) {
                 clearInterval(enemyDamage);
 
@@ -1638,20 +1854,6 @@ hell.onmouseover = () => {
     }
 }
 
-
-/**
-    if (roundValueCounter == 20 && (winsCounter.innerText > lossesCounter.innerText )) {
-        dcPlanet.style.display = "none";
-        nameOfPlanetDC.style.display = "none";
-        marvelPlanet.style.display = "none";
-        nameOfPlanet.style.display = "none";
-        hell.style.display = "block";
-    }
- */
-
-
-
-
 hell.onclick = () => {
     roundHellCounter++;
     yourName.style.display = "block";
@@ -1672,6 +1874,21 @@ hell.onclick = () => {
         yourHp.innerText -= 50;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat effect
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
             hellBossCompleted = false;
@@ -1827,6 +2044,21 @@ heaven.onclick = () => {
         yourHp.innerText -= 100;
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
+        //------------------------------------ hero heart beat effect
+        if (yourHp.innerText <= 10) {
+            const startPulse = Math.floor(Math.random() * 20);
+            setInterval(() => {
+                startPulse;
+            }, 500);
+            const endPulse = Math.floor(Math.random() * 25);
+            setInterval(() => {
+                endPulse;
+            }, 500);
+            console.log(`${startPulse} and ${endPulse}`);
+            heroIdle.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+            heroAttack.style.filter = `drop-shadow(3px 3px ${startPulse}px red)drop-shadow(-3px -3px ${endPulse}px red)`;
+
+        }
         if (yourHp.innerText <= 0) {
             clearInterval(enemyDamage);
             heavenBossCompleted = false;
@@ -1941,8 +2173,6 @@ heaven.onclick = () => {
         }
 
         if (hellBossCompleted && heavenBossCompleted) {
-            dcPlanet.style.display = "none";
-            nameOfPlanetDC.style.display = "none";
             marvelPlanet.style.display = "none";
             nameOfPlanet.style.display = "none";
             heaven.style.display = "none";
@@ -1960,8 +2190,8 @@ heaven.onclick = () => {
 theEndOfTheGame.onclick = () => {
     dcPlanet.style.display = "block";
     nameOfPlanetDC.style.display = "block";
-    marvelPlanet.style.display = "none";//
-    nameOfPlanet.style.display = "none";//
+    marvelPlanet.style.display = "none";
+    nameOfPlanet.style.display = "none";
     heaven.style.display = "none";
     hell.style.display = "none";
     inGameStoryRecapBtn.style.display = "block";
@@ -2040,8 +2270,8 @@ const dynamicTitleElements = [play, story, author, playDraezlyr1, marvelPlanet, 
     backBtnDC, backBtnShop, shopBtn, infoBtn, nextBtn, sendInputBtn, multiverse, skipIntroBtn, muteAudio,
     collectionBtn, hell, heaven, backToLobby, inGameStoryRecapBtn, theEndOfTheGame, tutorial, highDetailBtn];
 const dynamicValues = ["PLAY", "STORY RECAP", "AUTHOR", "PLAY DRAEZLYR SWORD MASSACRE", "MARVEL PLANET", "DC PLANET", "DEESDAV PLANET",
-    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLAY", "SKIP INTRO", "MUTE/UNMUTE AUDIO",
-    "COLLECTION", "HELL", "HEAVEN", "BACK TO LOBBY", "IN GAME STORY RECAP", "THE END", "TUTORIAL", "HIGH/LOW DETAIL"];
+    "BACK", "BACK", "BACK", "SHOP", "INFO", "NEXT", "SEND", "MULTIVERSE PLANET", "SKIP INTRO", "MUTE/UNMUTE AUDIO",
+    "COLLECTION OF ENEMIES", "HELL PLANET", "HEAVEN PLANET", "BACK TO LOBBY", "IN GAME STORY RECAP", "THE END", "TUTORIAL", "HIGH/LOW DETAIL"];
 const dynamicTitleDefault = "DRAEZLYR WIELDER";
 
 for (let i = 0; i < dynamicTitleElements.length; i++) {
@@ -2054,7 +2284,7 @@ for (let i = 0; i < dynamicTitleElements.length; i++) {
     });
 }
 
-//------------------------------------ date
+//------------------------------------ date functionality
 const realtime = new Date();
 const hours = realtime.getHours();
 
@@ -2676,6 +2906,8 @@ if (multiverseAppeared == false) {
         dcLevelONE.style.display = "block";
         marvelPlanet.style.display = "none";
         nameOfPlanet.style.display = "none";
+        hell.style.display = "none";
+        heaven.style.display = "none";
         dcPlanet.style.display = "none";
         nameOfPlanetDC.style.display = "none";
         deesdavPlanet.style.display = "none";
@@ -2811,8 +3043,8 @@ let yourXPIncrease = 2;
 let dotXP = 5;
 let upgradeDamageValue = 4;
 let upgradeHealthValue = 2;
-let upgradeShieldValue = 7;//7
-let upgradeCriticalValue = 6;//6
+let upgradeShieldValue = 7;
+let upgradeCriticalValue = 6;
 
 if (highDetail == true) {
     shop.backgroundImage = "url()";
@@ -3019,12 +3251,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3065,12 +3297,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3146,12 +3378,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3203,12 +3435,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3272,12 +3504,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3329,12 +3561,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3398,12 +3630,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3467,12 +3699,12 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3553,7 +3785,7 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -3599,12 +3831,12 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3681,12 +3913,12 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3739,12 +3971,12 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -3810,7 +4042,7 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -3870,7 +4102,7 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -3941,12 +4173,12 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4012,7 +4244,7 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4101,7 +4333,7 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4148,12 +4380,12 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4230,12 +4462,12 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4290,12 +4522,12 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4360,7 +4592,7 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4419,7 +4651,7 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4489,12 +4721,12 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4560,7 +4792,7 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4647,7 +4879,7 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4694,12 +4926,12 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4776,12 +5008,12 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4835,12 +5067,12 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -4905,7 +5137,7 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -4965,7 +5197,7 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -5036,12 +5268,12 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("r"): //redhero color
+                case ("r"): //red hero color
                 case ("R"):
                     if (highDetail == true) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
@@ -5107,7 +5339,7 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/secret.hero.attack.png";
                     }
                     yourHp.innerText += 0;
-                    // Revert to normal state
+                    //normal mode
                     setTimeout(() => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
@@ -5427,10 +5659,6 @@ yourName.onmouseout = () => {
     audioLobbyBackground.pause();
     audioLobbyBackground.currentTime = 0;
 }
-
-//------------------------------------ hero hp 
-
-
 
 //------------------------------------ enemy system
 let enemyCrosshair = false;
@@ -5865,15 +6093,6 @@ gameResult.onclick = () => {
         levelFOURTEEN.style.textDecoration = "underline";
     }
     if (levelFIFTEENCompleted) {
-        /*  if (highDetail == true) {
-              heroIdle.src = "./res/img/tan.hero.idle.gif";
-              heroIdleAppearance.src = "./res/img/tan.hero.idle.gif";
-              heroAttack.src = "./res/img/tan.hero.attack.gif";
-          } else if (highDetail == false) {
-              heroIdle.src = "./res/img/tan.hero.idle.png";
-              heroIdleAppearance.src = "./res/img/tan.hero.idle.png";
-              heroAttack.src = "./res/img/tan.hero.attack.png";
-          }*/
         marvelPlanet.style.filter = "grayscale(100%)";
         levelFIFTEEN.style.backgroundColor = "white";
         levelFIFTEEN.style.color = "black";
@@ -5976,15 +6195,6 @@ gameResult.onclick = () => {
                 }
 
                 if (deesdavDimensionCompleted) {
-                    /*  if (highDetail == true) {
-                          heroIdle.src = "./res/img/silver.hero.idle.gif";
-                          heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
-                          heroAttack.src = "./res/img/silver.hero.attack.gif";
-                      } else if (highDetail == false) {
-                          heroIdle.src = "./res/img/silver.hero.idle.png";
-                          heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
-                          heroAttack.src = "./res/img/silver.hero.attack.png";
-                      }*/
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
@@ -6005,8 +6215,8 @@ gameResult.onclick = () => {
                     planets.style.gap = "0px";
                     upgradeDamageValue = 9;
                     upgradeHealthValue = 7;
-                    upgradeShieldValue = 12;//12
-                    upgradeCriticalValue = 11;//11
+                    upgradeShieldValue = 12;
+                    upgradeCriticalValue = 11;
                     redColorValue = 10;
                     greenColorValue = 12;
                     blueColorValue = 15;
@@ -6064,15 +6274,6 @@ gameResult.onclick = () => {
         gridOfLevelsDC.style.display = "grid";
         backBtn.style.display = "none";
         backBtnDC.style.display = "block";
-        /* if (highDetail == true) {
-             heroIdle.src = "./res/img/silver.hero.idle.gif";
-             heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
-             heroAttack.src = "./res/img/silver.hero.attack.gif";
-         } else if (highDetail == false) {
-             heroIdle.src = "./res/img/silver.hero.idle.png";
-             heroIdleAppearance.src = "./res/img/silver.hero.idle.png";
-             heroAttack.src = "./res/img/silver.hero.attack.png";
-         }*/
     }
     if (dcLevelONECompleted) {
         dcLevelTWO.style.display = "block";
@@ -6316,10 +6517,6 @@ for (let i = 0; i < killedEnemies.length; i++) {
         viewPhoto.style.backgroundSize = "cover";
         viewPhoto.style.backgroundRepeat = "no-repeat";
         viewPhoto.style.backgroundPosition = "center";
-        /*   if (killedEnemiesId.alt == "multiverse" || killedEnemiesId.alt == "deesdav-dimension"
-               || killedEnemiesId.alt == "hell" || killedEnemiesId.alt == "heaven") {
-               viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.png`;
-           }*/
         viewPhoto.style.display = "block";
         killedEnemiesId.style.filter = "blur(0px)";
     }
