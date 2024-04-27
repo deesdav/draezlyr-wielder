@@ -2237,8 +2237,8 @@ for (let i = 0; i < disabledImages.length; i++) {
 const imagesDragDisable = document.querySelectorAll("#gridOfKilledEnemies img");
 
 imagesDragDisable.forEach(image => {
-    image.addEventListener("dragstart", (dis) => {
-        dis.preventDefault();
+    image.addEventListener("dragstart", (disabler) => {
+        disabler.preventDefault();
     });
 });
 
