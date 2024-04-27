@@ -5752,7 +5752,7 @@ function onKeyUp(e) {
 
 document.addEventListener("mousedown", (e) => {
     if (aKeyDown) {
-        console.log("ZABRANUJU");
+        console.log("I prevent");
         e.preventDefault();
     }
 });
