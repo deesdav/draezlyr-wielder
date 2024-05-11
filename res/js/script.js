@@ -175,7 +175,7 @@ highDetailBtn.onclick = () => {
         highDetailBtn.innerText = "HIGH DETAIL";
     }
 
-    if (highDetail == true) {
+    if (highDetail) {
         heroIdle.src = "./res/img/default.hero.idle.gif";
         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -186,7 +186,7 @@ highDetailBtn.onclick = () => {
     }
 
     document.body.onmouseover = () => {
-        if (highDetail == true) {
+        if (highDetail) {
             for (let i = 0; i < gifPlanetsAndRewardOverview.length; i++) {
                 gifPlanetsAndRewardOverview[i].src = `./res/img/${gifPlanetsAndRewardOverviewSrc[i]}.gif`;
             }
@@ -373,7 +373,7 @@ multiverse.onclick = () => {
     //------------------------------------ enemy pikachu
     if (randomEnemy == 0) {
         game.style.boxShadow = "0 0 120px yellow inset";
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/pikachuBG.gif)";
             enemy.src = "./res/img/enemies/enemy.pikachu.gif";
         } else if (highDetail == false) {
@@ -437,19 +437,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
                 yourXPValue += yourXPIncrease;
@@ -465,7 +453,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 1) {
         game.style.boxShadow = "0 0 120px red inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/supermarioBG.gif)";
             enemy.src = "./res/img/enemies/enemy.supermario.gif";
         } else if (highDetail == false) {
@@ -513,6 +501,7 @@ multiverse.onclick = () => {
                 yourHp.innerText = yourHpValue;
                 backBtn.style.zIndex = "999";
                 enemyHp.innerText = supermarioHP;
+
             }
             if (enemyHp.innerText <= 0 && yourHp.innerText > 0) {
                 clearInterval(enemyDamage);
@@ -529,19 +518,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -558,7 +534,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 2) {
         game.style.boxShadow = "0 0 120px brown inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/grootBG.gif)";
             enemy.src = "./res/img/enemies/enemy.groot.gif";
         } else if (highDetail == false) {
@@ -622,19 +598,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -651,7 +614,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 3) {
         game.style.boxShadow = "0 0 120px gray inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/robocopBG.gif)";
             enemy.src = "./res/img/enemies/enemy.robocop.gif";
         } else if (highDetail == false) {
@@ -716,19 +679,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -745,7 +696,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 4) {
         game.style.boxShadow = "0 0 120px green inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/predatorBG.gif)";
             enemy.src = "./res/img/enemies/enemy.predator.gif";
         } else if (highDetail == false) {
@@ -809,19 +760,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -838,7 +777,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 5) {
         game.style.boxShadow = "0 0 120px black inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/terminatorBG.gif)";
             enemy.src = "./res/img/enemies/enemy.terminator.gif";
         } else if (highDetail == false) {
@@ -902,19 +841,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -931,7 +858,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 6) {
         game.style.boxShadow = "0 0 120px rgb(100,50,10) inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/geraltBG.gif)";
             enemy.src = "./res/img/enemies/enemy.geralt.gif";
         } else if (highDetail == false) {
@@ -995,19 +922,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1024,7 +938,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 7) {
         game.style.boxShadow = "0 0 120px rgb(10,150,10) inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/doomslayerBG.gif)";
             enemy.src = "./res/img/enemies/enemy.doomslayer.gif";
         } else if (highDetail == false) {
@@ -1088,19 +1002,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1117,7 +1019,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 8) {
         game.style.boxShadow = "0 0 120px rgb(20,20,120) inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/solidsnakeBG.gif)";
             enemy.src = "./res/img/enemies/enemy.solidsnake.gif";
         } else if (highDetail == false) {
@@ -1181,19 +1083,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1210,7 +1099,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 9) {
         game.style.boxShadow = "0 0 120px silver inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/mandalorianBG.gif)";
             enemy.src = "./res/img/enemies/enemy.mandalorian.gif";
         } else if (highDetail == false) {
@@ -1274,19 +1163,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1303,7 +1180,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 10) {
         game.style.boxShadow = "0 0 120px rgb(100,0,0) inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/darthvaderBG.gif)";
             enemy.src = "./res/img/enemies/enemy.darthvader.gif";
         } else if (highDetail == false) {
@@ -1367,19 +1244,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1396,7 +1260,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 11) {
         game.style.boxShadow = "0 0 120px rgb(255,205,0) inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/narutoBG.gif)";
             enemy.src = "./res/img/enemies/enemy.naruto.gif";
         } else if (highDetail == false) {
@@ -1460,19 +1324,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1489,7 +1340,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 12) {
         game.style.boxShadow = "0 0 120px lightblue inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/gokuBG.gif)";
             enemy.src = "./res/img/enemies/enemy.goku.gif";
         } else if (highDetail == false) {
@@ -1553,19 +1404,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1582,7 +1421,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 13) {
         game.style.boxShadow = "0 0 120px goldenrod inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/johnwickBG.gif)";
             enemy.src = "./res/img/enemies/enemy.johnwick.gif";
         } else if (highDetail == false) {
@@ -1646,19 +1485,7 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
+
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1675,7 +1502,7 @@ multiverse.onclick = () => {
     if (randomEnemy == 14 || randomEnemy == 15) {
         game.style.boxShadow = "0 0 120px rgb(160,20,20) inset";
 
-        if (highDetail == true) {
+        if (highDetail) {
             game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/kratosBG.gif)";
             enemy.src = "./res/img/enemies/enemy.kratos.gif";
         } else if (highDetail == false) {
@@ -1739,19 +1566,6 @@ multiverse.onclick = () => {
                     gameResult.innerText = `${nameValue} won`;
                 }
                 winsCounter.innerText++;
-                if (hellBossCompleted == false) {
-                    if (roundValueCounter > 20 && (winsCounter.innerText > lossesCounter.innerText)) {
-                        console.log("hell is here");
-                        hell.style.display = "block";
-                    }
-                }
-                if (heavenBossCompleted == false) {
-                    if (roundValueCounter > 40 && (winsCounter.innerText > lossesCounter.innerText) && hell.style.display == "none") {
-                        console.log("heaven is here");
-                        hell.style.display = "none";
-                        heaven.style.display = "block";
-                    }
-                }
 
                 audioYouWin.src = "./res/audio/youWin.mp3";
                 audioYouWin.play();
@@ -1802,6 +1616,15 @@ multiverse.onclick = () => {
     backBtnShop.style.zIndex = "0";
 
     gameResult.onclick = () => {
+        if (hellBossCompleted == false && roundValueCounter > 20) {
+            console.log("hell is here");
+            hell.style.display = "block";
+        }
+        if (heavenBossCompleted == false && roundValueCounter > 40) {
+            console.log("heaven is here");
+            hell.style.display = "none";
+            heaven.style.display = "block";
+        }
         console.log("multiverse gamee resultt");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
@@ -1861,7 +1684,7 @@ hell.onclick = () => {
     highDetailBtn.style.display = "none";
     game.style.boxShadow = "0 0 120px #850111 inset";
 
-    if (highDetail == true) {
+    if (highDetail) {
         game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/hellBG.gif)";
         enemy.src = "./res/img/enemies/enemy.devil.gif";
     } else if (highDetail == false) {
@@ -2031,7 +1854,7 @@ heaven.onclick = () => {
     game.style.boxShadow = "0 0 120px #87CEEB inset";
     winAndLoss.style.display = "none";
     highDetailBtn.style.display = "none";
-    if (highDetail == true) {
+    if (highDetail) {
         game.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/heavenBG.gif)";
         enemy.src = "./res/img/enemies/enemy.angel.gif";
     } else if (highDetail == false) {
@@ -2175,6 +1998,8 @@ heaven.onclick = () => {
         if (hellBossCompleted && heavenBossCompleted) {
             marvelPlanet.style.display = "none";
             nameOfPlanet.style.display = "none";
+            dcPlanet.style.display = "none";
+            nameOfPlanetDC.style.display = "none";
             heaven.style.display = "none";
             hell.style.display = "none";
             inGameStoryRecapBtn.style.display = "none";
@@ -2243,7 +2068,7 @@ imagesDragDisable.forEach(image => {
 });
 
 //------------------------------------ btns onmouseover and onmouseout
-const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio, collectionBtn, yesLobby, noLobby, playDraezlyr1, inGameStoryRecapBtn, highDetailBtn];
+const btnsOnMouseOverAndOut = [shopBtn, backBtn, backBtnShop, infoBtn, backBtnDC, muteAudio, collectionBtn, yesLobby, noLobby, playDraezlyr1, inGameStoryRecapBtn, highDetailBtn, nextBtn, sendInputBtn];
 
 for (let i = 0; i < btnsOnMouseOverAndOut.length; i++) {
     btnsOnMouseOverAndOut[i].onmouseover = () => {
@@ -2308,7 +2133,9 @@ function showInfoBox() {
     inGameStoryRecapBtn.style.display = "none";
     marvelPlanetClick = false;
     dcPlanetClick = false;
-
+    muteAudio.style.display = "none";
+    highDetailBtn.style.display = "none";
+    yourName.style.display = "none";
 }
 infoBtn.onclick = () => {
     showInfoBox();
@@ -2319,19 +2146,10 @@ infoBox.onclick = () => {
     infoBox.style.display = "none";
     collectionBtn.style.display = "block";
     inGameStoryRecapBtn.style.display = "block";
+    muteAudio.style.display = "block";
+    highDetailBtn.style.display = "block";
+    yourName.style.display = "block";
 }
-
-infoBox.onmouseover = () => {
-    yourName.style.zIndex = "0";
-    muteAudio.style.zIndex = "0";
-    highDetailBtn.style.zIndex = "0";
-}
-infoBox.onmouseout = () => {
-    yourName.style.zIndex = "999";
-    muteAudio.style.zIndex = "999";
-    highDetailBtn.style.zIndex = "999";
-}
-
 headline.onmouseover = () => {
     audioLobbyBackground.src = "./res/audio/lobbymusic.mp3";
     audioLobbyBackground.play();
@@ -2347,7 +2165,7 @@ headline.onmouseover = () => {
     story.style.color = "transparent";
     author.style.color = "transparent";
     tutorial.style.color = "transparent";
-    if (highDetail == true) {
+    if (highDetail) {
         document.body.style.backgroundImage = "url(./res/img/draezlyr.lobbyBackground.gif)";
     } else if (highDetail == false) {
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0,  0.5), rgba(30, 150, 255, 0.3)), url(./res/img/lobbyBackground.png)";
@@ -2388,16 +2206,20 @@ for (let i = 0; i < lobbyElements.length; i++) {
 const storyRecapP = document.querySelectorAll("#storyRecap p");
 const inGameStoryRecapP = document.querySelectorAll("#inGameStoryRecap p");
 function showStoryRecap() {
+    infoDetectionOfYourPC.style.display = "none";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     storyRecap.style.display = "block";
     lobby.style.display = "none";
+    highDetailBtn.style.display = "none";
+    muteAudio.style.display = "none";
     storyRecapP.forEach(p => {
         p.innerText = "You were a knight named John Guiscard Coral Ironside who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality, great strength, and was controlled by anger.";
     });
 }
 
 function showInGameStoryRecap() {
+    infoDetectionOfYourPC.style.display = "none";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     inGameStoryRecap.style.display = "block";
@@ -2407,6 +2229,8 @@ function showInGameStoryRecap() {
     infoBtn.style.display = "none";
     shopBtn.style.display = "none";
     inGameStoryRecapBtn.style.display = "none";
+    highDetailBtn.style.display = "none";
+    muteAudio.style.display = "none";
     inGameStoryRecapP.forEach(p => {
         p.innerText = "You were a knight named John Guiscard Coral Ironside who went to the Temple of Doom and Oblivion where he was sent on a mission to find a fabled sword that was in an ancient prophecy to be the most powerful weapon ever and it bore the name Draezlyr. John found a sword stuck in a stone and pulled it out and he was cursed with the desire to kill monsters. The soul of the dragon Hraezlyr is hidden in the sword. The sword could also regenerate you, so John has gained immortality, great strength, and was controlled by anger.";
     });
@@ -2420,11 +2244,13 @@ inGameStoryRecapBtn.onclick = () => {
     showInGameStoryRecap();
 }
 storyRecap.onclick = () => {
+    infoDetectionOfYourPC.style.display = "block";
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
     audioButtonClick.play();
     storyRecap.style.display = "none";
     lobby.style.display = "flex";
-
+    highDetailBtn.style.display = "block";
+    muteAudio.style.display = "block";
 }
 inGameStoryRecap.onclick = () => {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -2436,6 +2262,8 @@ inGameStoryRecap.onclick = () => {
     infoBtn.style.display = "block";
     shopBtn.style.display = "block";
     inGameStoryRecapBtn.style.display = "block";
+    highDetailBtn.style.display = "block";
+    muteAudio.style.display = "block";
     if (deesdavPlanet.style.display == "block") {
         shopBtn.style.display = "none";
     } else {
@@ -2456,6 +2284,7 @@ tutorial.onclick = () => {
     tutorialShow();
 }
 function tutorialShow() {
+    infoDetectionOfYourPC.style.display = "none";
     headline.style.display = "none";
     skipIntroBtn.style.display = "none";
     realtimepresented.style.display = "none";
@@ -2484,6 +2313,7 @@ function tutorialShow() {
     yourHp.innerText = "number";
     enemyHp.innerText = "number";
     tutorialEnemy.onclick = () => {
+        infoDetectionOfYourPC.style.display = "block";
         audioButtonClick.src = "./res/audio/punchAttackSound.mp3";
         audioButtonClick.play();
         game.style.display = "none";
@@ -2650,7 +2480,7 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
-            if (highDetail == true) {
+            if (highDetail) {
                 heroIdle.src = "./res/img/secret.hero.idle.gif";
                 heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                 heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -2674,7 +2504,7 @@ document.addEventListener("keyup", (e) => {
                 audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                 audioButtonClick.play();
             }
-            if (highDetail == true) {
+            if (highDetail) {
                 heroIdle.src = "./res/img/default.hero.idle.gif";
                 heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                 heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -2758,7 +2588,7 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                if (highDetail == true) {
+                if (highDetail) {
                     heroIdle.src = "./res/img/tan.hero.idle.gif";
                     heroIdleAppearance.src = "./res/img/tan.hero.idle.gif";
                     heroAttack.src = "./res/img/tan.hero.attack.gif";
@@ -2776,7 +2606,7 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                if (highDetail == true) {
+                if (highDetail) {
                     heroIdle.src = "./res/img/silver.hero.idle.gif";
                     heroIdleAppearance.src = "./res/img/silver.hero.idle.gif";
                     heroAttack.src = "./res/img/silver.hero.attack.gif";
@@ -2794,7 +2624,7 @@ document.addEventListener("keyup", (e) => {
                     audioButtonClick.src = "./res/audio/keyboard.sound.mp3";
                     audioButtonClick.play();
                 }
-                if (highDetail == true) {
+                if (highDetail) {
                     heroIdle.src = "./res/img/gold.hero.idle.gif";
                     heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
                     heroAttack.src = "./res/img/gold.hero.attack.gif";
@@ -2830,7 +2660,7 @@ marvelPlanet.onclick = () => {
     highDetailBtn.style.zIndex = "999";
     rewardOverview.style.display = "block";
     rewardOverview.alt = "marvel-planet-reward";
-    if (highDetail == true) {
+    if (highDetail) {
         rewardOverview.src = "./res/img/tan.hero.idle.gif";
     } else if (highDetail == false) {
         rewardOverview.src = "./res/img/tan.hero.idle.png";
@@ -2886,7 +2716,7 @@ if (multiverseAppeared == false) {
         highDetailBtn.style.zIndex = "999";
         rewardOverview.style.display = "block";
         rewardOverview.alt = "dc-planet-reward";
-        if (highDetail == true) {
+        if (highDetail) {
             rewardOverview.src = "./res/img/gold.hero.idle.gif";
         } else if (highDetail == false) {
             rewardOverview.src = "./res/img/gold.hero.idle.png";
@@ -3046,7 +2876,7 @@ let upgradeHealthValue = 2;
 let upgradeShieldValue = 7;
 let upgradeCriticalValue = 6;
 
-if (highDetail == true) {
+if (highDetail) {
     shop.backgroundImage = "url()";
 } else if (highDetail == false) {
 
@@ -3220,7 +3050,7 @@ redColor.onclick = () => {
         redColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        if (highDetail == true) {
+        if (highDetail) {
             heroIdle.src = "./res/img/red.hero.idle.gif";
             heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
             heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3240,7 +3070,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3258,7 +3088,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3270,7 +3100,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3287,7 +3117,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3304,7 +3134,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3316,7 +3146,7 @@ redColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3328,7 +3158,7 @@ redColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -3340,7 +3170,7 @@ redColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -3352,7 +3182,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3368,7 +3198,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3385,7 +3215,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3397,7 +3227,7 @@ redColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3409,7 +3239,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3425,7 +3255,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3442,7 +3272,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3454,7 +3284,7 @@ redColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3466,7 +3296,7 @@ redColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -3478,7 +3308,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3494,7 +3324,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3511,7 +3341,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3523,7 +3353,7 @@ redColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -3535,7 +3365,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3551,7 +3381,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3568,7 +3398,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3580,7 +3410,7 @@ redColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -3592,7 +3422,7 @@ redColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -3604,7 +3434,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3620,7 +3450,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3637,7 +3467,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3649,7 +3479,7 @@ redColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3661,7 +3491,7 @@ redColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -3673,7 +3503,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3689,7 +3519,7 @@ redColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3706,7 +3536,7 @@ redColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3718,7 +3548,7 @@ redColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -3730,7 +3560,7 @@ redColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3755,7 +3585,7 @@ greenColor.onclick = () => {
         greenColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        if (highDetail == true) {
+        if (highDetail) {
             heroIdle.src = "./res/img/green.hero.idle.gif";
             heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
             heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3775,7 +3605,7 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3792,7 +3622,7 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3804,7 +3634,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3821,7 +3651,7 @@ greenColor.onclick = () => {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3838,7 +3668,7 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3850,7 +3680,7 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3862,7 +3692,7 @@ greenColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -3874,7 +3704,7 @@ greenColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -3886,7 +3716,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3903,7 +3733,7 @@ greenColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3920,7 +3750,7 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3932,7 +3762,7 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -3944,7 +3774,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -3961,7 +3791,7 @@ greenColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -3978,7 +3808,7 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -3990,7 +3820,7 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4002,7 +3832,7 @@ greenColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4014,7 +3844,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4032,7 +3862,7 @@ greenColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4050,7 +3880,7 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4062,7 +3892,7 @@ greenColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4074,7 +3904,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4092,7 +3922,7 @@ greenColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4110,7 +3940,7 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4122,7 +3952,7 @@ greenColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4134,7 +3964,7 @@ greenColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4146,7 +3976,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4163,7 +3993,7 @@ greenColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4180,7 +4010,7 @@ greenColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -4192,7 +4022,7 @@ greenColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4205,7 +4035,7 @@ greenColor.onclick = () => {
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4217,7 +4047,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4234,7 +4064,7 @@ greenColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4252,7 +4082,7 @@ greenColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4265,7 +4095,7 @@ greenColor.onclick = () => {
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4277,7 +4107,7 @@ greenColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4302,7 +4132,7 @@ blueColor.onclick = () => {
         blueColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        if (highDetail == true) {
+        if (highDetail) {
             heroIdle.src = "./res/img/blue.hero.idle.gif";
             heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
             heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4323,7 +4153,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4340,7 +4170,7 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4352,7 +4182,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4370,7 +4200,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4387,7 +4217,7 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -4399,7 +4229,7 @@ blueColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4411,7 +4241,7 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4423,7 +4253,7 @@ blueColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4435,7 +4265,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4452,7 +4282,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4469,7 +4299,7 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -4482,7 +4312,7 @@ blueColor.onclick = () => {
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4494,7 +4324,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4512,7 +4342,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4529,7 +4359,7 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -4541,7 +4371,7 @@ blueColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4553,7 +4383,7 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4565,7 +4395,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4582,7 +4412,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4600,7 +4430,7 @@ blueColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4612,7 +4442,7 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4624,7 +4454,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4641,7 +4471,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4658,7 +4488,7 @@ blueColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4670,7 +4500,7 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4682,7 +4512,7 @@ blueColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4694,7 +4524,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4711,7 +4541,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4728,7 +4558,7 @@ blueColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -4741,7 +4571,7 @@ blueColor.onclick = () => {
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4753,7 +4583,7 @@ blueColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4765,7 +4595,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4782,7 +4612,7 @@ blueColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4799,7 +4629,7 @@ blueColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4811,7 +4641,7 @@ blueColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4823,7 +4653,7 @@ blueColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4848,7 +4678,7 @@ yellowColor.onclick = () => {
         yellowColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
-        if (highDetail == true) {
+        if (highDetail) {
             heroIdle.src = "./res/img/yellow.hero.idle.gif";
             heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
             heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4862,14 +4692,14 @@ yellowColor.onclick = () => {
         yellowColorOwned = true;
     } else {
         yellowColor.disable = true;
-        yellowColor = false;
+        yellowColorOwned = false;
     }
     if (yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4886,7 +4716,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4898,7 +4728,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4916,7 +4746,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -4933,7 +4763,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -4945,7 +4775,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -4957,7 +4787,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -4969,7 +4799,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -4981,7 +4811,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -4998,7 +4828,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -5015,7 +4845,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -5028,7 +4858,7 @@ yellowColor.onclick = () => {
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -5040,7 +4870,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -5057,7 +4887,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -5074,7 +4904,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -5086,7 +4916,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -5098,7 +4928,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -5110,7 +4940,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -5127,7 +4957,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -5145,7 +4975,7 @@ yellowColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -5158,7 +4988,7 @@ yellowColor.onclick = () => {
 
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -5170,7 +5000,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -5187,7 +5017,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -5205,7 +5035,7 @@ yellowColor.onclick = () => {
 
                 case ("g"): //green hero color
                 case ("G"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
                         heroAttack.src = "./res/img/green.hero.attack.gif";
@@ -5217,7 +5047,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -5229,7 +5059,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -5241,7 +5071,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -5258,7 +5088,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -5275,7 +5105,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("r"): //red hero color
                 case ("R"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/red.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/red.hero.idle.gif";
                         heroAttack.src = "./res/img/red.hero.attack.gif";
@@ -5288,7 +5118,7 @@ yellowColor.onclick = () => {
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -5300,7 +5130,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -5312,7 +5142,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -5329,7 +5159,7 @@ yellowColor.onclick = () => {
 
             switch (e.key) {
                 case ("7"): //god mode
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/secret.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/secret.hero.idle.gif";
                         heroAttack.src = "./res/img/secret.hero.attack.gif";
@@ -5347,7 +5177,7 @@ yellowColor.onclick = () => {
 
                 case ("b"): //blue hero color
                 case ("B"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/blue.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/blue.hero.idle.gif";
                         heroAttack.src = "./res/img/blue.hero.attack.gif";
@@ -5359,7 +5189,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("y"): //yellow hero color
                 case ("Y"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/yellow.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/yellow.hero.idle.gif";
                         heroAttack.src = "./res/img/yellow.hero.attack.gif";
@@ -5371,7 +5201,7 @@ yellowColor.onclick = () => {
                     break;
                 case ("d"): //black and white default hero color
                 case ("D"):
-                    if (highDetail == true) {
+                    if (highDetail) {
                         heroIdle.src = "./res/img/default.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/default.hero.idle.gif";
                         heroAttack.src = "./res/img/default.hero.attack.gif";
@@ -5388,7 +5218,7 @@ yellowColor.onclick = () => {
 //------------------------------------ cost of colors mouse over
 redColor.onmouseover = () => {
     costOfColors.innerText = redColorValue;
-    if (highDetail == true) {
+    if (highDetail) {
         overviewSrc.src = "./res/img/red.hero.idle.gif";
     } else if (highDetail == false) {
         overviewSrc.src = "./res/img/red.hero.idle.png";
@@ -5403,7 +5233,7 @@ redColor.onmouseover = () => {
 }
 greenColor.onmouseover = () => {
     costOfColors.innerText = greenColorValue;
-    if (highDetail == true) {
+    if (highDetail) {
         overviewSrc.src = "./res/img/green.hero.idle.gif";
     } else if (highDetail == false) {
         overviewSrc.src = "./res/img/green.hero.idle.png";
@@ -5418,7 +5248,7 @@ greenColor.onmouseover = () => {
 }
 blueColor.onmouseover = () => {
     costOfColors.innerText = blueColorValue;
-    if (highDetail == true) {
+    if (highDetail) {
         overviewSrc.src = "./res/img/blue.hero.idle.gif";
     } else if (highDetail == false) {
         overviewSrc.src = "./res/img/blue.hero.idle.png";
@@ -5433,7 +5263,7 @@ blueColor.onmouseover = () => {
 }
 yellowColor.onmouseover = () => {
     costOfColors.innerText = yellowColorValue;
-    if (highDetail == true) {
+    if (highDetail) {
         overviewSrc.src = "./res/img/yellow.hero.idle.gif";
     } else if (highDetail == false) {
         overviewSrc.src = "./res/img/yellow.hero.idle.png";
@@ -5832,7 +5662,7 @@ function enemyKeyDown() {
         "batman", "batman", "batman", "aquaman", "batman", "cyborg", "greenlantern", "greenarrow", "batman", "shazam",
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
         "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "hell", "heaven"];
-    if (highDetail == true) {
+    if (highDetail) {
         for (let i = 0; i < enemyTextValue.length; i++) {
             if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
                 game.style.backgroundImage = `linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemiesBGs[i]}BG.gif)`;
@@ -5917,7 +5747,7 @@ function enemyKeyUp() {
         "blackadam", "doctormanhattan", "darkseid", "pikachu", "supermario", "groot", "robocop", "predator", "terminator", "geralt",
         "doomslayer", "solidsnake", "mandalorian", "darthvader", "naruto", "goku", "johnwick", "kratos", "hell", "heaven"];
 
-    if (highDetail == true) {
+    if (highDetail) {
         for (let i = 0; i < enemyTextValue.length; i++) {
             if (enemyHp.innerText <= 15 && enemyHpTextValue.innerText === `${enemyTextValue[i]}´S HP:`) {
                 game.style.backgroundImage = `linear-gradient(rgba(0, 0, 0,  0.2), rgba(0, 0, 0, 0.4)), url(./res/img/backgrounds/finished.${damagedAndFinishedEffectEnemiesBGs[i]}BG.gif)`;
@@ -6145,7 +5975,7 @@ gameResult.onclick = () => {
             winAndLoss.style.display = "none";
             rewardOverview.style.display = "block";
             rewardOverview.alt = "deesdav-dimension-reward";
-            if (highDetail == true) {
+            if (highDetail) {
                 rewardOverview.src = "./res/img/silver.hero.idle.gif";
             } else if (highDetail == false) {
                 rewardOverview.src = "./res/img/silver.hero.idle.png";
@@ -6374,7 +6204,7 @@ gameResult.onclick = () => {
         dcLevelFOURTEEN.style.textDecoration = "underline";
     }
     if (dcLevelFIFTEENCompleted) {
-        if (highDetail == true) {
+        if (highDetail) {
             heroIdle.src = "./res/img/gold.hero.idle.gif";
             heroIdleAppearance.src = "./res/img/gold.hero.idle.gif";
             heroAttack.src = "./res/img/gold.hero.attack.gif";
@@ -6494,16 +6324,16 @@ for (let i = 0; i < killedEnemies.length; i++) {
         if (killedEnemiesId.alt == "marvel" || killedEnemiesId.alt == "dc" || killedEnemiesId.alt == "deesdav-dimension" || killedEnemiesId.alt == "hell" || killedEnemiesId.alt == "heaven") {
             infoOfKilledEnemyLocation.innerText = `${locations[i]}`;
         } else {
-            infoOfKilledEnemyLocation.innerText = "MULTIVERSE";
+            infoOfKilledEnemyLocation.innerText = "MULTIVERSE PLANET";
         }
 
         if (killedEnemiesId.alt == "hell") {
-            infoOfKilledEnemyLocation.innerText = "HELL";
+            infoOfKilledEnemyLocation.innerText = "HELL PLANET";
         }
         if (killedEnemiesId.alt == "heaven") {
-            infoOfKilledEnemyLocation.innerText = "HEAVEN";
+            infoOfKilledEnemyLocation.innerText = "HEAVEN PLANET";
         }
-        if (highDetail == true) {
+        if (highDetail) {
             viewPhoto.src = `./res/img/enemies/enemy.${killedEnemies[i]}.gif`;
             viewPhoto.style.backgroundImage = `url(./res/img/backgrounds/finished.${killedEnemiesBGs[i]}BG.gif)`;
             if (killedEnemiesId.alt == "deesdav-dimension") {
