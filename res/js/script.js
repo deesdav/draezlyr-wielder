@@ -2423,7 +2423,7 @@ function sendEnter() {
     audioGameBackground.src = "./res/audio/bombBG.mp3";
     audioGameBackground.play();
     audioGameBackground.loop = true;
-    audioGameBackground.volume = 0.25;
+    audioGameBackground.volume = 0.2;
     const nameValue = storyPartInput.value;
     const defaultName = "Draezlyr Wielder";
     if (nameValue == "") {
