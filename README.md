@@ -8,7 +8,7 @@
 
 **Latest Update Highlights:**
 
-##### AFTER UPDATE:
+#### AFTER UPDATE:
 
 - Bugs fix
 - end planets show fix
@@ -16,7 +16,7 @@
 - story recaps fix
 - background music added
 
-##### RECOMMENDATION:
+#### RECOMMENDATION:
 
 1. In terminal clone the repo
 
@@ -25,6 +25,10 @@ git clone https://github.com/deesdav/draezlyr-wielder.git
 ```
 
 2. run live server in Visual Studion Code
+
+---
+
+##### OR
 
 ---
 
