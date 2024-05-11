@@ -265,6 +265,7 @@ const audioButtonClickMulti = document.getElementById("audioButtonClickMulti");
 const audioLobbyBackground = document.getElementById("audioLobbyBackground");
 const audioYouWin = document.getElementById("audioYouWin");
 const audioYouLost = document.getElementById("audioYouLost");
+const audioGameBackground = document.getElementById("audioGameBackground");
 
 const muteAudio = document.getElementById("muteAudio");
 
@@ -280,18 +281,20 @@ muteAudio.onclick = () => {
 }
 
 function toggleMute() {
-    if (audioButtonClick.muted || audioButtonClickMulti.muted || audioLobbyBackground.muted || audioYouWin.muted || audioYouLost.muted) {
+    if (audioButtonClick.muted || audioButtonClickMulti.muted || audioLobbyBackground.muted || audioYouWin.muted || audioYouLost.muted || audioGameBackground.muted) {
         audioButtonClick.muted = false;
         audioButtonClickMulti.muted = false;
         audioLobbyBackground.muted = false;
         audioYouWin.muted = false;
         audioYouLost.muted = false;
+        audioGameBackground.muted = false;
     } else {
         audioButtonClick.muted = true;
         audioButtonClickMulti.muted = true;
         audioLobbyBackground.muted = true;
         audioYouWin.muted = true;
         audioYouLost.muted = true;
+        audioGameBackground.muted = true;
     }
 }
 
@@ -301,6 +304,7 @@ function toggleUnMute() {
     audioLobbyBackground.muted = !audioLobbyBackground.muted;
     audioYouWin.muted = !audioYouWin.muted;
     audioYouLost.muted = !audioYouLost.muted;
+    audioGameBackground.muted = !audioGameBackground.muted;
 }
 
 //------------------------------------ multiverse
@@ -2415,7 +2419,11 @@ nextBtn.onclick = () => {
 }
 function sendEnter() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
-    audioButtonClick.play();
+    audioButtonClick.play(); 
+    audioGameBackground.src = "./res/audio/bombBG.mp3";
+    audioGameBackground.play();
+    audioGameBackground.loop = true;
+    audioGameBackground.volume = 0.25;
     const nameValue = storyPartInput.value;
     const defaultName = "Draezlyr Wielder";
     if (nameValue == "") {
@@ -5466,29 +5474,6 @@ yourXP.style.textShadow = "1px 1px 2px black";
 yourXP.style.fontWeight = "bold";
 yourHp.style.color = "rgb(0, 255, 0)";
 enemyHp.style.color = "rgb(255, 0, 0)";
-
-
-//------------------------------------ hero audio
-heroIdle.onmouseover = () => {
-    audioLobbyBackground.src = "./res/audio/bomb.mp3";
-    audioLobbyBackground.play();
-}
-heroAttack.onmouseout = () => {
-    audioLobbyBackground.pause();
-    audioLobbyBackground.currentTime = 0;
-}
-heroIdle.onmouseout = () => {
-    audioLobbyBackground.pause();
-    audioLobbyBackground.currentTime = 0;
-}
-yourName.onmouseover = () => {
-    audioLobbyBackground.src = "./res/audio/bomb.mp3";
-    audioLobbyBackground.play();
-}
-yourName.onmouseout = () => {
-    audioLobbyBackground.pause();
-    audioLobbyBackground.currentTime = 0;
-}
 
 //------------------------------------ enemy system
 let enemyCrosshair = false;

@@ -13,5 +13,6 @@
 - end planets show fix
 - buttons fix
 - story recaps fix
+- background music added
 
 ![alt text](res/img/allHeroesView.gif) ![alt text](res/img/allEnemiesView.gif)
