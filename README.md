@@ -24,7 +24,7 @@
 git clone https://github.com/deesdav/draezlyr-wielder.git
 ```
 
-2. run live server in Visual Studion Code
+2. run live server in Visual Studio Code (VSC)
 
 ---
 
@@ -33,7 +33,7 @@ git clone https://github.com/deesdav/draezlyr-wielder.git
 ---
 
 1. Download ZIP
-2. run live server in Visual Studion Code
+2. run live server in Visual Studio Code (VSC)
 
 ---
 
