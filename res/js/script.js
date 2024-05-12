@@ -48,7 +48,7 @@ const healthInfo = document.getElementById("healthInfo");
 const shieldInfo = document.getElementById("shieldInfo");
 const criticalInfo = document.getElementById("criticalInfo");
 const redColor = document.getElementById("redColor");
-const greenColor = document.getElementById("greenColor");
+const emeraldColor = document.getElementById("emeraldColor");
 const blueColor = document.getElementById("blueColor");
 const yellowColor = document.getElementById("yellowColor");
 const costOfColors = document.getElementById("costOfColors");
@@ -1624,10 +1624,14 @@ multiverse.onclick = () => {
             console.log("hell is here");
             hell.style.display = "block";
         }
-        if (heavenBossCompleted == false && roundValueCounter > 40) {
-            console.log("heaven is here");
-            hell.style.display = "none";
-            heaven.style.display = "block";
+        if (heavenBossCompleted == false) {
+            if (hellBossCompleted == true && roundValueCounter > 40) {
+                console.log("heaven is here");
+                hell.style.display = "none";
+                heaven.style.display = "block";
+            }
+        } else {
+            heaven.style.display = "none";
         }
         console.log("multiverse gamee resultt");
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
@@ -2419,7 +2423,7 @@ nextBtn.onclick = () => {
 }
 function sendEnter() {
     audioButtonClick.src = "./res/audio/buttonsound.mp3";
-    audioButtonClick.play(); 
+    audioButtonClick.play();
     audioGameBackground.src = "./res/audio/bombBG.mp3";
     audioGameBackground.play();
     audioGameBackground.loop = true;
@@ -3045,7 +3049,7 @@ critical.onmouseup = () => {
 
 //------------------------------------ customization upgrades
 let redColorOwned = false;
-let greenColorOwned = false;
+let emeraldColorOwned = false;
 let blueColorOwned = false;
 let yellowColorOwned = false;
 let redColorValue = 5;
@@ -3121,7 +3125,7 @@ redColor.onclick = () => {
             }
         });
     }
-    if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3152,8 +3156,8 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3202,7 +3206,7 @@ redColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3233,8 +3237,8 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3259,7 +3263,7 @@ redColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3290,8 +3294,8 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3328,7 +3332,7 @@ redColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3385,7 +3389,7 @@ redColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3454,7 +3458,7 @@ redColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3485,8 +3489,8 @@ redColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3523,7 +3527,7 @@ redColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3583,14 +3587,14 @@ redColor.onclick = () => {
     }
 }
 
-let greenColorValue = 7;
-greenColor.onclick = () => {
-    greenColor.style.borderColor = "red";
-    greenColor.style.backgroundColor = "white";
-    greenColor.style.color = "red";
-    if (yourXP.innerText >= greenColorValue) {
-        greenColor.style.display = "none";
-        greenColor.disable = false;
+let emeraldColorValue = 7;
+emeraldColor.onclick = () => {
+    emeraldColor.style.borderColor = "red";
+    emeraldColor.style.backgroundColor = "white";
+    emeraldColor.style.color = "red";
+    if (yourXP.innerText >= emeraldColorValue) {
+        emeraldColor.style.display = "none";
+        emeraldColor.disable = false;
         audioButtonClick.src = "./res/audio/buttonsound.mp3";
         audioButtonClick.play();
         if (highDetail) {
@@ -3602,14 +3606,14 @@ greenColor.onclick = () => {
             heroIdleAppearance.src = "./res/img/green.hero.idle.png";
             heroAttack.src = "./res/img/green.hero.attack.png";
         }
-        yourXPValue -= greenColorValue;
+        yourXPValue -= emeraldColorValue;
         yourXP.innerText = yourXPValue;
-        greenColorOwned = true;
+        emeraldColorOwned = true;
     } else {
-        greenColor.disable = true;
-        greenColorOwned = false;
+        emeraldColor.disable = true;
+        emeraldColorOwned = false;
     }
-    if (greenColorOwned == true) {
+    if (emeraldColorOwned == true) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3628,8 +3632,8 @@ greenColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3655,7 +3659,7 @@ greenColor.onclick = () => {
             }
         });
     }
-    if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
             switch (e.key) {
                 case ("7"): //god mode
@@ -3686,8 +3690,8 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3736,7 +3740,7 @@ greenColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -3768,8 +3772,8 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3794,7 +3798,7 @@ greenColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -3826,8 +3830,8 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3865,7 +3869,7 @@ greenColor.onclick = () => {
 
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -3886,8 +3890,8 @@ greenColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3925,7 +3929,7 @@ greenColor.onclick = () => {
 
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -3946,8 +3950,8 @@ greenColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -3996,7 +4000,7 @@ greenColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4028,8 +4032,8 @@ greenColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4067,7 +4071,7 @@ greenColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4088,8 +4092,8 @@ greenColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4203,7 +4207,7 @@ blueColor.onclick = () => {
             }
         });
     }
-    if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4235,8 +4239,8 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4285,7 +4289,7 @@ blueColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4345,7 +4349,7 @@ blueColor.onclick = () => {
 
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4377,8 +4381,8 @@ blueColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4415,7 +4419,7 @@ blueColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == false) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4436,8 +4440,8 @@ blueColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4474,7 +4478,7 @@ blueColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4494,8 +4498,8 @@ blueColor.onclick = () => {
                         yourHp.innerText = yourHpValue;
                     }, 5000);
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4544,7 +4548,7 @@ blueColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4615,7 +4619,7 @@ blueColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4749,7 +4753,7 @@ yellowColor.onclick = () => {
             }
         });
     }
-    if (redColorOwned == true && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4781,8 +4785,8 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4831,7 +4835,7 @@ yellowColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4890,7 +4894,7 @@ yellowColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4922,8 +4926,8 @@ yellowColor.onclick = () => {
                         heroAttack.src = "./res/img/red.hero.attack.png";
                     }
                     break;
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -4960,7 +4964,7 @@ yellowColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == false && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -4981,8 +4985,8 @@ yellowColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -5020,7 +5024,7 @@ yellowColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == true && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -5041,8 +5045,8 @@ yellowColor.onclick = () => {
                     }, 5000);
                     break;
 
-                case ("g"): //green hero color
-                case ("G"):
+                case ("e"): //emerald hero color
+                case ("E"):
                     if (highDetail) {
                         heroIdle.src = "./res/img/green.hero.idle.gif";
                         heroIdleAppearance.src = "./res/img/green.hero.idle.gif";
@@ -5091,7 +5095,7 @@ yellowColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == true && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == true && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -5162,7 +5166,7 @@ yellowColor.onclick = () => {
                     break;
             }
         });
-    } else if (redColorOwned == false && greenColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
+    } else if (redColorOwned == false && emeraldColorOwned == false && blueColorOwned == true && yellowColorOwned == true) {
         document.addEventListener("keyup", (e) => {
 
             switch (e.key) {
@@ -5239,8 +5243,8 @@ redColor.onmouseover = () => {
     redColor.style.color = "red";
     redColor.style.backgroundColor = "black";
 }
-greenColor.onmouseover = () => {
-    costOfColors.innerText = greenColorValue;
+emeraldColor.onmouseover = () => {
+    costOfColors.innerText = emeraldColorValue;
     if (highDetail) {
         overviewSrc.src = "./res/img/green.hero.idle.gif";
     } else if (highDetail == false) {
@@ -5250,9 +5254,9 @@ greenColor.onmouseover = () => {
     audioButtonClick.src = "./res/audio/choose.mp3";
     audioButtonClick.play();
     costingCustomization.style.color = "rgb(0,255,0)";
-    greenColor.style.borderColor = "rgb(0,255,0)";
-    greenColor.style.color = "rgb(0,255,0)";
-    greenColor.style.backgroundColor = "black";
+    emeraldColor.style.borderColor = "rgb(0,255,0)";
+    emeraldColor.style.color = "rgb(0,255,0)";
+    emeraldColor.style.backgroundColor = "black";
 }
 blueColor.onmouseover = () => {
     costOfColors.innerText = blueColorValue;
@@ -5294,14 +5298,14 @@ redColor.onmouseout = () => {
     redColor.style.color = "black";
     redColor.style.backgroundColor = "red";
 }
-greenColor.onmouseout = () => {
+emeraldColor.onmouseout = () => {
     costOfColors.innerText = 0;
     overviewSrc.src = "./res/img/default.hero.idle.gif";
     overview.style.display = "none";
     costingCustomization.style.color = "white";
-    greenColor.style.borderColor = "black";
-    greenColor.style.color = "black";
-    greenColor.style.backgroundColor = "rgb(0,255,0)";
+    emeraldColor.style.borderColor = "black";
+    emeraldColor.style.color = "black";
+    emeraldColor.style.backgroundColor = "rgb(0,255,0)";
 }
 blueColor.onmouseout = () => {
     costOfColors.innerText = 0;
@@ -5928,11 +5932,11 @@ gameResult.onclick = () => {
             document.body.style.backgroundImage = "none";
         }
         deesdavPlanet.onclick = () => {
+            audioGameBackground.volume = 0;
             lastLevelRewardHeadline.innerText = "reward for completing Deesdav Dimension";
             lastLevelRewardSwitch.innerText = "s or S";
             collectionBtn.style.display = "none";
             inGameStoryRecapBtn.style.display = "none";
-            highDetailBtn.style.display = "none";
             audioButtonClick.src = "./res/audio/buttonsound.mp3";
             audioButtonClick.play();
             marvelPlanet.style.display = "none";
@@ -5969,13 +5973,13 @@ gameResult.onclick = () => {
                 countDown.innerText--;
                 if (countDown.innerText == 0) {
                     clearInterval(timerDimension);
+                    audioGameBackground.volume = 0.2;
                     countDown.innerText = 60;
                     deesdavDimension.style.display = "none";
                     countDownText.style.display = "none";
                     marvelPlanet.style.display = "block";
                     nameOfPlanet.style.display = "block";
                     deesdavPlanet.style.display = "block";
-                    highDetailBtn.style.display = "none";
                     lastLevelReward.style.display = "none";
                     nameOfPlanetDeesdav.style.display = "block";
                     collectionBtn.style.display = "block";
@@ -6010,6 +6014,7 @@ gameResult.onclick = () => {
                 }
 
                 if (deesdavDimensionCompleted) {
+                    audioGameBackground.volume = 0.2;
                     yourXPValue -= 100;
                     yourXP.innerText = yourXPValue;
                     shopBtn.style.display = "block";
@@ -6033,7 +6038,7 @@ gameResult.onclick = () => {
                     upgradeShieldValue = 12;
                     upgradeCriticalValue = 11;
                     redColorValue = 10;
-                    greenColorValue = 12;
+                    emeraldColorValue = 12;
                     blueColorValue = 15;
                     yellowColorValue = 17;
                     yourXPIncrease = 4;
